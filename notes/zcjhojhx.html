@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>옵시디언 스크린샷 복붙 비장의 기술 - CMDS Eagle and Cloudflare R2 세팅법</title>
+<meta name="description" content="## 📝 Key Trigger (1–3 lines) &gt; [!NOTE] &gt; 옵시디언 필수급 플러그인 **CMDS-Eagle**을 제대로 사용하기 위한 Cloudflare R2 세팅법. &gt; 한번 설정하면 그 다음부터는 아주아주아주아주 편하게 스크린샷 복붙을 무지성으로 할 수 있다. &gt; **Achmage-slides-ultra**와 연계하면 더욱 강력해진다.">
+<link rel="canonical" href="https://laguna821.github.io/obsidian-shared-notes/notes/zcjhojhx.html">
+<meta property="og:url" content="https://laguna821.github.io/obsidian-shared-notes/notes/zcjhojhx.html">
+
+<link rel="icon" type="image/png" href="https://cmdspace.work/assets/logos/cmds-logo-round.png">
+<link rel="apple-touch-icon" href="https://cmdspace.work/assets/logos/cmds-logo-round.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CMDSPACE">
+<meta property="og:title" content="옵시디언 스크린샷 복붙 비장의 기술 - CMDS Eagle and Cloudflare R2 세팅법">
+<meta property="og:description" content="## 📝 Key Trigger (1–3 lines) &gt; [!NOTE] &gt; 옵시디언 필수급 플러그인 **CMDS-Eagle**을 제대로 사용하기 위한 Cloudflare R2 세팅법. &gt; 한번 설정하면 그 다음부터는 아주아주아주아주 편하게 스크린샷 복붙을 무지성으로 할 수 있다. &gt; **Achmage-slides-ultra**와 연계하면 더욱 강력해진다.">
+<meta property="og:image" content="https://share.cmdspace.work/assets/og/og-share.png">
+<meta property="og:image:secure_url" content="https://share.cmdspace.work/assets/og/og-share.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CMDS Share — 옵시디언 스크린샷 복붙 비장의 기술 - CMDS Eagle and Cloudflare R2 세팅법">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="옵시디언 스크린샷 복붙 비장의 기술 - CMDS Eagle and Cloudflare R2 세팅법">
+<meta name="twitter:description" content="## 📝 Key Trigger (1–3 lines) &gt; [!NOTE] &gt; 옵시디언 필수급 플러그인 **CMDS-Eagle**을 제대로 사용하기 위한 Cloudflare R2 세팅법. &gt; 한번 설정하면 그 다음부터는 아주아주아주아주 편하게 스크린샷 복붙을 무지성으로 할 수 있다. &gt; **Achmage-slides-ultra**와 연계하면 더욱 강력해진다.">
+<meta name="twitter:image" content="https://share.cmdspace.work/assets/og/og-share.png">
+
+<script>
+(function(){try{var t=localStorage.getItem('cmds-theme');if(t){document.documentElement.dataset.theme=t;}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.dataset.theme='dark';}else{document.documentElement.dataset.theme='light';}}catch(e){}})();
+</script>
+
+<style>
+:root {
+	--max: 750px;
+	--text: #3d3427;
+	--muted: #8a7a63;
+	--bg: #f8f2e7;
+	--accent: #8a5a2b;
+	--accent-light: #a5713c;
+	--accent-on: #fff;
+	--border: #e6dcc9;
+	--code-bg: #efe6d4;
+	--card-bg: #fdf9f0;
+	--pre-bg: #f1e9d8;
+	--pre-fg: #4a3f2e;
+	--graph-note: #8a5a2b;
+}
+[data-theme="dark"] {
+	--text: #e8ded0;
+	--muted: #a3947d;
+	--bg: #201a12;
+	--accent: #d9a05b;
+	--accent-light: #e6b678;
+	--accent-on: #241a0d;
+	--border: #3a3123;
+	--code-bg: #2a2318;
+	--card-bg: #271f15;
+	--pre-bg: #231c12;
+	--pre-fg: #ddd2c0;
+	--graph-note: #d9a05b;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+	--text: #e8ded0;
+	--muted: #a3947d;
+	--bg: #201a12;
+	--accent: #d9a05b;
+	--accent-light: #e6b678;
+	--accent-on: #241a0d;
+	--border: #3a3123;
+	--code-bg: #2a2318;
+	--card-bg: #271f15;
+	--pre-bg: #231c12;
+	--pre-fg: #ddd2c0;
+	--graph-note: #d9a05b;
+	}
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { color-scheme: light dark; scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
+	color: var(--text); background: var(--bg); line-height: 1.75;
+	font-size: 16px; -webkit-font-smoothing: antialiased;
+	transition: background-color .2s, color .2s;
+}
+
+.side-tools {
+	position: fixed; top: 1rem; right: 1rem; z-index: 100;
+	display: flex; flex-direction: column; gap: 0.5rem;
+}
+.tool-btn {
+	width: 36px; height: 36px;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 50%;
+	cursor: pointer;
+	display: grid; place-items: center;
+	color: var(--text);
+	transition: border-color .15s, background .15s, color .15s;
+}
+.tool-btn:hover { border-color: var(--accent); }
+.tool-btn.active { border-color: var(--accent); color: var(--accent); }
+.tool-btn svg { width: 16px; height: 16px; }
+
+.side-panel {
+	position: fixed; top: 1rem; right: 4rem; z-index: 99;
+	width: 280px; max-height: calc(100vh - 2rem);
+	overflow-y: auto;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 1rem 1.1rem;
+	display: none;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.side-panel.open { display: block; }
+.panel-head {
+	display: flex; align-items: center; justify-content: space-between;
+	margin-bottom: 0.6rem;
+}
+.panel-head h3 {
+	font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+	letter-spacing: 0.08em; color: var(--muted);
+}
+.pin-btn {
+	background: none; border: none; cursor: pointer; color: var(--muted);
+	width: 22px; height: 22px; display: grid; place-items: center;
+	border-radius: 5px;
+}
+.pin-btn:hover { color: var(--accent); background: var(--code-bg); }
+.pin-btn svg { width: 13px; height: 13px; }
+.g-controls { display: flex; gap: 2px; align-items: center; }
+
+/* docked mode: persistent right sidebar — TOC on top (scrolls), graph fills the rest */
+body.cmds-docked { padding-right: 312px; }
+body.cmds-docked .side-tools { right: calc(312px + 1rem); }
+body.cmds-docked #tocToggle, body.cmds-docked #graphToggle { display: none; }
+body.cmds-docked .pin-btn { color: var(--accent); }
+.side-dock {
+	position: fixed; top: 0; right: 0; bottom: 0; width: 312px; z-index: 98;
+	background: var(--card-bg); border-left: 1px solid var(--border);
+	display: flex; flex-direction: column;
+}
+.side-dock[hidden] { display: none; }
+.side-dock .side-panel {
+	position: static; display: block; width: auto; max-height: none;
+	border: none; border-radius: 0; box-shadow: none;
+}
+.side-dock #tocPanel { flex: 0 1 auto; min-height: 120px; max-height: 58%; overflow-y: auto; }
+.side-dock #graphPanel {
+	flex: 1 1 auto; min-height: 220px; overflow: hidden;
+	border-top: 1px solid var(--border);
+	display: flex; flex-direction: column;
+}
+.side-dock #graphPanel canvas { flex: 1; min-height: 0; }
+#graphCanvas { touch-action: none; cursor: grab; }
+#graphCanvas.dragging { cursor: grabbing; }
+#graphCanvas.on-node { cursor: pointer; }
+#tocList { display: flex; flex-direction: column; gap: 2px; }
+#tocList a {
+	color: var(--text); text-decoration: none; font-size: 0.82rem;
+	line-height: 1.4; padding: 0.25rem 0.5rem; border-radius: 6px;
+	display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+#tocList a:hover { background: var(--code-bg); color: var(--accent); }
+#tocList a.active { background: var(--code-bg); color: var(--accent); font-weight: 600; }
+#tocList a.toc-h2 { padding-left: 1.1rem; }
+#tocList a.toc-h3 { padding-left: 1.7rem; font-size: 0.78rem; color: var(--muted); }
+#tocList a.toc-h4 { padding-left: 2.3rem; font-size: 0.78rem; color: var(--muted); }
+#graphCanvas { width: 100%; display: block; }
+.graph-legend {
+	display: flex; gap: 0.9rem; margin-top: 0.5rem;
+	font-size: 0.7rem; color: var(--muted);
+}
+.graph-legend span::before {
+	content: ''; display: inline-block; width: 8px; height: 8px;
+	border-radius: 50%; margin-right: 4px;
+}
+.graph-legend .lg-link::before { background: var(--graph-note); }
+.graph-legend .lg-tag::before { background: #E985A2; }
+
+main {
+	max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem 3rem;
+}
+
+#note-content { font-size: 1rem; overflow-wrap: break-word; }
+#note-content h1, #note-content h2, #note-content h3,
+#note-content h4, #note-content h5, #note-content h6 {
+	font-weight: 700; letter-spacing: -0.02em; line-height: 1.3;
+	margin: 2rem 0 0.75rem; scroll-margin-top: 1.5rem;
+}
+#note-content h1 { font-size: 1.85rem; margin-top: 2.4rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+#note-content h2 { font-size: 1.4rem; margin-top: 2.2rem; }
+#note-content h3 { font-size: 1.18rem; }
+#note-content h4 { font-size: 1.06rem; color: var(--text); margin-top: 1.8rem; }
+#note-content h5 { font-size: 0.98rem; color: var(--text); }
+#note-content h6 { font-size: 0.9rem; color: var(--muted); }
+#note-content p { margin: 0.85rem 0; }
+#note-content ul, #note-content ol { margin: 0.85rem 0 0.85rem 1.4rem; }
+#note-content li { margin: 0.35rem 0; }
+#note-content li > ul, #note-content li > ol { margin: 0.25rem 0 0.25rem 1.2rem; }
+#note-content a {
+	color: var(--accent); text-decoration: none;
+	border-bottom: 1px solid transparent; transition: border-color .15s;
+}
+#note-content a:hover { border-bottom-color: var(--accent); }
+#note-content code {
+	background: var(--code-bg); padding: 0.18em 0.45em; border-radius: 6px;
+	font-size: 0.86em; font-family: 'SF Mono', 'Menlo', monospace;
+}
+#note-content pre {
+	background: var(--pre-bg); color: var(--pre-fg);
+	border: 1px solid var(--border);
+	padding: 1rem; border-radius: 12px;
+	overflow-x: auto; font-size: 0.85rem; line-height: 1.6;
+	font-family: 'SF Mono', 'Menlo', monospace; margin: 1rem 0;
+	position: relative;
+}
+.code-copy {
+	position: absolute; top: 8px; right: 8px;
+	width: 28px; height: 28px; border-radius: 6px;
+	background: color-mix(in srgb, var(--card-bg) 92%, transparent);
+	backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+	border: 1px solid var(--border);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+	color: var(--muted); cursor: pointer;
+	display: grid; place-items: center;
+	opacity: 0; transition: opacity .15s, color .15s, border-color .15s;
+}
+#note-content pre:hover .code-copy, .code-copy.copied { opacity: 1; }
+.code-copy:hover, .code-copy.copied { color: var(--accent); border-color: var(--accent); }
+.code-copy svg { width: 14px; height: 14px; }
+.h-anchor {
+	margin-left: 0.4rem; opacity: 0; color: var(--muted);
+	border-bottom: none !important; transition: opacity .15s, color .15s;
+}
+.h-anchor svg { width: 0.75em; height: 0.75em; }
+.h-anchor:hover { color: var(--accent); }
+#note-content h1:hover .h-anchor, #note-content h2:hover .h-anchor,
+#note-content h3:hover .h-anchor, #note-content h4:hover .h-anchor { opacity: 0.75; }
+#note-content pre code { background: transparent; padding: 0; font-size: 1em; }
+#note-content pre[data-lang]::before {
+	content: attr(data-lang);
+	position: absolute; top: 7px; left: 12px;
+	font-size: 0.66rem; font-weight: 600; letter-spacing: 0.05em;
+	color: var(--muted); opacity: 0.75; text-transform: lowercase;
+	font-family: -apple-system, sans-serif;
+}
+#note-content pre[data-lang] { padding-top: 1.9rem; }
+.mermaid-container { margin: 1rem 0; overflow-x: auto; text-align: center; }
+.mermaid-container svg { max-width: 100%; height: auto; }
+#note-content blockquote {
+	border-left: 3px solid var(--accent); padding: 0.5rem 1rem;
+	margin: 1rem 0; color: var(--muted); background: var(--code-bg);
+	border-radius: 0 8px 8px 0;
+}
+#note-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; }
+#note-content table {
+	border-collapse: collapse; margin: 1rem 0;
+	font-size: 0.9rem;
+	/* wide tables scroll inside themselves instead of panning the page */
+	display: block; width: max-content; min-width: 60%; max-width: 100%;
+	overflow-x: auto;
+}
+#note-content th, #note-content td {
+	border: none; border-bottom: 1px solid var(--border);
+	padding: 0.65rem 0.9rem; text-align: left; vertical-align: top;
+}
+#note-content th { font-weight: 700; font-size: 0.85rem; color: var(--muted); border-bottom-width: 2px; }
+#note-content tr:last-child td { border-bottom: none; }
+#note-content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+#note-content mark { background: rgba(233,133,162,0.25); padding: 0 0.2rem; border-radius: 3px; }
+#note-content .callout {
+	--co: var(--accent);
+	background: var(--code-bg); border-radius: 8px; padding: 0.9rem 1rem;
+	margin: 1rem 0; border-left: 3px solid var(--co);
+}
+#note-content .callout-title {
+	display: flex; align-items: center; gap: 0.5em;
+	font-weight: 700; color: var(--co); margin: 0;
+}
+#note-content .callout-icon { display: flex; align-items: center; flex-shrink: 0; }
+#note-content .callout-icon svg, #note-content .callout-title > svg {
+	width: 1.1em; height: 1.1em;
+}
+#note-content .callout-title-inner { line-height: 1.45; }
+#note-content .callout-fold { display: none; }
+#note-content .callout-content > :first-child { margin-top: 0.45rem; }
+#note-content .callout-content > :last-child { margin-bottom: 0.1rem; }
+#note-content .callout[data-callout="abstract"], #note-content .callout[data-callout="summary"], #note-content .callout[data-callout="tldr"] { --co: #23a8b8; }
+#note-content .callout[data-callout="info"], #note-content .callout[data-callout="note"], #note-content .callout[data-callout="todo"] { --co: #4a8edb; }
+#note-content .callout[data-callout="tip"], #note-content .callout[data-callout="hint"], #note-content .callout[data-callout="important"] { --co: #23b89b; }
+#note-content .callout[data-callout="success"], #note-content .callout[data-callout="check"], #note-content .callout[data-callout="done"] { --co: #3aa657; }
+#note-content .callout[data-callout="question"], #note-content .callout[data-callout="help"], #note-content .callout[data-callout="faq"] { --co: #d9a13b; }
+#note-content .callout[data-callout="warning"], #note-content .callout[data-callout="caution"], #note-content .callout[data-callout="attention"] { --co: #e0813a; }
+#note-content .callout[data-callout="danger"], #note-content .callout[data-callout="error"], #note-content .callout[data-callout="failure"], #note-content .callout[data-callout="fail"], #note-content .callout[data-callout="missing"], #note-content .callout[data-callout="bug"] { --co: #e05252; }
+#note-content .callout[data-callout="example"] { --co: #8a6fd6; }
+#note-content .callout[data-callout="quote"], #note-content .callout[data-callout="cite"] { --co: var(--muted); }
+#note-content .internal-link {
+	color: var(--accent); border-bottom: 1px dashed var(--accent); cursor: help;
+}
+
+.cmds-meta {
+	max-width: var(--max); margin: 0 auto;
+	padding: 2rem 1.5rem 2rem; border-top: 1px solid var(--border);
+	font-size: 0.75rem; color: var(--muted); text-align: center;
+	display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+}
+.cmds-meta img { width: 28px; height: 28px; border-radius: 50%; }
+.cmds-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.cmds-badge {
+	display: inline-flex; align-items: center; gap: 0.35em;
+	font-size: 0.7rem; font-weight: 600; color: var(--muted);
+	border: 1px solid var(--border); border-radius: 999px;
+	padding: 0.22rem 0.65rem; background: var(--card-bg);
+}
+.cmds-badge svg { width: 12px; height: 12px; }
+.cmds-badge.b-e2e { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.cmds-badge.b-soon { color: #e0813a; border-color: color-mix(in srgb, #e0813a 45%, var(--border)); }
+.cmds-badge.b-expired { color: #e05252; border-color: color-mix(in srgb, #e05252 45%, var(--border)); }
+.cmds-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.cmds-meta a:hover { text-decoration: underline; }
+.cmds-theme-note { font-size: 0.68rem; color: var(--muted); opacity: 0.75; }
+.cmds-author-link {
+	margin-top: 0.35rem; font-size: 0.85rem; font-weight: 700;
+	letter-spacing: -0.01em;
+}
+.cmds-loading { color: var(--muted); font-style: italic; }
+.decrypt-error {
+	color: #c62828; background: #fce4ec; padding: 1rem; border-radius: 8px;
+	border: 1px solid #c62828; margin: 2rem 0; text-align: center;
+}
+[data-theme="dark"] .decrypt-error { background: #4a1a24; color: #ff8899; border-color: #ff8899; }
+
+@media (max-width: 720px) {
+	.side-panel { right: 1rem; top: 4rem; width: min(280px, calc(100vw - 2rem)); }
+}
+</style>
+<link rel="stylesheet" href="https://laguna821.github.io/obsidian-shared-notes/notes/css/403bc9044fe591d379cf5bb55d905bc9927fbd04.css">
+</head>
+<body>
+
+<div class="side-tools">
+	<button class="tool-btn" id="themeToggle" aria-label="Toggle theme">
+		<svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+	</button>
+	<button class="tool-btn" id="tocToggle" aria-label="Table of contents" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+	</button>
+	<button class="tool-btn" id="graphToggle" aria-label="Local graph" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M10.8 6.9 6.2 16m7-9.1 4.6 9.1M7.2 18h9.6"/></svg>
+	</button>
+	<button class="tool-btn" id="mdCopy" aria-label="Copy markdown" title="Copy markdown" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5"/></svg>
+	</button>
+	<button class="tool-btn" id="mdDownload" aria-label="Download markdown" title="Download .md" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5"/><path d="M4 19h16"/></svg>
+	</button>
+</div>
+
+<div class="side-dock" id="sideDock" hidden></div>
+
+<aside class="side-panel" id="tocPanel"><div class="panel-head"><h3>Contents</h3><button class="pin-btn" data-pin aria-label="Dock panels" title="Dock / undock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5M9 3h6l1 7 3 2H5l3-2 1-7z"/></svg></button></div><nav id="tocList"></nav></aside>
+<aside class="side-panel" id="graphPanel"><div class="panel-head"><h3>Local Graph</h3><span class="g-controls"><button class="pin-btn" id="gZoomOut" aria-label="Zoom out" title="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg></button><button class="pin-btn" id="gZoomIn" aria-label="Zoom in" title="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><button class="pin-btn" id="gReset" aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button><button class="pin-btn" data-pin aria-label="Dock panels" title="Dock / undock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5M9 3h6l1 7 3 2H5l3-2 1-7z"/></svg></button></span></div><canvas id="graphCanvas"></canvas>
+<div class="graph-legend"><span class="lg-link">Notes</span><span class="lg-tag">Tags</span></div></aside>
+
+<main>
+	<article id="note-content" class="markdown-rendered"><h2 data-heading="📝 Key Trigger (1–3 lines)" dir="auto">📝 Key Trigger (1–3 lines)</h2>
+<div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout node-insert-event callout-note"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content">
+<p dir="auto">옵시디언 필수급 플러그인 <strong>CMDS-Eagle</strong>을 제대로 사용하기 위한 Cloudflare R2 세팅법.<br>
+한번 설정하면 그 다음부터는 아주아주아주아주 편하게 스크린샷 복붙을 무지성으로 할 수 있다.<br>
+<strong>Achmage-slides-ultra</strong>와 연계하면 더욱 강력해진다.</p>
+</div></div>
+<h2 data-heading="CMDS-Eagle 플러그인용 Cloudflare R2 설정하기" dir="auto">CMDS-Eagle 플러그인용 Cloudflare R2 설정하기</h2>
+<h3 data-heading="1. Cloudflare Dashboard 아이디 만들기" dir="auto">1. Cloudflare Dashboard 아이디 만들기</h3>
+<ul>
+<li dir="auto">
+<p>먼저 <a rel="noopener nofollow" class="external-link" href="https://dash.cloudflare.com/login" target="_blank">https://dash.cloudflare.com/login</a> 에 접속한다.</p>
+<ul>
+<li dir="auto">Sign up을 눌러서 ID를 만든다<br>
+<img alt="{17E1D37A-E7B1-48C9-A814-4974DA143BF1}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784618273942-6df757f8-c331-40d8-acb8-445bc3a5570f.png" referrerpolicy="no-referrer"></li>
+</ul>
+</li>
+<li dir="auto">
+<p>유효한 이메일로 아이디를 만든다음 로그인한다.</p>
+<ul>
+<li dir="auto">그러면 아래처럼 화면이 나온다.</li>
+</ul>
+</li>
+</ul>
+<p dir="auto"><img alt="{1576B078-3CE0-4BB5-A0E0-65849DD89AD2}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784618423604-94cb918c-e017-4b8e-b720-d2548cd44bd4.png" referrerpolicy="no-referrer"></p>
+<h3 data-heading="2. Cloudflare Worker 만들기" dir="auto">2. Cloudflare Worker 만들기</h3>
+<ul>
+<li dir="auto">
+<p>가운데 검색창 메뉴에서 <code>create worker</code> 라고 검색해서 메뉴를 클릭한다.<br>
+<img alt="{E026E7D1-6AE5-4F5C-9D48-4BE43CDF82D2}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784618526006-c4986fdc-e552-46f4-a38f-62de63be7dc0.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>그러면 아래처럼 이메일 인증이 나온다 인증해주자<br>
+<img alt="{5EC58117-E303-4B37-80E0-5C7E8785A696}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784618544290-4ca72b15-12e7-4816-ac01-75b92565bfbe.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>그러면 아래 화면이 나온다</p>
+<ul>
+<li dir="auto">아래 화면에서 <strong>두번째 줄</strong>에 <code>start with Hello World!</code> 를 누른다.<br>
+<img alt="{DBC81476-A913-4118-A71D-9C749931FAD6}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784618578624-72e56844-61af-40ee-bf62-8f82b9cb36f7.png" referrerpolicy="no-referrer"></li>
+</ul>
+</li>
+<li dir="auto">
+<p>그러면 아래와 같이 <code>Worker name</code> 에서 텍스트를 지우고 <code>obsidian-eagle-uploader</code>로 대충 이름을 짓는다<br>
+<img alt="{40C010A3-A4E9-42B7-A419-96CBB8F0FEA7}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784618708332-02f3801c-089a-4d22-a75c-d538e5308cb8.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>맨 아래에 deploy를 누르면 아래와 같은 화면이 나온다. <strong>우측 상단에 Edit Code를 클릭</strong> 한다<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784620537294-17c2f87d-82ee-4559-9e50-e4a1a7634c2a.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>왼쪽 아래 Hello World 부분 텍스트를 싹 다 지운다</p>
+</li>
+</ul>
+<p dir="auto"><img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784620625504-fbbee136-1617-4bfa-9350-034b9b4c50ed.png" referrerpolicy="no-referrer"></p>
+<ul>
+<li dir="auto">그리고 나서 아래 텍스트를 복붙한다:
+<ul>
+<li dir="auto">복붙해서 교체한다음 반드시 <strong>우측 상단의 deploy 버튼</strong>을 누른다</li>
+</ul>
+</li>
+</ul>
+<pre><code>export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+
+    const corsHeaders = {
+      "Access-Control-Allow-Origin": "app://obsidian.md",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "authorization, content-type, x-api-key",
+      "Access-Control-Max-Age": "86400",
+    };
+
+    function json(data, status = 200) {
+      return new Response(JSON.stringify(data), {
+        status,
+        headers: {
+          ...corsHeaders,
+          "Content-Type": "application/json",
+        },
+      });
+    }
+
+    function getProvidedKey() {
+      const authHeader = request.headers.get("authorization");
+      const xApiKey = request.headers.get("x-api-key");
+
+      if (authHeader) {
+        return authHeader.startsWith("Bearer ")
+          ? authHeader.slice(7)
+          : authHeader;
+      }
+
+      if (xApiKey) {
+        return xApiKey;
+      }
+
+      return null;
+    }
+
+    function isAuthorized() {
+      const providedKey = getProvidedKey();
+      return Boolean(providedKey &amp;&amp; providedKey === env.UPLOAD_API_KEY);
+    }
+
+    // Obsidian/Electron이 실제 POST 전에 보내는 CORS 사전 확인 요청
+    if (request.method === "OPTIONS") {
+      return new Response(null, {
+        status: 204,
+        headers: corsHeaders,
+      });
+    }
+
+    // 연결 확인용. 브라우저에서 그냥 열면 Unauthorized가 나올 수 있다.
+    if (url.pathname === "/health") {
+      if (!isAuthorized()) {
+        return json({ success: false, message: "Unauthorized" }, 401);
+      }
+
+      return json({
+        success: true,
+        message: "OK",
+      });
+    }
+
+    // CMDS Eagle은 이 경로로 업로드한다.
+    if (url.pathname !== "/upload") {
+      return json({
+        success: false,
+        message: "Not Found",
+        hint: "Use POST /upload",
+      }, 404);
+    }
+
+    if (request.method !== "POST") {
+      return json({
+        success: false,
+        message: "Method Not Allowed",
+        hint: "Use POST /upload",
+      }, 405);
+    }
+
+    if (!isAuthorized()) {
+      return json({
+        success: false,
+        message: "Unauthorized",
+      }, 401);
+    }
+
+    let formData;
+
+    try {
+      formData = await request.formData();
+    } catch (error) {
+      return json({
+        success: false,
+        message: "Invalid form data",
+        error: String(error),
+      }, 400);
+    }
+
+    const file = formData.get("file");
+    const originalFilename =
+      formData.get("filename") ||
+      (file &amp;&amp; typeof file !== "string" &amp;&amp; file.name) ||
+      "upload.bin";
+
+    const contentType =
+      formData.get("content_type") ||
+      (file &amp;&amp; typeof file !== "string" &amp;&amp; file.type) ||
+      "application/octet-stream";
+
+    if (!file || typeof file === "string") {
+      return json({
+        success: false,
+        message: "No file uploaded",
+      }, 400);
+    }
+
+    const filenameText = String(originalFilename);
+    const cleanExt = filenameText.includes(".")
+      ? filenameText.split(".").pop().replace(/[^a-zA-Z0-9]/g, "").toLowerCase()
+      : "";
+
+    const ext = cleanExt || "bin";
+
+    // R2 안에 저장될 파일 경로
+    const key = `images/${Date.now()}-${crypto.randomUUID()}.${ext}`;
+
+    await env.MY_BUCKET.put(key, file.stream(), {
+      httpMetadata: {
+        contentType: String(contentType),
+      },
+    });
+
+    const publicUrl = `${env.PUBLIC_BASE_URL}/${key}`;
+
+    return json({
+      success: true,
+      key,
+      filename: filenameText,
+      url: publicUrl,
+      publicUrl,
+    });
+  },
+};
+</code></pre>
+<p dir="auto"><img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784620800864-09d3fe71-4b14-4710-88fd-c61b0e7a0a44.png" referrerpolicy="no-referrer"></p>
+<h3 data-heading="3. R2 Storage 및 Bucket 만들기" dir="auto">3. R2 Storage 및 Bucket 만들기</h3>
+<ul>
+<li dir="auto">
+<p>우측 상단에서 <code>R2</code> 라고 검색하면 <strong>R2 Object Storage &gt; Overview</strong> 라는 항목이 나온다. 클릭해보자<br>
+<img alt="{1D5232A4-ADC0-4CE5-8F4C-98AF83A1DD6F}.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621376010-4db4f5a6-c863-445d-9935-21d1bc2de726.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>그러면 아래와 같이 결재 옵션이 나오는데 <strong>쫄지 말고 Add R2 Subscription to my account</strong> 를 누른다<br>
+<img alt="{39C0C222-5490-4A3F-BFFD-8C40F778D7AF}.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621427681-d13c5ac7-acdd-431f-9fd8-233098e8a958.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>아래와 같은 화면이 나오는데 <strong>설정하고 이미지 업로딩용으로만 쓰면 돈 하나도 안나가니까 쫄지 말고 카드 내거 아무거나 입력</strong>하자.<br>
+<img alt="{ED6C94C3-04B7-4CE5-8238-6C49D3DFA419}.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621524160-eb3b66fd-b378-423f-9ab4-0ce58c1a6337.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>그러면 아래처럼 화면이 나올텐데 <strong>Create bucket</strong>을 클릭하자<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621625900-f8a51804-c1ec-464c-b712-6c592d4d5e24.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>bucket name을 대충 아무거나 지은다음 : <code>obsidian-images</code> 이런식으로 맨 밑에 create bucket을 누른다<br>
+<img alt="{B14FCEF4-E5E9-43FA-A306-06A968F8B374}.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621745233-5d52fd01-b5b6-46a2-984a-afc46b105e9b.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p><code>Settings</code> 에 들어가서 <code>Public Development URL</code> 옆에 <code>Enable</code>을 켠다<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621845899-47bdcaab-6ded-410d-8474-90209cfd666d.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>allow를 입력하고 누른다<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621892761-96e6f506-4c49-47e6-8048-205c7f830a9d.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>그러면 주소가 생기는데 <strong>메모장에 따로 복붙해놓자 (Public URL)</strong><br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621974831-a501cb8a-7836-4468-938c-44fc53f51e0f.png" referrerpolicy="no-referrer"></p>
+</li>
+</ul>
+<h3 data-heading="4. Bucket &amp; Binding 설정하기" dir="auto">4. Bucket &amp; Binding 설정하기</h3>
+<ul>
+<li dir="auto">
+<p>이제 다시 왼쪽 설정창에서 <code>Workers</code>라고 검색해서 <code>Workers &amp; Pages</code> 로 들어가자<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784622155014-bdde8b11-bc94-4131-8019-80444c9f8ee1.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>Workers &amp; Pages에서 위에서 아래와 같이 <code>Worker name</code> 에서 텍스트를 지우고 <code>obsidian-eagle-uploader</code>로 대충 이름을 지었던 그 이름을 <strong>검색해서 들어간다</strong><br>
+<img alt="{40C010A3-A4E9-42B7-A419-96CBB8F0FEA7}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784618708332-02f3801c-089a-4d22-a75c-d538e5308cb8.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>Bindings가 비어있을 것이다. <code>Add binding</code> 을 누른다<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784622274238-c6f6a3bf-b497-40fb-8a19-65a8b9a313c9.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>Binding을 다시 누른다음<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784622322912-acf62c9c-982e-4ebb-89b9-241ce9d9a266.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p><code>R2  Bucket</code>을 선택하고 <code>Add binding</code> 클릭<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784622378468-e6c72341-d98f-4506-b1f9-2917696b3904.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>Variable name에는 <code>MY_BUCKET</code> 이라고 입력하고,</p>
+<ul>
+<li dir="auto">밑에 R2 Bucket은 바로 전단계에서 만든 버켓이 아마 골라질 것이다 </li>
+<li dir="auto">선택하고 밑에 Deploy를 누르면 된다<br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784622515739-03521b85-4da1-44e5-8077-983f7a2b402f.png" referrerpolicy="no-referrer"></li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="5. Worker URL 메모장에 복붙하기" dir="auto">5. Worker URL 메모장에 복붙하기</h3>
+<ul>
+<li dir="auto">다시 <code>Workers &amp; Pages</code> 에서 <code>Overview</code> 로 돌아오면
+<ul>
+<li dir="auto">아래 스크린샷처럼 <code>XXXX.아이디-###.workers.dev</code> 같이 끝에 <code>.dev</code> 로 끝나는 인터넷 주소가 있다</li>
+<li dir="auto">그걸 메모장에 따로 복붙해놓자 (Worker URL)</li>
+</ul>
+</li>
+</ul>
+<p dir="auto"><img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784622685737-a38039b8-6063-4c08-82bf-0e69dc59998e.png" referrerpolicy="no-referrer"></p>
+<h3 data-heading="6. Secret &amp; Key 설정하기" dir="auto">6. Secret &amp; Key 설정하기</h3>
+<ul>
+<li dir="auto">그 상태에서 다시 <code>Settings</code> 로 다시 간다
+<ul>
+<li dir="auto">그러면 <code>Variables and secrets</code> 항목이 비어있을 것이다.</li>
+<li dir="auto">Add를 누른다.</li>
+</ul>
+</li>
+</ul>
+<p dir="auto"><img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784622907291-bd77a206-d318-4c0b-88a8-8fc9a3449b0f.png" referrerpolicy="no-referrer"></p>
+<ul>
+<li dir="auto">Variables and secrets 창이 뜬다
+<ul>
+<li dir="auto"><code>Type</code> 을 <code>Secret</code> 으로 고르기</li>
+<li dir="auto"><code>Variable name</code> 을 <code>UPLOAD_API_KEY</code> 처럼 입력</li>
+<li dir="auto"><code>Value</code>에 <strong>내가 입력하고 싶은 비밀번호 아무거나 입력하고 메모장에 따로 저장</strong></li>
+</ul>
+</li>
+<li dir="auto">셋 다 입력하고 Deploy를 누른다.</li>
+</ul>
+<p dir="auto"><img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784622945509-f79c2433-7f6b-4522-be77-f795190b1c3f.png" referrerpolicy="no-referrer"></p>
+<ul>
+<li dir="auto">마찬가지로 한번 더 <code>Add</code> 를 눌러서
+<ul>
+<li dir="auto"><code>Type</code> 을 <code>Text</code> 로 고르기</li>
+<li dir="auto"><code>Variable name</code>을 <code>PUBLIC_BASE_URL</code> 로 입력</li>
+<li dir="auto"><code>value</code>에 주소를 <strong>위에 3단계에서 R2 Storge &amp; Bucket에서 만들고 메모장에 복붙했던 주소</strong>를 <strong>그대로 입력</strong>한다.</li>
+</ul>
+</li>
+<li dir="auto">다 입력하고 Deploy를 누른다.</li>
+</ul>
+<p dir="auto"><img alt="{CA1838C4-D11B-4AB3-80CE-70F1DB8A9CDF}.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784623108025-ce1afd8a-fc98-400a-a67d-6afa996cdd99.png" referrerpolicy="no-referrer"></p>
+<ul>
+<li dir="auto"><strong>(참고 RECAP)</strong> 그러면 주소가 생기는데 <strong>메모장에 따로 복붙해놓자 (Public URL)</strong><br>
+<img alt="image.png" src="https://pub-3041656bd7074cad9aa628c9112fb6cf.r2.dev/images/1784621974831-a501cb8a-7836-4468-938c-44fc53f51e0f.png" referrerpolicy="no-referrer"></li>
+</ul>
+<h3 data-heading="6. CMDS-Eagle 플러그인에 Cloudflare R2 값 입력하기" dir="auto">6. CMDS-Eagle 플러그인에 Cloudflare R2 값 입력하기</h3>
+<ul>
+<li dir="auto">
+<p>이제 세팅이 다되었으면 메모장에 아래의 세가지가 있다:<br>
+<img alt="{BFACB8B8-E5C5-4766-A88D-CC1892B2498E}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784623888241-470b3d33-1eb9-4ed4-a483-32c441d67668.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p><code>옵시디언 설정 - 커뮤니티 플러그인 - 탐색</code> 메뉴에 들어가서 <code>CMDS</code> 라고 검색하면 아래처럼 <code>CMDS Eagle</code> 이라는 앱이 나오는데 설치한다<br>
+<img alt="image.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784623959886-09362460-ea2a-4adb-b9b3-5e86eae44d80.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>CMDS Eagle 설정창에서 밑에 <code>Cloud Storage Provider</code>를 <code>Cloudflare R2</code> 로 바꾼다음,<br>
+<img alt="image.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784624045860-985bb9f8-e106-4477-914a-c3b6986fbb41.png" referrerpolicy="no-referrer"></p>
+</li>
+<li dir="auto">
+<p>Worker URL, API Key, Public URL에 각각 메모장에 복붙해놨던 값들을 입력하자</p>
+</li>
+</ul>
+<p dir="auto"><img alt="image.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784624169663-e87a04b0-e346-440d-895d-76056d95c45c.png" referrerpolicy="no-referrer"></p>
+<h2 data-heading="사용법: CMDS-Eagle &amp; Cloudflare" dir="auto">사용법: CMDS-Eagle &amp; Cloudflare</h2>
+<ul>
+<li dir="auto">사용법이 엄청나게 귀찮아서 그렇지, 사용법은 <strong>매우매우 간단하다.</strong>
+<ul>
+<li dir="auto">윈도우 기준으로는 <code>Window + Shift + S</code> 를 동시에 눌러서 스크린샷 캡쳐를 한다음</li>
+<li dir="auto">마크다운 노트 안에서 <code>Ctrl + V</code> 를 한 다음 아래 화면에서 <code>Cloudflare R2</code>를 고르면 된다:</li>
+</ul>
+</li>
+</ul>
+<p dir="auto"><img alt="{FC6ACA1D-7B92-400A-8100-87628737FD8B}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784624295926-b36223e8-cd8e-4b69-bd59-f63e5b3707a7.png" referrerpolicy="no-referrer"></p>
+<h3 data-heading="= 보너스: Snipaste" dir="auto">= 보너스: Snipaste</h3>
+<ul>
+<li dir="auto">구글에서 <code>Snipaste</code>라고 검색하면 아래 웹사이트가 나온다 (주소: <a data-tooltip-position="top" aria-label="https://www.snipaste.com/" rel="noopener nofollow" class="external-link" href="https://www.snipaste.com/" target="_blank">https://www.snipaste.com</a> )<br>
+<img alt="{508E6891-150F-460A-8665-578605329E9C}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784624418798-37227620-42f0-493c-bb96-bf594f75e53e.png" referrerpolicy="no-referrer"></li>
+<li dir="auto">설치를 하고 나면 기본 단축키가 <code>F1</code>을 누르면 스크린샷 캡쳐를 할 수 있는데,
+<ul>
+<li dir="auto">스크린샷 캡쳐한다음 도형을 그리고 주석을 달아서 복붙을 하거나,</li>
+<li dir="auto">혹은 스크린샷 고정도 할 수 있어서 각종 강의자료 제작 시간이 엄청나게 단축된다.</li>
+</ul>
+</li>
+</ul>
+<p dir="auto"><img alt="image.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784624812909-a1988702-a553-4817-aa4c-142e623f1d22.png" referrerpolicy="no-referrer"></p>
+<h3 data-heading="= 보너스2 : Achmage-slides-ultra" dir="auto">= 보너스2 : Achmage-slides-ultra</h3>
+<ul>
+<li dir="auto">본 노트를 만든 필자가 만든 옵시디언 커뮤니티 플러그인인 <code>Achmage-slides-ultra</code>를 설치하고 나면, 복붙한 스크린샷이 글과 섞인 노트가 아래처럼 바로 PPT로 보일 수 있어서 <strong>PPT 제작조차도 엄청나게 단축된다.</strong></li>
+</ul>
+<p dir="auto"><img alt="{3D794553-F1F3-48CF-857D-5135049B5104}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1784624935301-7ab38e72-3a1e-4bd1-bf03-1020778e715d.png" referrerpolicy="no-referrer"></p>
+<hr>
+<h2 data-heading="내면 질문" dir="auto">내면 질문</h2>
+<h3 data-heading="1) 이 노트가 내 사고에 어떤 점을 던져주었는가?" dir="auto">1) 이 노트가 내 사고에 어떤 점을 던져주었는가?</h3>
+<div data-callout-metadata="" data-callout-fold="" data-callout="quote" class="callout node-insert-event callout-quote"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">DIKM: X-Axis</div></div><div class="callout-content">
+<p dir="auto"> (최소) 3~5줄 요약으로 먼저 적기 → 필요하면 아래를 챕터처럼 확장</p>
+</div></div>
+<ul>
+<li dir="auto">CMDS-Eagle, Cloudflare R2, Achmage-slides-ultra 3종세트 연계 사용법을 위한 핵심 노트.
+<ul>
+<li dir="auto">옵시디언 초보는 이 노트를 숙지하고 처음 세팅 하느냐 마느냐가 <strong>사용성 UX가 체감상 한 10배는 올라가는</strong> 느낌이 된다고 할 수 있다.</li>
+<li dir="auto">설정법이 굉장히 귀찮아서 다시 확인하는데 오래 걸렸는데, 정리하고 나니까 다른 사람들에게 쉽게 공유가 가능한 <strong>초강력 교수자급 Teaching 특강 노트</strong>가 되었다
+<ul>
+<li dir="auto">이거 설정법만 한 20-30분 강의 분량으로 잡아야 할 것 같지만...</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="2) 지금의 나와 어떻게 연결되는가?" dir="auto">2) 지금의 나와 어떻게 연결되는가?</h3>
+<div data-callout-metadata="" data-callout-fold="" data-callout="quote" class="callout node-insert-event callout-quote"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">DIKM: Y-Axis</div></div><div class="callout-content">
+<p dir="auto"> DIKM의 “삶과 연결되는 지식” 관점에서, 내 루틴/관계/연구/창작과 연결 고리 만들기 </p>
+</div></div>
+<ul>
+<li dir="auto"><a class="internal-link" data-href="범정부 오피스에서 HanMark 1.0까지, 한글 자동화 옵시디언 플러그인을 향한 9개월 283간의 분투 기록.md" href="범정부 오피스에서 HanMark 1.0까지, 한글 자동화 옵시디언 플러그인을 향한 9개월 283간의 분투 기록.md" target="_blank" rel="noopener nofollow">범정부 오피스에서 HanMark 1.0까지, 한글 자동화 옵시디언 플러그인을 향한 9개월 283간의 분투 기록</a> 도 참조. HanMark + 스마트 컴포저 (Achmage 수정본) + Achmage-slides-ultra + CMDS-Eagle (Cloudflare R2 설정) 이야말로 왕초보를 위한 옵시디언 입문 마스터 패키지의 완성본이라고 할 수 있다.
+<ul>
+<li dir="auto">특히 이런 스크린샷 첨부하는 CMDS-Eagle (Cloudflare R2) 설정을 해놓으면, 굳이 HTML Slide가 아니라 PPTX로 만들고 싶은 경우, 해당 마크다운을 클로드 코드나 코덱스 등에 첨부한 뒤 <strong>스크린샷 링크들 크기를 감안해서 PPT로 만들어줘</strong> 같이 시켜버리면 깔끔하게 나온다.</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="3) 앞으로 어떤 실천/의미로 확장될 수 있을까?" dir="auto">3) 앞으로 어떤 실천/의미로 확장될 수 있을까?</h3>
+<div data-callout-metadata="" data-callout-fold="" data-callout="quote" class="callout node-insert-event callout-quote"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">: DIKM: z-Axis</div></div><div class="callout-content">
+<p dir="auto">“0.1% 성장률” 관점에서, 거창한 목표 말고 ‘다음 10분/다음 1주’ 단위로 번역 </p>
+</div></div>
+<ul>
+<li dir="auto">옵시디언 입문자 마스터클래스 강의 노트로 아주 사골처럼 우려먹을 수 있는 비장의 노트</li>
+</ul></article>
+</main>
+
+<footer class="cmds-meta">
+	
+	<a href="https://cmdspace.work" target="_blank" rel="noopener"><img src="https://cmdspace.work/assets/logos/cmds-logo-round.png" alt="CMDSPACE"></a>
+	<span>Shared via <a href="https://github.com/johnfkoo951/cmds-share" target="_blank" rel="noopener">CMDS Share</a></span>
+	<span class="cmds-theme-note">Theme: Sepia</span>
+	
+</footer>
+
+
+<script type="application/json" id="graph-data">{"title":"옵시디언 스크린샷 복붙 비장의 기술 - CMDS Eagle and Cloudflare R2 세팅법","nodes":[{"label":"옵시디언 스크린샷 복붙 비장의 기술 - CMDS Eagle and Cloudflare R2 세팅법","type":"note","level":0},{"label":"Achmage Slides Ultra 사용법 데모","type":"note","level":1},{"label":"⬇︎ Markdown Is All You Need (217호)","type":"note","level":1},{"label":"범정부 오피스에서 HanMark 1.0까지, 한글 자동화 옵시디언 플러그인을 향한 9개월 283간의 분투 기록","type":"note","level":1},{"label":"HanMark 사용법 총정리 튜토리얼 가이드","type":"note","level":1},{"label":"#옵시디언","type":"tag","level":1},{"label":"#방법론","type":"tag","level":1},{"label":"#CMDS","type":"tag","level":1},{"label":"#구요한","type":"tag","level":1},{"label":"#markdown","type":"tag","level":1},{"label":"#마크다운","type":"tag","level":1},{"label":"#마크다운_변환","type":"tag","level":1},{"label":"#마개조_PKM","type":"tag","level":1},{"label":"당신의 GPT와 Codex가 프론트엔드가 젬병인 이유는 DESIGN.md를 몰라서입니다","type":"note","level":2},{"label":"MD to HWPX 변환 패키지 사용법","type":"note","level":2},{"label":"Achmage 옵시디언 MD to HWPX 변환기 데모 문서","type":"note","level":2},{"label":"리베로 AI - 한글 HWP HWPX를 마크다운 MD 및 HTML로 변환하는 끝판왕 변환기 세팅하기 (API 발급 이후)","type":"note","level":2},{"label":"범정부오피스 G서식변신봇 - Gemini Gem 프롬프트","type":"note","level":2},{"label":"워크 플로우 엔지니어링 - Workflow Engineering","type":"note","level":2}],"edges":[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],[0,10],[0,11],[0,12],[2,13],[2,11],[3,14],[3,15],[3,16],[3,17],[3,18],[4,3],[4,5],[4,12]]}</script>
+<script type="text/plain" id="md-source">CiMjIPCfk50gS2V5IFRyaWdnZXIgKDHigJMzIGxpbmVzKQoKPiBbIU5PVEVdCj4g7Ji17Iuc65SU7Ja4IO2VhOyImOq4iSDtlIzrn6zqt7jsnbggKipDTURTLUVhZ2xlKirsnYQg7KCc64yA66GcIOyCrOyaqe2VmOq4sCDsnITtlZwgQ2xvdWRmbGFyZSBSMiDshLjtjIXrspUuCj4g7ZWc67KIIOyEpOygle2VmOuptCDqt7gg64uk7J2M67aA7YSw64qUIOyVhOyjvOyVhOyjvOyVhOyjvOyVhOyjvCDtjrjtlZjqsowg7Iqk7YGs66aw7IO3IOuzteu2meydhCDrrLTsp4DshLHsnLzroZwg7ZWgIOyImCDsnojri6QuCj4gKipBY2htYWdlLXNsaWRlcy11bHRyYSoq7JmAIOyXsOqzhO2VmOuptCDrjZTsmrEg6rCV66Cl7ZW07KeE64ukLgoKIyMgQ01EUy1FYWdsZSDtlIzrn6zqt7jsnbjsmqkgQ2xvdWRmbGFyZSBSMiDshKTsoJXtlZjquLAKIyMjIDEuIENsb3VkZmxhcmUgRGFzaGJvYXJkIOyVhOydtOuUlCDrp4zrk6TquLAKLSDrqLzsoIAgW2h0dHBzOi8vZGFzaC5jbG91ZGZsYXJlLmNvbS9sb2dpbl0oaHR0cHM6Ly9kYXNoLmNsb3VkZmxhcmUuY29tL2xvZ2luKSDsl5Ag7KCR7IaN7ZWc64ukLgoJLSBTaWduIHVw7J2EIOuIjOufrOyEnCBJROulvCDrp4zrk6Dri6QKIVt7MTdFMUQzN0EtRTdCMS00OEM5LUE4MTQtNDk3NERBMTQzQkYxfS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzg0NjE4MjczOTQyLTZkZjc1N2Y4LWMzMzEtNDBkOC1hY2I4LTQ0NWJjM2E1NTcwZi5wbmcpCgotIOycoO2aqO2VnCDsnbTrqZTsnbzroZwg7JWE7J2065SU66W8IOunjOuToOuLpOydjCDroZzqt7jsnbjtlZzri6QuCgktIOq3uOufrOuptCDslYTrnpjsspjrn7wg7ZmU66m07J20IOuCmOyYqOuLpC4KCiFbezE1NzZCMDc4LTNDRTAtNEJCNS1BMEUwLTY1ODQ5REQ4OUFEMn0ucG5nXShodHRwczovL3B1Yi1hY2Y2YWQ5M2YyZWM0YTVlOGZhMTJlOTRkMGM5YjE1MS5yMi5kZXYvMTc4NDYxODQyMzYwNC05NGNiOTE4Yy1lMDE3LTRiOGUtYjcyMC1kMjU0OGNkNDRiZDQucG5nKQoKIyMjIDIuIENsb3VkZmxhcmUgV29ya2VyIOunjOuTpOq4sAotIOqwgOyatOuNsCDqsoDsg4nssL0g66mU64m07JeQ7IScIGBjcmVhdGUgd29ya2VyYCDrnbzqs6Ag6rKA7IOJ7ZW07IScIOuplOuJtOulvCDtgbTrpq3tlZzri6QuCiFbe0UwMjZFN0QxLTZBRTUtNEY1Qy05RDQ4LTRCRTQzQ0RGODJEMn0ucG5nXShodHRwczovL3B1Yi1hY2Y2YWQ5M2YyZWM0YTVlOGZhMTJlOTRkMGM5YjE1MS5yMi5kZXYvMTc4NDYxODUyNjAwNi1jNDk4NmZkYy1lNTUyLTQ2ZjQtYTM4Zi02MmRlNjNiZTdkYzAucG5nKQoKLSDqt7jrn6zrqbQg7JWE656Y7LKY65+8IOydtOuplOydvCDsnbjspp3snbQg64KY7Jio64ukIOyduOymne2VtOyjvOyekAohW3s1RUM1ODExNy1FMzAzLTRCMzctODBFMC01QzdFODc4NUE2OTZ9LnBuZ10oaHR0cHM6Ly9wdWItYWNmNmFkOTNmMmVjNGE1ZThmYTEyZTk0ZDBjOWIxNTEucjIuZGV2LzE3ODQ2MTg1NDQyOTAtNGNhNzJiMTUtMTJlNy00ODE2LWFjMDEtNzViOTI1NjViZmJlLnBuZykKCi0g6re465+s66m0IOyVhOuemCDtmZTrqbTsnbQg64KY7Jio64ukCgktIOyVhOuemCDtmZTrqbTsl5DshJwgKirrkZDrsojsp7gg7KSEKirsl5AgYHN0YXJ0IHdpdGggSGVsbG8gV29ybGQhYCDrpbwg64iE66W464ukLgohW3tEQkM4MTQ3Ni1BOTEzLTQxMTgtQTcxRC05Qzc0OTkzMUZBRDZ9LnBuZ10oaHR0cHM6Ly9wdWItYWNmNmFkOTNmMmVjNGE1ZThmYTEyZTk0ZDBjOWIxNTEucjIuZGV2LzE3ODQ2MTg1Nzg2MjQtNzJlNTY4NDQtNjFhZi00MGVlLWJmNjItOGY4MmI5Y2IzNmY3LnBuZykKCi0g6re465+s66m0IOyVhOuemOyZgCDqsJnsnbQgYFdvcmtlciBuYW1lYCDsl5DshJwg7YWN7Iqk7Yq466W8IOyngOyasOqzoCBgb2JzaWRpYW4tZWFnbGUtdXBsb2FkZXJg66GcIOuMgOy2qSDsnbTrpoTsnYQg7KeT64qU64ukCiFbezQwQzAxMEEzLUE0RTktNDJCNy1BNDE5LTk2Q0JCOEYwRkVBN30ucG5nXShodHRwczovL3B1Yi1hY2Y2YWQ5M2YyZWM0YTVlOGZhMTJlOTRkMGM5YjE1MS5yMi5kZXYvMTc4NDYxODcwODMzMi0wMmYzODAxYy0wODlhLTRkMjItYTc1Yy1kNTM4ZTUzMDhjYjgucG5nKQotIOunqCDslYTrnpjsl5AgZGVwbG9566W8IOuIhOultOuptCDslYTrnpjsmYAg6rCZ7J2AIO2ZlOuptOydtCDrgpjsmKjri6QuICoq7Jqw7LihIOyDgeuLqOyXkCBFZGl0IENvZGXrpbwg7YG066atKiog7ZWc64ukCiFbaW1hZ2UucG5nXShodHRwczovL3B1Yi0zMDQxNjU2YmQ3MDc0Y2FkOWFhNjI4YzkxMTJmYjZjZi5yMi5kZXYvaW1hZ2VzLzE3ODQ2MjA1MzcyOTQtMTdjMmY4N2QtODJlZS00NTU5LTllNTAtZTRhMWE3NjM0YzJhLnBuZykKCi0g7Jm87Kq9IOyVhOuemCBIZWxsbyBXb3JsZCDrtoDrtoQg7YWN7Iqk7Yq466W8IOyLuSDri6Qg7KeA7Jq064ukCgohW2ltYWdlLnBuZ10oaHR0cHM6Ly9wdWItMzA0MTY1NmJkNzA3NGNhZDlhYTYyOGM5MTEyZmI2Y2YucjIuZGV2L2ltYWdlcy8xNzg0NjIwNjI1NTA0LWZiYmVlMTM2LTE2MTctNGJmYS05MzUwLTAzNGI5YjRjNTBlZC5wbmcpCgotIOq3uOumrOqzoCDrgpjshJwg7JWE656YIO2FjeyKpO2KuOulvCDrs7XrtpntlZzri6Q6CgktIOuzteu2me2VtOyEnCDqtZDssrTtlZzri6TsnYwg67CY65Oc7IucICoq7Jqw7LihIOyDgeuLqOydmCBkZXBsb3kg67KE7Yq8KirsnYQg64iE66W464ukCmBgYApleHBvcnQgZGVmYXVsdCB7CiAgYXN5bmMgZmV0Y2gocmVxdWVzdCwgZW52KSB7CiAgICBjb25zdCB1cmwgPSBuZXcgVVJMKHJlcXVlc3QudXJsKTsKCiAgICBjb25zdCBjb3JzSGVhZGVycyA9IHsKICAgICAgIkFjY2Vzcy1Db250cm9sLUFsbG93LU9yaWdpbiI6ICJhcHA6Ly9vYnNpZGlhbi5tZCIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1BbGxvdy1NZXRob2RzIjogIkdFVCwgUE9TVCwgT1BUSU9OUyIsCiAgICAgICJBY2Nlc3MtQ29udHJvbC1BbGxvdy1IZWFkZXJzIjogImF1dGhvcml6YXRpb24sIGNvbnRlbnQtdHlwZSwgeC1hcGkta2V5IiwKICAgICAgIkFjY2Vzcy1Db250cm9sLU1heC1BZ2UiOiAiODY0MDAiLAogICAgfTsKCiAgICBmdW5jdGlvbiBqc29uKGRhdGEsIHN0YXR1cyA9IDIwMCkgewogICAgICByZXR1cm4gbmV3IFJlc3BvbnNlKEpTT04uc3RyaW5naWZ5KGRhdGEpLCB7CiAgICAgICAgc3RhdHVzLAogICAgICAgIGhlYWRlcnM6IHsKICAgICAgICAgIC4uLmNvcnNIZWFkZXJzLAogICAgICAgICAgIkNvbnRlbnQtVHlwZSI6ICJhcHBsaWNhdGlvbi9qc29uIiwKICAgICAgICB9LAogICAgICB9KTsKICAgIH0KCiAgICBmdW5jdGlvbiBnZXRQcm92aWRlZEtleSgpIHsKICAgICAgY29uc3QgYXV0aEhlYWRlciA9IHJlcXVlc3QuaGVhZGVycy5nZXQoImF1dGhvcml6YXRpb24iKTsKICAgICAgY29uc3QgeEFwaUtleSA9IHJlcXVlc3QuaGVhZGVycy5nZXQoIngtYXBpLWtleSIpOwoKICAgICAgaWYgKGF1dGhIZWFkZXIpIHsKICAgICAgICByZXR1cm4gYXV0aEhlYWRlci5zdGFydHNXaXRoKCJCZWFyZXIgIikKICAgICAgICAgID8gYXV0aEhlYWRlci5zbGljZSg3KQogICAgICAgICAgOiBhdXRoSGVhZGVyOwogICAgICB9CgogICAgICBpZiAoeEFwaUtleSkgewogICAgICAgIHJldHVybiB4QXBpS2V5OwogICAgICB9CgogICAgICByZXR1cm4gbnVsbDsKICAgIH0KCiAgICBmdW5jdGlvbiBpc0F1dGhvcml6ZWQoKSB7CiAgICAgIGNvbnN0IHByb3ZpZGVkS2V5ID0gZ2V0UHJvdmlkZWRLZXkoKTsKICAgICAgcmV0dXJuIEJvb2xlYW4ocHJvdmlkZWRLZXkgJiYgcHJvdmlkZWRLZXkgPT09IGVudi5VUExPQURfQVBJX0tFWSk7CiAgICB9CgogICAgLy8gT2JzaWRpYW4vRWxlY3Ryb27snbQg7Iuk7KCcIFBPU1Qg7KCE7JeQIOuztOuCtOuKlCBDT1JTIOyCrOyghCDtmZXsnbgg7JqU7LKtCiAgICBpZiAocmVxdWVzdC5tZXRob2QgPT09ICJPUFRJT05TIikgewogICAgICByZXR1cm4gbmV3IFJlc3BvbnNlKG51bGwsIHsKICAgICAgICBzdGF0dXM6IDIwNCwKICAgICAgICBoZWFkZXJzOiBjb3JzSGVhZGVycywKICAgICAgfSk7CiAgICB9CgogICAgLy8g7Jew6rKwIO2ZleyduOyaqS4g67iM65287Jqw7KCA7JeQ7IScIOq3uOuDpSDsl7TrqbQgVW5hdXRob3JpemVk6rCAIOuCmOyYrCDsiJgg7J6I64ukLgogICAgaWYgKHVybC5wYXRobmFtZSA9PT0gIi9oZWFsdGgiKSB7CiAgICAgIGlmICghaXNBdXRob3JpemVkKCkpIHsKICAgICAgICByZXR1cm4ganNvbih7IHN1Y2Nlc3M6IGZhbHNlLCBtZXNzYWdlOiAiVW5hdXRob3JpemVkIiB9LCA0MDEpOwogICAgICB9CgogICAgICByZXR1cm4ganNvbih7CiAgICAgICAgc3VjY2VzczogdHJ1ZSwKICAgICAgICBtZXNzYWdlOiAiT0siLAogICAgICB9KTsKICAgIH0KCiAgICAvLyBDTURTIEVhZ2xl7J2AIOydtCDqsr3roZzroZwg7JeF66Gc65Oc7ZWc64ukLgogICAgaWYgKHVybC5wYXRobmFtZSAhPT0gIi91cGxvYWQiKSB7CiAgICAgIHJldHVybiBqc29uKHsKICAgICAgICBzdWNjZXNzOiBmYWxzZSwKICAgICAgICBtZXNzYWdlOiAiTm90IEZvdW5kIiwKICAgICAgICBoaW50OiAiVXNlIFBPU1QgL3VwbG9hZCIsCiAgICAgIH0sIDQwNCk7CiAgICB9CgogICAgaWYgKHJlcXVlc3QubWV0aG9kICE9PSAiUE9TVCIpIHsKICAgICAgcmV0dXJuIGpzb24oewogICAgICAgIHN1Y2Nlc3M6IGZhbHNlLAogICAgICAgIG1lc3NhZ2U6ICJNZXRob2QgTm90IEFsbG93ZWQiLAogICAgICAgIGhpbnQ6ICJVc2UgUE9TVCAvdXBsb2FkIiwKICAgICAgfSwgNDA1KTsKICAgIH0KCiAgICBpZiAoIWlzQXV0aG9yaXplZCgpKSB7CiAgICAgIHJldHVybiBqc29uKHsKICAgICAgICBzdWNjZXNzOiBmYWxzZSwKICAgICAgICBtZXNzYWdlOiAiVW5hdXRob3JpemVkIiwKICAgICAgfSwgNDAxKTsKICAgIH0KCiAgICBsZXQgZm9ybURhdGE7CgogICAgdHJ5IHsKICAgICAgZm9ybURhdGEgPSBhd2FpdCByZXF1ZXN0LmZvcm1EYXRhKCk7CiAgICB9IGNhdGNoIChlcnJvcikgewogICAgICByZXR1cm4ganNvbih7CiAgICAgICAgc3VjY2VzczogZmFsc2UsCiAgICAgICAgbWVzc2FnZTogIkludmFsaWQgZm9ybSBkYXRhIiwKICAgICAgICBlcnJvcjogU3RyaW5nKGVycm9yKSwKICAgICAgfSwgNDAwKTsKICAgIH0KCiAgICBjb25zdCBmaWxlID0gZm9ybURhdGEuZ2V0KCJmaWxlIik7CiAgICBjb25zdCBvcmlnaW5hbEZpbGVuYW1lID0KICAgICAgZm9ybURhdGEuZ2V0KCJmaWxlbmFtZSIpIHx8CiAgICAgIChmaWxlICYmIHR5cGVvZiBmaWxlICE9PSAic3RyaW5nIiAmJiBmaWxlLm5hbWUpIHx8CiAgICAgICJ1cGxvYWQuYmluIjsKCiAgICBjb25zdCBjb250ZW50VHlwZSA9CiAgICAgIGZvcm1EYXRhLmdldCgiY29udGVudF90eXBlIikgfHwKICAgICAgKGZpbGUgJiYgdHlwZW9mIGZpbGUgIT09ICJzdHJpbmciICYmIGZpbGUudHlwZSkgfHwKICAgICAgImFwcGxpY2F0aW9uL29jdGV0LXN0cmVhbSI7CgogICAgaWYgKCFmaWxlIHx8IHR5cGVvZiBmaWxlID09PSAic3RyaW5nIikgewogICAgICByZXR1cm4ganNvbih7CiAgICAgICAgc3VjY2VzczogZmFsc2UsCiAgICAgICAgbWVzc2FnZTogIk5vIGZpbGUgdXBsb2FkZWQiLAogICAgICB9LCA0MDApOwogICAgfQoKICAgIGNvbnN0IGZpbGVuYW1lVGV4dCA9IFN0cmluZyhvcmlnaW5hbEZpbGVuYW1lKTsKICAgIGNvbnN0IGNsZWFuRXh0ID0gZmlsZW5hbWVUZXh0LmluY2x1ZGVzKCIuIikKICAgICAgPyBmaWxlbmFtZVRleHQuc3BsaXQoIi4iKS5wb3AoKS5yZXBsYWNlKC9bXmEtekEtWjAtOV0vZywgIiIpLnRvTG93ZXJDYXNlKCkKICAgICAgOiAiIjsKCiAgICBjb25zdCBleHQgPSBjbGVhbkV4dCB8fCAiYmluIjsKCiAgICAvLyBSMiDslYjsl5Ag7KCA7J6l65CgIO2MjOydvCDqsr3roZwKICAgIGNvbnN0IGtleSA9IGBpbWFnZXMvJHtEYXRlLm5vdygpfS0ke2NyeXB0by5yYW5kb21VVUlEKCl9LiR7ZXh0fWA7CgogICAgYXdhaXQgZW52Lk1ZX0JVQ0tFVC5wdXQoa2V5LCBmaWxlLnN0cmVhbSgpLCB7CiAgICAgIGh0dHBNZXRhZGF0YTogewogICAgICAgIGNvbnRlbnRUeXBlOiBTdHJpbmcoY29udGVudFR5cGUpLAogICAgICB9LAogICAgfSk7CgogICAgY29uc3QgcHVibGljVXJsID0gYCR7ZW52LlBVQkxJQ19CQVNFX1VSTH0vJHtrZXl9YDsKCiAgICByZXR1cm4ganNvbih7CiAgICAgIHN1Y2Nlc3M6IHRydWUsCiAgICAgIGtleSwKICAgICAgZmlsZW5hbWU6IGZpbGVuYW1lVGV4dCwKICAgICAgdXJsOiBwdWJsaWNVcmwsCiAgICAgIHB1YmxpY1VybCwKICAgIH0pOwogIH0sCn07CmBgYAoKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMDgwMDg2NC0wOWQzZmU3MS00YjE0LTQ3MTAtODhmZC1jNjFiMGU3YTBhNDQucG5nKQoKIyMjIDMuIFIyIFN0b3JhZ2Ug67CPIEJ1Y2tldCDrp4zrk6TquLAKCi0g7Jqw7LihIOyDgeuLqOyXkOyEnCBgUjJgIOudvOqzoCDqsoDsg4ntlZjrqbQgKipSMiBPYmplY3QgU3RvcmFnZSA+IE92ZXJ2aWV3Kiog652864qUIO2VreuqqeydtCDrgpjsmKjri6QuIO2BtOumre2VtOuztOyekAohW3sxRDUyMzJBNC1BREMwLTRDRTUtOEY0Qy05OEFGODNBMURENkZ9LnBuZ10oaHR0cHM6Ly9wdWItMzA0MTY1NmJkNzA3NGNhZDlhYTYyOGM5MTEyZmI2Y2YucjIuZGV2L2ltYWdlcy8xNzg0NjIxMzc2MDEwLTRkYjRmNWE2LWM4NjMtNDQ1ZC05OTM1LTIxZDFiYzJkZTcyNi5wbmcpCgotIOq3uOufrOuptCDslYTrnpjsmYAg6rCZ7J20IOqysOyerCDsmLXshZjsnbQg64KY7Jik64qU642wICoq7KuE7KeAIOunkOqzoCBBZGQgUjIgU3Vic2NyaXB0aW9uIHRvIG15IGFjY291bnQqKiDrpbwg64iE66W464ukCiFbezM5QzBDMjIyLTU0OTAtNEEzRi1CRkZELThDNDBGNzc4RDdBRn0ucG5nXShodHRwczovL3B1Yi0zMDQxNjU2YmQ3MDc0Y2FkOWFhNjI4YzkxMTJmYjZjZi5yMi5kZXYvaW1hZ2VzLzE3ODQ2MjE0Mjc2ODEtZDEzYzVhYzctYWNkZC00MzFmLTlmZDgtMjMzMDk4ZThhOTU4LnBuZykKCi0g7JWE656Y7JmAIOqwmeydgCDtmZTrqbTsnbQg64KY7Jik64qU642wICoq7ISk7KCV7ZWY6rOgIOydtOuvuOyngCDsl4XroZzrlKnsmqnsnLzroZzrp4wg7JOw66m0IOuPiCDtlZjrgpjrj4Qg7JWI64KY6rCA64uI6rmMIOyrhOyngCDrp5Dqs6Ag7Lm065OcIOuCtOqxsCDslYTrrLTqsbDrgpgg7J6F66ClKirtlZjsnpAuCiFbe0VENkM5NEMzLTA0QjctNENFNS04MjM4LTZDNDlEM0RGQTQxOX0ucG5nXShodHRwczovL3B1Yi0zMDQxNjU2YmQ3MDc0Y2FkOWFhNjI4YzkxMTJmYjZjZi5yMi5kZXYvaW1hZ2VzLzE3ODQ2MjE1MjQxNjAtZWIzYjY2ZmQtYjM3OC00MjNmLTlhYjQtMGNlNThjMWE2MzM3LnBuZykKCi0g6re465+s66m0IOyVhOuemOyymOufvCDtmZTrqbTsnbQg64KY7Jis7YWQ642wICoqQ3JlYXRlIGJ1Y2tldCoq7J2EIO2BtOumre2VmOyekAohW2ltYWdlLnBuZ10oaHR0cHM6Ly9wdWItMzA0MTY1NmJkNzA3NGNhZDlhYTYyOGM5MTEyZmI2Y2YucjIuZGV2L2ltYWdlcy8xNzg0NjIxNjI1OTAwLWY4YTUxODA0LWMxZWMtNDY0Yy1iNzEyLTZjNTkyZDRkNWUyNC5wbmcpCgotIGJ1Y2tldCBuYW1l7J2EIOuMgOy2qSDslYTrrLTqsbDrgpgg7KeA7J2A64uk7J2MIDogYG9ic2lkaWFuLWltYWdlc2Ag7J2065+w7Iud7Jy866GcIOunqCDrsJHsl5AgY3JlYXRlIGJ1Y2tldOydhCDriITrpbjri6QKIVt7QjE0RkNFRjQtRTVFOS00M0ZBLUEzMDYtMDZBOTY4RjhCMzc0fS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMTc0NTIzMy01ZDUyZmQwMS1iNWI2LTQ2YTItOTg0YS1hZmM0NmIxMDVlOWIucG5nKQoKLSBgU2V0dGluZ3NgIOyXkCDrk6TslrTqsIDshJwgYFB1YmxpYyBEZXZlbG9wbWVudCBVUkxgIOyYhuyXkCBgRW5hYmxlYOydhCDsvKDri6QKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMTg0NTg5OS00N2JkY2FhYi02ZGVkLTQxMGQtODQ3NC05MDIwOWNmZDY2NmQucG5nKQoKLSBhbGxvd+ulvCDsnoXroKXtlZjqs6Ag64iE66W464ukCiFbaW1hZ2UucG5nXShodHRwczovL3B1Yi0zMDQxNjU2YmQ3MDc0Y2FkOWFhNjI4YzkxMTJmYjZjZi5yMi5kZXYvaW1hZ2VzLzE3ODQ2MjE4OTI3NjEtOTZlNmY1MDYtNGM0OS00N2U2LTgwNDgtMjA1YzdmODMwYTlkLnBuZykKCi0g6re465+s66m0IOyjvOyGjOqwgCDsg53quLDripTrjbAgKirrqZTrqqjsnqXsl5Ag65Sw66GcIOuzteu2me2VtOuGk+yekCAoUHVibGljIFVSTCkqKiAKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMTk3NDgzMS1hNTAxY2I4YS03ODM2LTQ0NjgtOTM4Yy00NGZjNTNmNTFlMGYucG5nKQoKIyMjIDQuIEJ1Y2tldCAmIEJpbmRpbmcg7ISk7KCV7ZWY6riwCgotIOydtOygnCDri6Tsi5wg7Jm87Kq9IOyEpOygleywveyXkOyEnCBgV29ya2Vyc2Drnbzqs6Ag6rKA7IOJ7ZW07IScIGBXb3JrZXJzICYgUGFnZXNgIOuhnCDrk6TslrTqsIDsnpAKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMjE1NTAxNC1iZGRlOGIxMS1iYzk0LTQxMzEtODAxOS04MDQ0NGM5ZjhlZTEucG5nKQoKLSBXb3JrZXJzICYgUGFnZXPsl5DshJwg7JyE7JeQ7IScIOyVhOuemOyZgCDqsJnsnbQgYFdvcmtlciBuYW1lYCDsl5DshJwg7YWN7Iqk7Yq466W8IOyngOyasOqzoCBgb2JzaWRpYW4tZWFnbGUtdXBsb2FkZXJg66GcIOuMgOy2qSDsnbTrpoTsnYQg7KeA7JeI642YIOq3uCDsnbTrpoTsnYQgKirqsoDsg4ntlbTshJwg65Ok7Ja06rCE64ukKioKIVt7NDBDMDEwQTMtQTRFOS00MkI3LUE0MTktOTZDQkI4RjBGRUE3fS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzg0NjE4NzA4MzMyLTAyZjM4MDFjLTA4OWEtNGQyMi1hNzVjLWQ1MzhlNTMwOGNiOC5wbmcpCgotIEJpbmRpbmdz6rCAIOu5hOyWtOyeiOydhCDqsoPsnbTri6QuIGBBZGQgYmluZGluZ2Ag7J2EIOuIhOuluOuLpAohW2ltYWdlLnBuZ10oaHR0cHM6Ly9wdWItMzA0MTY1NmJkNzA3NGNhZDlhYTYyOGM5MTEyZmI2Y2YucjIuZGV2L2ltYWdlcy8xNzg0NjIyMjc0MjM4LWM2ZjZhM2JmLWI0OTctNDBmYi04YTE5LTY1YThiOWEzMTNjOS5wbmcpCgotIEJpbmRpbmfsnYQg64uk7IucIOuIhOuluOuLpOydjAohW2ltYWdlLnBuZ10oaHR0cHM6Ly9wdWItMzA0MTY1NmJkNzA3NGNhZDlhYTYyOGM5MTEyZmI2Y2YucjIuZGV2L2ltYWdlcy8xNzg0NjIyMzIyOTEyLWFjZjYyYzljLTk4MmUtNGViYi04OWI5LTI0MWNlOWQ5YTI2Ni5wbmcpCgotIGBSMiAgQnVja2V0YOydhCDshKDtg53tlZjqs6AgYEFkZCBiaW5kaW5nYCDtgbTrpq0KIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMjM3ODQ2OC1lNmM3MjM0MS1kOThmLTQ1MDYtYjFmOS0yOTE3Njk2YjM5MDQucG5nKQoKLSBWYXJpYWJsZSBuYW1l7JeQ64qUIGBNWV9CVUNLRVRgIOydtOudvOqzoCDsnoXroKXtlZjqs6AsCgktIOuwkeyXkCBSMiBCdWNrZXTsnYAg67CU66GcIOyghOuLqOqzhOyXkOyEnCDrp4zrk6Ag67KE7LyT7J20IOyVhOuniCDqs6jrnbzsp4gg6rKD7J2064ukIAoJLSDshKDtg53tlZjqs6Ag67CR7JeQIERlcGxveeulvCDriITrpbTrqbQg65Cc64ukCiFbaW1hZ2UucG5nXShodHRwczovL3B1Yi0zMDQxNjU2YmQ3MDc0Y2FkOWFhNjI4YzkxMTJmYjZjZi5yMi5kZXYvaW1hZ2VzLzE3ODQ2MjI1MTU3MzktMDM1MjFiODUtNGRhMS00NGU1LTgwNzctOTgzZjdhMmI0MDJmLnBuZykKCiMjIyA1LiBXb3JrZXIgVVJMIOuplOuqqOyepeyXkCDrs7XrtpntlZjquLAKCi0g64uk7IucIGBXb3JrZXJzICYgUGFnZXNgIOyXkOyEnCBgT3ZlcnZpZXdgIOuhnCDrj4zslYTsmKTrqbQKCS0g7JWE656YIOyKpO2BrOumsOyDt+yymOufvCBgWFhYWC7slYTsnbTrlJQtIyMjLndvcmtlcnMuZGV2YCDqsJnsnbQg64Gd7JeQIGAuZGV2YCDroZwg64Gd64KY64qUIOyduO2EsOuEtyDso7zshozqsIAg7J6I64ukCgktIOq3uOqxuCDrqZTrqqjsnqXsl5Ag65Sw66GcIOuzteu2me2VtOuGk+yekCAoV29ya2VyIFVSTCkKCiFbaW1hZ2UucG5nXShodHRwczovL3B1Yi0zMDQxNjU2YmQ3MDc0Y2FkOWFhNjI4YzkxMTJmYjZjZi5yMi5kZXYvaW1hZ2VzLzE3ODQ2MjI2ODU3MzctYTM4MDM5YjgtNjA2My00YzA4LTgyYmYtMGU2OWRjNTk5OThlLnBuZykKCiMjIyA2LiBTZWNyZXQgJiBLZXkg7ISk7KCV7ZWY6riwCgotIOq3uCDsg4Htg5zsl5DshJwg64uk7IucIGBTZXR0aW5nc2Ag66GcIOuLpOyLnCDqsITri6QKCS0g6re465+s66m0IGBWYXJpYWJsZXMgYW5kIHNlY3JldHNgIO2VreuqqeydtCDruYTslrTsnojsnYQg6rKD7J2064ukLgoJLSBBZGTrpbwg64iE66W464ukLgoKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMjkwNzI5MS1iZDc3YTIwNi1kMzE4LTRjMGItODhhOC04ZmM5YTM0NDliMGYucG5nKQoKLSBWYXJpYWJsZXMgYW5kIHNlY3JldHMg7LC97J20IOucrOuLpAoJLSBgVHlwZWAg7J2EIGBTZWNyZXRgIOycvOuhnCDqs6DrpbTquLAKCS0gYFZhcmlhYmxlIG5hbWVgIOydhCBgVVBMT0FEX0FQSV9LRVlgIOyymOufvCDsnoXroKUKCS0gYFZhbHVlYOyXkCAqKuuCtOqwgCDsnoXroKXtlZjqs6Ag7Iu27J2AIOu5hOuwgOuyiO2YuCDslYTrrLTqsbDrgpgg7J6F66Cl7ZWY6rOgIOuplOuqqOyepeyXkCDrlLDroZwg7KCA7J6lKioKLSDshYsg64ukIOyeheugpe2VmOqzoCBEZXBsb3nrpbwg64iE66W464ukLgoKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMjk0NTUwOS1mNzljMjQzMy03ZjZiLTQ1MjItYmU3Ny1mNzk1MTkwYjFjM2YucG5nKQoKLSDrp4jssKzqsIDsp4DroZwg7ZWc67KIIOuNlCBgQWRkYCDrpbwg64iM65+s7IScCgktIGBUeXBlYCDsnYQgYFRleHRgIOuhnCDqs6DrpbTquLAKCS0gYFZhcmlhYmxlIG5hbWVg7J2EIGBQVUJMSUNfQkFTRV9VUkxgIOuhnCDsnoXroKUKCS0gYHZhbHVlYOyXkCDso7zshozrpbwgKirsnITsl5AgM+uLqOqzhOyXkOyEnCBSMiBTdG9yZ2UgJiBCdWNrZXTsl5DshJwg66eM65Ok6rOgIOuplOuqqOyepeyXkCDrs7XrtpntlojrjZgg7KO87IaMKirrpbwgKirqt7jrjIDroZwg7J6F66ClKirtlZzri6QuCi0g64ukIOyeheugpe2VmOqzoCBEZXBsb3nrpbwg64iE66W464ukLgoKIVt7Q0ExODM4QzQtRDExQi00QUIzLTgwQ0UtNzBGMURCOEE5Q0RGfS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMzEwODAyNS1jZTFhZmQ4YS1mYzk4LTQwMGEtYTY3ZC02YWZhOTk2Y2RkOTkucG5nKQoKLSAqKijssLjqs6AgUkVDQVApKiog6re465+s66m0IOyjvOyGjOqwgCDsg53quLDripTrjbAgKirrqZTrqqjsnqXsl5Ag65Sw66GcIOuzteu2me2VtOuGk+yekCAoUHVibGljIFVSTCkqKiAKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLTMwNDE2NTZiZDcwNzRjYWQ5YWE2MjhjOTExMmZiNmNmLnIyLmRldi9pbWFnZXMvMTc4NDYyMTk3NDgzMS1hNTAxY2I4YS03ODM2LTQ0NjgtOTM4Yy00NGZjNTNmNTFlMGYucG5nKQoKIyMjIDYuIENNRFMtRWFnbGUg7ZSM65+s6re47J247JeQIENsb3VkZmxhcmUgUjIg6rCSIOyeheugpe2VmOq4sAoKLSDsnbTsoJwg7IS47YyF7J20IOuLpOuQmOyXiOycvOuptCDrqZTrqqjsnqXsl5Ag7JWE656Y7J2YIOyEuOqwgOyngOqwgCDsnojri6Q6CiFbe0JGQUNCOEI4LUU1QzUtNDc2Ni1BODhELUNDMTg5MkIyNDk4RX0ucG5nXShodHRwczovL3B1Yi1hY2Y2YWQ5M2YyZWM0YTVlOGZhMTJlOTRkMGM5YjE1MS5yMi5kZXYvMTc4NDYyMzg4ODI0MS00NzBiM2QzMy0xZWI5LTRlZDQtYTQ4My0zMmM0NDFkNjc2NjgucG5nKQoKLSBg7Ji17Iuc65SU7Ja4IOyEpOyglSAtIOy7pOuupOuLiO2LsCDtlIzrn6zqt7jsnbggLSDtg5Dsg4lgIOuplOuJtOyXkCDrk6TslrTqsIDshJwgYENNRFNgIOudvOqzoCDqsoDsg4ntlZjrqbQg7JWE656Y7LKY65+8IGBDTURTIEVhZ2xlYCDsnbTrnbzripQg7JWx7J20IOuCmOyYpOuKlOuNsCDshKTsuZjtlZzri6QKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzg0NjIzOTU5ODg2LTA5MzYyNDYwLWVhMmEtNGFkYi1iOWIzLTVlODZlYWU0NGQ4MC5wbmcpCgotIENNRFMgRWFnbGUg7ISk7KCV7LC97JeQ7IScIOuwkeyXkCBgQ2xvdWQgU3RvcmFnZSBQcm92aWRlcmDrpbwgYENsb3VkZmxhcmUgUjJgIOuhnCDrsJTqvrzri6TsnYwsCiFbaW1hZ2UucG5nXShodHRwczovL3B1Yi1hY2Y2YWQ5M2YyZWM0YTVlOGZhMTJlOTRkMGM5YjE1MS5yMi5kZXYvMTc4NDYyNDA0NTg2MC05ODViYjlmOC1lMTA2LTQ0NzctOTE0YS1jM2I2OTg2ZmJiNDEucG5nKQoKCi0gV29ya2VyIFVSTCwgQVBJIEtleSwgUHVibGljIFVSTOyXkCDqsIHqsIEg66mU66qo7J6l7JeQIOuzteu2me2VtOuGqOuNmCDqsJLrk6TsnYQg7J6F66Cl7ZWY7J6QCgohW2ltYWdlLnBuZ10oaHR0cHM6Ly9wdWItYWNmNmFkOTNmMmVjNGE1ZThmYTEyZTk0ZDBjOWIxNTEucjIuZGV2LzE3ODQ2MjQxNjk2NjMtZTg3YTA0YjAtZTM0Ni00NDBkLTg5NWQtNzYwNTZkOTVjNDVjLnBuZykKCgojIyDsgqzsmqnrspU6IENNRFMtRWFnbGUgJiBDbG91ZGZsYXJlCi0g7IKs7Jqp67KV7J20IOyXhOyyreuCmOqyjCDqt4DssK7slYTshJwg6re466CH7KeALCDsgqzsmqnrspXsnYAgKirrp6TsmrDrp6TsmrAg6rCE64uo7ZWY64ukLioqCgktIOyciOuPhOyasCDquLDspIDsnLzroZzripQgYFdpbmRvdyArIFNoaWZ0ICsgU2Ag66W8IOuPmeyLnOyXkCDriIzrn6zshJwg7Iqk7YGs66aw7IO3IOy6oeyzkOulvCDtlZzri6TsnYwKCS0g66eI7YGs64uk7Jq0IOuFuO2KuCDslYjsl5DshJwgYEN0cmwgKyBWYCDrpbwg7ZWcIOuLpOydjCDslYTrnpgg7ZmU66m07JeQ7IScIGBDbG91ZGZsYXJlIFIyYOulvCDqs6DrpbTrqbQg65Cc64ukOgoKIVt7RkM2QUNBMUQtN0I5Mi00MDBBLTgxMDAtODc2Mjg3MzdGRDhCfS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzg0NjI0Mjk1OTI2LWIzNjIyM2U4LWNkOGUtNGI2OS1iZDU5LWY2M2U1YjM3MDdhNy5wbmcpCgoKIyMjID0g67O064SI7IqkOiBTbmlwYXN0ZQoKLSDqtazquIDsl5DshJwgYFNuaXBhc3RlYOudvOqzoCDqsoDsg4ntlZjrqbQg7JWE656YIOybueyCrOydtO2KuOqwgCDrgpjsmKjri6QgKOyjvOyGjDogW2h0dHBzOi8vd3d3LnNuaXBhc3RlLmNvbV0oaHR0cHM6Ly93d3cuc25pcGFzdGUuY29tLykgKQohW3s1MDhFNjg5MS0xNTBGLTQ2MEEtODY2NS01Nzg2MDUzMjlFOUN9LnBuZ10oaHR0cHM6Ly9wdWItYWNmNmFkOTNmMmVjNGE1ZThmYTEyZTk0ZDBjOWIxNTEucjIuZGV2LzE3ODQ2MjQ0MTg3OTgtMzcyMjc2MjAtNDJmMC00OTNjLWJiOTYtYmY1OTRmNzVlNTNlLnBuZykKLSDshKTsuZjrpbwg7ZWY6rOgIOuCmOuptCDquLDrs7gg64uo7LaV7YKk6rCAIGBGMWDsnYQg64iE66W066m0IOyKpO2BrOumsOyDtyDsuqHss5Drpbwg7ZWgIOyImCDsnojripTrjbAsCgktIOyKpO2BrOumsOyDtyDsuqHss5DtlZzri6TsnYwg64+E7ZiV7J2EIOq3uOumrOqzoCDso7zshJ3snYQg64us7JWE7IScIOuzteu2meydhCDtlZjqsbDrgpgsCgktIO2YueydgCDsiqTtgazrprDsg7cg6rOg7KCV64+EIO2VoCDsiJgg7J6I7Ja07IScIOqwgeyihSDqsJXsnZjsnpDro4wg7KCc7J6RIOyLnOqwhOydtCDsl4Tssq3rgpjqsowg64uo7LaV65Cc64ukLgoKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzg0NjI0ODEyOTA5LWExOTg4NzAyLWE1NTMtNDgxNy1hYTRjLTE0MmU2MjNmMWQyMi5wbmcpCgojIyMgPSDrs7TrhIjsiqQyIDogQWNobWFnZS1zbGlkZXMtdWx0cmEKLSDrs7gg64W47Yq466W8IOunjOuToCDtlYTsnpDqsIAg66eM65OgIOyYteyLnOuUlOyWuCDsu6TrrqTri4jti7Ag7ZSM65+s6re47J247J24IGBBY2htYWdlLXNsaWRlcy11bHRyYWDrpbwg7ISk7LmY7ZWY6rOgIOuCmOuptCwg67O167aZ7ZWcIOyKpO2BrOumsOyDt+ydtCDquIDqs7wg7ISe7J24IOuFuO2KuOqwgCDslYTrnpjsspjrn7wg67CU66GcIFBQVOuhnCDrs7Tsnbwg7IiYIOyeiOyWtOyEnCAqKlBQVCDsoJzsnpHsobDssKjrj4Qg7JeE7LKt64KY6rKMIOuLqOy2leuQnOuLpC4qKgoKIVt7M0Q3OTQ1NTMtRjFGMy00OENGLTg1N0QtNTEzNTA0OUI1MTA0fS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzg0NjI0OTM1MzAxLTdhYjM4ZTcyLTNhMWUtNGJkMS1iZjAzLTEwMjA3NzhlNzE1ZC5wbmcpCgoKCi0tLQojIyDrgrTrqbQg7KeI66y4IAojIyMgIDEpIOydtCDrhbjtirjqsIAg64K0IOyCrOqzoOyXkCDslrTrlqQg7KCQ7J2EIOuNmOyguOyjvOyXiOuKlOqwgD8KPiBbIXF1b3RlXSBESUtNOiBYLUF4aXMKPiAgKOy1nOyGjCkgM3417KSEIOyalOyVveycvOuhnCDrqLzsoIAg7KCB6riwIOKGkiDtlYTsmpTtlZjrqbQg7JWE656Y66W8IOyxle2EsOyymOufvCDtmZXsnqUKCi0gQ01EUy1FYWdsZSwgQ2xvdWRmbGFyZSBSMiwgQWNobWFnZS1zbGlkZXMtdWx0cmEgM+yiheyEuO2KuCDsl7Dqs4Qg7IKs7Jqp67KV7J2EIOychO2VnCDtlbXsi6wg64W47Yq4LgoJLSDsmLXsi5zrlJTslrgg7LSI67O064qUIOydtCDrhbjtirjrpbwg7IiZ7KeA7ZWY6rOgIOyymOydjCDshLjtjIUg7ZWY64qQ64OQIOuniOuKkOuDkOqwgCAqKuyCrOyaqeyEsSBVWOqwgCDssrTqsJDsg4Eg7ZWcIDEw67Cw64qUIOyYrOudvOqwgOuKlCoqIOuKkOuCjOydtCDrkJzri6Tqs6Ag7ZWgIOyImCDsnojri6QuCgktIOyEpOygleuyleydtCDqtYnsnqXtnogg6reA7LCu7JWE7IScIOuLpOyLnCDtmZXsnbjtlZjripTrjbAg7Jik656YIOqxuOuguOuKlOuNsCwg7KCV66as7ZWY6rOgIOuCmOuLiOq5jCDri6Trpbgg7IKs656M65Ok7JeQ6rKMIOyJveqyjCDqs7XsnKDqsIAg6rCA64ql7ZWcICoq7LSI6rCV66ClIOq1kOyImOyekOq4iSBUZWFjaGluZyDtirnqsJUg64W47Yq4KirqsIAg65CY7JeI64ukCgkJLSDsnbTqsbAg7ISk7KCV67KV66eMIO2VnCAyMC0zMOu2hCDqsJXsnZgg67aE65+J7Jy866GcIOyeoeyVhOyVvCDtlaAg6rKDIOqwmeyngOunjC4uLgoKIyMjICAyKSDsp4DquIjsnZgg64KY7JmAIOyWtOuWu+qyjCDsl7DqsrDrkJjripTqsIA/Cj4gWyFxdW90ZV0gRElLTTogWS1BeGlzCj4gIERJS03snZgg4oCc7IK26rO8IOyXsOqysOuQmOuKlCDsp4Dsi53igJ0g6rSA7KCQ7JeQ7IScLCDrgrQg66Oo7Yu0L+q0gOqzhC/sl7Dqtawv7LC97J6R6rO8IOyXsOqysCDqs6Drpqwg66eM65Ok6riwIAoKLSBb67KU7KCV67aAIOyYpO2UvOyKpOyXkOyEnCBIYW5NYXJrIDEuMOq5jOyngCwg7ZWc6riAIOyekOuPme2ZlCDsmLXsi5zrlJTslrgg7ZSM65+s6re47J247J2EIO2Wpe2VnCA56rCc7JuUIDI4M+qwhOydmCDrtoTtiKwg6riw66GdXSjrspTsoJXrtoAlMjDsmKTtlLzsiqTsl5DshJwlMjBIYW5NYXJrJTIwMS4w6rmM7KeALCUyMO2VnOq4gCUyMOyekOuPme2ZlCUyMOyYteyLnOuUlOyWuCUyMO2UjOufrOq3uOyduOydhCUyMO2Wpe2VnCUyMDnqsJzsm5QlMjAyODPqsITsnZglMjDrtoTtiKwlMjDquLDroZ0ubWQpIOuPhCDssLjsobAuIEhhbk1hcmsgKyDsiqTrp4jtirgg7Lu07Y+s7KCAIChBY2htYWdlIOyImOygleuzuCkgKyBBY2htYWdlLXNsaWRlcy11bHRyYSArIENNRFMtRWFnbGUgKENsb3VkZmxhcmUgUjIg7ISk7KCVKSDsnbTslbzrp5DroZwg7JmV7LSI67O066W8IOychO2VnCDsmLXsi5zrlJTslrgg7J6F66y4IOuniOyKpO2EsCDtjKjtgqTsp4DsnZgg7JmE7ISx67O47J2065286rOgIO2VoCDsiJgg7J6I64ukLgoJLSDtirntnogg7J2065+wIOyKpO2BrOumsOyDtyDssqjrtoDtlZjripQgQ01EUy1FYWdsZSAoQ2xvdWRmbGFyZSBSMikg7ISk7KCV7J2EIO2VtOuGk+ycvOuptCwg6rWz7J20IEhUTUwgU2xpZGXqsIAg7JWE64uI6528IFBQVFjroZwg66eM65Ok6rOgIOyLtuydgCDqsr3smrAsIO2VtOuLuSDrp4jtgazri6TsmrTsnYQg7YG066Gc65OcIOy9lOuTnOuCmCDsvZTrjbHsiqQg65Ox7JeQIOyyqOu2gO2VnCDrkqQgKirsiqTtgazrprDsg7cg66eB7YGs65OkIO2BrOq4sOulvCDqsJDslYjtlbTshJwgUFBU66GcIOunjOuTpOyWtOykmCoqIOqwmeydtCDsi5zsvJzrsoTrpqzrqbQg6rmU64GU7ZWY6rKMIOuCmOyYqOuLpC4KCgojIyMgMykg7JWe7Jy866GcIOyWtOuWpCDsi6Tsspwv7J2Y66+466GcIO2ZleyepeuQoCDsiJgg7J6I7J2E6rmMPwoKPiBbIVF1b3RlXSA6IERJS006IHotQXhpcwo+IOKAnDAuMSUg7ISx7J6l66Wg4oCdIOq0gOygkOyXkOyEnCwg6rGw7LC97ZWcIOuqqe2RnCDrp5Dqs6Ag4oCY64uk7J2MIDEw67aEL+uLpOydjCAx7KO84oCZIOuLqOychOuhnCDrsojsl60gCgotIOyYteyLnOuUlOyWuCDsnoXrrLjsnpAg66eI7Iqk7YSw7YG0656Y7IqkIOqwleydmCDrhbjtirjroZwg7JWE7KO8IOyCrOqzqOyymOufvCDsmrDroKTrqLnsnYQg7IiYIOyeiOuKlCDruYTsnqXsnZgg64W47Yq4</script>
+
+
+<script type="module">
+(async function() {
+	// mermaid sources travel base64-encoded in data-mmd; render with the LATEST mermaid
+	if (document.getElementById('encrypted-data') && !window.__cmdsReady) {
+		await new Promise(function(r) { document.addEventListener('cmds-content-ready', r, { once: true }); });
+	}
+	var containers = Array.from(document.querySelectorAll('.mermaid-container[data-mmd]'));
+	if (!containers.length) return;
+	function decode(b64) {
+		var bin = atob(b64); var bytes = new Uint8Array(bin.length);
+		for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+		return new TextDecoder().decode(bytes);
+	}
+	var sources = containers.map(function(d) { return decode(d.getAttribute('data-mmd')); });
+	var mermaid;
+	try {
+		mermaid = (await import('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs')).default;
+	} catch (e) {
+		containers.forEach(function(d, i) {
+			var pre = document.createElement('pre');
+			pre.textContent = sources[i];
+			d.replaceWith(pre);
+		});
+		return;
+	}
+	var seq = 0;
+	async function renderAll() {
+		var dark = document.documentElement.dataset.theme === 'dark';
+		mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'neutral', securityLevel: 'strict' });
+		for (var i = 0; i < containers.length; i++) {
+			try {
+				var out = await mermaid.render('cmds-mmd-' + i + '-' + (seq++), sources[i]);
+				containers[i].innerHTML = out.svg;
+			} catch (e) {
+				var pre = document.createElement('pre');
+				pre.textContent = sources[i];
+				containers[i].innerHTML = '';
+				containers[i].appendChild(pre);
+			}
+		}
+	}
+	await renderAll();
+	new MutationObserver(function() { renderAll(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
+
+
+<script>
+(function() {
+	var icon = document.getElementById('themeIcon');
+	var SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+	var MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+	function paint(theme) {
+		if (icon) icon.innerHTML = theme === 'dark' ? MOON : SUN;
+	}
+	var btn = document.getElementById('themeToggle');
+	if (btn) btn.addEventListener('click', function() {
+		var next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+		document.documentElement.dataset.theme = next;
+		try { localStorage.setItem('cmds-theme', next); } catch(e) {}
+		paint(next);
+	});
+	paint(document.documentElement.dataset.theme || 'light');
+})();
+</script>
+
+<script>
+(function() {
+	var badge = document.getElementById('expiryBadge');
+	if (!badge) return;
+	var ts = Number(badge.getAttribute('data-expires'));
+	if (!ts) return;
+	var ko = badge.getAttribute('data-lang') === 'ko';
+	var text = document.getElementById('expiryText');
+	function render() {
+		var msLeft = ts - Date.now();
+		var d = new Date(ts);
+		var dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+		if (msLeft <= 0) {
+			text.textContent = ko ? '만료됨' : 'Expired';
+			badge.classList.add('b-expired');
+			// file-hosting backends (GitHub Pages, NAS…) have no server to
+			// 410 an expired share — hide the body here as a soft tombstone
+			var body = document.getElementById('note-content');
+			if (body && !body.dataset.tombstoned) {
+				body.dataset.tombstoned = '1';
+				body.innerHTML = '<p class="cmds-loading">' + (ko ? '이 공유는 만료되었습니다.' : 'This shared note has expired.') + '</p>';
+				var toc = document.getElementById('tocToggle'); if (toc) toc.hidden = true;
+				['mdCopy', 'mdDownload'].forEach(function(id) { var b = document.getElementById(id); if (b) b.hidden = true; });
+			}
+		} else {
+			// calendar-date diff, so "D-1" flips at midnight, not at share-time+24h
+			var now = new Date();
+			var days = Math.round(
+				(new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime() -
+				 new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()) / 86400000
+			);
+			var count = days <= 0 ? (ko ? '오늘 만료' : 'expires today') : 'D-' + days;
+			text.textContent = (ko ? dateStr + ' 만료 · ' : 'Expires ' + dateStr + ' · ') + count;
+			if (days <= 3) badge.classList.add('b-soon');
+		}
+		badge.hidden = false;
+	}
+	render();
+	// keep honest across long-lived tabs (midnight rollover)
+	setInterval(render, 60 * 60 * 1000);
+})();
+</script>
+
+
+<script>
+(function() {
+	var PANELS = { toc: 'tocPanel', graph: 'graphPanel' };
+	var hasToc = false, hasGraph = false;
+
+	function docked() { return document.body.classList.contains('cmds-docked'); }
+
+	function setPanel(name, open) {
+		Object.keys(PANELS).forEach(function(k) {
+			var on = k === name ? open : false;
+			document.getElementById(PANELS[k]).classList.toggle('open', on);
+			document.getElementById(k + 'Toggle').classList.toggle('active', on);
+			try { localStorage.setItem('cmds-panel-' + k, on ? '1' : '0'); } catch(e) {}
+		});
+		if (name === 'graph' && open) requestAnimationFrame(function() { relayoutGraph(); });
+	}
+	function wireToggle(name) {
+		document.getElementById(name + 'Toggle').addEventListener('click', function() {
+			var isOpen = document.getElementById(PANELS[name]).classList.contains('open');
+			setPanel(name, !isOpen);
+		});
+	}
+
+	function setDock(on) {
+		if (on && window.innerWidth <= 1100) on = false;
+		var dock = document.getElementById('sideDock');
+		var toc = document.getElementById('tocPanel');
+		var graph = document.getElementById('graphPanel');
+		document.body.classList.toggle('cmds-docked', on);
+		if (on) {
+			Object.keys(PANELS).forEach(function(k) {
+				document.getElementById(PANELS[k]).classList.remove('open');
+				document.getElementById(k + 'Toggle').classList.remove('active');
+			});
+			if (hasToc) dock.appendChild(toc);
+			if (hasGraph) dock.appendChild(graph);
+			dock.hidden = false;
+		} else {
+			dock.hidden = true;
+			document.body.appendChild(toc);
+			document.body.appendChild(graph);
+		}
+		try { localStorage.setItem('cmds-dock', on ? '1' : '0'); } catch(e) {}
+		if (hasGraph) requestAnimationFrame(function() { relayoutGraph(); });
+	}
+
+	function headings() {
+		return document.querySelectorAll('#note-content h1, #note-content h2, #note-content h3, #note-content h4');
+	}
+
+	function assignHeadingIds() {
+		var used = {};
+		headings().forEach(function(h) {
+			var text = (h.textContent || '').trim();
+			if (!text || h.id) return;
+			var slug = text.toLowerCase().replace(/[^0-9a-z\uAC00-\uD7A3\u3131-\u318E\s-]/g, '').replace(/\s+/g, '-') || 'section';
+			if (used[slug] != null) { used[slug]++; slug = slug + '-' + used[slug]; } else { used[slug] = 0; }
+			h.id = slug;
+		});
+	}
+
+	function buildToc() {
+		var list = document.getElementById('tocList');
+		list.innerHTML = '';
+		headings().forEach(function(h) {
+			var text = (h.textContent || '').trim();
+			if (!text || !h.id) return;
+			var a = document.createElement('a');
+			a.href = '#' + h.id;
+			a.textContent = text;
+			a.className = 'toc-' + h.tagName.toLowerCase();
+			a.title = text;
+			list.appendChild(a);
+		});
+		return list.children.length >= 2;
+	}
+
+	// highlight the section currently in view (and keep it visible in a scrolling TOC)
+	function scrollSpy() {
+		var links = document.querySelectorAll('#tocList a');
+		if (!links.length) return;
+		var map = {};
+		links.forEach(function(a) { map[decodeURIComponent(a.hash.slice(1))] = a; });
+		var obs = new IntersectionObserver(function(entries) {
+			entries.forEach(function(en) {
+				if (!en.isIntersecting) return;
+				links.forEach(function(a) { a.classList.remove('active'); });
+				var a = map[en.target.id];
+				if (a) {
+					a.classList.add('active');
+					if (a.scrollIntoView) a.scrollIntoView({ block: 'nearest' });
+				}
+			});
+		}, { rootMargin: '0px 0px -75% 0px' });
+		headings().forEach(function(h) { if (h.id) obs.observe(h); });
+	}
+
+	var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5"/></svg>';
+	var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+	var ICON_LINK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+	function enhanceCodeBlocks() {
+		document.querySelectorAll('#note-content pre').forEach(function(pre) {
+			if (pre.querySelector('.code-copy')) return;
+			var code = pre.querySelector('code');
+			var langMatch = ((code ? code.className : '') + ' ' + pre.className).match(/language-([a-z0-9+#-]+)/i);
+			if (langMatch && langMatch[1] !== 'undefined') pre.setAttribute('data-lang', langMatch[1]);
+			var btn = document.createElement('button');
+			btn.className = 'code-copy';
+			btn.setAttribute('aria-label', 'Copy code');
+			btn.innerHTML = ICON_COPY;
+			btn.addEventListener('click', function() {
+				var code = pre.querySelector('code');
+				var textToCopy = (code || pre).innerText.replace(/\n$/, '');
+				navigator.clipboard.writeText(textToCopy).then(function() {
+					btn.innerHTML = ICON_CHECK;
+					btn.classList.add('copied');
+					setTimeout(function() { btn.innerHTML = ICON_COPY; btn.classList.remove('copied'); }, 1500);
+				});
+			});
+			pre.appendChild(btn);
+		});
+	}
+
+	// hover link icon on headings — click copies the deep link
+	function headingAnchors() {
+		headings().forEach(function(h) {
+			if (!h.id || h.querySelector('.h-anchor')) return;
+			var a = document.createElement('a');
+			a.className = 'h-anchor';
+			a.href = '#' + h.id;
+			a.setAttribute('aria-label', 'Copy link to section');
+			a.innerHTML = ICON_LINK;
+			a.addEventListener('click', function(e) {
+				e.preventDefault();
+				history.replaceState(null, '', '#' + h.id);
+				try { navigator.clipboard.writeText(location.href.split('#')[0] + '#' + h.id); } catch(err) {}
+				h.scrollIntoView({ behavior: 'smooth' });
+			});
+			h.appendChild(a);
+		});
+	}
+
+	// ══════════ markdown source tools (copy / download) ══════════
+	function mdSource() {
+		if (window.__cmdsMd != null) return window.__cmdsMd; // decrypted payload
+		var el = document.getElementById('md-source');
+		if (!el) return null;
+		try {
+			var bin = atob(el.textContent.trim());
+			var bytes = new Uint8Array(bin.length);
+			for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+			return new TextDecoder().decode(bytes);
+		} catch(e) { return null; }
+	}
+
+	function wireMdTools() {
+		var md = mdSource();
+		if (md == null) return;
+		var copyBtn = document.getElementById('mdCopy');
+		var dlBtn = document.getElementById('mdDownload');
+		if (copyBtn) {
+			copyBtn.hidden = false;
+			var idle = copyBtn.innerHTML;
+			copyBtn.addEventListener('click', function() {
+				navigator.clipboard.writeText(md).then(function() {
+					copyBtn.innerHTML = ICON_CHECK;
+					copyBtn.classList.add('active');
+					setTimeout(function() { copyBtn.innerHTML = idle; copyBtn.classList.remove('active'); }, 1500);
+				});
+			});
+		}
+		if (dlBtn) {
+			dlBtn.hidden = false;
+			dlBtn.addEventListener('click', function() {
+				var name = (document.title || 'note').replace(/[\\/:*?"<>|]/g, '-').trim() || 'note';
+				var blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+				var url = URL.createObjectURL(blob);
+				var a = document.createElement('a');
+				a.href = url;
+				a.download = name + '.md';
+				document.body.appendChild(a);
+				a.click();
+				a.remove();
+				setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+			});
+		}
+	}
+
+	// ══════════ interactive force-directed local graph ══════════
+	var G = null; // { data, pts, adj, deg, W, H, k, tx, ty, hover }
+
+	function readGraphData() {
+		var dataEl = document.getElementById('graph-data');
+		if (!dataEl) return null;
+		var g;
+		try { g = JSON.parse(dataEl.textContent); } catch(e) { return null; }
+		if (!g.nodes || g.nodes.length < 2) return null;
+		return g;
+	}
+
+	function runLayout(g, W, H) {
+		var N = g.nodes.length;
+		var pts = g.nodes.map(function(n, i) {
+			var a = i * 2.399963;
+			var r = n.level === 0 ? 0 : (n.level === 1 ? 0.35 : 0.7) * Math.min(W, H) / 2;
+			return { x: W / 2 + r * Math.cos(a), y: H / 2 + r * Math.sin(a), vx: 0, vy: 0 };
+		});
+		var SPRING = 0.03, REST = Math.min(W, H) / 3.2, REPEL = Math.min(W, H) * 55, GRAV = 0.008;
+		for (var it = 0; it < 300; it++) {
+			var damp = 0.85 * (1 - it / 340);
+			for (var i = 0; i < N; i++) {
+				for (var j = i + 1; j < N; j++) {
+					var dx = pts[j].x - pts[i].x, dy = pts[j].y - pts[i].y;
+					var d2 = dx * dx + dy * dy + 0.01, d = Math.sqrt(d2);
+					var f = Math.min(REPEL / d2, 8);
+					var fx = (dx / d) * f, fy = (dy / d) * f;
+					pts[i].vx -= fx; pts[i].vy -= fy;
+					pts[j].vx += fx; pts[j].vy += fy;
+				}
+			}
+			g.edges.forEach(function(e) {
+				var a = pts[e[0]], b = pts[e[1]];
+				var dx = b.x - a.x, dy = b.y - a.y;
+				var d = Math.sqrt(dx * dx + dy * dy) + 0.01;
+				var f = SPRING * (d - REST);
+				var fx = (dx / d) * f, fy = (dy / d) * f;
+				a.vx += fx; a.vy += fy;
+				b.vx -= fx; b.vy -= fy;
+			});
+			for (var k2 = 0; k2 < N; k2++) {
+				pts[k2].vx += (W / 2 - pts[k2].x) * GRAV;
+				pts[k2].vy += (H / 2 - pts[k2].y) * GRAV;
+				pts[k2].x += pts[k2].vx * damp;
+				pts[k2].y += pts[k2].vy * damp;
+				pts[k2].vx *= 0.6; pts[k2].vy *= 0.6;
+			}
+			pts[0].x = W / 2; pts[0].y = H / 2; pts[0].vx = 0; pts[0].vy = 0;
+		}
+		var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
+		pts.forEach(function(pt) {
+			minX = Math.min(minX, pt.x); maxX = Math.max(maxX, pt.x);
+			minY = Math.min(minY, pt.y); maxY = Math.max(maxY, pt.y);
+		});
+		var M = 30;
+		var sx = (W - M * 2) / Math.max(maxX - minX, 1), sy = (H - M * 2) / Math.max(maxY - minY, 1);
+		var sc = Math.min(sx, sy, 1.5);
+		pts.forEach(function(pt) {
+			pt.x = M + (pt.x - minX) * sc + (W - M * 2 - (maxX - minX) * sc) / 2;
+			pt.y = M + (pt.y - minY) * sc + (H - M * 2 - (maxY - minY) * sc) / 2;
+		});
+		return pts;
+	}
+
+	function canvasSize() {
+		var canvas = document.getElementById('graphCanvas');
+		var panel = document.getElementById('graphPanel');
+		var wasHidden = !panel.classList.contains('open') && !docked();
+		if (wasHidden) { panel.style.visibility = 'hidden'; panel.classList.add('open'); }
+		var W = Math.max(canvas.clientWidth || panel.clientWidth - 36, 200);
+		var H = docked() ? Math.max(canvas.clientHeight, 200) : 280;
+		if (wasHidden) { panel.classList.remove('open'); panel.style.visibility = ''; }
+		return { W: W, H: H };
+	}
+
+	function relayoutGraph() {
+		var data = G ? G.data : readGraphData();
+		if (!data) return;
+		var sz = canvasSize();
+		var adj = data.nodes.map(function() { return {}; });
+		var deg = data.nodes.map(function() { return 0; });
+		data.edges.forEach(function(e) {
+			adj[e[0]][e[1]] = true; adj[e[1]][e[0]] = true;
+			deg[e[0]]++; deg[e[1]]++;
+		});
+		G = {
+			data: data, adj: adj, deg: deg,
+			pts: runLayout(data, sz.W, sz.H),
+			W: sz.W, H: sz.H, k: 1, tx: 0, ty: 0, hover: -1,
+		};
+		renderGraph();
+	}
+
+	function renderGraph() {
+		if (!G) return;
+		var canvas = document.getElementById('graphCanvas');
+		var dpr = window.devicePixelRatio || 1;
+		canvas.width = G.W * dpr; canvas.height = G.H * dpr;
+		if (!docked()) canvas.style.height = G.H + 'px';
+		var ctx = canvas.getContext('2d');
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+		ctx.clearRect(0, 0, G.W, G.H);
+
+		var css = getComputedStyle(document.documentElement);
+		var noteColor = css.getPropertyValue('--graph-note').trim() || css.getPropertyValue('--accent').trim();
+		var muted = css.getPropertyValue('--muted').trim();
+		var text = css.getPropertyValue('--text').trim();
+		var border = css.getPropertyValue('--border').trim();
+		var cardBg = css.getPropertyValue('--card-bg').trim();
+
+		var g = G.data, pts = G.pts, k = G.k, hover = G.hover;
+		var sx = function(pt) { return pt.x * k + G.tx; };
+		var sy = function(pt) { return pt.y * k + G.ty; };
+		var inHood = function(i) { return hover < 0 || i === hover || G.adj[hover][i]; };
+
+		g.edges.forEach(function(e) {
+			var touches = hover >= 0 && (e[0] === hover || e[1] === hover);
+			if (hover >= 0) {
+				ctx.globalAlpha = touches ? 0.95 : 0.08;
+				ctx.strokeStyle = touches ? muted : border;
+				ctx.lineWidth = touches ? 1.5 : 1;
+			} else {
+				ctx.globalAlpha = (g.nodes[e[0]].level === 2 || g.nodes[e[1]].level === 2) ? 0.45 : 0.8;
+				ctx.strokeStyle = border;
+				ctx.lineWidth = 1;
+			}
+			ctx.beginPath();
+			ctx.moveTo(sx(pts[e[0]]), sy(pts[e[0]]));
+			ctx.lineTo(sx(pts[e[1]]), sy(pts[e[1]]));
+			ctx.stroke();
+		});
+
+		var rOf = function(i) {
+			var base = i === 0 ? 7 : Math.min(3.2 + G.deg[i] * 0.6, 6.5);
+			return base * Math.pow(k, 0.75);
+		};
+		g.nodes.forEach(function(n, i) {
+			var dim = hover >= 0 ? (inHood(i) ? 1 : 0.14) : (n.level === 2 ? 0.65 : 1);
+			ctx.globalAlpha = dim;
+			ctx.fillStyle = n.type === 'tag' ? '#E985A2' : noteColor;
+			ctx.beginPath(); ctx.arc(sx(pts[i]), sy(pts[i]), rOf(i), 0, Math.PI * 2); ctx.fill();
+			if (i === hover) {
+				ctx.strokeStyle = text; ctx.lineWidth = 1.5;
+				ctx.beginPath(); ctx.arc(sx(pts[i]), sy(pts[i]), rOf(i) + 2.5, 0, Math.PI * 2); ctx.stroke();
+			}
+		});
+
+		// labels: center always; L1 at normal zoom; everything once zoomed in;
+		// hovering shows the whole neighborhood regardless of zoom
+		g.nodes.forEach(function(n, i) {
+			var show;
+			if (hover >= 0) show = inHood(i);
+			else show = i === 0 || (n.level === 1 && (k >= 1.05 || g.nodes.length <= 20)) || k >= 1.9 || g.nodes.length <= 12;
+			if (!show) return;
+			var fs = i === 0 || i === hover ? 11.5 : 10.5;
+			ctx.font = (i === 0 || i === hover ? 'bold ' : '') + fs + 'px -apple-system, sans-serif';
+			var label = n.label.length > 22 ? n.label.slice(0, 21) + '…' : n.label;
+			var tw = ctx.measureText(label).width;
+			var lx = Math.max(2, Math.min(G.W - tw - 2, sx(pts[i]) - tw / 2));
+			var ly = sy(pts[i]) + rOf(i) + fs + 2;
+			var alpha = hover >= 0 ? (inHood(i) ? 1 : 0) : (n.level === 2 && k < 2 ? 0.7 : 0.95);
+			ctx.globalAlpha = alpha * 0.8;
+			ctx.fillStyle = cardBg;
+			ctx.fillRect(lx - 3, ly - fs + 1, tw + 6, fs + 3);
+			ctx.globalAlpha = alpha;
+			ctx.fillStyle = i === 0 || i === hover ? text : muted;
+			ctx.fillText(label, lx, ly);
+		});
+		ctx.globalAlpha = 1;
+	}
+
+	function zoomBy(factor) {
+		if (!G) return;
+		var mx = G.W / 2, my = G.H / 2;
+		var nk = Math.max(0.35, Math.min(4.5, G.k * factor));
+		factor = nk / G.k;
+		G.tx = mx - (mx - G.tx) * factor;
+		G.ty = my - (my - G.ty) * factor;
+		G.k = nk;
+		renderGraph();
+	}
+
+	function wireGraphInteraction() {
+		var canvas = document.getElementById('graphCanvas');
+		var dragging = false, moved = false, lastX = 0, lastY = 0;
+
+		document.getElementById('gZoomIn').addEventListener('click', function() { zoomBy(1.35); });
+		document.getElementById('gZoomOut').addEventListener('click', function() { zoomBy(1 / 1.35); });
+		document.getElementById('gReset').addEventListener('click', function() {
+			if (G) { G.k = 1; G.tx = 0; G.ty = 0; renderGraph(); }
+		});
+
+		function pick(mx, my) {
+			if (!G) return -1;
+			var best = -1, bestD = 12 * 12;
+			G.pts.forEach(function(pt, i) {
+				var dx = pt.x * G.k + G.tx - mx, dy = pt.y * G.k + G.ty - my;
+				var d = dx * dx + dy * dy;
+				if (d < bestD) { bestD = d; best = i; }
+			});
+			return best;
+		}
+		function pos(e) {
+			var r = canvas.getBoundingClientRect();
+			return { x: e.clientX - r.left, y: e.clientY - r.top };
+		}
+
+		canvas.addEventListener('wheel', function(e) {
+			if (!G) return;
+			e.preventDefault();
+			var m = pos(e);
+			var factor = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.002));
+			var nk = Math.max(0.35, Math.min(4.5, G.k * factor));
+			factor = nk / G.k;
+			G.tx = m.x - (m.x - G.tx) * factor;
+			G.ty = m.y - (m.y - G.ty) * factor;
+			G.k = nk;
+			renderGraph();
+		}, { passive: false });
+
+		canvas.addEventListener('pointerdown', function(e) {
+			if (!G) return;
+			dragging = true; moved = false;
+			lastX = e.clientX; lastY = e.clientY;
+			canvas.classList.add('dragging');
+			canvas.setPointerCapture(e.pointerId);
+		});
+		canvas.addEventListener('pointermove', function(e) {
+			if (!G) return;
+			if (dragging) {
+				var dx = e.clientX - lastX, dy = e.clientY - lastY;
+				if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
+				G.tx += dx; G.ty += dy;
+				lastX = e.clientX; lastY = e.clientY;
+				renderGraph();
+			} else {
+				var m = pos(e);
+				var h = pick(m.x, m.y);
+				canvas.classList.toggle('on-node', h >= 0);
+				if (h !== G.hover) { G.hover = h; renderGraph(); }
+			}
+		});
+		canvas.addEventListener('pointerup', function(e) {
+			dragging = false;
+			canvas.classList.remove('dragging');
+			// double-click-ish: a clean click on empty space resets the view
+			if (!moved) {
+				var m = pos(e);
+				if (pick(m.x, m.y) < 0 && G.k !== 1) { G.k = 1; G.tx = 0; G.ty = 0; renderGraph(); }
+			}
+		});
+		canvas.addEventListener('pointerleave', function() {
+			if (G && G.hover !== -1) { G.hover = -1; renderGraph(); }
+			canvas.classList.remove('on-node');
+		});
+	}
+
+	function init() {
+		// start from a known-clean panel state before restoring preferences
+		document.body.classList.remove('cmds-docked');
+		document.getElementById('sideDock').hidden = true;
+		assignHeadingIds();
+		enhanceCodeBlocks();
+		headingAnchors();
+		wireMdTools();
+		hasToc = buildToc();
+		if (hasToc) {
+			document.getElementById('tocToggle').hidden = false;
+			wireToggle('toc');
+			scrollSpy();
+		}
+		hasGraph = !!readGraphData();
+		if (hasGraph) {
+			document.getElementById('graphToggle').hidden = false;
+			wireToggle('graph');
+			wireGraphInteraction();
+			new MutationObserver(function() { renderGraph(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+			window.addEventListener('resize', function() {
+				if (docked() && window.innerWidth <= 1100) { setDock(false); return; }
+				if (docked()) requestAnimationFrame(function() { relayoutGraph(); });
+			});
+		}
+		if (hasToc || hasGraph) {
+			document.querySelectorAll('[data-pin]').forEach(function(btn) {
+				btn.addEventListener('click', function() { setDock(!docked()); });
+			});
+			// floating popups close on any click outside the card (docked stays put)
+			document.addEventListener('pointerdown', function(e) {
+				if (docked()) return;
+				if (e.target.closest('.side-panel, .side-tools')) return;
+				Object.keys(PANELS).forEach(function(k) {
+					if (document.getElementById(PANELS[k]).classList.contains('open')) setPanel(k, false);
+				});
+			});
+		}
+		try {
+			if (localStorage.getItem('cmds-dock') === '1' && (hasToc || hasGraph)) {
+				setDock(true);
+			} else if (localStorage.getItem('cmds-panel-toc') === '1' && hasToc) setPanel('toc', true);
+			else if (localStorage.getItem('cmds-panel-graph') === '1' && hasGraph) setPanel('graph', true);
+		} catch(e) {}
+	}
+
+	if (document.getElementById('encrypted-data') && !window.__cmdsReady) {
+		document.addEventListener('cmds-content-ready', init, { once: true });
+	} else {
+		init();
+	}
+})();
+</script>
+
+</body>
+</html>
