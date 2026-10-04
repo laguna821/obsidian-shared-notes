@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-10-04 AI와의 작업을 다음 생각의 맥락으로 남기는 일</title>
+<meta name="description" content="## 📝 Key Trigger (1–3 lines) &gt; “작업 세션 과정 이런 정도까지 싹다 기록으로 남기고 반복하고 하는 정도의 집요한 context engineering” — 안창현, 2026-10-04 보충 설명. &gt; AI와 함께 생각한 과정이 다음 작업의 조건으로 남는가. 이번 글은 그 기록과 재사용의 연결을 다룬다.">
+<link rel="canonical" href="https://laguna821.github.io/obsidian-shared-notes/notes/xegp4ogr.html">
+<meta property="og:url" content="https://laguna821.github.io/obsidian-shared-notes/notes/xegp4ogr.html">
+
+<link rel="icon" type="image/png" href="https://cmdspace.work/assets/logos/cmds-logo-round.png">
+<link rel="apple-touch-icon" href="https://cmdspace.work/assets/logos/cmds-logo-round.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CMDSPACE">
+<meta property="og:title" content="2026-10-04 AI와의 작업을 다음 생각의 맥락으로 남기는 일">
+<meta property="og:description" content="## 📝 Key Trigger (1–3 lines) &gt; “작업 세션 과정 이런 정도까지 싹다 기록으로 남기고 반복하고 하는 정도의 집요한 context engineering” — 안창현, 2026-10-04 보충 설명. &gt; AI와 함께 생각한 과정이 다음 작업의 조건으로 남는가. 이번 글은 그 기록과 재사용의 연결을 다룬다.">
+<meta property="og:image" content="https://share.cmdspace.work/assets/og/og-share.png">
+<meta property="og:image:secure_url" content="https://share.cmdspace.work/assets/og/og-share.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CMDS Share — 2026-10-04 AI와의 작업을 다음 생각의 맥락으로 남기는 일">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2026-10-04 AI와의 작업을 다음 생각의 맥락으로 남기는 일">
+<meta name="twitter:description" content="## 📝 Key Trigger (1–3 lines) &gt; “작업 세션 과정 이런 정도까지 싹다 기록으로 남기고 반복하고 하는 정도의 집요한 context engineering” — 안창현, 2026-10-04 보충 설명. &gt; AI와 함께 생각한 과정이 다음 작업의 조건으로 남는가. 이번 글은 그 기록과 재사용의 연결을 다룬다.">
+<meta name="twitter:image" content="https://share.cmdspace.work/assets/og/og-share.png">
+
+<script>
+(function(){try{var t=localStorage.getItem('cmds-theme');if(t){document.documentElement.dataset.theme=t;}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.dataset.theme='dark';}else{document.documentElement.dataset.theme='light';}}catch(e){}})();
+</script>
+
+<style>
+:root {
+	--max: 750px;
+	--text: #111;
+	--muted: #6b6b6b;
+	--bg: #fff;
+	--accent: #111;
+	--accent-light: #333;
+	--accent-on: #fff;
+	--border: #e4e4e4;
+	--code-bg: #f4f4f4;
+	--card-bg: #fff;
+	--pre-bg: #f6f6f6;
+	--pre-fg: #222;
+	--graph-note: #555;
+}
+[data-theme="dark"] {
+	--text: #ececec;
+	--muted: #9a9a9a;
+	--bg: #0a0a0a;
+	--accent: #ececec;
+	--accent-light: #fff;
+	--accent-on: #0a0a0a;
+	--border: #242424;
+	--code-bg: #161616;
+	--card-bg: #101010;
+	--pre-bg: #111;
+	--pre-fg: #ddd;
+	--graph-note: #aaa;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+	--text: #ececec;
+	--muted: #9a9a9a;
+	--bg: #0a0a0a;
+	--accent: #ececec;
+	--accent-light: #fff;
+	--accent-on: #0a0a0a;
+	--border: #242424;
+	--code-bg: #161616;
+	--card-bg: #101010;
+	--pre-bg: #111;
+	--pre-fg: #ddd;
+	--graph-note: #aaa;
+	}
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { color-scheme: light dark; scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
+	color: var(--text); background: var(--bg); line-height: 1.75;
+	font-size: 16px; -webkit-font-smoothing: antialiased;
+	transition: background-color .2s, color .2s;
+}
+
+.side-tools {
+	position: fixed; top: 1rem; right: 1rem; z-index: 100;
+	display: flex; flex-direction: column; gap: 0.5rem;
+}
+.tool-btn {
+	width: 36px; height: 36px;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 50%;
+	cursor: pointer;
+	display: grid; place-items: center;
+	color: var(--text);
+	transition: border-color .15s, background .15s, color .15s;
+}
+.tool-btn:hover { border-color: var(--accent); }
+.tool-btn.active { border-color: var(--accent); color: var(--accent); }
+.tool-btn svg { width: 16px; height: 16px; }
+
+.side-panel {
+	position: fixed; top: 1rem; right: 4rem; z-index: 99;
+	width: 280px; max-height: calc(100vh - 2rem);
+	overflow-y: auto;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 1rem 1.1rem;
+	display: none;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.side-panel.open { display: block; }
+.panel-head {
+	display: flex; align-items: center; justify-content: space-between;
+	margin-bottom: 0.6rem;
+}
+.panel-head h3 {
+	font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+	letter-spacing: 0.08em; color: var(--muted);
+}
+.pin-btn {
+	background: none; border: none; cursor: pointer; color: var(--muted);
+	width: 22px; height: 22px; display: grid; place-items: center;
+	border-radius: 5px;
+}
+.pin-btn:hover { color: var(--accent); background: var(--code-bg); }
+.pin-btn svg { width: 13px; height: 13px; }
+.g-controls { display: flex; gap: 2px; align-items: center; }
+
+/* docked mode: persistent right sidebar — TOC on top (scrolls), graph fills the rest */
+body.cmds-docked { padding-right: 312px; }
+body.cmds-docked .side-tools { right: calc(312px + 1rem); }
+body.cmds-docked #tocToggle, body.cmds-docked #graphToggle { display: none; }
+body.cmds-docked .pin-btn { color: var(--accent); }
+.side-dock {
+	position: fixed; top: 0; right: 0; bottom: 0; width: 312px; z-index: 98;
+	background: var(--card-bg); border-left: 1px solid var(--border);
+	display: flex; flex-direction: column;
+}
+.side-dock[hidden] { display: none; }
+.side-dock .side-panel {
+	position: static; display: block; width: auto; max-height: none;
+	border: none; border-radius: 0; box-shadow: none;
+}
+.side-dock #tocPanel { flex: 0 1 auto; min-height: 120px; max-height: 58%; overflow-y: auto; }
+.side-dock #graphPanel {
+	flex: 1 1 auto; min-height: 220px; overflow: hidden;
+	border-top: 1px solid var(--border);
+	display: flex; flex-direction: column;
+}
+.side-dock #graphPanel canvas { flex: 1; min-height: 0; }
+#graphCanvas { touch-action: none; cursor: grab; }
+#graphCanvas.dragging { cursor: grabbing; }
+#graphCanvas.on-node { cursor: pointer; }
+#tocList { display: flex; flex-direction: column; gap: 2px; }
+#tocList a {
+	color: var(--text); text-decoration: none; font-size: 0.82rem;
+	line-height: 1.4; padding: 0.25rem 0.5rem; border-radius: 6px;
+	display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+#tocList a:hover { background: var(--code-bg); color: var(--accent); }
+#tocList a.active { background: var(--code-bg); color: var(--accent); font-weight: 600; }
+#tocList a.toc-h2 { padding-left: 1.1rem; }
+#tocList a.toc-h3 { padding-left: 1.7rem; font-size: 0.78rem; color: var(--muted); }
+#tocList a.toc-h4 { padding-left: 2.3rem; font-size: 0.78rem; color: var(--muted); }
+#graphCanvas { width: 100%; display: block; }
+.graph-legend {
+	display: flex; gap: 0.9rem; margin-top: 0.5rem;
+	font-size: 0.7rem; color: var(--muted);
+}
+.graph-legend span::before {
+	content: ''; display: inline-block; width: 8px; height: 8px;
+	border-radius: 50%; margin-right: 4px;
+}
+.graph-legend .lg-link::before { background: var(--graph-note); }
+.graph-legend .lg-tag::before { background: #E985A2; }
+
+main {
+	max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem 3rem;
+}
+
+#note-content { font-size: 1rem; overflow-wrap: break-word; }
+#note-content h1, #note-content h2, #note-content h3,
+#note-content h4, #note-content h5, #note-content h6 {
+	font-weight: 700; letter-spacing: -0.02em; line-height: 1.3;
+	margin: 2rem 0 0.75rem; scroll-margin-top: 1.5rem;
+}
+#note-content h1 { font-size: 1.85rem; margin-top: 2.4rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+#note-content h2 { font-size: 1.4rem; margin-top: 2.2rem; }
+#note-content h3 { font-size: 1.18rem; }
+#note-content h4 { font-size: 1.06rem; color: var(--text); margin-top: 1.8rem; }
+#note-content h5 { font-size: 0.98rem; color: var(--text); }
+#note-content h6 { font-size: 0.9rem; color: var(--muted); }
+#note-content p { margin: 0.85rem 0; }
+#note-content ul, #note-content ol { margin: 0.85rem 0 0.85rem 1.4rem; }
+#note-content li { margin: 0.35rem 0; }
+#note-content li > ul, #note-content li > ol { margin: 0.25rem 0 0.25rem 1.2rem; }
+#note-content a {
+	color: var(--accent); text-decoration: none;
+	border-bottom: 1px solid transparent; transition: border-color .15s;
+}
+#note-content a:hover { border-bottom-color: var(--accent); }
+#note-content code {
+	background: var(--code-bg); padding: 0.18em 0.45em; border-radius: 6px;
+	font-size: 0.86em; font-family: 'SF Mono', 'Menlo', monospace;
+}
+#note-content pre {
+	background: var(--pre-bg); color: var(--pre-fg);
+	border: 1px solid var(--border);
+	padding: 1rem; border-radius: 12px;
+	overflow-x: auto; font-size: 0.85rem; line-height: 1.6;
+	font-family: 'SF Mono', 'Menlo', monospace; margin: 1rem 0;
+	position: relative;
+}
+.code-copy {
+	position: absolute; top: 8px; right: 8px;
+	width: 28px; height: 28px; border-radius: 6px;
+	background: color-mix(in srgb, var(--card-bg) 92%, transparent);
+	backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+	border: 1px solid var(--border);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+	color: var(--muted); cursor: pointer;
+	display: grid; place-items: center;
+	opacity: 0; transition: opacity .15s, color .15s, border-color .15s;
+}
+#note-content pre:hover .code-copy, .code-copy.copied { opacity: 1; }
+.code-copy:hover, .code-copy.copied { color: var(--accent); border-color: var(--accent); }
+.code-copy svg { width: 14px; height: 14px; }
+.h-anchor {
+	margin-left: 0.4rem; opacity: 0; color: var(--muted);
+	border-bottom: none !important; transition: opacity .15s, color .15s;
+}
+.h-anchor svg { width: 0.75em; height: 0.75em; }
+.h-anchor:hover { color: var(--accent); }
+#note-content h1:hover .h-anchor, #note-content h2:hover .h-anchor,
+#note-content h3:hover .h-anchor, #note-content h4:hover .h-anchor { opacity: 0.75; }
+#note-content pre code { background: transparent; padding: 0; font-size: 1em; }
+#note-content pre[data-lang]::before {
+	content: attr(data-lang);
+	position: absolute; top: 7px; left: 12px;
+	font-size: 0.66rem; font-weight: 600; letter-spacing: 0.05em;
+	color: var(--muted); opacity: 0.75; text-transform: lowercase;
+	font-family: -apple-system, sans-serif;
+}
+#note-content pre[data-lang] { padding-top: 1.9rem; }
+.mermaid-container { margin: 1rem 0; overflow-x: auto; text-align: center; }
+.mermaid-container svg { max-width: 100%; height: auto; }
+#note-content blockquote {
+	border-left: 3px solid var(--accent); padding: 0.5rem 1rem;
+	margin: 1rem 0; color: var(--muted); background: var(--code-bg);
+	border-radius: 0 8px 8px 0;
+}
+#note-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; }
+#note-content table {
+	border-collapse: collapse; margin: 1rem 0;
+	font-size: 0.9rem;
+	/* wide tables scroll inside themselves instead of panning the page */
+	display: block; width: max-content; min-width: 60%; max-width: 100%;
+	overflow-x: auto;
+}
+#note-content th, #note-content td {
+	border: none; border-bottom: 1px solid var(--border);
+	padding: 0.65rem 0.9rem; text-align: left; vertical-align: top;
+}
+#note-content th { font-weight: 700; font-size: 0.85rem; color: var(--muted); border-bottom-width: 2px; }
+#note-content tr:last-child td { border-bottom: none; }
+#note-content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+#note-content mark { background: rgba(233,133,162,0.25); padding: 0 0.2rem; border-radius: 3px; }
+#note-content .callout {
+	--co: var(--accent);
+	background: var(--code-bg); border-radius: 8px; padding: 0.9rem 1rem;
+	margin: 1rem 0; border-left: 3px solid var(--co);
+}
+#note-content .callout-title {
+	display: flex; align-items: center; gap: 0.5em;
+	font-weight: 700; color: var(--co); margin: 0;
+}
+#note-content .callout-icon { display: flex; align-items: center; flex-shrink: 0; }
+#note-content .callout-icon svg, #note-content .callout-title > svg {
+	width: 1.1em; height: 1.1em;
+}
+#note-content .callout-title-inner { line-height: 1.45; }
+#note-content .callout-fold { display: none; }
+#note-content .callout-content > :first-child { margin-top: 0.45rem; }
+#note-content .callout-content > :last-child { margin-bottom: 0.1rem; }
+#note-content .callout[data-callout="abstract"], #note-content .callout[data-callout="summary"], #note-content .callout[data-callout="tldr"] { --co: #23a8b8; }
+#note-content .callout[data-callout="info"], #note-content .callout[data-callout="note"], #note-content .callout[data-callout="todo"] { --co: #4a8edb; }
+#note-content .callout[data-callout="tip"], #note-content .callout[data-callout="hint"], #note-content .callout[data-callout="important"] { --co: #23b89b; }
+#note-content .callout[data-callout="success"], #note-content .callout[data-callout="check"], #note-content .callout[data-callout="done"] { --co: #3aa657; }
+#note-content .callout[data-callout="question"], #note-content .callout[data-callout="help"], #note-content .callout[data-callout="faq"] { --co: #d9a13b; }
+#note-content .callout[data-callout="warning"], #note-content .callout[data-callout="caution"], #note-content .callout[data-callout="attention"] { --co: #e0813a; }
+#note-content .callout[data-callout="danger"], #note-content .callout[data-callout="error"], #note-content .callout[data-callout="failure"], #note-content .callout[data-callout="fail"], #note-content .callout[data-callout="missing"], #note-content .callout[data-callout="bug"] { --co: #e05252; }
+#note-content .callout[data-callout="example"] { --co: #8a6fd6; }
+#note-content .callout[data-callout="quote"], #note-content .callout[data-callout="cite"] { --co: var(--muted); }
+#note-content .internal-link {
+	color: var(--accent); border-bottom: 1px dashed var(--accent); cursor: help;
+}
+
+.cmds-meta {
+	max-width: var(--max); margin: 0 auto;
+	padding: 2rem 1.5rem 2rem; border-top: 1px solid var(--border);
+	font-size: 0.75rem; color: var(--muted); text-align: center;
+	display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+}
+.cmds-meta img { width: 28px; height: 28px; border-radius: 50%; }
+.cmds-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.cmds-badge {
+	display: inline-flex; align-items: center; gap: 0.35em;
+	font-size: 0.7rem; font-weight: 600; color: var(--muted);
+	border: 1px solid var(--border); border-radius: 999px;
+	padding: 0.22rem 0.65rem; background: var(--card-bg);
+}
+.cmds-badge svg { width: 12px; height: 12px; }
+.cmds-badge.b-e2e { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.cmds-badge.b-soon { color: #e0813a; border-color: color-mix(in srgb, #e0813a 45%, var(--border)); }
+.cmds-badge.b-expired { color: #e05252; border-color: color-mix(in srgb, #e05252 45%, var(--border)); }
+.cmds-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.cmds-meta a:hover { text-decoration: underline; }
+.cmds-theme-note { font-size: 0.68rem; color: var(--muted); opacity: 0.75; }
+.cmds-author-link {
+	margin-top: 0.35rem; font-size: 0.85rem; font-weight: 700;
+	letter-spacing: -0.01em;
+}
+.cmds-loading { color: var(--muted); font-style: italic; }
+.decrypt-error {
+	color: #c62828; background: #fce4ec; padding: 1rem; border-radius: 8px;
+	border: 1px solid #c62828; margin: 2rem 0; text-align: center;
+}
+[data-theme="dark"] .decrypt-error { background: #4a1a24; color: #ff8899; border-color: #ff8899; }
+
+@media (max-width: 720px) {
+	.side-panel { right: 1rem; top: 4rem; width: min(280px, calc(100vw - 2rem)); }
+}
+</style>
+<link rel="stylesheet" href="https://laguna821.github.io/obsidian-shared-notes/notes/css/31500808d2248f8ee6deee006e23f7748c6433c3.css">
+</head>
+<body>
+
+<div class="side-tools">
+	<button class="tool-btn" id="themeToggle" aria-label="Toggle theme">
+		<svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+	</button>
+	<button class="tool-btn" id="tocToggle" aria-label="Table of contents" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+	</button>
+	<button class="tool-btn" id="graphToggle" aria-label="Local graph" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M10.8 6.9 6.2 16m7-9.1 4.6 9.1M7.2 18h9.6"/></svg>
+	</button>
+	<button class="tool-btn" id="mdCopy" aria-label="Copy markdown" title="Copy markdown" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5"/></svg>
+	</button>
+	<button class="tool-btn" id="mdDownload" aria-label="Download markdown" title="Download .md" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5"/><path d="M4 19h16"/></svg>
+	</button>
+</div>
+
+<div class="side-dock" id="sideDock" hidden></div>
+
+<aside class="side-panel" id="tocPanel"><div class="panel-head"><h3>Contents</h3><button class="pin-btn" data-pin aria-label="Dock panels" title="Dock / undock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5M9 3h6l1 7 3 2H5l3-2 1-7z"/></svg></button></div><nav id="tocList"></nav></aside>
+<aside class="side-panel" id="graphPanel"><div class="panel-head"><h3>Local Graph</h3><span class="g-controls"><button class="pin-btn" id="gZoomOut" aria-label="Zoom out" title="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg></button><button class="pin-btn" id="gZoomIn" aria-label="Zoom in" title="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><button class="pin-btn" id="gReset" aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button><button class="pin-btn" data-pin aria-label="Dock panels" title="Dock / undock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5M9 3h6l1 7 3 2H5l3-2 1-7z"/></svg></button></span></div><canvas id="graphCanvas"></canvas>
+<div class="graph-legend"><span class="lg-link">Notes</span><span class="lg-tag">Tags</span></div></aside>
+
+<main>
+	<article id="note-content" class="markdown-rendered"><h2 data-heading="📝 Key Trigger (1–3 lines)" dir="auto">📝 Key Trigger (1–3 lines)</h2>
+<blockquote dir="auto">
+<p>“작업 세션 과정 이런 정도까지 싹다 기록으로 남기고 반복하고 하는 정도의 집요한 context engineering” — 안창현, 2026-10-04 보충 설명.<br>
+AI와 함께 생각한 과정이 다음 작업의 조건으로 남는가. 이번 글은 그 기록과 재사용의 연결을 다룬다.</p>
+</blockquote>
+<h2 data-heading="🧠 주요 내용 / 본문" dir="auto">🧠 주요 내용 / 본문</h2>
+<h3 data-heading="AI 사용을 한 번의 응답으로 세면 놓치는 것" dir="auto">AI 사용을 한 번의 응답으로 세면 놓치는 것</h3>
+<p dir="auto">AI와의 작업을 평가하려면 그 작업이 다음 생각에 무엇을 남기는지까지 살펴볼 필요가 있다. 질문을 던져 답을 받는 순간에 이어, 답을 검토하고 고친 이유를 남기고 나중에 그 이유를 다시 불러오는 과정이 있다. 이 연결이 반복되면 어제의 작업은 오늘의 입력 조건을 바꾼다. 세션의 종료와 함께 모든 판단을 처음부터 다시 구성해야 하는 경우와는 다른 작업 방식이다.</p>
+<p dir="auto">안창현은 작업 세션의 과정까지 기록하고 반복해서 사용하는 자신의 실천을 설명하며, 집요한 맥락 설계와 그것을 받쳐 주는 기록 시스템을 핵심으로 짚었다. 여기서 생각할 것은 기록의 총량이 얼마나 큰가보다 그 기록이 다음 작업에서 어떤 역할을 하는가이다. 한 번의 요청에 얼마나 좋은 답을 받았는지만 보면, 이전 작업에서 쌓인 선택과 수정이 지금의 답을 가능하게 한 조건은 잘 보이지 않는다.</p>
+<p dir="auto"><a data-href="Your Brain on ChatGPT 논문의 강력 비판" href="Your Brain on ChatGPT 논문의 강력 비판" class="internal-link" target="_blank" rel="noopener nofollow">Your Brain on ChatGPT 논문의 강력 비판</a>에는 이 문제의 출발점이 이미 있다. 2025년 6월의 이 노트는 LLM을 사용했다는 사실만으로 상호작용의 차이를 충분히 설명할 수 있는지 묻는다. 특히 인간이 전체 지적 과정을 설계하고, 상황에 따라 도구를 선택하며, 프롬프트의 문제를 찾아 고치는 능력을 강조한다. 현재의 보충 설명은 그 설계에 시간의 길이를 더한다. 한 세션 안에서 잘 조합한 작업이 다음 세션에도 이어지려면, 어떤 선택을 했고 왜 고쳤는지 다시 접근할 수 있어야 한다.</p>
+<p dir="auto">프롬프트의 횟수와 길이는 그 과정의 일부를 기술한다. 그러나 같은 횟수의 대화를 했더라도 지난번의 오류를 알고 질문한 사람과 같은 오류를 처음 만난 사람의 작업 조건은 다르다. 무엇이 그 차이를 만들었는지 보려면 대화의 양과 함께 이전 맥락을 회수하고 활용하는 과정을 살펴봐야 한다. 이번 연결에서 기록 시스템이 중요한 이유가 여기에 있다.</p>
+<h3 data-heading="결과와 함께 판단의 경로를 남긴다" dir="auto">결과와 함께 판단의 경로를 남긴다</h3>
+<p dir="auto">완성된 결과물에는 선택 과정의 많은 부분이 드러나지 않는다. 자연스러운 한 문장이 남았을 때, 그 문장이 처음부터 적절했는지 여러 차례 고친 끝에 남았는지는 결과만으로 알기 어렵다. 이전 표현을 버린 이유도 사라지기 쉽다. 작업 과정을 기록하는 일은 결과가 매끄러워지면서 지워지는 판단의 흔적을 보존한다.</p>
+<p dir="auto">가령 AI와 글을 쓰는 상황을 생각해 볼 수 있다. 초안에 들어간 비유가 설명하려는 대상의 특징을 지나치게 단순화해서 삭제했다고 하자. 완성본만 남기면 다음 작업의 AI는 같은 비유를 다시 그럴듯하게 제안할 수 있다. 삭제한 표현과 그 이유가 남아 있고, 비슷한 질문에서 그 맥락을 다시 읽을 수 있다면 출발점이 달라진다. 지금 필요한 것은 “이 비유는 사용 금지”라는 명령 하나일 수도, 어떤 경우에만 부적절한지 설명하는 짧은 조건일 수도 있다. 이 장면은 설명을 위한 가정이며 사용자의 실제 작업 사례를 재현한 것은 아니다.</p>
+<p dir="auto">이때 다시 쓰는 것은 옛 답만이 아니다. 그 답을 받아들이거나 고치게 했던 조건까지 다시 쓴다. 과거에 거절했다는 사실만 남기면 유효한 재검토까지 막을 수 있고, 성공했다는 사실만 남기면 달라진 상황에서 같은 방법을 고집할 수 있다. 어떤 대상과 목적 아래에서 그런 판단을 했는지가 함께 남을 때 기록은 이후의 생각을 더 구체적으로 돕는다.</p>
+<p dir="auto">그래서 자세한 원문과 짧은 작업 맥락은 서로 다른 역할을 맡는다. 짧은 기록은 지금 무엇을 알아야 하는지 알려 주고, 원문은 그 짧은 기록이 의심스러울 때 돌아갈 자리를 제공한다. 요약이 원래의 뜻을 바꾸었는지, 당시의 확신이 실제 근거보다 컸는지 다시 확인할 수 있다는 점도 원문 보존의 가치다.</p>
+<h3 data-heading="메타인지에 시간을 붙이는 일" dir="auto">메타인지에 시간을 붙이는 일</h3>
+<p dir="auto"><a data-href="메타인지" href="메타인지" class="internal-link" target="_blank" rel="noopener nofollow">메타인지</a> 노트는 자신의 느낌과 앎의 상태를 한발 물러나 알아차리는 일을 설명한다. 이 정의를 작업 기록과 연결하면 질문의 시제가 달라진다. 지금 내가 무엇을 안다고 생각하는가에 더해, 그때는 무엇을 안다고 생각했고 무엇 때문에 판단을 바꾸었는가를 물을 수 있다.</p>
+<p dir="auto">기억만으로 과거의 사고를 설명하면 현재의 결론이 이전 과정에 덧씌워질 수 있다. 결과를 알고 난 뒤에는 원래부터 그 방향을 예상했다고 느끼기 쉽고, 수정 과정에서 중요했던 작은 단서를 잊을 수도 있다. 실제 질문과 답, 중간의 수정, 확인한 근거가 남아 있으면 현재의 설명을 당시 흔적과 대조할 수 있다. 기록이 메타인지를 돕는 자리는 이 대조에 있다.</p>
+<p dir="auto">이것은 자신을 계속 채점하라는 요구와는 거리가 있다. 이미 작업하면서 생긴 자료를 다음 사고에서 이용하는 문제다. 별도의 반성문을 매번 쓰지 않더라도, 어떤 설명을 고쳤는지와 그때 확인한 근거가 남아 있다면 이후 판단에 쓸 재료가 생긴다. 기록 시스템이 제공하는 것은 스스로를 돌아볼 기회와 근거이며, 그 자료를 어떻게 읽을지는 다시 판단해야 한다.</p>
+<p dir="auto">AI도 이 과정에 참여할 수 있다. 이전의 선택을 찾아 주고, 지금의 요청과 충돌하는 부분을 보여 주거나, 바뀐 조건을 정리하는 일을 맡길 수 있다. 그러려면 현재의 사용자 결정과 과거에 남긴 문장을 구별할 수 있어야 한다. 오래된 맥락을 잘 찾는 능력과 그것을 오늘도 유효한 것으로 다루어도 되는지 판단하는 능력은 함께 필요하다. 기록을 재사용한다는 것은 과거를 계속 복종할 명령으로 만드는 일이 아니다.</p>
+<h3 data-heading="모두 보존하더라도 지금 필요한 맥락은 고른다" dir="auto">모두 보존하더라도 지금 필요한 맥락은 고른다</h3>
+<p dir="auto">안창현이 말한 “싹다 기록”을 현재의 AI 입력을 언제나 최대한 길게 채우라는 뜻으로 읽을 필요는 없다. 자세한 흔적을 보존하는 층과 지금의 질문을 위해 읽는 층은 함께 설계할 수 있다. 오히려 원문으로 돌아갈 길이 확실할수록 당장 모든 내용을 한꺼번에 펼칠 필요가 줄어든다.</p>
+<p dir="auto">앞의 비유 수정 사례에서도 오늘 필요한 것은 옛 대화 전체가 아닐 수 있다. 비유를 고친 이유와 그것이 적용되던 조건을 먼저 읽고, 뜻이 불분명할 때 해당 대화 구간으로 돌아가는 방식이다. 기록을 보관하는 일, 필요한 부분을 찾는 일, 찾은 내용을 현재의 질문에 적용하는 일이 이어져야 한다. 어느 한 단계가 빠지면 자료가 많아도 같은 설명을 다시 해야 하는 상황이 생길 수 있다.</p>
+<p dir="auto">이 관점에서 context engineering은 다음 응답이 의지할 맥락을 계속 구성하고 갱신하는 일이다. 무엇을 이미 확인했고 무엇은 아직 가정인지, 어떤 선택이 현재 유효한지, 무엇이 바뀌어 다시 살펴봐야 하는지를 작업에 맞게 전달한다. 기록 시스템은 이 구성을 가능하게 하는 재료와 연결을 제공한다. 보존된 경험이 매번의 판단에 참여하도록 만드는 설계인 셈이다.</p>
+<p dir="auto">여기에는 수정 가능성도 포함된다. 잘 정리된 요약이 오래 살아남을수록 처음의 오류 역시 오래 반복될 수 있다. 원문과 요약의 관계, 현재의 결정과 과거의 결정 사이의 차이가 보이면 그 반복을 끊을 수 있다. 지속적인 기록의 가치는 한 번 얻은 결론을 영구히 고정하는 데 있지 않고, 다음 경험으로 결론을 더 정확히 고칠 수 있게 하는 데 있다.</p>
+<h3 data-heading="AI 연구에 요구한 근거를 내 사용에도 적용한다면" dir="auto">AI 연구에 요구한 근거를 내 사용에도 적용한다면</h3>
+<p dir="auto">이 질문을 실제 작업 세션의 기록에 가져오면 평가할 대상이 구체화된다. “AI를 쓴 사람”이라는 범주 안에서도 어떤 사람은 현재의 질문만 입력하고, 어떤 사람은 이전 작업의 근거와 수정 이력을 함께 활용한다. 같은 모델을 사용해도 주어진 맥락과 반복의 방식은 달라질 수 있다. 안창현이 지적한 기록 시스템의 유무는 이런 차이를 살펴보게 한다.</p>
+<p dir="auto">따라서 먼저 확인할 것은 시스템이 실제로 어떤 맥락을 가져왔고, 그 맥락이 다음 작업에 어떻게 쓰였는가이다. 이전에 바로잡은 오류를 다시 설명하지 않아도 되었는지, 조건이 달라진 옛 판단을 알아차릴 수 있었는지 같은 장면은 이 연결이 작동하는 모습을 보여 준다. 개인의 모든 인지 능력에 대한 결론까지 한 번에 내릴 필요 없이, 기록이 작업의 연속성을 바꾸는 지점부터 살펴볼 수 있다.</p>
+<p dir="auto">다만 기록 시스템이 다음 작업을 잘 이어 주었다는 사실과 사람이 그 내용을 자기 지식으로 갖게 되었다는 사실은 구별해야 한다. 전자는 이번 글의 중심이며, 후자는 시간이 지나 자기 말로 설명하고 다시 쓸 수 있는지를 묻는 별도의 질문과 이어진다. 두 질문을 구별하면 기록의 도움을 구체적으로 설명하면서도 기록량만으로 학습을 단정하지 않을 수 있다.</p>
+<p dir="auto">AI와 일하는 능력을 다음 세션에 무엇을 남기는가까지 넓혀 보면, 보이지 않던 일이 드러난다. 그때의 수정이 보존되고, 필요한 순간에 다시 읽히며, 새로운 조건에 맞게 고쳐지는 일이다. 작업이 끝날 때 남는 것은 완성품과 함께 다음 생각이 출발할 자리이기도 하다.</p>
+<p dir="auto"><img alt="보관된 작업 맥락을 선택해 다시 쓰고 수정 내용을 돌려놓는 순환" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1791094906700-d7bdb895-c539-4e35-9d58-7cbf4e26add2.png" referrerpolicy="no-referrer"></p>
+<p dir="auto"><em>큰 기록 보관함에서 필요한 카드만 현재 작업으로 가져오고, 수정한 맥락은 다시 보관한다. 기록의 보존과 지금 필요한 맥락의 선택이 함께 움직이는 모습을 표현한 AI 일러스트다. 인물과 공간은 실제 사용자를 재현한 것이 아니다.</em></p>
+<h2 data-heading="더 배워볼 거리" dir="auto">더 배워볼 거리</h2>
+<p dir="auto">Anthropic의 <a data-tooltip-position="top" aria-label="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" rel="noopener nofollow" class="external-link" href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank">「Effective context engineering for AI agents」</a>는 맥락을 유한한 자원으로 다루며, 필요한 정보를 작업 중에 불러오고 중요한 상태를 외부 노트에 남겼다가 다시 읽는 방식을 설명한다. 대화 압축에서는 이후에도 필요한 결정과 미해결 사항을 보존하는 선택이 중요하다고 본다. 이 글에서 가져올 관점은 저장된 자료 전체와 지금 모델이 읽을 자료를 구분하는 것이다. 이는 에이전트의 작업 지속성에 관한 공학적 설명이며 사람의 학습 향상을 입증한 연구는 아니다.</p>
+<p dir="auto">이를 앞의 글쓰기 예시에 적용한다면, 비유를 삭제한 이유는 다음 초안에서 바로 필요한 맥락이 될 수 있고 긴 원문 대화는 확인이 필요할 때 찾아갈 근거가 될 수 있다. 이 적용은 AI의 종합 제안이다. 원문은 얼마나 잘 남는가, 요약에서 어떤 조건이 빠지는가, 그 조건을 원문에서 다시 찾을 수 있는가를 서로 연결해 생각할 수 있다. 저장량을 늘리는 한 가지 목표로는 이 관계를 충분히 설명하기 어렵다.</p>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2506.08872v2" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2506.08872v2" target="_blank">「Your Brain on ChatGPT」의 현재 arXiv v2 초록</a>은 LLM, 검색 엔진, 도구를 쓰지 않는 조건에서 에세이를 작성한 집단과 일부 참가자의 조건 전환을 설명한다. 연구진은 뇌 연결성과 글의 소유감, 회상에서 차이를 보고한다. 이번에는 초록과 판본 정보를 직접 확인했으며, 개정 본문 전체의 방법과 분석을 재검토하지는 않았다. 따라서 2025년 6월에 작성한 개인 비판 노트의 모든 지적이 현재 판본에도 그대로 해당한다고 확정할 수는 없다.</p>
+<p dir="auto">여기서 이어갈 질문은 기록과 재사용을 포함한 작업 방식을 어떤 단위로 설명할 것인가이다. 완성된 에세이의 비교에 더해, 이전 판단이 이후 작업에 참여하는 과정을 관찰하려면 무엇이 보여야 할까. 이 질문은 본 논문의 결과를 기록 시스템 부재 하나로 설명했다는 결론과 구별된다. 안창현의 작업 경험이 던지는 문제를 연구의 새로운 질문으로 가져가는 방향이다.</p>
+<h2 data-heading="내면 질문" dir="auto">내면 질문</h2>
+<h3 data-heading="1) 이 노트가 내 사고에 어떤 점을 던져주었는가?" dir="auto">1) 이 노트가 내 사고에 어떤 점을 던져주었는가?</h3>
+<p dir="auto">AI의 응답이 만들어지는 조건을 볼 때 현재 질문 앞에 놓인 시간까지 포함할 수 있다. 이전 세션에서 고친 내용과 찾아낸 근거가 지금의 작업에 들어왔다면, 이번 응답에는 그 축적도 참여한다. 잘된 결과를 모델의 능력 하나에 돌리거나, 잘못된 결과를 사용자의 한 번의 질문으로만 설명하면 이 조건을 놓칠 수 있다. 지금의 판단을 가능하게 한 맥락이 무엇이었는지를 돌아볼 이유가 생긴다.</p>
+<h3 data-heading="2) 지금의 나와 어떻게 연결되는가?" dir="auto">2) 지금의 나와 어떻게 연결되는가?</h3>
+<p dir="auto">작업 과정까지 기록하고 반복해서 사용하는 실천은 이미 이번 보충 설명에 들어 있다. 이 글은 그 실천을 새 숙제로 바꾸기보다, 기록 시스템이 무엇을 이어 주는지 설명할 언어를 제안한다. 이전 판단의 조건과 수정 이유가 다시 쓰이는 장면을 찾으면 기록의 효용을 더 구체적으로 말할 수 있다. 동시에 잘 보존된 자료 가운데 아직 쓰이지 않은 것이 있다고 해서 그것을 개인의 학습 실패로 판정할 필요도 없다.</p>
+<h3 data-heading="3) 앞으로 어떤 실천/의미로 확장될 수 있을까?" dir="auto">3) 앞으로 어떤 실천/의미로 확장될 수 있을까?</h3>
+<p dir="auto">다음에 이미 해 본 작업을 이어갈 때, 지난번과 출발점이 어떻게 달라졌는지 눈여겨볼 수 있다. 되풀이하지 않아도 된 설명이 무엇인지, 다시 검토하게 된 조건은 무엇인지가 그 차이를 드러낸다. 이것을 매일의 점수나 별도 기록량으로 만들 필요는 없다. 현재의 기록 안에서 과거의 수정이 다음 판단에 실제로 참여하는 장면을 발견하는 것만으로도 이 시스템이 맡는 역할을 더 정확히 이해할 수 있다.</p>
+<h2 data-heading="AI의 노트" dir="auto">AI의 노트</h2>
+<p dir="auto">이 글은 GPT-6 Astra(gpt-6-astra / xhigh)가 작성하고 같은 모델이 본문 전체의 의미와 근거를 재검토했다. 안창현의 2026년 10월 4일 보충 설명과 두 원문 노트를 중심으로, 작업 세션의 기록과 반복 재사용을 사고의 연속성이라는 관점으로 연결했다. 설명을 위한 글쓰기 장면은 가정으로 표시했으며 사용자의 실제 경험으로 만들지 않았다.</p>
+<p dir="auto">두 원문은 현재 내용을 직접 읽었고, 외부 자료는 Anthropic 글의 맥락 관리·회수·지속 노트 설명과 논문의 v2 초록·판본 정보 범위에서 사용했다. 공학적 작업 지속성과 사람의 인지 효과를 같은 증거로 취급하지 않았으며, 논문에서 보고한 차이의 원인을 기록 시스템 부재로 확정하지 않았다. 이 검토는 같은 모델의 편집 검토이며 독립 심사나 사용자의 읽음·학습·실천 결과를 뜻하지 않는다.</p>
+<p dir="auto">이 연결에서 더 생각해 볼 지점은 기록을 돌아볼 수 있는 가능성과 실제로 다시 읽는 행위 사이의 간격이다. 기록 시스템은 과거의 선택을 다음 작업에 참여시킬 수 있게 한다. 그 참여가 이루어지는 순간에는 기록도 다시 해석되고 수정된다. 생각을 이어 간다는 것은 지난 결론을 그대로 반복하는 일보다, 그 결론이 만들어진 조건을 가지고 다음 질문 앞에 서는 일에 가깝다.</p>
+
+<p dir="auto">이 새 노트는 AI가 정리한 해석입니다. 원래 대화와 사용자 결정이 우선하며, 기존 노트를 수정하지 않았습니다.</p></article>
+</main>
+
+<footer class="cmds-meta">
+	
+	<a href="https://cmdspace.work" target="_blank" rel="noopener"><img src="https://cmdspace.work/assets/logos/cmds-logo-round.png" alt="CMDSPACE"></a>
+	<span>Shared via <a href="https://github.com/johnfkoo951/cmds-share" target="_blank" rel="noopener">CMDS Share</a></span>
+	<span class="cmds-theme-note">Theme: Mono</span>
+	
+</footer>
+
+
+<script type="application/json" id="graph-data">{"title":"2026-10-04 AI와의 작업을 다음 생각의 맥락으로 남기는 일","nodes":[{"label":"2026-10-04 AI와의 작업을 다음 생각의 맥락으로 남기는 일","type":"note","level":0},{"label":"Your Brain on ChatGPT 논문의 강력 비판","type":"note","level":1},{"label":"메타인지","type":"note","level":1},{"label":"#Context_Engineering","type":"tag","level":1},{"label":"#인간-AI_협업/메타인지","type":"tag","level":1},{"label":"#개인지식관리_PKM","type":"tag","level":1},{"label":"#작업기록","type":"tag","level":1},{"label":"#사고의_연속성","type":"tag","level":1},{"label":"Your Brain on ChatGPT Accumulation of Cognitive Debt when Using an AI Assistant for Essay Writing Task","type":"note","level":2},{"label":"RAG (Retrieval-Augmented Generation) AI_TerminologyRAG AI_TerminologyRetrieval-Augmented-Generation","type":"note","level":2},{"label":"3. RAG vs. Non-RAG Hallucinations","type":"note","level":2}],"edges":[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[1,8],[1,2],[1,9],[1,10]]}</script>
+<script type="text/plain" id="md-source">CiMjIPCfk50gS2V5IFRyaWdnZXIgKDHigJMzIGxpbmVzKQoKPiDigJzsnpHsl4Ug7IS47IWYIOqzvOyglSDsnbTrn7Ag7KCV64+E6rmM7KeAIOyLueuLpCDquLDroZ3snLzroZwg64Ko6riw6rOgIOuwmOuzte2VmOqzoCDtlZjripQg7KCV64+E7J2YIOynkeyalO2VnCBjb250ZXh0IGVuZ2luZWVyaW5n4oCdIOKAlCDslYjssL3tmIQsIDIwMjYtMTAtMDQg67O07LapIOyEpOuqhS4KPiBBSeyZgCDtlajqu5gg7IOd6rCB7ZWcIOqzvOygleydtCDri6TsnYwg7J6R7JeF7J2YIOyhsOqxtOycvOuhnCDrgqjripTqsIAuIOydtOuyiCDquIDsnYAg6re4IOq4sOuhneqzvCDsnqzsgqzsmqnsnZgg7Jew6rKw7J2EIOuLpOujrOuLpC4KCiMjIPCfp6Ag7KO87JqUIOuCtOyaqSAvIOuzuOusuAoKIyMjIEFJIOyCrOyaqeydhCDtlZwg67KI7J2YIOydkeuLteycvOuhnCDshLjrqbQg64aT7LmY64qUIOqygwoKQUnsmYDsnZgg7J6R7JeF7J2EIO2PieqwgO2VmOugpOuptCDqt7gg7J6R7JeF7J20IOuLpOydjCDsg53qsIHsl5Ag66y07JeH7J2EIOuCqOq4sOuKlOyngOq5jOyngCDsgrTtjrTrs7wg7ZWE7JqU6rCAIOyeiOuLpC4g7KeI66y47J2EIOuNmOyguCDri7XsnYQg67Cb64qUIOyInOqwhOyXkCDsnbTslrQsIOuLteydhCDqsoDthqDtlZjqs6Ag6rOg7LmcIOydtOycoOulvCDrgqjquLDqs6Ag64KY7KSR7JeQIOq3uCDsnbTsnKDrpbwg64uk7IucIOu2iOufrOyYpOuKlCDqs7zsoJXsnbQg7J6I64ukLiDsnbQg7Jew6rKw7J20IOuwmOuzteuQmOuptCDslrTsoJzsnZgg7J6R7JeF7J2AIOyYpOuKmOydmCDsnoXroKUg7KGw6rG07J2EIOuwlOq+vOuLpC4g7IS47IWY7J2YIOyiheujjOyZgCDtlajqu5gg66qo65OgIO2MkOuLqOydhCDsspjsnYzrtoDthLAg64uk7IucIOq1rOyEse2VtOyVvCDtlZjripQg6rK97Jqw7JmA64qUIOuLpOuluCDsnpHsl4Ug67Cp7Iud7J2064ukLgoK7JWI7LC97ZiE7J2AIOyekeyXhSDshLjshZjsnZgg6rO87KCV6rmM7KeAIOq4sOuhne2VmOqzoCDrsJjrs7XtlbTshJwg7IKs7Jqp7ZWY64qUIOyekOyLoOydmCDsi6TsspzsnYQg7ISk66qF7ZWY66mwLCDsp5HsmpTtlZwg66el6529IOyEpOqzhOyZgCDqt7jqsoPsnYQg67Cb7LOQIOyjvOuKlCDquLDroZ0g7Iuc7Iqk7YWc7J2EIO2VteyLrOycvOuhnCDsp5rsl4jri6QuIOyXrOq4sOyEnCDsg53qsIHtlaAg6rKD7J2AIOq4sOuhneydmCDstJ3rn4nsnbQg7Ja866eI64KYIO2BsOqwgOuztOuLpCDqt7gg6riw66Gd7J20IOuLpOydjCDsnpHsl4Xsl5DshJwg7Ja065akIOyXre2VoOydhCDtlZjripTqsIDsnbTri6QuIO2VnCDrsojsnZgg7JqU7LKt7JeQIOyWvOuniOuCmCDsoovsnYAg64u17J2EIOuwm+yVmOuKlOyngOunjCDrs7TrqbQsIOydtOyghCDsnpHsl4Xsl5DshJwg7IyT7J24IOyEoO2DneqzvCDsiJjsoJXsnbQg7KeA6riI7J2YIOuLteydhCDqsIDriqXtlZjqsowg7ZWcIOyhsOqxtOydgCDsnpgg67O07J207KeAIOyViuuKlOuLpC4KCltbWW91ciBCcmFpbiBvbiBDaGF0R1BUIOuFvOusuOydmCDqsJXroKUg67mE7YyQXV3sl5DripQg7J20IOusuOygnOydmCDstpzrsJzsoJDsnbQg7J2066+4IOyeiOuLpC4gMjAyNeuFhCA27JuU7J2YIOydtCDrhbjtirjripQgTExN7J2EIOyCrOyaqe2WiOuLpOuKlCDsgqzsi6Trp4zsnLzroZwg7IOB7Zi47J6R7Jqp7J2YIOywqOydtOulvCDstqnrtoTtnogg7ISk66qF7ZWgIOyImCDsnojripTsp4Ag66y764qU64ukLiDtirntnogg7J246rCE7J20IOyghOyytCDsp4DsoIEg6rO87KCV7J2EIOyEpOqzhO2VmOqzoCwg7IOB7Zmp7JeQIOuUsOudvCDrj4Tqtazrpbwg7ISg7YOd7ZWY66mwLCDtlITroaztlITtirjsnZgg66y47KCc66W8IOywvuyVhCDqs6DsuZjripQg64ql66Cl7J2EIOqwleyhsO2VnOuLpC4g7ZiE7J6s7J2YIOuztOy2qSDshKTrqoXsnYAg6re4IOyEpOqzhOyXkCDsi5zqsITsnZgg6ri47J2066W8IOuNlO2VnOuLpC4g7ZWcIOyEuOyFmCDslYjsl5DshJwg7J6YIOyhsO2Vqe2VnCDsnpHsl4XsnbQg64uk7J2MIOyEuOyFmOyXkOuPhCDsnbTslrTsp4DroKTrqbQsIOyWtOuWpCDshKDtg53snYQg7ZaI6rOgIOyZnCDqs6Dss6TripTsp4Ag64uk7IucIOygkeq3vO2VoCDsiJgg7J6I7Ja07JW8IO2VnOuLpC4KCu2UhOuhrO2UhO2KuOydmCDtmp/siJjsmYAg6ri47J2064qUIOq3uCDqs7zsoJXsnZgg7J2867aA66W8IOq4sOyIoO2VnOuLpC4g6re465+s64KYIOqwmeydgCDtmp/siJjsnZgg64yA7ZmU66W8IO2WiOuNlOudvOuPhCDsp4DrgpzrsojsnZgg7Jik66WY66W8IOyVjOqzoCDsp4jrrLjtlZwg7IKs656M6rO8IOqwmeydgCDsmKTrpZjrpbwg7LKY7J2MIOunjOuCnCDsgqzrnozsnZgg7J6R7JeFIOyhsOqxtOydgCDri6TrpbTri6QuIOustOyXh+ydtCDqt7gg7LCo7J2066W8IOunjOuTpOyXiOuKlOyngCDrs7TroKTrqbQg64yA7ZmU7J2YIOyWkeqzvCDtlajqu5gg7J207KCEIOunpeudveydhCDtmozsiJjtlZjqs6Ag7Zmc7Jqp7ZWY64qUIOqzvOygleydhCDsgrTtjrTrtJDslbwg7ZWc64ukLiDsnbTrsogg7Jew6rKw7JeQ7IScIOq4sOuhnSDsi5zsiqTthZzsnbQg7KSR7JqU7ZWcIOydtOycoOqwgCDsl6zquLDsl5Ag7J6I64ukLgoKIyMjIOqysOqzvOyZgCDtlajqu5gg7YyQ64uo7J2YIOqyveuhnOulvCDrgqjquLTri6QKCuyZhOyEseuQnCDqsrDqs7zrrLzsl5DripQg7ISg7YOdIOqzvOygleydmCDrp47snYAg67aA67aE7J20IOuTnOufrOuCmOyngCDslYrripTri6QuIOyekOyXsOyKpOufrOyatCDtlZwg66y47J6l7J20IOuCqOyVmOydhCDrlYwsIOq3uCDrrLjsnqXsnbQg7LKY7J2M67aA7YSwIOyggeygiO2WiOuKlOyngCDsl6zrn6wg7LCo66GAIOqzoOy5nCDrgZ3sl5Ag64Ko7JWY64qU7KeA64qUIOqysOqzvOunjOycvOuhnCDslYzquLAg7Ja066C164ukLiDsnbTsoIQg7ZGc7ZiE7J2EIOuyhOumsCDsnbTsnKDrj4Qg7IKs65287KeA6riwIOyJveuLpC4g7J6R7JeFIOqzvOygleydhCDquLDroZ3tlZjripQg7J287J2AIOqysOqzvOqwgCDrp6TrgYTrn6zsm4zsp4DrqbTshJwg7KeA7JuM7KeA64qUIO2MkOuLqOydmCDtnZTsoIHsnYQg67O07KG07ZWc64ukLgoK6rCA66C5IEFJ7JmAIOq4gOydhCDsk7DripQg7IOB7Zmp7J2EIOyDneqwge2VtCDrs7wg7IiYIOyeiOuLpC4g7LSI7JWI7JeQIOuTpOyWtOqwhCDruYTsnKDqsIAg7ISk66qF7ZWY66Ck64qUIOuMgOyDgeydmCDtirnsp5XsnYQg7KeA64KY7LmY6rKMIOuLqOyInO2ZlO2VtOyEnCDsgq3soJztlojri6Tqs6Ag7ZWY7J6QLiDsmYTshLHrs7jrp4wg64Ko6riw66m0IOuLpOydjCDsnpHsl4XsnZggQUnripQg6rCZ7J2AIOu5hOycoOulvCDri6Tsi5wg6re465+065Ov7ZWY6rKMIOygnOyViO2VoCDsiJgg7J6I64ukLiDsgq3soJztlZwg7ZGc7ZiE6rO8IOq3uCDsnbTsnKDqsIAg64Ko7JWEIOyeiOqzoCwg67mE7Iq37ZWcIOyniOusuOyXkOyEnCDqt7gg66el65297J2EIOuLpOyLnCDsnb3snYQg7IiYIOyeiOuLpOuptCDstpzrsJzsoJDsnbQg64us65287KeE64ukLiDsp4DquIgg7ZWE7JqU7ZWcIOqyg+ydgCDigJzsnbQg67mE7Jyg64qUIOyCrOyaqSDquIjsp4DigJ3rnbzripQg66qF66C5IO2VmOuCmOydvCDsiJjrj4QsIOyWtOuWpCDqsr3smrDsl5Drp4wg67aA7KCB7KCI7ZWc7KeAIOyEpOuqhe2VmOuKlCDsp6fsnYAg7KGw6rG07J28IOyImOuPhCDsnojri6QuIOydtCDsnqXrqbTsnYAg7ISk66qF7J2EIOychO2VnCDqsIDsoJXsnbTrqbAg7IKs7Jqp7J6Q7J2YIOyLpOygnCDsnpHsl4Ug7IKs66GA66W8IOyerO2YhO2VnCDqsoPsnYAg7JWE64uI64ukLgoK7J2065WMIOuLpOyLnCDsk7DripQg6rKD7J2AIOyYmyDri7Xrp4zsnbQg7JWE64uI64ukLiDqt7gg64u17J2EIOuwm+yVhOuTpOydtOqxsOuCmCDqs6DsuZjqsowg7ZaI642YIOyhsOqxtOq5jOyngCDri6Tsi5wg7JO064ukLiDqs7zqsbDsl5Ag6rGw7KCI7ZaI64uk64qUIOyCrOyLpOunjCDrgqjquLDrqbQg7Jyg7Zqo7ZWcIOyerOqygO2GoOq5jOyngCDrp4nsnYQg7IiYIOyeiOqzoCwg7ISx6rO17ZaI64uk64qUIOyCrOyLpOunjCDrgqjquLDrqbQg64us65287KeEIOyDge2ZqeyXkOyEnCDqsJnsnYAg67Cp67KV7J2EIOqzoOynke2VoCDsiJgg7J6I64ukLiDslrTrlqQg64yA7IOB6rO8IOuqqeyggSDslYTrnpjsl5DshJwg6re465+wIO2MkOuLqOydhCDtlojripTsp4DqsIAg7ZWo6ruYIOuCqOydhCDrlYwg6riw66Gd7J2AIOydtO2bhOydmCDsg53qsIHsnYQg642UIOq1rOyytOyggeycvOuhnCDrj5XripTri6QuCgrqt7jrnpjshJwg7J6Q7IS47ZWcIOybkOusuOqzvCDsp6fsnYAg7J6R7JeFIOunpeudveydgCDshJzroZwg64uk66W4IOyXre2VoOydhCDrp6HripTri6QuIOynp+ydgCDquLDroZ3snYAg7KeA6riIIOustOyXh+ydhCDslYzslYTslbwg7ZWY64qU7KeAIOyVjOugpCDso7zqs6AsIOybkOusuOydgCDqt7gg7Ken7J2AIOq4sOuhneydtCDsnZjsi6zsiqTrn6zsmrgg65WMIOuPjOyVhOqwiCDsnpDrpqzrpbwg7KCc6rO17ZWc64ukLiDsmpTslb3snbQg7JuQ656Y7J2YIOucu+ydhCDrsJTqvrjsl4jripTsp4AsIOuLueyLnOydmCDtmZXsi6DsnbQg7Iuk7KCcIOq3vOqxsOuztOuLpCDsu7jripTsp4Ag64uk7IucIO2ZleyduO2VoCDsiJgg7J6I64uk64qUIOygkOuPhCDsm5DrrLgg67O07KG07J2YIOqwgOy5mOuLpC4KCiMjIyDrqZTtg4Dsnbjsp4Dsl5Ag7Iuc6rCE7J2EIOu2meydtOuKlCDsnbwKCltb66mU7YOA7J247KeAXV0g64W47Yq464qUIOyekOyLoOydmCDripDrgozqs7wg7JWO7J2YIOyDge2DnOulvCDtlZzrsJwg66y865+s64KYIOyVjOyVhOywqOumrOuKlCDsnbzsnYQg7ISk66qF7ZWc64ukLiDsnbQg7KCV7J2Y66W8IOyekeyXhSDquLDroZ3qs7wg7Jew6rKw7ZWY66m0IOyniOusuOydmCDsi5zsoJzqsIAg64us65287KeE64ukLiDsp4DquIgg64K06rCAIOustOyXh+ydhCDslYjri6Tqs6Ag7IOd6rCB7ZWY64qU6rCA7JeQIOuNlO2VtCwg6re465WM64qUIOustOyXh+ydhCDslYjri6Tqs6Ag7IOd6rCB7ZaI6rOgIOustOyXhyDrlYzrrLjsl5Ag7YyQ64uo7J2EIOuwlOq+uOyXiOuKlOqwgOulvCDrrLzsnYQg7IiYIOyeiOuLpC4KCuq4sOyWteunjOycvOuhnCDqs7zqsbDsnZgg7IKs6rOg66W8IOyEpOuqhe2VmOuptCDtmITsnqzsnZgg6rKw66Gg7J20IOydtOyghCDqs7zsoJXsl5Ag642n7JSM7JuM7KeIIOyImCDsnojri6QuIOqysOqzvOulvCDslYzqs6Ag64KcIOuSpOyXkOuKlCDsm5DrnpjrtoDthLAg6re4IOuwqe2WpeydhCDsmIjsg4Htlojri6Tqs6Ag64qQ64G86riwIOyJveqzoCwg7IiY7KCVIOqzvOygleyXkOyEnCDspJHsmpTtlojrjZgg7J6R7J2AIOuLqOyEnOulvCDsnorsnYQg7IiY64+EIOyeiOuLpC4g7Iuk7KCcIOyniOusuOqzvCDri7UsIOykkeqwhOydmCDsiJjsoJUsIO2ZleyduO2VnCDqt7zqsbDqsIAg64Ko7JWEIOyeiOycvOuptCDtmITsnqzsnZgg7ISk66qF7J2EIOuLueyLnCDtnZTsoIHqs7wg64yA7KGw7ZWgIOyImCDsnojri6QuIOq4sOuhneydtCDrqZTtg4Dsnbjsp4Drpbwg64+V64qUIOyekOumrOuKlCDsnbQg64yA7KGw7JeQIOyeiOuLpC4KCuydtOqyg+ydgCDsnpDsi6DsnYQg6rOE7IaNIOyxhOygkO2VmOudvOuKlCDsmpTqtazsmYDripQg6rGw66as6rCAIOyeiOuLpC4g7J2066+4IOyekeyXhe2VmOuptOyEnCDsg53quLQg7J6Q66OM66W8IOuLpOydjCDsgqzqs6Dsl5DshJwg7J207Jqp7ZWY64qUIOusuOygnOuLpC4g67OE64+E7J2YIOuwmOyEseusuOydhCDrp6Trsogg7JOw7KeAIOyViuuNlOudvOuPhCwg7Ja065akIOyEpOuqheydhCDqs6Dss6TripTsp4DsmYAg6re465WMIO2ZleyduO2VnCDqt7zqsbDqsIAg64Ko7JWEIOyeiOuLpOuptCDsnbTtm4Qg7YyQ64uo7JeQIOyTuCDsnqzro4zqsIAg7IOd6ri064ukLiDquLDroZ0g7Iuc7Iqk7YWc7J20IOygnOqzte2VmOuKlCDqsoPsnYAg7Iqk7Iqk66Gc66W8IOuPjOyVhOuzvCDquLDtmozsmYAg6re86rGw7J2066mwLCDqt7gg7J6Q66OM66W8IOyWtOuWu+qyjCDsnb3snYTsp4DripQg64uk7IucIO2MkOuLqO2VtOyVvCDtlZzri6QuCgpBSeuPhCDsnbQg6rO87KCV7JeQIOywuOyXrO2VoCDsiJgg7J6I64ukLiDsnbTsoITsnZgg7ISg7YOd7J2EIOywvuyVhCDso7zqs6AsIOyngOq4iOydmCDsmpTssq3qs7wg7Lap64+M7ZWY64qUIOu2gOu2hOydhCDrs7Tsl6wg7KO86rGw64KYLCDrsJTrgJAg7KGw6rG07J2EIOygleumrO2VmOuKlCDsnbzsnYQg66eh6ri4IOyImCDsnojri6QuIOq3uOufrOugpOuptCDtmITsnqzsnZgg7IKs7Jqp7J6QIOqysOygleqzvCDqs7zqsbDsl5Ag64Ko6ri0IOusuOyepeydhCDqtazrs4TtlaAg7IiYIOyeiOyWtOyVvCDtlZzri6QuIOyYpOuemOuQnCDrp6Xrnb3snYQg7J6YIOywvuuKlCDriqXroKXqs7wg6re46rKD7J2EIOyYpOuKmOuPhCDsnKDtmqjtlZwg6rKD7Jy866GcIOuLpOujqOyWtOuPhCDrkJjripTsp4Ag7YyQ64uo7ZWY64qUIOuKpeugpeydgCDtlajqu5gg7ZWE7JqU7ZWY64ukLiDquLDroZ3snYQg7J6s7IKs7Jqp7ZWc64uk64qUIOqyg+ydgCDqs7zqsbDrpbwg6rOE7IaNIOuzteyihe2VoCDrqoXroLnsnLzroZwg66eM65Oc64qUIOydvOydtCDslYTri4jri6QuCgojIyMg66qo65GQIOuztOyhtO2VmOuNlOudvOuPhCDsp4DquIgg7ZWE7JqU7ZWcIOunpeudveydgCDqs6Drpbjri6QKCuyViOywve2YhOydtCDrp5DtlZwg4oCc7Iu564ukIOq4sOuhneKAneydhCDtmITsnqzsnZggQUkg7J6F66Cl7J2EIOyWuOygnOuCmCDstZzrjIDtlZwg6ri46rKMIOyxhOyasOudvOuKlCDrnLvsnLzroZwg7J297J2EIO2VhOyalOuKlCDsl4bri6QuIOyekOyEuO2VnCDtnZTsoIHsnYQg67O07KG07ZWY64qUIOy4teqzvCDsp4DquIjsnZgg7KeI66y47J2EIOychO2VtCDsnb3ripQg7Li17J2AIO2VqOq7mCDshKTqs4TtlaAg7IiYIOyeiOuLpC4g7Jik7Z6I66CkIOybkOusuOycvOuhnCDrj4zslYTqsIgg6ri47J20IO2ZleyLpO2VoOyImOuhnSDri7nsnqUg66qo65OgIOuCtOyaqeydhCDtlZzqurzrsojsl5Ag7Y687LmgIO2VhOyalOqwgCDspITslrTrk6Dri6QuCgrslZ7snZgg67mE7JygIOyImOyglSDsgqzroYDsl5DshJzrj4Qg7Jik64qYIO2VhOyalO2VnCDqsoPsnYAg7JibIOuMgO2ZlCDsoITssrTqsIAg7JWE64uQIOyImCDsnojri6QuIOu5hOycoOulvCDqs6DsuZwg7J207Jyg7JmAIOq3uOqyg+ydtCDsoIHsmqnrkJjrjZgg7KGw6rG07J2EIOuovOyggCDsnb3qs6AsIOucu+ydtCDrtojrtoTrqoXtlaAg65WMIO2VtOuLuSDrjIDtmZQg6rWs6rCE7Jy866GcIOuPjOyVhOqwgOuKlCDrsKnsi53snbTri6QuIOq4sOuhneydhCDrs7TqtIDtlZjripQg7J28LCDtlYTsmpTtlZwg67aA67aE7J2EIOywvuuKlCDsnbwsIOywvuydgCDrgrTsmqnsnYQg7ZiE7J6s7J2YIOyniOusuOyXkCDsoIHsmqntlZjripQg7J287J20IOydtOyWtOyguOyVvCDtlZzri6QuIOyWtOuKkCDtlZwg64uo6rOE6rCAIOu5oOyngOuptCDsnpDro4zqsIAg66eO7JWE64+EIOqwmeydgCDshKTrqoXsnYQg64uk7IucIO2VtOyVvCDtlZjripQg7IOB7Zmp7J20IOyDneq4uCDsiJgg7J6I64ukLgoK7J20IOq0gOygkOyXkOyEnCBjb250ZXh0IGVuZ2luZWVyaW5n7J2AIOuLpOydjCDsnZHri7XsnbQg7J2Y7KeA7ZWgIOunpeudveydhCDqs4Tsho0g6rWs7ISx7ZWY6rOgIOqwseyLoO2VmOuKlCDsnbzsnbTri6QuIOustOyXh+ydhCDsnbTrr7gg7ZmV7J247ZaI6rOgIOustOyXh+ydgCDslYTsp4Eg6rCA7KCV7J247KeALCDslrTrlqQg7ISg7YOd7J20IO2YhOyerCDsnKDtmqjtlZzsp4AsIOustOyXh+ydtCDrsJTrgIzslrQg64uk7IucIOyCtO2OtOu0kOyVvCDtlZjripTsp4Drpbwg7J6R7JeF7JeQIOunnuqyjCDsoITri6ztlZzri6QuIOq4sOuhnSDsi5zsiqTthZzsnYAg7J20IOq1rOyEseydhCDqsIDriqXtlZjqsowg7ZWY64qUIOyerOujjOyZgCDsl7DqsrDsnYQg7KCc6rO17ZWc64ukLiDrs7TsobTrkJwg6rK97ZeY7J20IOunpOuyiOydmCDtjJDri6jsl5Ag7LC47Jes7ZWY64+E66GdIOunjOuTnOuKlCDshKTqs4Tsnbgg7IWI7J2064ukLgoK7Jes6riw7JeQ64qUIOyImOyglSDqsIDriqXshLHrj4Qg7Y+s7ZWo65Cc64ukLiDsnpgg7KCV66as65CcIOyalOyVveydtCDsmKTrnpgg7IK07JWE64Ko7J2E7IiY66GdIOyymOydjOydmCDsmKTrpZgg7Jet7IucIOyYpOuemCDrsJjrs7XrkKAg7IiYIOyeiOuLpC4g7JuQ66y46rO8IOyalOyVveydmCDqtIDqs4QsIO2YhOyerOydmCDqsrDsoJXqs7wg6rO86rGw7J2YIOqysOyglSDsgqzsnbTsnZgg7LCo7J206rCAIOuztOydtOuptCDqt7gg67CY67O17J2EIOuBiuydhCDsiJgg7J6I64ukLiDsp4Dsho3soIHsnbgg6riw66Gd7J2YIOqwgOy5mOuKlCDtlZwg67KIIOyWu+ydgCDqsrDroaDsnYQg7JiB6rWs7Z6IIOqzoOygle2VmOuKlCDrjbAg7J6I7KeAIOyViuqzoCwg64uk7J2MIOqyve2XmOycvOuhnCDqsrDroaDsnYQg642UIOygle2Zle2eiCDqs6DsuaAg7IiYIOyeiOqyjCDtlZjripQg642wIOyeiOuLpC4KCiMjIyBBSSDsl7Dqtazsl5Ag7JqU6rWs7ZWcIOq3vOqxsOulvCDrgrQg7IKs7Jqp7JeQ64+EIOyggeyaqe2VnOuLpOuptAoK7J20IOyniOusuOydhCDsi6TsoJwg7J6R7JeFIOyEuOyFmOydmCDquLDroZ3sl5Ag6rCA7KC47Jik66m0IO2PieqwgO2VoCDrjIDsg4HsnbQg6rWs7LK07ZmU65Cc64ukLiDigJxBSeulvCDsk7Qg7IKs656M4oCd7J20652864qUIOuylOyjvCDslYjsl5DshJzrj4Qg7Ja065akIOyCrOuejOydgCDtmITsnqzsnZgg7KeI66y466eMIOyeheugpe2VmOqzoCwg7Ja065akIOyCrOuejOydgCDsnbTsoIQg7J6R7JeF7J2YIOq3vOqxsOyZgCDsiJjsoJUg7J2066Cl7J2EIO2VqOq7mCDtmZzsmqntlZzri6QuIOqwmeydgCDrqqjrjbjsnYQg7IKs7Jqp7ZW064+EIOyjvOyWtOynhCDrp6Xrnb3qs7wg67CY67O17J2YIOuwqeyLneydgCDri6zrnbzsp4gg7IiYIOyeiOuLpC4g7JWI7LC97ZiE7J20IOyngOygge2VnCDquLDroZ0g7Iuc7Iqk7YWc7J2YIOycoOustOuKlCDsnbTrn7Ag7LCo7J2066W8IOyCtO2OtOuztOqyjCDtlZzri6QuCgrrlLDrnbzshJwg66i87KCAIO2ZleyduO2VoCDqsoPsnYAg7Iuc7Iqk7YWc7J20IOyLpOygnOuhnCDslrTrlqQg66el65297J2EIOqwgOyguOyZlOqzoCwg6re4IOunpeudveydtCDri6TsnYwg7J6R7JeF7JeQIOyWtOuWu+qyjCDsk7DsmIDripTqsIDsnbTri6QuIOydtOyghOyXkCDrsJTroZzsnqHsnYAg7Jik66WY66W8IOuLpOyLnCDshKTrqoXtlZjsp4Ag7JWK7JWE64+EIOuQmOyXiOuKlOyngCwg7KGw6rG07J20IOuLrOudvOynhCDsmJsg7YyQ64uo7J2EIOyVjOyVhOywqOumtCDsiJgg7J6I7JeI64qU7KeAIOqwmeydgCDsnqXrqbTsnYAg7J20IOyXsOqysOydtCDsnpHrj5ntlZjripQg66qo7Iq17J2EIOuztOyXrCDspIDri6QuIOqwnOyduOydmCDrqqjrk6Ag7J247KeAIOuKpeugpeyXkCDrjIDtlZwg6rKw66Gg6rmM7KeAIO2VnCDrsojsl5Ag64K066a0IO2VhOyalCDsl4bsnbQsIOq4sOuhneydtCDsnpHsl4XsnZgg7Jew7IaN7ISx7J2EIOuwlOq+uOuKlCDsp4DsoJDrtoDthLAg7IK07Y6067O8IOyImCDsnojri6QuCgrri6Trp4wg6riw66GdIOyLnOyKpO2FnOydtCDri6TsnYwg7J6R7JeF7J2EIOyemCDsnbTslrQg7KO87JeI64uk64qUIOyCrOyLpOqzvCDsgqzrnozsnbQg6re4IOuCtOyaqeydhCDsnpDquLAg7KeA7Iud7Jy866GcIOqwluqyjCDrkJjsl4jri6TripQg7IKs7Iuk7J2AIOq1rOuzhO2VtOyVvCDtlZzri6QuIOyghOyekOuKlCDsnbTrsogg6riA7J2YIOykkeyLrOydtOupsCwg7ZuE7J6Q64qUIOyLnOqwhOydtCDsp4Drgpgg7J6Q6riwIOunkOuhnCDshKTrqoXtlZjqs6Ag64uk7IucIOyTuCDsiJgg7J6I64qU7KeA66W8IOusu+uKlCDrs4Trj4TsnZgg7KeI66y46rO8IOydtOyWtOynhOuLpC4g65GQIOyniOusuOydhCDqtazrs4TtlZjrqbQg6riw66Gd7J2YIOuPhOybgOydhCDqtazssrTsoIHsnLzroZwg7ISk66qF7ZWY66m07ISc64+EIOq4sOuhneufieunjOycvOuhnCDtlZnsirXsnYQg64uo7KCV7ZWY7KeAIOyViuydhCDsiJgg7J6I64ukLgoKQUnsmYAg7J287ZWY64qUIOuKpeugpeydhCDri6TsnYwg7IS47IWY7JeQIOustOyXh+ydhCDrgqjquLDripTqsIDquYzsp4Ag64ST7ZiAIOuztOuptCwg67O07J207KeAIOyViuuNmCDsnbzsnbQg65Oc65+s64Kc64ukLiDqt7jrlYzsnZgg7IiY7KCV7J20IOuztOyhtOuQmOqzoCwg7ZWE7JqU7ZWcIOyInOqwhOyXkCDri6Tsi5wg7J297Z6I66mwLCDsg4jroZzsmrQg7KGw6rG07JeQIOunnuqyjCDqs6Dss5Dsp4DripQg7J287J2064ukLiDsnpHsl4XsnbQg64Gd64KgIOuVjCDrgqjripQg6rKD7J2AIOyZhOyEse2SiOqzvCDtlajqu5gg64uk7J2MIOyDneqwgeydtCDstpzrsJztlaAg7J6Q66as7J206riw64+EIO2VmOuLpC4KCiFb67O06rSA65CcIOyekeyXhSDrp6Xrnb3snYQg7ISg7YOd7ZW0IOuLpOyLnCDsk7Dqs6Ag7IiY7KCVIOuCtOyaqeydhCDrj4zroKTrhpPripQg7Iic7ZmYXShodHRwczovL3B1Yi1hY2Y2YWQ5M2YyZWM0YTVlOGZhMTJlOTRkMGM5YjE1MS5yMi5kZXYvMTc5MTA5NDkwNjcwMC1kN2JkYjg5NS1jNTM5LTRlMzUtOWQ1OC03Y2JmNGUyNmFkZDIucG5nKQoKKu2BsCDquLDroZ0g67O06rSA7ZWo7JeQ7IScIO2VhOyalO2VnCDsubTrk5zrp4wg7ZiE7J6sIOyekeyXheycvOuhnCDqsIDsoLjsmKTqs6AsIOyImOygle2VnCDrp6Xrnb3snYAg64uk7IucIOuztOq0gO2VnOuLpC4g6riw66Gd7J2YIOuztOyhtOqzvCDsp4DquIgg7ZWE7JqU7ZWcIOunpeudveydmCDshKDtg53snbQg7ZWo6ruYIOybgOyngeydtOuKlCDrqqjsirXsnYQg7ZGc7ZiE7ZWcIEFJIOydvOufrOyKpO2KuOuLpC4g7J2466y86rO8IOqzteqwhOydgCDsi6TsoJwg7IKs7Jqp7J6Q66W8IOyerO2YhO2VnCDqsoPsnbQg7JWE64uI64ukLioKCiMjIOuNlCDrsLDsm4zrs7wg6rGw66asCgpBbnRocm9waWPsnZggW+OAjEVmZmVjdGl2ZSBjb250ZXh0IGVuZ2luZWVyaW5nIGZvciBBSSBhZ2VudHPjgI1dKGh0dHBzOi8vd3d3LmFudGhyb3BpYy5jb20vZW5naW5lZXJpbmcvZWZmZWN0aXZlLWNvbnRleHQtZW5naW5lZXJpbmctZm9yLWFpLWFnZW50cynripQg66el65297J2EIOycoO2VnO2VnCDsnpDsm5DsnLzroZwg64uk66Oo66mwLCDtlYTsmpTtlZwg7KCV67O066W8IOyekeyXhSDspJHsl5Ag67aI65+s7Jik6rOgIOykkeyalO2VnCDsg4Htg5zrpbwg7Jm467aAIOuFuO2KuOyXkCDrgqjqsrzri6TqsIAg64uk7IucIOydveuKlCDrsKnsi53snYQg7ISk66qF7ZWc64ukLiDrjIDtmZQg7JWV7LaV7JeQ7ISc64qUIOydtO2bhOyXkOuPhCDtlYTsmpTtlZwg6rKw7KCV6rO8IOuvuO2VtOqysCDsgqztla3snYQg67O07KG07ZWY64qUIOyEoO2DneydtCDspJHsmpTtlZjri6Tqs6Ag67O464ukLiDsnbQg6riA7JeQ7IScIOqwgOyguOyYrCDqtIDsoJDsnYAg7KCA7J6l65CcIOyekOujjCDsoITssrTsmYAg7KeA6riIIOuqqOuNuOydtCDsnb3snYQg7J6Q66OM66W8IOq1rOu2hO2VmOuKlCDqsoPsnbTri6QuIOydtOuKlCDsl5DsnbTsoITtirjsnZgg7J6R7JeFIOyngOyGjeyEseyXkCDqtIDtlZwg6rO17ZWZ7KCBIOyEpOuqheydtOupsCDsgqzrnozsnZgg7ZWZ7Iq1IO2WpeyDgeydhCDsnoXspp3tlZwg7Jew6rWs64qUIOyVhOuLiOuLpC4KCuydtOulvCDslZ7snZgg6riA7JOw6riwIOyYiOyLnOyXkCDsoIHsmqntlZzri6TrqbQsIOu5hOycoOulvCDsgq3soJztlZwg7J207Jyg64qUIOuLpOydjCDstIjslYjsl5DshJwg67CU66GcIO2VhOyalO2VnCDrp6Xrnb3snbQg65CgIOyImCDsnojqs6Ag6ri0IOybkOusuCDrjIDtmZTripQg7ZmV7J247J20IO2VhOyalO2VoCDrlYwg7LC+7JWE6rCIIOq3vOqxsOqwgCDrkKAg7IiYIOyeiOuLpC4g7J20IOyggeyaqeydgCBBSeydmCDsooXtlakg7KCc7JWI7J2064ukLiDsm5DrrLjsnYAg7Ja866eI64KYIOyemCDrgqjripTqsIAsIOyalOyVveyXkOyEnCDslrTrlqQg7KGw6rG07J20IOu5oOyngOuKlOqwgCwg6re4IOyhsOqxtOydhCDsm5DrrLjsl5DshJwg64uk7IucIOywvuydhCDsiJgg7J6I64qU6rCA66W8IOyEnOuhnCDsl7DqsrDtlbQg7IOd6rCB7ZWgIOyImCDsnojri6QuIOyggOyepeufieydhCDripjrpqzripQg7ZWcIOqwgOyngCDrqqntkZzroZzripQg7J20IOq0gOqzhOulvCDstqnrtoTtnogg7ISk66qF7ZWY6riwIOyWtOugteuLpC4KClvjgIxZb3VyIEJyYWluIG9uIENoYXRHUFTjgI3snZgg7ZiE7J6sIGFyWGl2IHYyIOy0iOuhnV0oaHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzI1MDYuMDg4NzJ2MinsnYAgTExNLCDqsoDsg4kg7JeU7KeELCDrj4Tqtazrpbwg7JOw7KeAIOyViuuKlCDsobDqsbTsl5DshJwg7JeQ7IS47J2066W8IOyekeyEse2VnCDsp5Hri6jqs7wg7J2867aAIOywuOqwgOyekOydmCDsobDqsbQg7KCE7ZmY7J2EIOyEpOuqhe2VnOuLpC4g7Jew6rWs7KeE7J2AIOuHjCDsl7DqsrDshLHqs7wg6riA7J2YIOyGjOycoOqwkCwg7ZqM7IOB7JeQ7IScIOywqOydtOulvCDrs7Tqs6DtlZzri6QuIOydtOuyiOyXkOuKlCDstIjroZ3qs7wg7YyQ67O4IOygleuztOulvCDsp4HsoJEg7ZmV7J247ZaI7Jy866mwLCDqsJzsoJUg67O466y4IOyghOyytOydmCDrsKnrspXqs7wg67aE7ISd7J2EIOyerOqygO2GoO2VmOyngOuKlCDslYrslZjri6QuIOuUsOudvOyEnCAyMDI164WEIDbsm5Tsl5Ag7J6R7ISx7ZWcIOqwnOyduCDruYTtjJAg64W47Yq47J2YIOuqqOuToCDsp4DsoIHsnbQg7ZiE7J6sIO2MkOuzuOyXkOuPhCDqt7jrjIDroZwg7ZW064u57ZWc64uk6rOgIO2Zleygle2VoCDsiJjripQg7JeG64ukLgoK7Jes6riw7IScIOydtOyWtOqwiCDsp4jrrLjsnYAg6riw66Gd6rO8IOyerOyCrOyaqeydhCDtj6ztlajtlZwg7J6R7JeFIOuwqeyLneydhCDslrTrlqQg64uo7JyE66GcIOyEpOuqhe2VoCDqsoPsnbjqsIDsnbTri6QuIOyZhOyEseuQnCDsl5DshLjsnbTsnZgg67mE6rWQ7JeQIOuNlO2VtCwg7J207KCEIO2MkOuLqOydtCDsnbTtm4Qg7J6R7JeF7JeQIOywuOyXrO2VmOuKlCDqs7zsoJXsnYQg6rSA7LCw7ZWY66Ck66m0IOustOyXh+ydtCDrs7Tsl6zslbwg7ZWg6rmMLiDsnbQg7KeI66y47J2AIOuzuCDrhbzrrLjsnZgg6rKw6rO866W8IOq4sOuhnSDsi5zsiqTthZwg67aA7J6sIO2VmOuCmOuhnCDshKTrqoXtlojri6TripQg6rKw66Gg6rO8IOq1rOuzhOuQnOuLpC4g7JWI7LC97ZiE7J2YIOyekeyXhSDqsr3tl5jsnbQg642Y7KeA64qUIOusuOygnOulvCDsl7DqtazsnZgg7IOI66Gc7Jq0IOyniOusuOycvOuhnCDqsIDsoLjqsIDripQg67Cp7Zal7J2064ukLgoKIyMg64K066m0IOyniOusuAoKIyMjIDEpIOydtCDrhbjtirjqsIAg64K0IOyCrOqzoOyXkCDslrTrlqQg7KCQ7J2EIOuNmOyguOyjvOyXiOuKlOqwgD8KCkFJ7J2YIOydkeuLteydtCDrp4zrk6TslrTsp4DripQg7KGw6rG07J2EIOuzvCDrlYwg7ZiE7J6sIOyniOusuCDslZ7sl5Ag64aT7J24IOyLnOqwhOq5jOyngCDtj6ztlajtlaAg7IiYIOyeiOuLpC4g7J207KCEIOyEuOyFmOyXkOyEnCDqs6DsuZwg64K07Jqp6rO8IOywvuyVhOuCuCDqt7zqsbDqsIAg7KeA6riI7J2YIOyekeyXheyXkCDrk6TslrTsmZTri6TrqbQsIOydtOuyiCDsnZHri7Xsl5DripQg6re4IOy2leyggeuPhCDssLjsl6ztlZzri6QuIOyemOuQnCDqsrDqs7zrpbwg66qo64247J2YIOuKpeugpSDtlZjrgpjsl5Ag64+M66as6rGw64KYLCDsnpjrqrvrkJwg6rKw6rO866W8IOyCrOyaqeyekOydmCDtlZwg67KI7J2YIOyniOusuOycvOuhnOunjCDshKTrqoXtlZjrqbQg7J20IOyhsOqxtOydhCDrhpPsuaAg7IiYIOyeiOuLpC4g7KeA6riI7J2YIO2MkOuLqOydhCDqsIDriqXtlZjqsowg7ZWcIOunpeudveydtCDrrLTsl4fsnbTsl4jripTsp4Drpbwg64+M7JWE67O8IOydtOycoOqwgCDsg53quLTri6QuCgojIyMgMikg7KeA6riI7J2YIOuCmOyZgCDslrTrlrvqsowg7Jew6rKw65CY64qU6rCAPwoK7J6R7JeFIOqzvOygleq5jOyngCDquLDroZ3tlZjqs6Ag67CY67O17ZW07IScIOyCrOyaqe2VmOuKlCDsi6TsspzsnYAg7J2066+4IOydtOuyiCDrs7Tstqkg7ISk66qF7JeQIOuTpOyWtCDsnojri6QuIOydtCDquIDsnYAg6re4IOyLpOyynOydhCDsg4gg7IiZ7KCc66GcIOuwlOq+uOq4sOuztOuLpCwg6riw66GdIOyLnOyKpO2FnOydtCDrrLTsl4fsnYQg7J207Ja0IOyjvOuKlOyngCDshKTrqoXtlaAg7Ja47Ja066W8IOygnOyViO2VnOuLpC4g7J207KCEIO2MkOuLqOydmCDsobDqsbTqs7wg7IiY7KCVIOydtOycoOqwgCDri6Tsi5wg7JOw7J2064qUIOyepeuptOydhCDssL7snLzrqbQg6riw66Gd7J2YIO2aqOyaqeydhCDrjZQg6rWs7LK07KCB7Jy866GcIOunkO2VoCDsiJgg7J6I64ukLiDrj5nsi5zsl5Ag7J6YIOuztOyhtOuQnCDsnpDro4wg6rCA7Jq0642wIOyVhOyngSDsk7DsnbTsp4Ag7JWK7J2AIOqyg+ydtCDsnojri6Tqs6Ag7ZW07IScIOq3uOqyg+ydhCDqsJzsnbjsnZgg7ZWZ7Iq1IOyLpO2MqOuhnCDtjJDsoJXtlaAg7ZWE7JqU64+EIOyXhuuLpC4KCiMjIyAzKSDslZ7snLzroZwg7Ja065akIOyLpOyynC/snZjrr7jroZwg7ZmV7J6l65CgIOyImCDsnojsnYTquYw/Cgrri6TsnYzsl5Ag7J2066+4IO2VtCDrs7gg7J6R7JeF7J2EIOydtOyWtOqwiCDrlYwsIOyngOuCnOuyiOqzvCDstpzrsJzsoJDsnbQg7Ja065a76rKMIOuLrOudvOyhjOuKlOyngCDriIjsl6zqsqjrs7wg7IiYIOyeiOuLpC4g65CY7ZKA7J207ZWY7KeAIOyViuyVhOuPhCDrkJwg7ISk66qF7J20IOustOyXh+yduOyngCwg64uk7IucIOqygO2GoO2VmOqyjCDrkJwg7KGw6rG07J2AIOustOyXh+yduOyngOqwgCDqt7gg7LCo7J2066W8IOuTnOufrOuCuOuLpC4g7J206rKD7J2EIOunpOydvOydmCDsoJDsiJjrgpgg67OE64+EIOq4sOuhneufieycvOuhnCDrp4zrk6Qg7ZWE7JqU64qUIOyXhuuLpC4g7ZiE7J6s7J2YIOq4sOuhnSDslYjsl5DshJwg6rO86rGw7J2YIOyImOygleydtCDri6TsnYwg7YyQ64uo7JeQIOyLpOygnOuhnCDssLjsl6ztlZjripQg7J6l66m07J2EIOuwnOqyrO2VmOuKlCDqsoPrp4zsnLzroZzrj4Qg7J20IOyLnOyKpO2FnOydtCDrp6HripQg7Jet7ZWg7J2EIOuNlCDsoJXtmZXtnogg7J207ZW07ZWgIOyImCDsnojri6QuCgojIyBBSeydmCDrhbjtirgKCuydtCDquIDsnYAgR1BULTYgQXN0cmEoZ3B0LTYtYXN0cmEgLyB4aGlnaCnqsIAg7J6R7ISx7ZWY6rOgIOqwmeydgCDrqqjrjbjsnbQg67O466y4IOyghOyytOydmCDsnZjrr7jsmYAg6re86rGw66W8IOyerOqygO2GoO2WiOuLpC4g7JWI7LC97ZiE7J2YIDIwMjbrhYQgMTDsm5QgNOydvCDrs7Tstqkg7ISk66qF6rO8IOuRkCDsm5DrrLgg64W47Yq466W8IOykkeyLrOycvOuhnCwg7J6R7JeFIOyEuOyFmOydmCDquLDroZ3qs7wg67CY67O1IOyerOyCrOyaqeydhCDsgqzqs6DsnZgg7Jew7IaN7ISx7J20652864qUIOq0gOygkOycvOuhnCDsl7DqsrDtlojri6QuIOyEpOuqheydhCDsnITtlZwg6riA7JOw6riwIOyepeuptOydgCDqsIDsoJXsnLzroZwg7ZGc7Iuc7ZaI7Jy866mwIOyCrOyaqeyekOydmCDsi6TsoJwg6rK97ZeY7Jy866GcIOunjOuTpOyngCDslYrslZjri6QuCgrrkZAg7JuQ66y47J2AIO2YhOyerCDrgrTsmqnsnYQg7KeB7KCRIOydveyXiOqzoCwg7Jm467aAIOyekOujjOuKlCBBbnRocm9waWMg6riA7J2YIOunpeudvSDqtIDrpqzCt+2ajOyImMK37KeA7IaNIOuFuO2KuCDshKTrqoXqs7wg64W866y47J2YIHYyIOy0iOuhncK37YyQ67O4IOygleuztCDrspTsnITsl5DshJwg7IKs7Jqp7ZaI64ukLiDqs7XtlZnsoIEg7J6R7JeFIOyngOyGjeyEseqzvCDsgqzrnozsnZgg7J247KeAIO2aqOqzvOulvCDqsJnsnYAg7Kad6rGw66GcIOy3qOq4ie2VmOyngCDslYrslZjsnLzrqbAsIOuFvOusuOyXkOyEnCDrs7Tqs6DtlZwg7LCo7J207J2YIOybkOyduOydhCDquLDroZ0g7Iuc7Iqk7YWcIOu2gOyerOuhnCDtmZXsoJXtlZjsp4Ag7JWK7JWY64ukLiDsnbQg6rKA7Yag64qUIOqwmeydgCDrqqjrjbjsnZgg7Y647KeRIOqygO2GoOydtOupsCDrj4Xrpr0g7Ius7IKs64KYIOyCrOyaqeyekOydmCDsnb3snYzCt+2VmeyKtcK37Iuk7LKcIOqysOqzvOulvCDrnLvtlZjsp4Ag7JWK64qU64ukLgoK7J20IOyXsOqysOyXkOyEnCDrjZQg7IOd6rCB7ZW0IOuzvCDsp4DsoJDsnYAg6riw66Gd7J2EIOuPjOyVhOuzvCDsiJgg7J6I64qUIOqwgOuKpeyEseqzvCDsi6TsoJzroZwg64uk7IucIOydveuKlCDtlonsnIQg7IKs7J207J2YIOqwhOqyqeydtOuLpC4g6riw66GdIOyLnOyKpO2FnOydgCDqs7zqsbDsnZgg7ISg7YOd7J2EIOuLpOydjCDsnpHsl4Xsl5Ag7LC47Jes7Iuc7YKsIOyImCDsnojqsowg7ZWc64ukLiDqt7gg7LC47Jes6rCAIOydtOujqOyWtOyngOuKlCDsiJzqsITsl5DripQg6riw66Gd64+EIOuLpOyLnCDtlbTshJ3rkJjqs6Ag7IiY7KCV65Cc64ukLiDsg53qsIHsnYQg7J207Ja0IOqwhOuLpOuKlCDqsoPsnYAg7KeA64KcIOqysOuhoOydhCDqt7jrjIDroZwg67CY67O17ZWY64qUIOydvOuztOuLpCwg6re4IOqysOuhoOydtCDrp4zrk6TslrTsp4Qg7KGw6rG07J2EIOqwgOyngOqzoCDri6TsnYwg7KeI66y4IOyVnuyXkCDshJzripQg7J287JeQIOqwgOq5neuLpC4KCjwhLS0gYWNobWFnZS1pbnNpZ2h0OjZkZjcwN2E4YTEwZTJkODYwZDJhNDMxYTcxNzhlOWQwMmMyNTFiNDc3ODZhMGNiOTE5NmIzMDBjZmFjOGQ5NTkgLS0+CgrsnbQg7IOIIOuFuO2KuOuKlCBBSeqwgCDsoJXrpqztlZwg7ZW07ISd7J6F64uI64ukLiDsm5Drnpgg64yA7ZmU7JmAIOyCrOyaqeyekCDqsrDsoJXsnbQg7Jqw7ISg7ZWY66mwLCDquLDsobQg64W47Yq466W8IOyImOygle2VmOyngCDslYrslZjsirXri4jri6QuCg==</script>
+
+
+<script type="module">
+(async function() {
+	// mermaid sources travel base64-encoded in data-mmd; render with the LATEST mermaid
+	if (document.getElementById('encrypted-data') && !window.__cmdsReady) {
+		await new Promise(function(r) { document.addEventListener('cmds-content-ready', r, { once: true }); });
+	}
+	var containers = Array.from(document.querySelectorAll('.mermaid-container[data-mmd]'));
+	if (!containers.length) return;
+	function decode(b64) {
+		var bin = atob(b64); var bytes = new Uint8Array(bin.length);
+		for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+		return new TextDecoder().decode(bytes);
+	}
+	var sources = containers.map(function(d) { return decode(d.getAttribute('data-mmd')); });
+	var mermaid;
+	try {
+		mermaid = (await import('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs')).default;
+	} catch (e) {
+		containers.forEach(function(d, i) {
+			var pre = document.createElement('pre');
+			pre.textContent = sources[i];
+			d.replaceWith(pre);
+		});
+		return;
+	}
+	var seq = 0;
+	async function renderAll() {
+		var dark = document.documentElement.dataset.theme === 'dark';
+		mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'neutral', securityLevel: 'strict' });
+		for (var i = 0; i < containers.length; i++) {
+			try {
+				var out = await mermaid.render('cmds-mmd-' + i + '-' + (seq++), sources[i]);
+				containers[i].innerHTML = out.svg;
+			} catch (e) {
+				var pre = document.createElement('pre');
+				pre.textContent = sources[i];
+				containers[i].innerHTML = '';
+				containers[i].appendChild(pre);
+			}
+		}
+	}
+	await renderAll();
+	new MutationObserver(function() { renderAll(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
+
+
+<script>
+(function() {
+	var icon = document.getElementById('themeIcon');
+	var SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+	var MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+	function paint(theme) {
+		if (icon) icon.innerHTML = theme === 'dark' ? MOON : SUN;
+	}
+	var btn = document.getElementById('themeToggle');
+	if (btn) btn.addEventListener('click', function() {
+		var next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+		document.documentElement.dataset.theme = next;
+		try { localStorage.setItem('cmds-theme', next); } catch(e) {}
+		paint(next);
+	});
+	paint(document.documentElement.dataset.theme || 'light');
+})();
+</script>
+
+<script>
+(function() {
+	var badge = document.getElementById('expiryBadge');
+	if (!badge) return;
+	var ts = Number(badge.getAttribute('data-expires'));
+	if (!ts) return;
+	var ko = badge.getAttribute('data-lang') === 'ko';
+	var text = document.getElementById('expiryText');
+	function render() {
+		var msLeft = ts - Date.now();
+		var d = new Date(ts);
+		var dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+		if (msLeft <= 0) {
+			text.textContent = ko ? '만료됨' : 'Expired';
+			badge.classList.add('b-expired');
+			// file-hosting backends (GitHub Pages, NAS…) have no server to
+			// 410 an expired share — hide the body here as a soft tombstone
+			var body = document.getElementById('note-content');
+			if (body && !body.dataset.tombstoned) {
+				body.dataset.tombstoned = '1';
+				body.innerHTML = '<p class="cmds-loading">' + (ko ? '이 공유는 만료되었습니다.' : 'This shared note has expired.') + '</p>';
+				var toc = document.getElementById('tocToggle'); if (toc) toc.hidden = true;
+				['mdCopy', 'mdDownload'].forEach(function(id) { var b = document.getElementById(id); if (b) b.hidden = true; });
+			}
+		} else {
+			// calendar-date diff, so "D-1" flips at midnight, not at share-time+24h
+			var now = new Date();
+			var days = Math.round(
+				(new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime() -
+				 new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()) / 86400000
+			);
+			var count = days <= 0 ? (ko ? '오늘 만료' : 'expires today') : 'D-' + days;
+			text.textContent = (ko ? dateStr + ' 만료 · ' : 'Expires ' + dateStr + ' · ') + count;
+			if (days <= 3) badge.classList.add('b-soon');
+		}
+		badge.hidden = false;
+	}
+	render();
+	// keep honest across long-lived tabs (midnight rollover)
+	setInterval(render, 60 * 60 * 1000);
+})();
+</script>
+
+
+<script>
+(function() {
+	var PANELS = { toc: 'tocPanel', graph: 'graphPanel' };
+	var hasToc = false, hasGraph = false;
+
+	function docked() { return document.body.classList.contains('cmds-docked'); }
+
+	function setPanel(name, open) {
+		Object.keys(PANELS).forEach(function(k) {
+			var on = k === name ? open : false;
+			document.getElementById(PANELS[k]).classList.toggle('open', on);
+			document.getElementById(k + 'Toggle').classList.toggle('active', on);
+			try { localStorage.setItem('cmds-panel-' + k, on ? '1' : '0'); } catch(e) {}
+		});
+		if (name === 'graph' && open) requestAnimationFrame(function() { relayoutGraph(); });
+	}
+	function wireToggle(name) {
+		document.getElementById(name + 'Toggle').addEventListener('click', function() {
+			var isOpen = document.getElementById(PANELS[name]).classList.contains('open');
+			setPanel(name, !isOpen);
+		});
+	}
+
+	function setDock(on) {
+		if (on && window.innerWidth <= 1100) on = false;
+		var dock = document.getElementById('sideDock');
+		var toc = document.getElementById('tocPanel');
+		var graph = document.getElementById('graphPanel');
+		document.body.classList.toggle('cmds-docked', on);
+		if (on) {
+			Object.keys(PANELS).forEach(function(k) {
+				document.getElementById(PANELS[k]).classList.remove('open');
+				document.getElementById(k + 'Toggle').classList.remove('active');
+			});
+			if (hasToc) dock.appendChild(toc);
+			if (hasGraph) dock.appendChild(graph);
+			dock.hidden = false;
+		} else {
+			dock.hidden = true;
+			document.body.appendChild(toc);
+			document.body.appendChild(graph);
+		}
+		try { localStorage.setItem('cmds-dock', on ? '1' : '0'); } catch(e) {}
+		if (hasGraph) requestAnimationFrame(function() { relayoutGraph(); });
+	}
+
+	function headings() {
+		return document.querySelectorAll('#note-content h1, #note-content h2, #note-content h3, #note-content h4');
+	}
+
+	function assignHeadingIds() {
+		var used = {};
+		headings().forEach(function(h) {
+			var text = (h.textContent || '').trim();
+			if (!text || h.id) return;
+			var slug = text.toLowerCase().replace(/[^0-9a-z\uAC00-\uD7A3\u3131-\u318E\s-]/g, '').replace(/\s+/g, '-') || 'section';
+			if (used[slug] != null) { used[slug]++; slug = slug + '-' + used[slug]; } else { used[slug] = 0; }
+			h.id = slug;
+		});
+	}
+
+	function buildToc() {
+		var list = document.getElementById('tocList');
+		list.innerHTML = '';
+		headings().forEach(function(h) {
+			var text = (h.textContent || '').trim();
+			if (!text || !h.id) return;
+			var a = document.createElement('a');
+			a.href = '#' + h.id;
+			a.textContent = text;
+			a.className = 'toc-' + h.tagName.toLowerCase();
+			a.title = text;
+			list.appendChild(a);
+		});
+		return list.children.length >= 2;
+	}
+
+	// highlight the section currently in view (and keep it visible in a scrolling TOC)
+	function scrollSpy() {
+		var links = document.querySelectorAll('#tocList a');
+		if (!links.length) return;
+		var map = {};
+		links.forEach(function(a) { map[decodeURIComponent(a.hash.slice(1))] = a; });
+		var obs = new IntersectionObserver(function(entries) {
+			entries.forEach(function(en) {
+				if (!en.isIntersecting) return;
+				links.forEach(function(a) { a.classList.remove('active'); });
+				var a = map[en.target.id];
+				if (a) {
+					a.classList.add('active');
+					if (a.scrollIntoView) a.scrollIntoView({ block: 'nearest' });
+				}
+			});
+		}, { rootMargin: '0px 0px -75% 0px' });
+		headings().forEach(function(h) { if (h.id) obs.observe(h); });
+	}
+
+	var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5"/></svg>';
+	var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+	var ICON_LINK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+	function enhanceCodeBlocks() {
+		document.querySelectorAll('#note-content pre').forEach(function(pre) {
+			if (pre.querySelector('.code-copy')) return;
+			var code = pre.querySelector('code');
+			var langMatch = ((code ? code.className : '') + ' ' + pre.className).match(/language-([a-z0-9+#-]+)/i);
+			if (langMatch && langMatch[1] !== 'undefined') pre.setAttribute('data-lang', langMatch[1]);
+			var btn = document.createElement('button');
+			btn.className = 'code-copy';
+			btn.setAttribute('aria-label', 'Copy code');
+			btn.innerHTML = ICON_COPY;
+			btn.addEventListener('click', function() {
+				var code = pre.querySelector('code');
+				var textToCopy = (code || pre).innerText.replace(/\n$/, '');
+				navigator.clipboard.writeText(textToCopy).then(function() {
+					btn.innerHTML = ICON_CHECK;
+					btn.classList.add('copied');
+					setTimeout(function() { btn.innerHTML = ICON_COPY; btn.classList.remove('copied'); }, 1500);
+				});
+			});
+			pre.appendChild(btn);
+		});
+	}
+
+	// hover link icon on headings — click copies the deep link
+	function headingAnchors() {
+		headings().forEach(function(h) {
+			if (!h.id || h.querySelector('.h-anchor')) return;
+			var a = document.createElement('a');
+			a.className = 'h-anchor';
+			a.href = '#' + h.id;
+			a.setAttribute('aria-label', 'Copy link to section');
+			a.innerHTML = ICON_LINK;
+			a.addEventListener('click', function(e) {
+				e.preventDefault();
+				history.replaceState(null, '', '#' + h.id);
+				try { navigator.clipboard.writeText(location.href.split('#')[0] + '#' + h.id); } catch(err) {}
+				h.scrollIntoView({ behavior: 'smooth' });
+			});
+			h.appendChild(a);
+		});
+	}
+
+	// ══════════ markdown source tools (copy / download) ══════════
+	function mdSource() {
+		if (window.__cmdsMd != null) return window.__cmdsMd; // decrypted payload
+		var el = document.getElementById('md-source');
+		if (!el) return null;
+		try {
+			var bin = atob(el.textContent.trim());
+			var bytes = new Uint8Array(bin.length);
+			for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+			return new TextDecoder().decode(bytes);
+		} catch(e) { return null; }
+	}
+
+	function wireMdTools() {
+		var md = mdSource();
+		if (md == null) return;
+		var copyBtn = document.getElementById('mdCopy');
+		var dlBtn = document.getElementById('mdDownload');
+		if (copyBtn) {
+			copyBtn.hidden = false;
+			var idle = copyBtn.innerHTML;
+			copyBtn.addEventListener('click', function() {
+				navigator.clipboard.writeText(md).then(function() {
+					copyBtn.innerHTML = ICON_CHECK;
+					copyBtn.classList.add('active');
+					setTimeout(function() { copyBtn.innerHTML = idle; copyBtn.classList.remove('active'); }, 1500);
+				});
+			});
+		}
+		if (dlBtn) {
+			dlBtn.hidden = false;
+			dlBtn.addEventListener('click', function() {
+				var name = (document.title || 'note').replace(/[\\/:*?"<>|]/g, '-').trim() || 'note';
+				var blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+				var url = URL.createObjectURL(blob);
+				var a = document.createElement('a');
+				a.href = url;
+				a.download = name + '.md';
+				document.body.appendChild(a);
+				a.click();
+				a.remove();
+				setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+			});
+		}
+	}
+
+	// ══════════ interactive force-directed local graph ══════════
+	var G = null; // { data, pts, adj, deg, W, H, k, tx, ty, hover }
+
+	function readGraphData() {
+		var dataEl = document.getElementById('graph-data');
+		if (!dataEl) return null;
+		var g;
+		try { g = JSON.parse(dataEl.textContent); } catch(e) { return null; }
+		if (!g.nodes || g.nodes.length < 2) return null;
+		return g;
+	}
+
+	function runLayout(g, W, H) {
+		var N = g.nodes.length;
+		var pts = g.nodes.map(function(n, i) {
+			var a = i * 2.399963;
+			var r = n.level === 0 ? 0 : (n.level === 1 ? 0.35 : 0.7) * Math.min(W, H) / 2;
+			return { x: W / 2 + r * Math.cos(a), y: H / 2 + r * Math.sin(a), vx: 0, vy: 0 };
+		});
+		var SPRING = 0.03, REST = Math.min(W, H) / 3.2, REPEL = Math.min(W, H) * 55, GRAV = 0.008;
+		for (var it = 0; it < 300; it++) {
+			var damp = 0.85 * (1 - it / 340);
+			for (var i = 0; i < N; i++) {
+				for (var j = i + 1; j < N; j++) {
+					var dx = pts[j].x - pts[i].x, dy = pts[j].y - pts[i].y;
+					var d2 = dx * dx + dy * dy + 0.01, d = Math.sqrt(d2);
+					var f = Math.min(REPEL / d2, 8);
+					var fx = (dx / d) * f, fy = (dy / d) * f;
+					pts[i].vx -= fx; pts[i].vy -= fy;
+					pts[j].vx += fx; pts[j].vy += fy;
+				}
+			}
+			g.edges.forEach(function(e) {
+				var a = pts[e[0]], b = pts[e[1]];
+				var dx = b.x - a.x, dy = b.y - a.y;
+				var d = Math.sqrt(dx * dx + dy * dy) + 0.01;
+				var f = SPRING * (d - REST);
+				var fx = (dx / d) * f, fy = (dy / d) * f;
+				a.vx += fx; a.vy += fy;
+				b.vx -= fx; b.vy -= fy;
+			});
+			for (var k2 = 0; k2 < N; k2++) {
+				pts[k2].vx += (W / 2 - pts[k2].x) * GRAV;
+				pts[k2].vy += (H / 2 - pts[k2].y) * GRAV;
+				pts[k2].x += pts[k2].vx * damp;
+				pts[k2].y += pts[k2].vy * damp;
+				pts[k2].vx *= 0.6; pts[k2].vy *= 0.6;
+			}
+			pts[0].x = W / 2; pts[0].y = H / 2; pts[0].vx = 0; pts[0].vy = 0;
+		}
+		var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
+		pts.forEach(function(pt) {
+			minX = Math.min(minX, pt.x); maxX = Math.max(maxX, pt.x);
+			minY = Math.min(minY, pt.y); maxY = Math.max(maxY, pt.y);
+		});
+		var M = 30;
+		var sx = (W - M * 2) / Math.max(maxX - minX, 1), sy = (H - M * 2) / Math.max(maxY - minY, 1);
+		var sc = Math.min(sx, sy, 1.5);
+		pts.forEach(function(pt) {
+			pt.x = M + (pt.x - minX) * sc + (W - M * 2 - (maxX - minX) * sc) / 2;
+			pt.y = M + (pt.y - minY) * sc + (H - M * 2 - (maxY - minY) * sc) / 2;
+		});
+		return pts;
+	}
+
+	function canvasSize() {
+		var canvas = document.getElementById('graphCanvas');
+		var panel = document.getElementById('graphPanel');
+		var wasHidden = !panel.classList.contains('open') && !docked();
+		if (wasHidden) { panel.style.visibility = 'hidden'; panel.classList.add('open'); }
+		var W = Math.max(canvas.clientWidth || panel.clientWidth - 36, 200);
+		var H = docked() ? Math.max(canvas.clientHeight, 200) : 280;
+		if (wasHidden) { panel.classList.remove('open'); panel.style.visibility = ''; }
+		return { W: W, H: H };
+	}
+
+	function relayoutGraph() {
+		var data = G ? G.data : readGraphData();
+		if (!data) return;
+		var sz = canvasSize();
+		var adj = data.nodes.map(function() { return {}; });
+		var deg = data.nodes.map(function() { return 0; });
+		data.edges.forEach(function(e) {
+			adj[e[0]][e[1]] = true; adj[e[1]][e[0]] = true;
+			deg[e[0]]++; deg[e[1]]++;
+		});
+		G = {
+			data: data, adj: adj, deg: deg,
+			pts: runLayout(data, sz.W, sz.H),
+			W: sz.W, H: sz.H, k: 1, tx: 0, ty: 0, hover: -1,
+		};
+		renderGraph();
+	}
+
+	function renderGraph() {
+		if (!G) return;
+		var canvas = document.getElementById('graphCanvas');
+		var dpr = window.devicePixelRatio || 1;
+		canvas.width = G.W * dpr; canvas.height = G.H * dpr;
+		if (!docked()) canvas.style.height = G.H + 'px';
+		var ctx = canvas.getContext('2d');
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+		ctx.clearRect(0, 0, G.W, G.H);
+
+		var css = getComputedStyle(document.documentElement);
+		var noteColor = css.getPropertyValue('--graph-note').trim() || css.getPropertyValue('--accent').trim();
+		var muted = css.getPropertyValue('--muted').trim();
+		var text = css.getPropertyValue('--text').trim();
+		var border = css.getPropertyValue('--border').trim();
+		var cardBg = css.getPropertyValue('--card-bg').trim();
+
+		var g = G.data, pts = G.pts, k = G.k, hover = G.hover;
+		var sx = function(pt) { return pt.x * k + G.tx; };
+		var sy = function(pt) { return pt.y * k + G.ty; };
+		var inHood = function(i) { return hover < 0 || i === hover || G.adj[hover][i]; };
+
+		g.edges.forEach(function(e) {
+			var touches = hover >= 0 && (e[0] === hover || e[1] === hover);
+			if (hover >= 0) {
+				ctx.globalAlpha = touches ? 0.95 : 0.08;
+				ctx.strokeStyle = touches ? muted : border;
+				ctx.lineWidth = touches ? 1.5 : 1;
+			} else {
+				ctx.globalAlpha = (g.nodes[e[0]].level === 2 || g.nodes[e[1]].level === 2) ? 0.45 : 0.8;
+				ctx.strokeStyle = border;
+				ctx.lineWidth = 1;
+			}
+			ctx.beginPath();
+			ctx.moveTo(sx(pts[e[0]]), sy(pts[e[0]]));
+			ctx.lineTo(sx(pts[e[1]]), sy(pts[e[1]]));
+			ctx.stroke();
+		});
+
+		var rOf = function(i) {
+			var base = i === 0 ? 7 : Math.min(3.2 + G.deg[i] * 0.6, 6.5);
+			return base * Math.pow(k, 0.75);
+		};
+		g.nodes.forEach(function(n, i) {
+			var dim = hover >= 0 ? (inHood(i) ? 1 : 0.14) : (n.level === 2 ? 0.65 : 1);
+			ctx.globalAlpha = dim;
+			ctx.fillStyle = n.type === 'tag' ? '#E985A2' : noteColor;
+			ctx.beginPath(); ctx.arc(sx(pts[i]), sy(pts[i]), rOf(i), 0, Math.PI * 2); ctx.fill();
+			if (i === hover) {
+				ctx.strokeStyle = text; ctx.lineWidth = 1.5;
+				ctx.beginPath(); ctx.arc(sx(pts[i]), sy(pts[i]), rOf(i) + 2.5, 0, Math.PI * 2); ctx.stroke();
+			}
+		});
+
+		// labels: center always; L1 at normal zoom; everything once zoomed in;
+		// hovering shows the whole neighborhood regardless of zoom
+		g.nodes.forEach(function(n, i) {
+			var show;
+			if (hover >= 0) show = inHood(i);
+			else show = i === 0 || (n.level === 1 && (k >= 1.05 || g.nodes.length <= 20)) || k >= 1.9 || g.nodes.length <= 12;
+			if (!show) return;
+			var fs = i === 0 || i === hover ? 11.5 : 10.5;
+			ctx.font = (i === 0 || i === hover ? 'bold ' : '') + fs + 'px -apple-system, sans-serif';
+			var label = n.label.length > 22 ? n.label.slice(0, 21) + '…' : n.label;
+			var tw = ctx.measureText(label).width;
+			var lx = Math.max(2, Math.min(G.W - tw - 2, sx(pts[i]) - tw / 2));
+			var ly = sy(pts[i]) + rOf(i) + fs + 2;
+			var alpha = hover >= 0 ? (inHood(i) ? 1 : 0) : (n.level === 2 && k < 2 ? 0.7 : 0.95);
+			ctx.globalAlpha = alpha * 0.8;
+			ctx.fillStyle = cardBg;
+			ctx.fillRect(lx - 3, ly - fs + 1, tw + 6, fs + 3);
+			ctx.globalAlpha = alpha;
+			ctx.fillStyle = i === 0 || i === hover ? text : muted;
+			ctx.fillText(label, lx, ly);
+		});
+		ctx.globalAlpha = 1;
+	}
+
+	function zoomBy(factor) {
+		if (!G) return;
+		var mx = G.W / 2, my = G.H / 2;
+		var nk = Math.max(0.35, Math.min(4.5, G.k * factor));
+		factor = nk / G.k;
+		G.tx = mx - (mx - G.tx) * factor;
+		G.ty = my - (my - G.ty) * factor;
+		G.k = nk;
+		renderGraph();
+	}
+
+	function wireGraphInteraction() {
+		var canvas = document.getElementById('graphCanvas');
+		var dragging = false, moved = false, lastX = 0, lastY = 0;
+
+		document.getElementById('gZoomIn').addEventListener('click', function() { zoomBy(1.35); });
+		document.getElementById('gZoomOut').addEventListener('click', function() { zoomBy(1 / 1.35); });
+		document.getElementById('gReset').addEventListener('click', function() {
+			if (G) { G.k = 1; G.tx = 0; G.ty = 0; renderGraph(); }
+		});
+
+		function pick(mx, my) {
+			if (!G) return -1;
+			var best = -1, bestD = 12 * 12;
+			G.pts.forEach(function(pt, i) {
+				var dx = pt.x * G.k + G.tx - mx, dy = pt.y * G.k + G.ty - my;
+				var d = dx * dx + dy * dy;
+				if (d < bestD) { bestD = d; best = i; }
+			});
+			return best;
+		}
+		function pos(e) {
+			var r = canvas.getBoundingClientRect();
+			return { x: e.clientX - r.left, y: e.clientY - r.top };
+		}
+
+		canvas.addEventListener('wheel', function(e) {
+			if (!G) return;
+			e.preventDefault();
+			var m = pos(e);
+			var factor = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.002));
+			var nk = Math.max(0.35, Math.min(4.5, G.k * factor));
+			factor = nk / G.k;
+			G.tx = m.x - (m.x - G.tx) * factor;
+			G.ty = m.y - (m.y - G.ty) * factor;
+			G.k = nk;
+			renderGraph();
+		}, { passive: false });
+
+		canvas.addEventListener('pointerdown', function(e) {
+			if (!G) return;
+			dragging = true; moved = false;
+			lastX = e.clientX; lastY = e.clientY;
+			canvas.classList.add('dragging');
+			canvas.setPointerCapture(e.pointerId);
+		});
+		canvas.addEventListener('pointermove', function(e) {
+			if (!G) return;
+			if (dragging) {
+				var dx = e.clientX - lastX, dy = e.clientY - lastY;
+				if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
+				G.tx += dx; G.ty += dy;
+				lastX = e.clientX; lastY = e.clientY;
+				renderGraph();
+			} else {
+				var m = pos(e);
+				var h = pick(m.x, m.y);
+				canvas.classList.toggle('on-node', h >= 0);
+				if (h !== G.hover) { G.hover = h; renderGraph(); }
+			}
+		});
+		canvas.addEventListener('pointerup', function(e) {
+			dragging = false;
+			canvas.classList.remove('dragging');
+			// double-click-ish: a clean click on empty space resets the view
+			if (!moved) {
+				var m = pos(e);
+				if (pick(m.x, m.y) < 0 && G.k !== 1) { G.k = 1; G.tx = 0; G.ty = 0; renderGraph(); }
+			}
+		});
+		canvas.addEventListener('pointerleave', function() {
+			if (G && G.hover !== -1) { G.hover = -1; renderGraph(); }
+			canvas.classList.remove('on-node');
+		});
+	}
+
+	function init() {
+		// start from a known-clean panel state before restoring preferences
+		document.body.classList.remove('cmds-docked');
+		document.getElementById('sideDock').hidden = true;
+		assignHeadingIds();
+		enhanceCodeBlocks();
+		headingAnchors();
+		wireMdTools();
+		hasToc = buildToc();
+		if (hasToc) {
+			document.getElementById('tocToggle').hidden = false;
+			wireToggle('toc');
+			scrollSpy();
+		}
+		hasGraph = !!readGraphData();
+		if (hasGraph) {
+			document.getElementById('graphToggle').hidden = false;
+			wireToggle('graph');
+			wireGraphInteraction();
+			new MutationObserver(function() { renderGraph(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+			window.addEventListener('resize', function() {
+				if (docked() && window.innerWidth <= 1100) { setDock(false); return; }
+				if (docked()) requestAnimationFrame(function() { relayoutGraph(); });
+			});
+		}
+		if (hasToc || hasGraph) {
+			document.querySelectorAll('[data-pin]').forEach(function(btn) {
+				btn.addEventListener('click', function() { setDock(!docked()); });
+			});
+			// floating popups close on any click outside the card (docked stays put)
+			document.addEventListener('pointerdown', function(e) {
+				if (docked()) return;
+				if (e.target.closest('.side-panel, .side-tools')) return;
+				Object.keys(PANELS).forEach(function(k) {
+					if (document.getElementById(PANELS[k]).classList.contains('open')) setPanel(k, false);
+				});
+			});
+		}
+		try {
+			if (localStorage.getItem('cmds-dock') === '1' && (hasToc || hasGraph)) {
+				setDock(true);
+			} else if (localStorage.getItem('cmds-panel-toc') === '1' && hasToc) setPanel('toc', true);
+			else if (localStorage.getItem('cmds-panel-graph') === '1' && hasGraph) setPanel('graph', true);
+		} catch(e) {}
+	}
+
+	if (document.getElementById('encrypted-data') && !window.__cmdsReady) {
+		document.addEventListener('cmds-content-ready', init, { once: true });
+	} else {
+		init();
+	}
+})();
+</script>
+
+</body>
+</html>
