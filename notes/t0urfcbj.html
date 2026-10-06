@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이제 똥컴도 가능! 구글 Kaggle에서 무료로 AI 이미지·영상 만들기</title>
+<meta name="description" content="&gt; [!summary]+ 3줄 요약 &gt; - 이 영상은 카글(Kaggle)의 무료 GPU를 활용해 사양이 낮은 컴퓨터에서도 브라우저만으로 AI 이미지와 영상을 만드는 방법을 소개합니다. &gt; - 이미지 생성은 Krea 2, 영상 생성은 한국어 대사가 가능한 LTX-2.3 오픈소스 모델을 사용하며, 노트북을 복사해 단계별로 실행하는 방식입니다. &gt; - 세션...">
+<link rel="canonical" href="https://laguna821.github.io/obsidian-shared-notes/notes/t0urfcbj.html">
+<meta property="og:url" content="https://laguna821.github.io/obsidian-shared-notes/notes/t0urfcbj.html">
+
+<link rel="icon" type="image/png" href="https://cmdspace.work/assets/logos/cmds-logo-round.png">
+<link rel="apple-touch-icon" href="https://cmdspace.work/assets/logos/cmds-logo-round.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CMDSPACE">
+<meta property="og:title" content="이제 똥컴도 가능! 구글 Kaggle에서 무료로 AI 이미지·영상 만들기">
+<meta property="og:description" content="&gt; [!summary]+ 3줄 요약 &gt; - 이 영상은 카글(Kaggle)의 무료 GPU를 활용해 사양이 낮은 컴퓨터에서도 브라우저만으로 AI 이미지와 영상을 만드는 방법을 소개합니다. &gt; - 이미지 생성은 Krea 2, 영상 생성은 한국어 대사가 가능한 LTX-2.3 오픈소스 모델을 사용하며, 노트북을 복사해 단계별로 실행하는 방식입니다. &gt; - 세션...">
+<meta property="og:image" content="https://share.cmdspace.work/assets/og/og-share.png">
+<meta property="og:image:secure_url" content="https://share.cmdspace.work/assets/og/og-share.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CMDS Share — 이제 똥컴도 가능! 구글 Kaggle에서 무료로 AI 이미지·영상 만들기">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="이제 똥컴도 가능! 구글 Kaggle에서 무료로 AI 이미지·영상 만들기">
+<meta name="twitter:description" content="&gt; [!summary]+ 3줄 요약 &gt; - 이 영상은 카글(Kaggle)의 무료 GPU를 활용해 사양이 낮은 컴퓨터에서도 브라우저만으로 AI 이미지와 영상을 만드는 방법을 소개합니다. &gt; - 이미지 생성은 Krea 2, 영상 생성은 한국어 대사가 가능한 LTX-2.3 오픈소스 모델을 사용하며, 노트북을 복사해 단계별로 실행하는 방식입니다. &gt; - 세션...">
+<meta name="twitter:image" content="https://share.cmdspace.work/assets/og/og-share.png">
+
+<script>
+(function(){try{var t=localStorage.getItem('cmds-theme');if(t){document.documentElement.dataset.theme=t;}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.dataset.theme='dark';}else{document.documentElement.dataset.theme='light';}}catch(e){}})();
+</script>
+
+<style>
+:root {
+	--max: 750px;
+	--text: #111;
+	--muted: #6b6b6b;
+	--bg: #fff;
+	--accent: #111;
+	--accent-light: #333;
+	--accent-on: #fff;
+	--border: #e4e4e4;
+	--code-bg: #f4f4f4;
+	--card-bg: #fff;
+	--pre-bg: #f6f6f6;
+	--pre-fg: #222;
+	--graph-note: #555;
+}
+[data-theme="dark"] {
+	--text: #ececec;
+	--muted: #9a9a9a;
+	--bg: #0a0a0a;
+	--accent: #ececec;
+	--accent-light: #fff;
+	--accent-on: #0a0a0a;
+	--border: #242424;
+	--code-bg: #161616;
+	--card-bg: #101010;
+	--pre-bg: #111;
+	--pre-fg: #ddd;
+	--graph-note: #aaa;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+	--text: #ececec;
+	--muted: #9a9a9a;
+	--bg: #0a0a0a;
+	--accent: #ececec;
+	--accent-light: #fff;
+	--accent-on: #0a0a0a;
+	--border: #242424;
+	--code-bg: #161616;
+	--card-bg: #101010;
+	--pre-bg: #111;
+	--pre-fg: #ddd;
+	--graph-note: #aaa;
+	}
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { color-scheme: light dark; scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
+	color: var(--text); background: var(--bg); line-height: 1.75;
+	font-size: 16px; -webkit-font-smoothing: antialiased;
+	transition: background-color .2s, color .2s;
+}
+
+.side-tools {
+	position: fixed; top: 1rem; right: 1rem; z-index: 100;
+	display: flex; flex-direction: column; gap: 0.5rem;
+}
+.tool-btn {
+	width: 36px; height: 36px;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 50%;
+	cursor: pointer;
+	display: grid; place-items: center;
+	color: var(--text);
+	transition: border-color .15s, background .15s, color .15s;
+}
+.tool-btn:hover { border-color: var(--accent); }
+.tool-btn.active { border-color: var(--accent); color: var(--accent); }
+.tool-btn svg { width: 16px; height: 16px; }
+
+.side-panel {
+	position: fixed; top: 1rem; right: 4rem; z-index: 99;
+	width: 280px; max-height: calc(100vh - 2rem);
+	overflow-y: auto;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 1rem 1.1rem;
+	display: none;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.side-panel.open { display: block; }
+.panel-head {
+	display: flex; align-items: center; justify-content: space-between;
+	margin-bottom: 0.6rem;
+}
+.panel-head h3 {
+	font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+	letter-spacing: 0.08em; color: var(--muted);
+}
+.pin-btn {
+	background: none; border: none; cursor: pointer; color: var(--muted);
+	width: 22px; height: 22px; display: grid; place-items: center;
+	border-radius: 5px;
+}
+.pin-btn:hover { color: var(--accent); background: var(--code-bg); }
+.pin-btn svg { width: 13px; height: 13px; }
+.g-controls { display: flex; gap: 2px; align-items: center; }
+
+/* docked mode: persistent right sidebar — TOC on top (scrolls), graph fills the rest */
+body.cmds-docked { padding-right: 312px; }
+body.cmds-docked .side-tools { right: calc(312px + 1rem); }
+body.cmds-docked #tocToggle, body.cmds-docked #graphToggle { display: none; }
+body.cmds-docked .pin-btn { color: var(--accent); }
+.side-dock {
+	position: fixed; top: 0; right: 0; bottom: 0; width: 312px; z-index: 98;
+	background: var(--card-bg); border-left: 1px solid var(--border);
+	display: flex; flex-direction: column;
+}
+.side-dock[hidden] { display: none; }
+.side-dock .side-panel {
+	position: static; display: block; width: auto; max-height: none;
+	border: none; border-radius: 0; box-shadow: none;
+}
+.side-dock #tocPanel { flex: 0 1 auto; min-height: 120px; max-height: 58%; overflow-y: auto; }
+.side-dock #graphPanel {
+	flex: 1 1 auto; min-height: 220px; overflow: hidden;
+	border-top: 1px solid var(--border);
+	display: flex; flex-direction: column;
+}
+.side-dock #graphPanel canvas { flex: 1; min-height: 0; }
+#graphCanvas { touch-action: none; cursor: grab; }
+#graphCanvas.dragging { cursor: grabbing; }
+#graphCanvas.on-node { cursor: pointer; }
+#tocList { display: flex; flex-direction: column; gap: 2px; }
+#tocList a {
+	color: var(--text); text-decoration: none; font-size: 0.82rem;
+	line-height: 1.4; padding: 0.25rem 0.5rem; border-radius: 6px;
+	display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+#tocList a:hover { background: var(--code-bg); color: var(--accent); }
+#tocList a.active { background: var(--code-bg); color: var(--accent); font-weight: 600; }
+#tocList a.toc-h2 { padding-left: 1.1rem; }
+#tocList a.toc-h3 { padding-left: 1.7rem; font-size: 0.78rem; color: var(--muted); }
+#tocList a.toc-h4 { padding-left: 2.3rem; font-size: 0.78rem; color: var(--muted); }
+#graphCanvas { width: 100%; display: block; }
+.graph-legend {
+	display: flex; gap: 0.9rem; margin-top: 0.5rem;
+	font-size: 0.7rem; color: var(--muted);
+}
+.graph-legend span::before {
+	content: ''; display: inline-block; width: 8px; height: 8px;
+	border-radius: 50%; margin-right: 4px;
+}
+.graph-legend .lg-link::before { background: var(--graph-note); }
+.graph-legend .lg-tag::before { background: #E985A2; }
+
+main {
+	max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem 3rem;
+}
+
+#note-content { font-size: 1rem; overflow-wrap: break-word; }
+#note-content h1, #note-content h2, #note-content h3,
+#note-content h4, #note-content h5, #note-content h6 {
+	font-weight: 700; letter-spacing: -0.02em; line-height: 1.3;
+	margin: 2rem 0 0.75rem; scroll-margin-top: 1.5rem;
+}
+#note-content h1 { font-size: 1.85rem; margin-top: 2.4rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+#note-content h2 { font-size: 1.4rem; margin-top: 2.2rem; }
+#note-content h3 { font-size: 1.18rem; }
+#note-content h4 { font-size: 1.06rem; color: var(--text); margin-top: 1.8rem; }
+#note-content h5 { font-size: 0.98rem; color: var(--text); }
+#note-content h6 { font-size: 0.9rem; color: var(--muted); }
+#note-content p { margin: 0.85rem 0; }
+#note-content ul, #note-content ol { margin: 0.85rem 0 0.85rem 1.4rem; }
+#note-content li { margin: 0.35rem 0; }
+#note-content li > ul, #note-content li > ol { margin: 0.25rem 0 0.25rem 1.2rem; }
+#note-content a {
+	color: var(--accent); text-decoration: none;
+	border-bottom: 1px solid transparent; transition: border-color .15s;
+}
+#note-content a:hover { border-bottom-color: var(--accent); }
+#note-content code {
+	background: var(--code-bg); padding: 0.18em 0.45em; border-radius: 6px;
+	font-size: 0.86em; font-family: 'SF Mono', 'Menlo', monospace;
+}
+#note-content pre {
+	background: var(--pre-bg); color: var(--pre-fg);
+	border: 1px solid var(--border);
+	padding: 1rem; border-radius: 12px;
+	overflow-x: auto; font-size: 0.85rem; line-height: 1.6;
+	font-family: 'SF Mono', 'Menlo', monospace; margin: 1rem 0;
+	position: relative;
+}
+.code-copy {
+	position: absolute; top: 8px; right: 8px;
+	width: 28px; height: 28px; border-radius: 6px;
+	background: color-mix(in srgb, var(--card-bg) 92%, transparent);
+	backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+	border: 1px solid var(--border);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+	color: var(--muted); cursor: pointer;
+	display: grid; place-items: center;
+	opacity: 0; transition: opacity .15s, color .15s, border-color .15s;
+}
+#note-content pre:hover .code-copy, .code-copy.copied { opacity: 1; }
+.code-copy:hover, .code-copy.copied { color: var(--accent); border-color: var(--accent); }
+.code-copy svg { width: 14px; height: 14px; }
+.h-anchor {
+	margin-left: 0.4rem; opacity: 0; color: var(--muted);
+	border-bottom: none !important; transition: opacity .15s, color .15s;
+}
+.h-anchor svg { width: 0.75em; height: 0.75em; }
+.h-anchor:hover { color: var(--accent); }
+#note-content h1:hover .h-anchor, #note-content h2:hover .h-anchor,
+#note-content h3:hover .h-anchor, #note-content h4:hover .h-anchor { opacity: 0.75; }
+#note-content pre code { background: transparent; padding: 0; font-size: 1em; }
+#note-content pre[data-lang]::before {
+	content: attr(data-lang);
+	position: absolute; top: 7px; left: 12px;
+	font-size: 0.66rem; font-weight: 600; letter-spacing: 0.05em;
+	color: var(--muted); opacity: 0.75; text-transform: lowercase;
+	font-family: -apple-system, sans-serif;
+}
+#note-content pre[data-lang] { padding-top: 1.9rem; }
+.mermaid-container { margin: 1rem 0; overflow-x: auto; text-align: center; }
+.mermaid-container svg { max-width: 100%; height: auto; }
+#note-content blockquote {
+	border-left: 3px solid var(--accent); padding: 0.5rem 1rem;
+	margin: 1rem 0; color: var(--muted); background: var(--code-bg);
+	border-radius: 0 8px 8px 0;
+}
+#note-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; }
+#note-content table {
+	border-collapse: collapse; margin: 1rem 0;
+	font-size: 0.9rem;
+	/* wide tables scroll inside themselves instead of panning the page */
+	display: block; width: max-content; min-width: 60%; max-width: 100%;
+	overflow-x: auto;
+}
+#note-content th, #note-content td {
+	border: none; border-bottom: 1px solid var(--border);
+	padding: 0.65rem 0.9rem; text-align: left; vertical-align: top;
+}
+#note-content th { font-weight: 700; font-size: 0.85rem; color: var(--muted); border-bottom-width: 2px; }
+#note-content tr:last-child td { border-bottom: none; }
+#note-content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+#note-content mark { background: rgba(233,133,162,0.25); padding: 0 0.2rem; border-radius: 3px; }
+#note-content .callout {
+	--co: var(--accent);
+	background: var(--code-bg); border-radius: 8px; padding: 0.9rem 1rem;
+	margin: 1rem 0; border-left: 3px solid var(--co);
+}
+#note-content .callout-title {
+	display: flex; align-items: center; gap: 0.5em;
+	font-weight: 700; color: var(--co); margin: 0;
+}
+#note-content .callout-icon { display: flex; align-items: center; flex-shrink: 0; }
+#note-content .callout-icon svg, #note-content .callout-title > svg {
+	width: 1.1em; height: 1.1em;
+}
+#note-content .callout-title-inner { line-height: 1.45; }
+#note-content .callout-fold { display: none; }
+#note-content .callout-content > :first-child { margin-top: 0.45rem; }
+#note-content .callout-content > :last-child { margin-bottom: 0.1rem; }
+#note-content .callout[data-callout="abstract"], #note-content .callout[data-callout="summary"], #note-content .callout[data-callout="tldr"] { --co: #23a8b8; }
+#note-content .callout[data-callout="info"], #note-content .callout[data-callout="note"], #note-content .callout[data-callout="todo"] { --co: #4a8edb; }
+#note-content .callout[data-callout="tip"], #note-content .callout[data-callout="hint"], #note-content .callout[data-callout="important"] { --co: #23b89b; }
+#note-content .callout[data-callout="success"], #note-content .callout[data-callout="check"], #note-content .callout[data-callout="done"] { --co: #3aa657; }
+#note-content .callout[data-callout="question"], #note-content .callout[data-callout="help"], #note-content .callout[data-callout="faq"] { --co: #d9a13b; }
+#note-content .callout[data-callout="warning"], #note-content .callout[data-callout="caution"], #note-content .callout[data-callout="attention"] { --co: #e0813a; }
+#note-content .callout[data-callout="danger"], #note-content .callout[data-callout="error"], #note-content .callout[data-callout="failure"], #note-content .callout[data-callout="fail"], #note-content .callout[data-callout="missing"], #note-content .callout[data-callout="bug"] { --co: #e05252; }
+#note-content .callout[data-callout="example"] { --co: #8a6fd6; }
+#note-content .callout[data-callout="quote"], #note-content .callout[data-callout="cite"] { --co: var(--muted); }
+#note-content .internal-link {
+	color: var(--accent); border-bottom: 1px dashed var(--accent); cursor: help;
+}
+
+.cmds-meta {
+	max-width: var(--max); margin: 0 auto;
+	padding: 2rem 1.5rem 2rem; border-top: 1px solid var(--border);
+	font-size: 0.75rem; color: var(--muted); text-align: center;
+	display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+}
+.cmds-meta img { width: 28px; height: 28px; border-radius: 50%; }
+.cmds-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.cmds-badge {
+	display: inline-flex; align-items: center; gap: 0.35em;
+	font-size: 0.7rem; font-weight: 600; color: var(--muted);
+	border: 1px solid var(--border); border-radius: 999px;
+	padding: 0.22rem 0.65rem; background: var(--card-bg);
+}
+.cmds-badge svg { width: 12px; height: 12px; }
+.cmds-badge.b-e2e { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.cmds-badge.b-soon { color: #e0813a; border-color: color-mix(in srgb, #e0813a 45%, var(--border)); }
+.cmds-badge.b-expired { color: #e05252; border-color: color-mix(in srgb, #e05252 45%, var(--border)); }
+.cmds-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.cmds-meta a:hover { text-decoration: underline; }
+.cmds-theme-note { font-size: 0.68rem; color: var(--muted); opacity: 0.75; }
+.cmds-author-link {
+	margin-top: 0.35rem; font-size: 0.85rem; font-weight: 700;
+	letter-spacing: -0.01em;
+}
+.cmds-loading { color: var(--muted); font-style: italic; }
+.decrypt-error {
+	color: #c62828; background: #fce4ec; padding: 1rem; border-radius: 8px;
+	border: 1px solid #c62828; margin: 2rem 0; text-align: center;
+}
+[data-theme="dark"] .decrypt-error { background: #4a1a24; color: #ff8899; border-color: #ff8899; }
+
+@media (max-width: 720px) {
+	.side-panel { right: 1rem; top: 4rem; width: min(280px, calc(100vw - 2rem)); }
+}
+</style>
+<link rel="stylesheet" href="https://laguna821.github.io/obsidian-shared-notes/notes/css/5d27aed2110e9e8b7e83f3a69c5ce3945368ba87.css">
+</head>
+<body>
+
+<div class="side-tools">
+	<button class="tool-btn" id="themeToggle" aria-label="Toggle theme">
+		<svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+	</button>
+	<button class="tool-btn" id="tocToggle" aria-label="Table of contents" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+	</button>
+	<button class="tool-btn" id="graphToggle" aria-label="Local graph" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M10.8 6.9 6.2 16m7-9.1 4.6 9.1M7.2 18h9.6"/></svg>
+	</button>
+	<button class="tool-btn" id="mdCopy" aria-label="Copy markdown" title="Copy markdown" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5"/></svg>
+	</button>
+	<button class="tool-btn" id="mdDownload" aria-label="Download markdown" title="Download .md" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5"/><path d="M4 19h16"/></svg>
+	</button>
+</div>
+
+<div class="side-dock" id="sideDock" hidden></div>
+
+<aside class="side-panel" id="tocPanel"><div class="panel-head"><h3>Contents</h3><button class="pin-btn" data-pin aria-label="Dock panels" title="Dock / undock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5M9 3h6l1 7 3 2H5l3-2 1-7z"/></svg></button></div><nav id="tocList"></nav></aside>
+<aside class="side-panel" id="graphPanel"><div class="panel-head"><h3>Local Graph</h3><span class="g-controls"><button class="pin-btn" id="gZoomOut" aria-label="Zoom out" title="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg></button><button class="pin-btn" id="gZoomIn" aria-label="Zoom in" title="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><button class="pin-btn" id="gReset" aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button><button class="pin-btn" data-pin aria-label="Dock panels" title="Dock / undock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5M9 3h6l1 7 3 2H5l3-2 1-7z"/></svg></button></span></div><canvas id="graphCanvas"></canvas>
+<div class="graph-legend"><span class="lg-link">Notes</span><span class="lg-tag">Tags</span></div></aside>
+
+<main>
+	<article id="note-content" class="markdown-rendered"><h2 data-heading="📝 Summary or Key Trigger" dir="auto">📝 Summary or Key Trigger</h2>
+<div data-callout-metadata="" data-callout-fold="+" data-callout="summary" class="callout is-collapsible node-insert-event callout-summary"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-clipboard-list"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></div><div class="callout-title-inner">3줄 요약</div><div class="callout-fold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg></div></div><div class="callout-content">
+<ul>
+<li dir="auto">이 영상은 카글(Kaggle)의 무료 GPU를 활용해 사양이 낮은 컴퓨터에서도 브라우저만으로 AI 이미지와 영상을 만드는 방법을 소개합니다.</li>
+<li dir="auto">이미지 생성은 Krea 2, 영상 생성은 한국어 대사가 가능한 LTX-2.3 오픈소스 모델을 사용하며, 노트북을 복사해 단계별로 실행하는 방식입니다.</li>
+<li dir="auto">세션 종료, 모델 삭제, 결과물 다운로드 같은 주의사항과 함께, 무료 GPU 사용 시간을 아끼는 팁도 알려줍니다.</li>
+</ul>
+</div></div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="quote" class="callout node-insert-event callout-quote"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">Quote</div></div><div class="callout-content">
+<p dir="auto">무료 GPU는 공짜가 아니라, 시간과 집중력의 선불이다. 조금이라도 아끼고 잘 쓰는 사람이 결국 더 많이 만든다. — 안창현</p>
+</div></div>
+<h2 data-heading="🧠 주요 내용 / 본문" dir="auto">🧠 주요 내용 / 본문</h2>
+<p dir="auto">똥컴으로도 <strong>무료</strong> <strong>AI 이미지·영상</strong>을 만들 수 있는 방법은? 구글 Kaggle에서 제공하는 무료 GPU를 활용하면 고사양 컴퓨터 없이도 이미지 생성 모델 '크레아 2'와 한국어 대사 영상 모델 'LTX 2.3'을 이용해 결과물을 얻을 수 있습니다. 고성능 컴퓨터 없이도 구글 Kaggle의 무료 GPU를 활용하여 AI 이미지와 영상을 무료로 만들 수 있다.</p>
+<h2 data-heading="목차" dir="auto">목차</h2>
+<ul>
+<li dir="auto"><a data-tooltip-position="top" aria-label="https://lilys.ai/digest/10848736/12749273#dae727f2-dca7-431e-b0b2-b0d14e5535b7" rel="noopener nofollow" class="external-link" href="https://lilys.ai/digest/10848736/12749273#dae727f2-dca7-431e-b0b2-b0d14e5535b7" target="_blank">1. 사양 낮은 컴퓨터에서도 무료로 AI 이미지·영상 만들기</a></li>
+<li dir="auto"><a data-tooltip-position="top" aria-label="https://lilys.ai/digest/10848736/12749273#3825ce4c-0236-4c7e-a8ff-d0bd7ffe4e1f" rel="noopener nofollow" class="external-link" href="https://lilys.ai/digest/10848736/12749273#3825ce4c-0236-4c7e-a8ff-d0bd7ffe4e1f" target="_blank">1.1. Kaggle 가입 및 무료 GPU 활용</a></li>
+<li dir="auto"><a data-tooltip-position="top" aria-label="https://lilys.ai/digest/10848736/12749273#2079e7b9-4394-47ca-9f7e-698c712c1ba5" rel="noopener nofollow" class="external-link" href="https://lilys.ai/digest/10848736/12749273#2079e7b9-4394-47ca-9f7e-698c712c1ba5" target="_blank">1.2. Krea 2를 이용한 AI 이미지 생성</a></li>
+<li dir="auto"><a data-tooltip-position="top" aria-label="https://lilys.ai/digest/10848736/12749273#8a4c2d5a-dc9a-42ed-8856-409b1018f11a" rel="noopener nofollow" class="external-link" href="https://lilys.ai/digest/10848736/12749273#8a4c2d5a-dc9a-42ed-8856-409b1018f11a" target="_blank">1.3. LTX 2.3을 이용한 한국어 대사 영상 생성</a></li>
+<li dir="auto"><a data-tooltip-position="top" aria-label="https://lilys.ai/digest/10848736/12749273#5c8d179b-3271-4f2e-9e18-e94e59930f4b" rel="noopener nofollow" class="external-link" href="https://lilys.ai/digest/10848736/12749273#5c8d179b-3271-4f2e-9e18-e94e59930f4b" target="_blank">1.4. 영상 제작 팁 및 주의사항</a></li>
+</ul>
+<h2 data-heading="Kaggle 가입 및 무료 GPU 활용" dir="auto">Kaggle 가입 및 무료 GPU 활용</h2>
+<p dir="auto"><img alt="captureSource" src="https://resource-release.s3.ap-northeast-2.amazonaws.com/thumbnails/5DQLYQg1iLU/107.jpg" referrerpolicy="no-referrer"></p>
+<h2 data-heading="가입 조건과 무료 GPU 사양" dir="auto">가입 조건과 무료 GPU 사양</h2>
+<ul>
+<li dir="auto"><strong>Kaggle 가입 필요</strong>: AI 이미지 및 영상 제작을 위해 Kaggle에 가입해야 한다.</li>
+<li dir="auto"><strong>무료 GPU 제공</strong>: Kaggle은 일주일에 30시간 무료 GPU를 대여해준다.
+<ul>
+<li dir="auto">가입 시 휴대폰 인증이 필요하며, 인증 완료 시 16GB GPU 두 장을 무료로 사용할 수 있다.</li>
+</ul>
+</li>
+<li dir="auto"><strong>"절대 돈 내지 마라"</strong>: 이 규칙을 강조한다.</li>
+</ul>
+<h2 data-heading="Krea 2를 이용한 AI 이미지 생성" dir="auto">Krea 2를 이용한 AI 이미지 생성</h2>
+<p dir="auto"><img alt="captureSource" src="https://resource-release.s3.ap-northeast-2.amazonaws.com/thumbnails/5DQLYQg1iLU/136.jpg" referrerpolicy="no-referrer"></p>
+<h2 data-heading="Krea 2 모델과 실행 환경 준비" dir="auto">Krea 2 모델과 실행 환경 준비</h2>
+<ul>
+<li dir="auto"><strong>Krea 2 모델 소개</strong>: 오픈소스 모델 중 성능이 괜찮은 Krea 2를 사용하여 이미지를 생성하는 방법을 설명한다.</li>
+<li dir="auto"><strong>노트북 활용 및 실행 환경 준비</strong>: 직접 노트북을 만드는 대신, 미리 준비된 노트북 링크를 활용한다.
+<ul>
+<li dir="auto">노트북 링크를 복사(Copy &amp; Edit)하여 사용한다.</li>
+<li dir="auto">총 5단계로 구성되어 있으며, 첫 단계는 실행 환경 준비이다.</li>
+<li dir="auto"><strong>세션 옵션에서 GPU를 반드시 켜야 한다.</strong></li>
+<li dir="auto">인터넷 연결 상태를 확인한다.</li>
+<li dir="auto">1단계 셀을 실행하면 환경 준비가 완료된다.</li>
+</ul>
+</li>
+</ul>
+<h2 data-heading="이미지 생성 2~5단계 실행" dir="auto">이미지 생성 2~5단계 실행</h2>
+<ul>
+<li dir="auto"><strong>2단계 · AI 그림 생성 프로그램 설치</strong>: 2단계에서는 AI 그림을 그려주는 프로그램을 설치한다.
+<ul>
+<li dir="auto">셀을 실행하면 약 3분 후 설치가 완료된다.</li>
+</ul>
+</li>
+<li dir="auto"><strong>3단계 · AI 모델 다운로드</strong>: 3단계에서는 그림을 그리는 AI 모델을 다운로드한다.
+<ul>
+<li dir="auto">셀을 실행하면 약 1분 만에 모델 다운로드가 완료된다.</li>
+</ul>
+</li>
+<li dir="auto"><strong>4단계 · 정상 실행 확인</strong>: 4단계는 매우 빠르게 진행되며, 한 줄이 나타나면 정상 실행된 것이다.</li>
+<li dir="auto"><strong>5단계 · 프로그램 실행 및 이미지 생성</strong>: 5단계에서는 프로그램을 실행하며, 약 1분 후 이미지 생성을 위한 링크가 나타난다.
+<ul>
+<li dir="auto">생성된 화면에서 프롬프트 입력, 이미지 개수, 해상도, 스타일 등을 선택하여 이미지를 만들 수 있다.</li>
+<li dir="auto">프롬프트에 맞는 이미지가 생성되는 것을 확인할 수 있다.</li>
+<li dir="auto">무료 GPU 사용 시간은 세션 옵션에 표시되며, 이미지 생성 시 시간이 소모된다.</li>
+</ul>
+</li>
+</ul>
+<h2 data-heading="세션 종료의 중요성" dir="auto">세션 종료의 중요성</h2>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout node-insert-event callout-warning"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">스톱 세션</div></div><div class="callout-content">
+<p dir="auto">GPU 사용을 중단하려면 반드시 '스톱 세션' 버튼을 눌러야 한다.</p>
+</div></div>
+<h2 data-heading="LTX 2.3을 이용한 한국어 대사 영상 생성" dir="auto">LTX 2.3을 이용한 한국어 대사 영상 생성</h2>
+<p dir="auto"><img alt="captureSource" src="https://resource-release.s3.ap-northeast-2.amazonaws.com/thumbnails/5DQLYQg1iLU/329.jpg" referrerpolicy="no-referrer"></p>
+<h2 data-heading="LTX 2.3 모델과 노트북 실행 준비" dir="auto">LTX 2.3 모델과 노트북 실행 준비</h2>
+<ul>
+<li dir="auto"><strong>LTX 2.3 모델 소개</strong>: 생성한 이미지들로 한국어 대사가 가능한 LTX 2.3 모델을 사용하여 영상을 만든다.
+<ul>
+<li dir="auto">이 모델은 오픈소스 중 한국어 대사가 가장 자연스러운 모델로 평가된다.</li>
+</ul>
+</li>
+<li dir="auto"><strong>노트북 복사 및 실행 환경 설정</strong>: 영상 제작을 위한 노트북 링크를 복사하여 사용한다.
+<ul>
+<li dir="auto">이미지 생성과 마찬가지로 5단계로 구성되어 있으며, 영상 모델이라 시간이 더 소요된다.</li>
+<li dir="auto">단계별 또는 한꺼번에 실행할 수 있다.</li>
+<li dir="auto">실행 전 세션 옵션에서 GPU 선택 및 인터넷 연결을 확인해야 한다.</li>
+<li dir="auto">'런 5'를 눌러 실행한다.</li>
+</ul>
+</li>
+<li dir="auto"><strong>단계별 실행 및 완료</strong>: 1단계부터 4단계까지 순차적으로 실행되며, 각 단계 완료 메시지가 표시된다.
+<ul>
+<li dir="auto">마지막 단계에서 영상 생성을 위한 링크가 나타난다.</li>
+</ul>
+</li>
+</ul>
+<h2 data-heading="영상 생성 화면 및 옵션" dir="auto">영상 생성 화면 및 옵션</h2>
+<ul>
+<li dir="auto"><strong>입력 방식</strong>: 링크를 클릭하면 영상 생성 화면이 나타나며, 텍스트만 입력하거나 첫 장면, 시작 이미지와 끝 이미지를 넣어 영상을 만들 수 있다.
+<ul>
+<li dir="auto">예시로 Krea 2로 만든 아이와 로봇 이미지를 사용한다.</li>
+</ul>
+</li>
+<li dir="auto"><strong>프롬프트 언어</strong>: 프롬프트는 기본적으로 영어로 입력하고, 한국어 대사는 한국어로 작성한다.</li>
+<li dir="auto"><strong>길이와 화질</strong>: 영상 길이와 화질을 선택할 수 있으며, 화질이 높거나 길이가 길수록 시간이 더 걸린다.
+<ul>
+<li dir="auto">처음에는 480p로 시작하여, 결과가 만족스러우면 720p 등으로 높이는 것을 권장한다.</li>
+</ul>
+</li>
+<li dir="auto"><strong>생성 소요 시간</strong>: 생성 시간은 GPU 상황에 따라 다르며, 480p는 약 7분, 720p는 약 13분이 소요된다.</li>
+</ul>
+<h2 data-heading="영상 생성 결과 확인" dir="auto">영상 생성 결과 확인</h2>
+<ul>
+<li dir="auto"><strong>2단계 처리 구조</strong>: 영상 제작은 1, 2단계를 거치며, 특히 2단계 화질 개선에서 시간이 오래 걸린다.</li>
+<li dir="auto"><strong>결과 품질</strong>: 생성된 영상은 프롬프트대로 대사와 움직임이 잘 만들어졌음을 확인할 수 있다.</li>
+<li dir="auto"><strong>결과물 저장</strong>: 결과물이 마음에 들면 다운로드 버튼을 눌러 저장한다.</li>
+<li dir="auto"><strong>720p 제작 결과</strong>: 720p로 제작 시 시간이 걸리지만, 한국어 대사와 움직임이 자연스럽게 만들어진다.</li>
+</ul>
+<h2 data-heading="영상 제작 팁 및 주의사항" dir="auto">영상 제작 팁 및 주의사항</h2>
+<p dir="auto"><img alt="captureSource" src="https://resource-release.s3.ap-northeast-2.amazonaws.com/thumbnails/5DQLYQg1iLU/526.jpg" referrerpolicy="no-referrer"></p>
+<h2 data-heading="영상 제작 팁" dir="auto">영상 제작 팁</h2>
+<ul>
+<li dir="auto"><strong>시작/끝 이미지 활용 영상 제작</strong>: 시작 이미지와 끝 이미지를 넣어 나이가 들어가는 모습의 영상을 만들 수 있다.
+<ul>
+<li dir="auto">480p로 제작 시 약 58초가 소요되며, 젊은 여성이 나이가 들어가는 모습과 계절 변화가 자연스럽게 표현된다.</li>
+</ul>
+</li>
+<li dir="auto"><strong>고화질 영상 제작 권장</strong>: 720p로 제작하면 화질이 더 좋으므로, 다른 작업을 하면서 기다리는 것을 추천한다.</li>
+</ul>
+<h2 data-heading="필수 주의사항" dir="auto">필수 주의사항</h2>
+<div data-callout-metadata="" data-callout-fold="" data-callout="warning" class="callout node-insert-event callout-warning"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">세션 종료</div></div><div class="callout-content">
+<p dir="auto">사용하지 않을 때는 반드시 '스톱 세션'을 눌러야 한다.</p>
+</div></div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="attention" class="callout node-insert-event callout-attention"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">모델 삭제</div></div><div class="callout-content">
+<p dir="auto">세션을 종료하면 다운로드한 모델이 모두 사라지므로, 작업은 한 번에 몰아서 하는 것이 편리하다.</p>
+</div></div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="tip" class="callout node-insert-event callout-tip"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">오류 해결</div></div><div class="callout-content">
+<p dir="auto">프로그램 셋업 오류 시 셀을 껐다 다시 실행하거나, 그라디오 화면 오류 시 링크를 재접속하면 대부분 해결된다.</p>
+</div></div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="important" class="callout node-insert-event callout-important"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">결과물 저장</div></div><div class="callout-content">
+<p dir="auto">마음에 드는 결과물은 반드시 다운로드해야 모델과 함께 사라지지 않는다.</p>
+</div></div>
+<div data-callout-metadata="" data-callout-fold="" data-callout="note" class="callout node-insert-event callout-note"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">노트북 수정 및 저장</div></div><div class="callout-content">
+<p dir="auto">노트북 셀을 수정할 경우 '퀵 세이브'로 저장하고, '세이브 앤 런 올'은 전체 재실행되므로 주의한다.</p>
+</div></div>
+<hr>
+<h2 data-heading="내면 질문" dir="auto">내면 질문</h2>
+<h3 data-heading="1) 이 노트가 내 사고에 어떤 점을 던져주었는가?" dir="auto">1) 이 노트가 내 사고에 어떤 점을 던져주었는가?</h3>
+<div data-callout-metadata="" data-callout-fold="" data-callout="quote" class="callout node-insert-event callout-quote"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">DIKM: X-Axis</div></div><div class="callout-content">
+<p dir="auto"> (최소) 3~5줄 요약으로 먼저 적기 → 필요하면 아래를 챕터처럼 확장</p>
+</div></div>
+<p dir="auto">구독료 없이 AI영상 만들기. 따라해보면 생각보다 굉장히 쉬운데:</p>
+<ul>
+<li dir="auto">Kaggle ID를 만든다</li>
+<li dir="auto">순서대로 클릭한다<br>
+두 가지가 끝이라서 세팅과 실행이 매우 단순하고 따라하기도 쉽다.</li>
+</ul>
+<h3 data-heading="2) 지금의 나와 어떻게 연결되는가?" dir="auto">2) 지금의 나와 어떻게 연결되는가?</h3>
+<div data-callout-metadata="" data-callout-fold="" data-callout="quote" class="callout node-insert-event callout-quote"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">DIKM: Y-Axis</div></div><div class="callout-content">
+<p dir="auto"> DIKM의 “삶과 연결되는 지식” 관점에서, 내 루틴/관계/연구/창작과 연결 고리 만들기 </p>
+</div></div>
+<p dir="auto">해보니 느낀 점들은:</p>
+<ul>
+<li dir="auto">매번 세션때마다 1-5단계 클라우드 모델 설치를 다시 해야함</li>
+<li dir="auto">그래서 스토리 보드랑 이미지를 몽땅 다 파이널로 준비하고 작업시작해야 한다</li>
+<li dir="auto">720p 10초 만드는데 대략 30분 정도 (구글 32gb VRAM 대여)</li>
+<li dir="auto">GPT-image-2 등으로 10초 단위로 시작 frame / 엔드 frame 이미지들을 수십-수백장 다 만들어놓고 한번에 작업해야한다.</li>
+</ul>
+<p dir="auto">작업에 걸리는 시간은,<br>
+<strong>720p 10초짜리 기준:</strong> 1800초 (30분) 정도가 소요되었다</p>
+<p dir="auto">대신에 결과물에 음성이 들어가고 액션 씬도 꽤 잘 나온다 (프롬프트 엔지니어링을 잘 해야한다는 부분이 있지만)</p>
+<h3 data-heading="참고 팁: 프롬프팅을 좀 더 빠르고 쉽게 하기 위한 세팅" dir="auto">참고 팁: 프롬프팅을 좀 더 빠르고 쉽게 하기 위한 세팅</h3>
+<p dir="auto"><a data-tooltip-position="top" aria-label="https://www.youtube.com/watch?v=sNk_bZDxM5w" rel="noopener nofollow" class="external-link" href="https://www.youtube.com/watch?v=sNk_bZDxM5w" target="_blank">미니맥스 H3 로컬 Comfy UI 세팅 관련 영상</a> 참조.<br>
+<a data-tooltip-position="top" aria-label="https://huggingface.co/MiniMaxAI/MiniMax-H3/tree/main/docs" rel="noopener nofollow" class="external-link" href="https://huggingface.co/MiniMaxAI/MiniMax-H3/tree/main/docs" target="_blank">이 링크로 가서</a> 아래의 마크다운 두가지를 다운받은 다음</p>
+<p dir="auto"><img alt="{60CD27C9-441C-42A9-8E04-DAD912718743}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1786004802093-f970993a-d0b3-4700-be76-807314b65b5d.png" referrerpolicy="no-referrer"></p>
+<p dir="auto">GPT에 프로젝트 폴더를 하나 파놓고 아래처럼 마크다운 파일을 첨부해서 다음과 같이 치면 세팅이 된다:</p>
+<pre><code>해당 MD 파일을 확인하고 상황에 맞게 Prompt 제작할 수 있도록 준비해줘
+</code></pre>
+<p dir="auto"><img alt="{914ADFC5-9372-4DFD-9D79-311E33D2516C}.png" src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1786004856353-d8f4551e-cfc0-48f8-aa31-12e6f5c568c5.png" referrerpolicy="no-referrer"></p>
+<p dir="auto">그러면 예를 들어 <code>닌자 고양이와 다크 히어로+베놈 느낌의 근육질 거북이가 싸우는 실사 영화 액션 씬 프롬프트를 영어로 만들어봐</code> 라고 하면 길게 프롬프트가 알아서 잘 생성된다.</p>
+<h3 data-heading="3) 앞으로 어떤 실천/의미로 확장될 수 있을까?" dir="auto">3) 앞으로 어떤 실천/의미로 확장될 수 있을까?</h3>
+<div data-callout-metadata="" data-callout-fold="" data-callout="quote" class="callout node-insert-event callout-quote"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">: DIKM: z-Axis</div></div><div class="callout-content">
+<p dir="auto">“0.1% 성장률” 관점에서, 거창한 목표 말고 ‘다음 10분/다음 1주’ 단위로 번역 </p>
+</div></div>
+<p dir="auto">Comfy UI로 MiniMax H3를 로컬로 돌리기엔 매우매우 비싼 고성능 GPU와 32-64GB이상의 고용량 램이 달린 초 고사양 데스크톱 컴퓨터가 필요한데, 그런 컴퓨터는 일반적인 대학생들에게는 거의 없어서 로컬로 돌리기에는 매우 힘들고 설치와 실행도 어려운 부분이 있다. 그런 면에서 Kaggle 을 이용해서 구글 서버를 빌려서 AI영상 제작을 돌려보는 팁은 매우 귀중한 팁이다.</p>
+<p dir="auto">한 가지 계속 강조할 부분은, 영상에서도 나오지만 <strong>반드시 작업 안하면 Stop Session을 누를 것</strong>과, <strong>작업 결과물 마음에 드는 것을 반드시 다운로드 버튼을 일일히 매번 눌러줄 것</strong>이다. 이 두 가지만 알고 있으면 상당히 많이 실습을 해볼 수 있고, 구글 계정이 여러 개라면 돌려막기도 가능하므로 상당히 강력한 AI영상 제작실습 강의자료 실전 노트가 된다.</p></article>
+</main>
+
+<footer class="cmds-meta">
+	
+	<a href="https://cmdspace.work" target="_blank" rel="noopener"><img src="https://cmdspace.work/assets/logos/cmds-logo-round.png" alt="CMDSPACE"></a>
+	<span>Shared via <a href="https://github.com/johnfkoo951/cmds-share" target="_blank" rel="noopener">CMDS Share</a></span>
+	<span class="cmds-theme-note">Theme: Mono</span>
+	
+</footer>
+
+
+<script type="application/json" id="graph-data">{"title":"이제 똥컴도 가능! 구글 Kaggle에서 무료로 AI 이미지·영상 만들기","nodes":[{"label":"이제 똥컴도 가능! 구글 Kaggle에서 무료로 AI 이미지·영상 만들기","type":"note","level":0},{"label":"#AI영상_규모의경제학","type":"tag","level":1},{"label":"#콘텐츠제작/AI_영상제작","type":"tag","level":1},{"label":"#Text-to-Video","type":"tag","level":1},{"label":"#T2I","type":"tag","level":1},{"label":"#T2V","type":"tag","level":1},{"label":"#강의자료","type":"tag","level":1}],"edges":[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6]]}</script>
+<script type="text/plain" id="md-source">IyMg8J+TnSBTdW1tYXJ5IG9yIEtleSBUcmlnZ2VyCgo+IFshc3VtbWFyeV0rIDPspIQg7JqU7JW9Cj4gLSDsnbQg7JiB7IOB7J2AIOy5tOq4gChLYWdnbGUp7J2YIOustOujjCBHUFXrpbwg7Zmc7Jqp7ZW0IOyCrOyWkeydtCDrgq7snYAg7Lu07ZOo7YSw7JeQ7ISc64+EIOu4jOudvOyasOyggOunjOycvOuhnCBBSSDsnbTrr7jsp4DsmYAg7JiB7IOB7J2EIOunjOuTnOuKlCDrsKnrspXsnYQg7IaM6rCc7ZWp64uI64ukLgo+IC0g7J2066+47KeAIOyDneyEseydgCBLcmVhIDIsIOyYgeyDgSDsg53shLHsnYAg7ZWc6rWt7Ja0IOuMgOyCrOqwgCDqsIDriqXtlZwgTFRYLTIuMyDsmKTtlIjshozsiqQg66qo64247J2EIOyCrOyaqe2VmOupsCwg64W47Yq467aB7J2EIOuzteyCrO2VtCDri6jqs4Trs4TroZwg7Iuk7ZaJ7ZWY64qUIOuwqeyLneyeheuLiOuLpC4KPiAtIOyEuOyFmCDsooXro4wsIOuqqOuNuCDsgq3soJwsIOqysOqzvOusvCDri6TsmrTroZzrk5wg6rCZ7J2AIOyjvOydmOyCrO2VreqzvCDtlajqu5gsIOustOujjCBHUFUg7IKs7JqpIOyLnOqwhOydhCDslYTrgbzripQg7YyB64+EIOyVjOugpOykjeuLiOuLpC4KCj4gWyFRdW90ZV0KPiDrrLTro4wgR1BV64qUIOqzteynnOqwgCDslYTri4jrnbwsIOyLnOqwhOqzvCDsp5HspJHroKXsnZgg7ISg67aI7J2064ukLiDsobDquIjsnbTrnbzrj4Qg7JWE64G86rOgIOyemCDsk7DripQg7IKs656M7J20IOqysOq1rSDrjZQg66eO7J20IOunjOuToOuLpC4g4oCUIOyViOywve2YhAoKIyMg8J+noCDso7zsmpQg64K07JqpIC8g67O466y4CuuYpey7tOycvOuhnOuPhCAqKuustOujjCoqICoqQUkg7J2066+47KeAwrfsmIHsg4EqKuydhCDrp4zrk6Qg7IiYIOyeiOuKlCDrsKnrspXsnYA/IOq1rOq4gCBLYWdnbGXsl5DshJwg7KCc6rO17ZWY64qUIOustOujjCBHUFXrpbwg7Zmc7Jqp7ZWY66m0IOqzoOyCrOyWkSDsu7Ttk6jthLAg7JeG7J2064+EIOydtOuvuOyngCDsg53shLEg66qo6424ICftgazroIjslYQgMifsmYAg7ZWc6rWt7Ja0IOuMgOyCrCDsmIHsg4Eg66qo6424ICdMVFggMi4zJ+ydhCDsnbTsmqntlbQg6rKw6rO866y87J2EIOyWu+ydhCDsiJgg7J6I7Iq164uI64ukLiDqs6DshLHriqUg7Lu07ZOo7YSwIOyXhuydtOuPhCDqtazquIAgS2FnZ2xl7J2YIOustOujjCBHUFXrpbwg7Zmc7Jqp7ZWY7JesIEFJIOydtOuvuOyngOyZgCDsmIHsg4HsnYQg66y066OM66GcIOunjOuTpCDsiJgg7J6I64ukLgojIyDrqqnssKgKLSBbMS4g7IKs7JaRIOuCruydgCDsu7Ttk6jthLDsl5DshJzrj4Qg66y066OM66GcIEFJIOydtOuvuOyngMK37JiB7IOBIOunjOuTpOq4sF0oaHR0cHM6Ly9saWx5cy5haS9kaWdlc3QvMTA4NDg3MzYvMTI3NDkyNzMjZGFlNzI3ZjItZGNhNy00MzFlLWIwYjItYjBkMTRlNTUzNWI3KQotIFsxLjEuIEthZ2dsZSDqsIDsnoUg67CPIOustOujjCBHUFUg7Zmc7JqpXShodHRwczovL2xpbHlzLmFpL2RpZ2VzdC8xMDg0ODczNi8xMjc0OTI3MyMzODI1Y2U0Yy0wMjM2LTRjN2UtYThmZi1kMGJkN2ZmZTRlMWYpCi0gWzEuMi4gS3JlYSAy66W8IOydtOyaqe2VnCBBSSDsnbTrr7jsp4Ag7IOd7ISxXShodHRwczovL2xpbHlzLmFpL2RpZ2VzdC8xMDg0ODczNi8xMjc0OTI3MyMyMDc5ZTdiOS00Mzk0LTQ3Y2EtOWY3ZS02OThjNzEyYzFiYTUpCi0gWzEuMy4gTFRYIDIuM+ydhCDsnbTsmqntlZwg7ZWc6rWt7Ja0IOuMgOyCrCDsmIHsg4Eg7IOd7ISxXShodHRwczovL2xpbHlzLmFpL2RpZ2VzdC8xMDg0ODczNi8xMjc0OTI3MyM4YTRjMmQ1YS1kYzlhLTQyZWQtODg1Ni00MDliMTAxOGYxMWEpCi0gWzEuNC4g7JiB7IOBIOygnOyekSDtjIEg67CPIOyjvOydmOyCrO2VrV0oaHR0cHM6Ly9saWx5cy5haS9kaWdlc3QvMTA4NDg3MzYvMTI3NDkyNzMjNWM4ZDE3OWItMzI3MS00ZjJlLTllMTgtZTk0ZTU5OTMwZjRiKQojIyBLYWdnbGUg6rCA7J6FIOuwjyDrrLTro4wgR1BVIO2ZnOyaqQohW2NhcHR1cmVTb3VyY2VdKGh0dHBzOi8vcmVzb3VyY2UtcmVsZWFzZS5zMy5hcC1ub3J0aGVhc3QtMi5hbWF6b25hd3MuY29tL3RodW1ibmFpbHMvNURRTFlRZzFpTFUvMTA3LmpwZykKIyMg6rCA7J6FIOyhsOqxtOqzvCDrrLTro4wgR1BVIOyCrOyWkQotICoqS2FnZ2xlIOqwgOyehSDtlYTsmpQqKjogQUkg7J2066+47KeAIOuwjyDsmIHsg4Eg7KCc7J6R7J2EIOychO2VtCBLYWdnbGXsl5Ag6rCA7J6F7ZW07JW8IO2VnOuLpC4KLSAqKuustOujjCBHUFUg7KCc6rO1Kio6IEthZ2dsZeydgCDsnbzso7zsnbzsl5AgMzDsi5zqsIQg66y066OMIEdQVeulvCDrjIDsl6ztlbTspIDri6QuCiAgICAtIOqwgOyehSDsi5wg7Zy064yA7Y+wIOyduOymneydtCDtlYTsmpTtlZjrqbAsIOyduOymnSDsmYTro4wg7IucIDE2R0IgR1BVIOuRkCDsnqXsnYQg66y066OM66GcIOyCrOyaqe2VoCDsiJgg7J6I64ukLgotICoqIuygiOuMgCDrj4gg64K07KeAIOuniOudvCIqKjog7J20IOq3nOy5meydhCDqsJXsobDtlZzri6QuCiMjIEtyZWEgMuulvCDsnbTsmqntlZwgQUkg7J2066+47KeAIOyDneyEsQohW2NhcHR1cmVTb3VyY2VdKGh0dHBzOi8vcmVzb3VyY2UtcmVsZWFzZS5zMy5hcC1ub3J0aGVhc3QtMi5hbWF6b25hd3MuY29tL3RodW1ibmFpbHMvNURRTFlRZzFpTFUvMTM2LmpwZykKIyMgS3JlYSAyIOuqqOuNuOqzvCDsi6Ttlokg7ZmY6rK9IOykgOu5hAotICoqS3JlYSAyIOuqqOuNuCDshozqsJwqKjog7Jik7ZSI7IaM7IqkIOuqqOuNuCDspJEg7ISx64ql7J20IOq0nOywruydgCBLcmVhIDLrpbwg7IKs7Jqp7ZWY7JesIOydtOuvuOyngOulvCDsg53shLHtlZjripQg67Cp67KV7J2EIOyEpOuqhe2VnOuLpC4KLSAqKuuFuO2KuOu2gSDtmZzsmqkg67CPIOyLpO2WiSDtmZjqsr0g7KSA67mEKio6IOyngeygkSDrhbjtirjrtoHsnYQg66eM65Oc64qUIOuMgOyLoCwg66+466asIOykgOu5hOuQnCDrhbjtirjrtoEg66eB7YGs66W8IO2ZnOyaqe2VnOuLpC4KICAgIC0g64W47Yq467aBIOunge2BrOulvCDrs7XsgqwoQ29weSAmIEVkaXQp7ZWY7JesIOyCrOyaqe2VnOuLpC4KICAgIC0g7LSdIDXri6jqs4TroZwg6rWs7ISx65CY7Ja0IOyeiOycvOupsCwg7LKrIOuLqOqzhOuKlCDsi6Ttlokg7ZmY6rK9IOykgOu5hOydtOuLpC4KICAgIC0gKirshLjshZgg7Ji17IWY7JeQ7IScIEdQVeulvCDrsJjrk5zsi5wg7Lyc7JW8IO2VnOuLpC4qKgogICAgLSDsnbjthLDrhLcg7Jew6rKwIOyDge2DnOulvCDtmZXsnbjtlZzri6QuCiAgICAtIDHri6jqs4Qg7IWA7J2EIOyLpO2Wie2VmOuptCDtmZjqsr0g7KSA67mE6rCAIOyZhOujjOuQnOuLpC4KIyMg7J2066+47KeAIOyDneyEsSAyfjXri6jqs4Qg7Iuk7ZaJCi0gKioy64uo6rOEIMK3IEFJIOq3uOumvCDsg53shLEg7ZSE66Gc6re4656oIOyEpOy5mCoqOiAy64uo6rOE7JeQ7ISc64qUIEFJIOq3uOumvOydhCDqt7jroKTso7zripQg7ZSE66Gc6re4656o7J2EIOyEpOy5mO2VnOuLpC4KICAgIC0g7IWA7J2EIOyLpO2Wie2VmOuptCDslb0gM+u2hCDtm4Qg7ISk7LmY6rCAIOyZhOujjOuQnOuLpC4KLSAqKjPri6jqs4QgwrcgQUkg66qo6424IOuLpOyatOuhnOuTnCoqOiAz64uo6rOE7JeQ7ISc64qUIOq3uOumvOydhCDqt7jrpqzripQgQUkg66qo64247J2EIOuLpOyatOuhnOuTnO2VnOuLpC4KICAgIC0g7IWA7J2EIOyLpO2Wie2VmOuptCDslb0gMeu2hCDrp4zsl5Ag66qo6424IOuLpOyatOuhnOuTnOqwgCDsmYTro4zrkJzri6QuCi0gKio064uo6rOEIMK3IOygleyDgSDsi6Ttlokg7ZmV7J24Kio6IDTri6jqs4TripQg66ek7JqwIOu5oOultOqyjCDsp4TtlonrkJjrqbAsIO2VnCDspITsnbQg64KY7YOA64KY66m0IOygleyDgSDsi6TtlonrkJwg6rKD7J2064ukLgotICoqNeuLqOqzhCDCtyDtlITroZzqt7jrnqgg7Iuk7ZaJIOuwjyDsnbTrr7jsp4Ag7IOd7ISxKio6IDXri6jqs4Tsl5DshJzripQg7ZSE66Gc6re4656o7J2EIOyLpO2Wie2VmOupsCwg7JW9IDHrtoQg7ZuEIOydtOuvuOyngCDsg53shLHsnYQg7JyE7ZWcIOunge2BrOqwgCDrgpjtg4Drgpzri6QuCiAgICAtIOyDneyEseuQnCDtmZTrqbTsl5DshJwg7ZSE66Gs7ZSE7Yq4IOyeheugpSwg7J2066+47KeAIOqwnOyImCwg7ZW07IOB64+ELCDsiqTtg4Dsnbwg65Ox7J2EIOyEoO2Dne2VmOyXrCDsnbTrr7jsp4Drpbwg66eM65OkIOyImCDsnojri6QuCiAgICAtIO2UhOuhrO2UhO2KuOyXkCDrp57ripQg7J2066+47KeA6rCAIOyDneyEseuQmOuKlCDqsoPsnYQg7ZmV7J247ZWgIOyImCDsnojri6QuCiAgICAtIOustOujjCBHUFUg7IKs7JqpIOyLnOqwhOydgCDshLjshZgg7Ji17IWY7JeQIO2RnOyLnOuQmOupsCwg7J2066+47KeAIOyDneyEsSDsi5wg7Iuc6rCE7J20IOyGjOuqqOuQnOuLpC4KIyMg7IS47IWYIOyiheujjOydmCDspJHsmpTshLEKPiBbIXdhcm5pbmddIOyKpO2GsSDshLjshZgKPiBHUFUg7IKs7Jqp7J2EIOykkeuLqO2VmOugpOuptCDrsJjrk5zsi5wgJ+yKpO2GsSDshLjshZgnIOuyhO2KvOydhCDriIzrn6zslbwg7ZWc64ukLgojIyBMVFggMi4z7J2EIOydtOyaqe2VnCDtlZzqta3slrQg64yA7IKsIOyYgeyDgSDsg53shLEKIVtjYXB0dXJlU291cmNlXShodHRwczovL3Jlc291cmNlLXJlbGVhc2UuczMuYXAtbm9ydGhlYXN0LTIuYW1hem9uYXdzLmNvbS90aHVtYm5haWxzLzVEUUxZUWcxaUxVLzMyOS5qcGcpCiMjIExUWCAyLjMg66qo64246rO8IOuFuO2KuOu2gSDsi6Ttlokg7KSA67mECi0gKipMVFggMi4zIOuqqOuNuCDshozqsJwqKjog7IOd7ISx7ZWcIOydtOuvuOyngOuTpOuhnCDtlZzqta3slrQg64yA7IKs6rCAIOqwgOuKpe2VnCBMVFggMi4zIOuqqOuNuOydhCDsgqzsmqntlZjsl6wg7JiB7IOB7J2EIOunjOuToOuLpC4KICAgIC0g7J20IOuqqOuNuOydgCDsmKTtlIjshozsiqQg7KSRIO2VnOq1reyWtCDrjIDsgqzqsIAg6rCA7J6lIOyekOyXsOyKpOufrOyatCDrqqjrjbjroZwg7Y+J6rCA65Cc64ukLgotICoq64W47Yq467aBIOuzteyCrCDrsI8g7Iuk7ZaJIO2ZmOqyvSDshKTsoJUqKjog7JiB7IOBIOygnOyekeydhCDsnITtlZwg64W47Yq467aBIOunge2BrOulvCDrs7XsgqztlZjsl6wg7IKs7Jqp7ZWc64ukLgogICAgLSDsnbTrr7jsp4Ag7IOd7ISx6rO8IOuniOywrOqwgOyngOuhnCA164uo6rOE66GcIOq1rOyEseuQmOyWtCDsnojsnLzrqbAsIOyYgeyDgSDrqqjrjbjsnbTrnbwg7Iuc6rCE7J20IOuNlCDshozsmpTrkJzri6QuCiAgICAtIOuLqOqzhOuzhCDrmJDripQg7ZWc6rq867KI7JeQIOyLpO2Wie2VoCDsiJgg7J6I64ukLgogICAgLSDsi6Ttlokg7KCEIOyEuOyFmCDsmLXshZjsl5DshJwgR1BVIOyEoO2DnSDrsI8g7J247YSw64S3IOyXsOqysOydhCDtmZXsnbjtlbTslbwg7ZWc64ukLgogICAgLSAn65+wIDUn66W8IOuIjOufrCDsi6TtlontlZzri6QuCi0gKirri6jqs4Trs4Qg7Iuk7ZaJIOuwjyDsmYTro4wqKjogMeuLqOqzhOu2gO2EsCA064uo6rOE6rmM7KeAIOyInOywqOyggeycvOuhnCDsi6TtlonrkJjrqbAsIOqwgSDri6jqs4Qg7JmE66OMIOuplOyLnOyngOqwgCDtkZzsi5zrkJzri6QuCiAgICAtIOuniOyngOuniSDri6jqs4Tsl5DshJwg7JiB7IOBIOyDneyEseydhCDsnITtlZwg66eB7YGs6rCAIOuCmO2DgOuCnOuLpC4KIyMg7JiB7IOBIOyDneyEsSDtmZTrqbQg67CPIOyYteyFmAotICoq7J6F66ClIOuwqeyLnSoqOiDrp4Htgazrpbwg7YG066at7ZWY66m0IOyYgeyDgSDsg53shLEg7ZmU66m07J20IOuCmO2DgOuCmOupsCwg7YWN7Iqk7Yq466eMIOyeheugpe2VmOqxsOuCmCDssqsg7J6l66m0LCDsi5zsnpEg7J2066+47KeA7JmAIOuBnSDsnbTrr7jsp4Drpbwg64Sj7Ja0IOyYgeyDgeydhCDrp4zrk6Qg7IiYIOyeiOuLpC4KICAgIC0g7JiI7Iuc66GcIEtyZWEgMuuhnCDrp4zrk6Ag7JWE7J207JmAIOuhnOu0hyDsnbTrr7jsp4Drpbwg7IKs7Jqp7ZWc64ukLgotICoq7ZSE66Gs7ZSE7Yq4IOyWuOyWtCoqOiDtlITroaztlITtirjripQg6riw67O47KCB7Jy866GcIOyYgeyWtOuhnCDsnoXroKXtlZjqs6AsIO2VnOq1reyWtCDrjIDsgqzripQg7ZWc6rWt7Ja066GcIOyekeyEse2VnOuLpC4KLSAqKuq4uOydtOyZgCDtmZTsp4gqKjog7JiB7IOBIOq4uOydtOyZgCDtmZTsp4jsnYQg7ISg7YOd7ZWgIOyImCDsnojsnLzrqbAsIO2ZlOyniOydtCDrhpLqsbDrgpgg6ri47J206rCAIOq4uOyImOuhnSDsi5zqsITsnbQg642UIOqxuOumsOuLpC4KICAgIC0g7LKY7J2M7JeQ64qUIDQ4MHDroZwg7Iuc7J6R7ZWY7JesLCDqsrDqs7zqsIAg66eM7KGx7Iqk65+s7Jqw66m0IDcyMHAg65Ox7Jy866GcIOuGkuydtOuKlCDqsoPsnYQg6raM7J6l7ZWc64ukLgotICoq7IOd7ISxIOyGjOyalCDsi5zqsIQqKjog7IOd7ISxIOyLnOqwhOydgCBHUFUg7IOB7Zmp7JeQIOuUsOudvCDri6TrpbTrqbAsIDQ4MHDripQg7JW9IDfrtoQsIDcyMHDripQg7JW9IDEz67aE7J20IOyGjOyalOuQnOuLpC4KIyMg7JiB7IOBIOyDneyEsSDqsrDqs7wg7ZmV7J24Ci0gKioy64uo6rOEIOyymOumrCDqtazsobAqKjog7JiB7IOBIOygnOyekeydgCAxLCAy64uo6rOE66W8IOqxsOy5mOupsCwg7Yq57Z6IIDLri6jqs4Qg7ZmU7KeIIOqwnOyEoOyXkOyEnCDsi5zqsITsnbQg7Jik656YIOqxuOumsOuLpC4KLSAqKuqysOqzvCDtkojsp4gqKjog7IOd7ISx65CcIOyYgeyDgeydgCDtlITroaztlITtirjrjIDroZwg64yA7IKs7JmAIOybgOyngeyehOydtCDsnpgg66eM65Ok7Ja07KGM7J2M7J2EIO2ZleyduO2VoCDsiJgg7J6I64ukLgotICoq6rKw6rO866y8IOyggOyepSoqOiDqsrDqs7zrrLzsnbQg66eI7J2M7JeQIOuTpOuptCDri6TsmrTroZzrk5wg67KE7Yq87J2EIOuIjOufrCDsoIDsnqXtlZzri6QuCi0gKio3MjBwIOygnOyekSDqsrDqs7wqKjogNzIwcOuhnCDsoJzsnpEg7IucIOyLnOqwhOydtCDqsbjrpqzsp4Drp4wsIO2VnOq1reyWtCDrjIDsgqzsmYAg7JuA7KeB7J6E7J20IOyekOyXsOyKpOufveqyjCDrp4zrk6TslrTsp4Tri6QuCiMjIOyYgeyDgSDsoJzsnpEg7YyBIOuwjyDso7zsnZjsgqztla0KIVtjYXB0dXJlU291cmNlXShodHRwczovL3Jlc291cmNlLXJlbGVhc2UuczMuYXAtbm9ydGhlYXN0LTIuYW1hem9uYXdzLmNvbS90aHVtYm5haWxzLzVEUUxZUWcxaUxVLzUyNi5qcGcpCiMjIOyYgeyDgSDsoJzsnpEg7YyBCi0gKirsi5zsnpEv64GdIOydtOuvuOyngCDtmZzsmqkg7JiB7IOBIOygnOyekSoqOiDsi5zsnpEg7J2066+47KeA7JmAIOuBnSDsnbTrr7jsp4Drpbwg64Sj7Ja0IOuCmOydtOqwgCDrk6TslrTqsIDripQg66qo7Iq17J2YIOyYgeyDgeydhCDrp4zrk6Qg7IiYIOyeiOuLpC4KICAgIC0gNDgwcOuhnCDsoJzsnpEg7IucIOyVvSA1OOy0iOqwgCDshozsmpTrkJjrqbAsIOygiuydgCDsl6zshLHsnbQg64KY7J206rCAIOuTpOyWtOqwgOuKlCDrqqjsirXqs7wg6rOE7KCIIOuzgO2ZlOqwgCDsnpDsl7DsiqTrn73qsowg7ZGc7ZiE65Cc64ukLgotICoq6rOg7ZmU7KeIIOyYgeyDgSDsoJzsnpEg6raM7J6lKio6IDcyMHDroZwg7KCc7J6R7ZWY66m0IO2ZlOyniOydtCDrjZQg7KKL7Jy866+A66GcLCDri6Trpbgg7J6R7JeF7J2EIO2VmOuptOyEnCDquLDri6TrpqzripQg6rKD7J2EIOy2lOyynO2VnOuLpC4KIyMg7ZWE7IiYIOyjvOydmOyCrO2VrQo+IFshd2FybmluZ10g7IS47IWYIOyiheujjAo+IOyCrOyaqe2VmOyngCDslYrsnYQg65WM64qUIOuwmOuTnOyLnCAn7Iqk7YaxIOyEuOyFmCfsnYQg64iM65+s7JW8IO2VnOuLpC4KCj4gWyFhdHRlbnRpb25dIOuqqOuNuCDsgq3soJwKPiDshLjshZjsnYQg7KKF66OM7ZWY66m0IOuLpOyatOuhnOuTnO2VnCDrqqjrjbjsnbQg66qo65GQIOyCrOudvOyngOuvgOuhnCwg7J6R7JeF7J2AIO2VnCDrsojsl5Ag66qw7JWE7IScIO2VmOuKlCDqsoPsnbQg7Y6466as7ZWY64ukLgoKPiBbIXRpcF0g7Jik66WYIO2VtOqysAo+IO2UhOuhnOq3uOueqCDshYvsl4Ug7Jik66WYIOyLnCDshYDsnYQg6ruQ64ukIOuLpOyLnCDsi6TtlontlZjqsbDrgpgsIOq3uOudvOuUlOyYpCDtmZTrqbQg7Jik66WYIOyLnCDrp4Htgazrpbwg7J6s7KCR7IaN7ZWY66m0IOuMgOu2gOu2hCDtlbTqsrDrkJzri6QuCgo+IFshaW1wb3J0YW50XSDqsrDqs7zrrLwg7KCA7J6lCj4g66eI7J2M7JeQIOuTnOuKlCDqsrDqs7zrrLzsnYAg67CY65Oc7IucIOuLpOyatOuhnOuTnO2VtOyVvCDrqqjrjbjqs7wg7ZWo6ruYIOyCrOudvOyngOyngCDslYrripTri6QuCgo+IFshbm90ZV0g64W47Yq467aBIOyImOyglSDrsI8g7KCA7J6lCj4g64W47Yq467aBIOyFgOydhCDsiJjsoJXtlaAg6rK97JqwICftgLUg7IS47J2067iMJ+uhnCDsoIDsnqXtlZjqs6AsICfshLjsnbTruIwg7JWkIOufsCDsmKwn7J2AIOyghOyytCDsnqzsi6TtlonrkJjrr4DroZwg7KO87J2Y7ZWc64ukLgoKCi0tLQojIyDrgrTrqbQg7KeI66y4IAojIyMgIDEpIOydtCDrhbjtirjqsIAg64K0IOyCrOqzoOyXkCDslrTrlqQg7KCQ7J2EIOuNmOyguOyjvOyXiOuKlOqwgD8KPiBbIXF1b3RlXSBESUtNOiBYLUF4aXMKPiAgKOy1nOyGjCkgM3417KSEIOyalOyVveycvOuhnCDrqLzsoIAg7KCB6riwIOKGkiDtlYTsmpTtlZjrqbQg7JWE656Y66W8IOyxle2EsOyymOufvCDtmZXsnqUKCuq1rOuPheujjCDsl4bsnbQgQUnsmIHsg4Eg66eM65Ok6riwLiDrlLDrnbztlbTrs7TrqbQg7IOd6rCB67O064ukIOq1ieyepe2eiCDsiazsmrTrjbA6Ci0gS2FnZ2xlIElE66W8IOunjOuToOuLpAotIOyInOyEnOuMgOuhnCDtgbTrpq3tlZzri6QK65GQIOqwgOyngOqwgCDrgZ3snbTrnbzshJwg7IS47YyF6rO8IOyLpO2WieydtCDrp6TsmrAg64uo7Iic7ZWY6rOgIOuUsOudvO2VmOq4sOuPhCDsib3ri6QuCgoKCiMjIyAgMikg7KeA6riI7J2YIOuCmOyZgCDslrTrlrvqsowg7Jew6rKw65CY64qU6rCAPwo+IFshcXVvdGVdIERJS006IFktQXhpcwo+ICBESUtN7J2YIOKAnOyCtuqzvCDsl7DqsrDrkJjripQg7KeA7Iud4oCdIOq0gOygkOyXkOyEnCwg64K0IOujqO2LtC/qtIDqs4Qv7Jew6rWsL+ywveyekeqzvCDsl7DqsrAg6rOg66asIOunjOuTpOq4sCAKCu2VtOuztOuLiCDripDrgoAg7KCQ65Ok7J2AOgotIOunpOuyiCDshLjshZjrlYzrp4jri6QgMS0164uo6rOEIO2BtOudvOyasOuTnCDrqqjrjbgg7ISk7LmY66W8IOuLpOyLnCDtlbTslbztlagKLSDqt7jrnpjshJwg7Iqk7Yag66asIOuztOuTnOuekSDsnbTrr7jsp4Drpbwg66q965WFIOuLpCDtjIzsnbTrhJDroZwg7KSA67mE7ZWY6rOgIOyekeyXheyLnOyeke2VtOyVvCDtlZzri6QKLSA3MjBwIDEw7LSIIOunjOuTnOuKlOuNsCDrjIDrnrUgMzDrtoQg7KCV64+EICjqtazquIAgMzJnYiBWUkFNIOuMgOyXrCkKLSBHUFQtaW1hZ2UtMiDrk7HsnLzroZwgMTDstIgg64uo7JyE66GcIOyLnOyekSBmcmFtZSAvIOyXlOuTnCBmcmFtZSDsnbTrr7jsp4Drk6TsnYQg7IiY7IutLeyImOuwseyepSDri6Qg66eM65Ok7Ja064aT6rOgIO2VnOuyiOyXkCDsnpHsl4XtlbTslbztlZzri6QuCgrsnpHsl4Xsl5Ag6rG466as64qUIOyLnOqwhOydgCwgCioqNzIwcCAxMOy0iOynnOumrCDquLDspIA6KiogMTgwMOy0iCAoMzDrtoQpIOygleuPhOqwgCDshozsmpTrkJjsl4jri6QKCuuMgOyLoOyXkCDqsrDqs7zrrLzsl5Ag7J2M7ISx7J20IOuTpOyWtOqwgOqzoCDslaHshZgg7JSs64+EIOq9pCDsnpgg64KY7Jio64ukICjtlITroaztlITtirgg7JeU7KeA64uI7Ja066eB7J2EIOyemCDtlbTslbztlZzri6TripQg67aA67aE7J20IOyeiOyngOunjCkKCiMjIyDssLjqs6Ag7YyBOiDtlITroaztlITtjIXsnYQg7KKAIOuNlCDruaDrpbTqs6Ag7Im96rKMIO2VmOq4sCDsnITtlZwg7IS47YyFCgpb66+464uI66el7IqkIEgzIOuhnOy7rCBDb21meSBVSSDshLjtjIUg6rSA66CoIOyYgeyDgV0oaHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1zTmtfYlpEeE01dykg7LC47KGwLiAKW+ydtCDrp4HtgazroZwg6rCA7IScXShodHRwczovL2h1Z2dpbmdmYWNlLmNvL01pbmlNYXhBSS9NaW5pTWF4LUgzL3RyZWUvbWFpbi9kb2NzKSDslYTrnpjsnZgg66eI7YGs64uk7Jq0IOuRkOqwgOyngOulvCDri6TsmrTrsJvsnYAg64uk7J2MCgohW3s2MENEMjdDOS00NDFDLTQyQTktOEUwNC1EQUQ5MTI3MTg3NDN9LnBuZ10oaHR0cHM6Ly9wdWItYWNmNmFkOTNmMmVjNGE1ZThmYTEyZTk0ZDBjOWIxNTEucjIuZGV2LzE3ODYwMDQ4MDIwOTMtZjk3MDk5M2EtZDBiMy00NzAwLWJlNzYtODA3MzE0YjY1YjVkLnBuZykKCkdQVOyXkCDtlITroZzsoJ3tirgg7Y+0642U66W8IO2VmOuCmCDtjIzrhpPqs6Ag7JWE656Y7LKY65+8IOuniO2BrOuLpOyatCDtjIzsnbzsnYQg7LKo67aA7ZW07IScIOuLpOydjOqzvCDqsJnsnbQg7LmY66m0IOyEuO2MheydtCDrkJzri6Q6CgpgYGAK7ZW064u5IE1EIO2MjOydvOydhCDtmZXsnbjtlZjqs6Ag7IOB7Zmp7JeQIOunnuqyjCBQcm9tcHQg7KCc7J6R7ZWgIOyImCDsnojrj4TroZ0g7KSA67mE7ZW07KSYCmBgYAoKIVt7OTE0QURGQzUtOTM3Mi00REZELTlENzktMzExRTMzRDI1MTZDfS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzg2MDA0ODU2MzUzLWQ4ZjQ1NTFlLWNmYzAtNDhmOC1hYTMxLTEyZTZmNWM1NjhjNS5wbmcpCgrqt7jrn6zrqbQg7JiI66W8IOuTpOyWtCBg64uM7J6QIOqzoOyWkeydtOyZgCDri6Ttgawg7Z6I7Ja066GcK+uyoOuGiCDripDrgozsnZgg6re87Jyh7KeIIOqxsOu2geydtOqwgCDsi7jsmrDripQg7Iuk7IKsIOyYge2ZlCDslaHshZgg7JSsIO2UhOuhrO2UhO2KuOulvCDsmIHslrTroZwg66eM65Ok7Ja067SQYCDrnbzqs6Ag7ZWY66m0IOq4uOqyjCDtlITroaztlITtirjqsIAg7JWM7JWE7IScIOyemCDsg53shLHrkJzri6QuCgoKIyMjIDMpIOyVnuycvOuhnCDslrTrlqQg7Iuk7LKcL+ydmOuvuOuhnCDtmZXsnqXrkKAg7IiYIOyeiOydhOq5jD8KCj4gWyFRdW90ZV0gOiBESUtNOiB6LUF4aXMKPiDigJwwLjElIOyEseyepeuloOKAnSDqtIDsoJDsl5DshJwsIOqxsOywve2VnCDrqqntkZwg66eQ6rOgIOKAmOuLpOydjCAxMOu2hC/ri6TsnYwgMeyjvOKAmSDri6jsnITroZwg67KI7JetIAoKQ29tZnkgVUnroZwgTWluaU1heCBIM+ulvCDroZzsu6zroZwg64+M66as6riw7JeUIOunpOyasOunpOyasCDruYTsi7wg6rOg7ISx64qlIEdQVeyZgCAzMi02NEdC7J207IOB7J2YIOqzoOyaqeufiSDrnqjsnbQg64us66awIOy0iCDqs6DsgqzslpEg642w7Iqk7YGs7YaxIOy7tO2TqO2EsOqwgCDtlYTsmpTtlZzrjbAsIOq3uOufsCDsu7Ttk6jthLDripQg7J2867CY7KCB7J24IOuMgO2VmeyDneuTpOyXkOqyjOuKlCDqsbDsnZgg7JeG7Ja07IScIOuhnOy7rOuhnCDrj4zrpqzquLDsl5DripQg66ek7JqwIO2emOuTpOqzoCDshKTsuZjsmYAg7Iuk7ZaJ64+EIOyWtOugpOyatCDrtoDrtoTsnbQg7J6I64ukLiDqt7jrn7Ag66m07JeQ7IScIEthZ2dsZSDsnYQg7J207Jqp7ZW07IScIOq1rOq4gCDshJzrsoTrpbwg67mM66Ck7IScIEFJ7JiB7IOBIOygnOyekeydhCDrj4zroKTrs7TripQg7YyB7J2AIOunpOyasCDqt4DspJHtlZwg7YyB7J2064ukLgoK7ZWcIOqwgOyngCDqs4Tsho0g6rCV7KGw7ZWgIOu2gOu2hOydgCwg7JiB7IOB7JeQ7ISc64+EIOuCmOyYpOyngOunjCAqKuuwmOuTnOyLnCDsnpHsl4Ug7JWI7ZWY66m0IFN0b3AgU2Vzc2lvbuydhCDriITrpbwg6rKDKirqs7wsICoq7J6R7JeFIOqysOqzvOusvCDrp4jsnYzsl5Ag65Oc64qUIOqyg+ydhCDrsJjrk5zsi5wg64uk7Jq066Gc65OcIOuyhO2KvOydhCDsnbzsnbztnogg66ek67KIIOuIjOufrOykhCDqsoMqKuydtOuLpC4g7J20IOuRkCDqsIDsp4Drp4wg7JWM6rOgIOyeiOycvOuptCDsg4Hri7ntnogg66eO7J20IOyLpOyKteydhCDtlbTrs7wg7IiYIOyeiOqzoCwg6rWs6riAIOqzhOygleydtCDsl6zrn6wg6rCc652866m0IOuPjOugpOunieq4sOuPhCDqsIDriqXtlZjrr4DroZwg7IOB64u57Z6IIOqwleugpe2VnCBBSeyYgeyDgSDsoJzsnpHsi6TsirUg6rCV7J2Y7J6Q66OMIOyLpOyghCDrhbjtirjqsIAg65Cc64ukLg==</script>
+
+
+<script type="module">
+(async function() {
+	// mermaid sources travel base64-encoded in data-mmd; render with the LATEST mermaid
+	if (document.getElementById('encrypted-data') && !window.__cmdsReady) {
+		await new Promise(function(r) { document.addEventListener('cmds-content-ready', r, { once: true }); });
+	}
+	var containers = Array.from(document.querySelectorAll('.mermaid-container[data-mmd]'));
+	if (!containers.length) return;
+	function decode(b64) {
+		var bin = atob(b64); var bytes = new Uint8Array(bin.length);
+		for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+		return new TextDecoder().decode(bytes);
+	}
+	var sources = containers.map(function(d) { return decode(d.getAttribute('data-mmd')); });
+	var mermaid;
+	try {
+		mermaid = (await import('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs')).default;
+	} catch (e) {
+		containers.forEach(function(d, i) {
+			var pre = document.createElement('pre');
+			pre.textContent = sources[i];
+			d.replaceWith(pre);
+		});
+		return;
+	}
+	var seq = 0;
+	async function renderAll() {
+		var dark = document.documentElement.dataset.theme === 'dark';
+		mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'neutral', securityLevel: 'strict' });
+		for (var i = 0; i < containers.length; i++) {
+			try {
+				var out = await mermaid.render('cmds-mmd-' + i + '-' + (seq++), sources[i]);
+				containers[i].innerHTML = out.svg;
+			} catch (e) {
+				var pre = document.createElement('pre');
+				pre.textContent = sources[i];
+				containers[i].innerHTML = '';
+				containers[i].appendChild(pre);
+			}
+		}
+	}
+	await renderAll();
+	new MutationObserver(function() { renderAll(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
+
+
+<script>
+(function() {
+	var icon = document.getElementById('themeIcon');
+	var SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+	var MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+	function paint(theme) {
+		if (icon) icon.innerHTML = theme === 'dark' ? MOON : SUN;
+	}
+	var btn = document.getElementById('themeToggle');
+	if (btn) btn.addEventListener('click', function() {
+		var next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+		document.documentElement.dataset.theme = next;
+		try { localStorage.setItem('cmds-theme', next); } catch(e) {}
+		paint(next);
+	});
+	paint(document.documentElement.dataset.theme || 'light');
+})();
+</script>
+
+<script>
+(function() {
+	var badge = document.getElementById('expiryBadge');
+	if (!badge) return;
+	var ts = Number(badge.getAttribute('data-expires'));
+	if (!ts) return;
+	var ko = badge.getAttribute('data-lang') === 'ko';
+	var text = document.getElementById('expiryText');
+	function render() {
+		var msLeft = ts - Date.now();
+		var d = new Date(ts);
+		var dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+		if (msLeft <= 0) {
+			text.textContent = ko ? '만료됨' : 'Expired';
+			badge.classList.add('b-expired');
+			// file-hosting backends (GitHub Pages, NAS…) have no server to
+			// 410 an expired share — hide the body here as a soft tombstone
+			var body = document.getElementById('note-content');
+			if (body && !body.dataset.tombstoned) {
+				body.dataset.tombstoned = '1';
+				body.innerHTML = '<p class="cmds-loading">' + (ko ? '이 공유는 만료되었습니다.' : 'This shared note has expired.') + '</p>';
+				var toc = document.getElementById('tocToggle'); if (toc) toc.hidden = true;
+				['mdCopy', 'mdDownload'].forEach(function(id) { var b = document.getElementById(id); if (b) b.hidden = true; });
+			}
+		} else {
+			// calendar-date diff, so "D-1" flips at midnight, not at share-time+24h
+			var now = new Date();
+			var days = Math.round(
+				(new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime() -
+				 new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()) / 86400000
+			);
+			var count = days <= 0 ? (ko ? '오늘 만료' : 'expires today') : 'D-' + days;
+			text.textContent = (ko ? dateStr + ' 만료 · ' : 'Expires ' + dateStr + ' · ') + count;
+			if (days <= 3) badge.classList.add('b-soon');
+		}
+		badge.hidden = false;
+	}
+	render();
+	// keep honest across long-lived tabs (midnight rollover)
+	setInterval(render, 60 * 60 * 1000);
+})();
+</script>
+
+
+<script>
+(function() {
+	var PANELS = { toc: 'tocPanel', graph: 'graphPanel' };
+	var hasToc = false, hasGraph = false;
+
+	function docked() { return document.body.classList.contains('cmds-docked'); }
+
+	function setPanel(name, open) {
+		Object.keys(PANELS).forEach(function(k) {
+			var on = k === name ? open : false;
+			document.getElementById(PANELS[k]).classList.toggle('open', on);
+			document.getElementById(k + 'Toggle').classList.toggle('active', on);
+			try { localStorage.setItem('cmds-panel-' + k, on ? '1' : '0'); } catch(e) {}
+		});
+		if (name === 'graph' && open) requestAnimationFrame(function() { relayoutGraph(); });
+	}
+	function wireToggle(name) {
+		document.getElementById(name + 'Toggle').addEventListener('click', function() {
+			var isOpen = document.getElementById(PANELS[name]).classList.contains('open');
+			setPanel(name, !isOpen);
+		});
+	}
+
+	function setDock(on) {
+		if (on && window.innerWidth <= 1100) on = false;
+		var dock = document.getElementById('sideDock');
+		var toc = document.getElementById('tocPanel');
+		var graph = document.getElementById('graphPanel');
+		document.body.classList.toggle('cmds-docked', on);
+		if (on) {
+			Object.keys(PANELS).forEach(function(k) {
+				document.getElementById(PANELS[k]).classList.remove('open');
+				document.getElementById(k + 'Toggle').classList.remove('active');
+			});
+			if (hasToc) dock.appendChild(toc);
+			if (hasGraph) dock.appendChild(graph);
+			dock.hidden = false;
+		} else {
+			dock.hidden = true;
+			document.body.appendChild(toc);
+			document.body.appendChild(graph);
+		}
+		try { localStorage.setItem('cmds-dock', on ? '1' : '0'); } catch(e) {}
+		if (hasGraph) requestAnimationFrame(function() { relayoutGraph(); });
+	}
+
+	function headings() {
+		return document.querySelectorAll('#note-content h1, #note-content h2, #note-content h3, #note-content h4');
+	}
+
+	function assignHeadingIds() {
+		var used = {};
+		headings().forEach(function(h) {
+			var text = (h.textContent || '').trim();
+			if (!text || h.id) return;
+			var slug = text.toLowerCase().replace(/[^0-9a-z\uAC00-\uD7A3\u3131-\u318E\s-]/g, '').replace(/\s+/g, '-') || 'section';
+			if (used[slug] != null) { used[slug]++; slug = slug + '-' + used[slug]; } else { used[slug] = 0; }
+			h.id = slug;
+		});
+	}
+
+	function buildToc() {
+		var list = document.getElementById('tocList');
+		list.innerHTML = '';
+		headings().forEach(function(h) {
+			var text = (h.textContent || '').trim();
+			if (!text || !h.id) return;
+			var a = document.createElement('a');
+			a.href = '#' + h.id;
+			a.textContent = text;
+			a.className = 'toc-' + h.tagName.toLowerCase();
+			a.title = text;
+			list.appendChild(a);
+		});
+		return list.children.length >= 2;
+	}
+
+	// highlight the section currently in view (and keep it visible in a scrolling TOC)
+	function scrollSpy() {
+		var links = document.querySelectorAll('#tocList a');
+		if (!links.length) return;
+		var map = {};
+		links.forEach(function(a) { map[decodeURIComponent(a.hash.slice(1))] = a; });
+		var obs = new IntersectionObserver(function(entries) {
+			entries.forEach(function(en) {
+				if (!en.isIntersecting) return;
+				links.forEach(function(a) { a.classList.remove('active'); });
+				var a = map[en.target.id];
+				if (a) {
+					a.classList.add('active');
+					if (a.scrollIntoView) a.scrollIntoView({ block: 'nearest' });
+				}
+			});
+		}, { rootMargin: '0px 0px -75% 0px' });
+		headings().forEach(function(h) { if (h.id) obs.observe(h); });
+	}
+
+	var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5"/></svg>';
+	var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+	var ICON_LINK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+	function enhanceCodeBlocks() {
+		document.querySelectorAll('#note-content pre').forEach(function(pre) {
+			if (pre.querySelector('.code-copy')) return;
+			var code = pre.querySelector('code');
+			var langMatch = ((code ? code.className : '') + ' ' + pre.className).match(/language-([a-z0-9+#-]+)/i);
+			if (langMatch && langMatch[1] !== 'undefined') pre.setAttribute('data-lang', langMatch[1]);
+			var btn = document.createElement('button');
+			btn.className = 'code-copy';
+			btn.setAttribute('aria-label', 'Copy code');
+			btn.innerHTML = ICON_COPY;
+			btn.addEventListener('click', function() {
+				var code = pre.querySelector('code');
+				var textToCopy = (code || pre).innerText.replace(/\n$/, '');
+				navigator.clipboard.writeText(textToCopy).then(function() {
+					btn.innerHTML = ICON_CHECK;
+					btn.classList.add('copied');
+					setTimeout(function() { btn.innerHTML = ICON_COPY; btn.classList.remove('copied'); }, 1500);
+				});
+			});
+			pre.appendChild(btn);
+		});
+	}
+
+	// hover link icon on headings — click copies the deep link
+	function headingAnchors() {
+		headings().forEach(function(h) {
+			if (!h.id || h.querySelector('.h-anchor')) return;
+			var a = document.createElement('a');
+			a.className = 'h-anchor';
+			a.href = '#' + h.id;
+			a.setAttribute('aria-label', 'Copy link to section');
+			a.innerHTML = ICON_LINK;
+			a.addEventListener('click', function(e) {
+				e.preventDefault();
+				history.replaceState(null, '', '#' + h.id);
+				try { navigator.clipboard.writeText(location.href.split('#')[0] + '#' + h.id); } catch(err) {}
+				h.scrollIntoView({ behavior: 'smooth' });
+			});
+			h.appendChild(a);
+		});
+	}
+
+	// ══════════ markdown source tools (copy / download) ══════════
+	function mdSource() {
+		if (window.__cmdsMd != null) return window.__cmdsMd; // decrypted payload
+		var el = document.getElementById('md-source');
+		if (!el) return null;
+		try {
+			var bin = atob(el.textContent.trim());
+			var bytes = new Uint8Array(bin.length);
+			for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+			return new TextDecoder().decode(bytes);
+		} catch(e) { return null; }
+	}
+
+	function wireMdTools() {
+		var md = mdSource();
+		if (md == null) return;
+		var copyBtn = document.getElementById('mdCopy');
+		var dlBtn = document.getElementById('mdDownload');
+		if (copyBtn) {
+			copyBtn.hidden = false;
+			var idle = copyBtn.innerHTML;
+			copyBtn.addEventListener('click', function() {
+				navigator.clipboard.writeText(md).then(function() {
+					copyBtn.innerHTML = ICON_CHECK;
+					copyBtn.classList.add('active');
+					setTimeout(function() { copyBtn.innerHTML = idle; copyBtn.classList.remove('active'); }, 1500);
+				});
+			});
+		}
+		if (dlBtn) {
+			dlBtn.hidden = false;
+			dlBtn.addEventListener('click', function() {
+				var name = (document.title || 'note').replace(/[\\/:*?"<>|]/g, '-').trim() || 'note';
+				var blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+				var url = URL.createObjectURL(blob);
+				var a = document.createElement('a');
+				a.href = url;
+				a.download = name + '.md';
+				document.body.appendChild(a);
+				a.click();
+				a.remove();
+				setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+			});
+		}
+	}
+
+	// ══════════ interactive force-directed local graph ══════════
+	var G = null; // { data, pts, adj, deg, W, H, k, tx, ty, hover }
+
+	function readGraphData() {
+		var dataEl = document.getElementById('graph-data');
+		if (!dataEl) return null;
+		var g;
+		try { g = JSON.parse(dataEl.textContent); } catch(e) { return null; }
+		if (!g.nodes || g.nodes.length < 2) return null;
+		return g;
+	}
+
+	function runLayout(g, W, H) {
+		var N = g.nodes.length;
+		var pts = g.nodes.map(function(n, i) {
+			var a = i * 2.399963;
+			var r = n.level === 0 ? 0 : (n.level === 1 ? 0.35 : 0.7) * Math.min(W, H) / 2;
+			return { x: W / 2 + r * Math.cos(a), y: H / 2 + r * Math.sin(a), vx: 0, vy: 0 };
+		});
+		var SPRING = 0.03, REST = Math.min(W, H) / 3.2, REPEL = Math.min(W, H) * 55, GRAV = 0.008;
+		for (var it = 0; it < 300; it++) {
+			var damp = 0.85 * (1 - it / 340);
+			for (var i = 0; i < N; i++) {
+				for (var j = i + 1; j < N; j++) {
+					var dx = pts[j].x - pts[i].x, dy = pts[j].y - pts[i].y;
+					var d2 = dx * dx + dy * dy + 0.01, d = Math.sqrt(d2);
+					var f = Math.min(REPEL / d2, 8);
+					var fx = (dx / d) * f, fy = (dy / d) * f;
+					pts[i].vx -= fx; pts[i].vy -= fy;
+					pts[j].vx += fx; pts[j].vy += fy;
+				}
+			}
+			g.edges.forEach(function(e) {
+				var a = pts[e[0]], b = pts[e[1]];
+				var dx = b.x - a.x, dy = b.y - a.y;
+				var d = Math.sqrt(dx * dx + dy * dy) + 0.01;
+				var f = SPRING * (d - REST);
+				var fx = (dx / d) * f, fy = (dy / d) * f;
+				a.vx += fx; a.vy += fy;
+				b.vx -= fx; b.vy -= fy;
+			});
+			for (var k2 = 0; k2 < N; k2++) {
+				pts[k2].vx += (W / 2 - pts[k2].x) * GRAV;
+				pts[k2].vy += (H / 2 - pts[k2].y) * GRAV;
+				pts[k2].x += pts[k2].vx * damp;
+				pts[k2].y += pts[k2].vy * damp;
+				pts[k2].vx *= 0.6; pts[k2].vy *= 0.6;
+			}
+			pts[0].x = W / 2; pts[0].y = H / 2; pts[0].vx = 0; pts[0].vy = 0;
+		}
+		var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
+		pts.forEach(function(pt) {
+			minX = Math.min(minX, pt.x); maxX = Math.max(maxX, pt.x);
+			minY = Math.min(minY, pt.y); maxY = Math.max(maxY, pt.y);
+		});
+		var M = 30;
+		var sx = (W - M * 2) / Math.max(maxX - minX, 1), sy = (H - M * 2) / Math.max(maxY - minY, 1);
+		var sc = Math.min(sx, sy, 1.5);
+		pts.forEach(function(pt) {
+			pt.x = M + (pt.x - minX) * sc + (W - M * 2 - (maxX - minX) * sc) / 2;
+			pt.y = M + (pt.y - minY) * sc + (H - M * 2 - (maxY - minY) * sc) / 2;
+		});
+		return pts;
+	}
+
+	function canvasSize() {
+		var canvas = document.getElementById('graphCanvas');
+		var panel = document.getElementById('graphPanel');
+		var wasHidden = !panel.classList.contains('open') && !docked();
+		if (wasHidden) { panel.style.visibility = 'hidden'; panel.classList.add('open'); }
+		var W = Math.max(canvas.clientWidth || panel.clientWidth - 36, 200);
+		var H = docked() ? Math.max(canvas.clientHeight, 200) : 280;
+		if (wasHidden) { panel.classList.remove('open'); panel.style.visibility = ''; }
+		return { W: W, H: H };
+	}
+
+	function relayoutGraph() {
+		var data = G ? G.data : readGraphData();
+		if (!data) return;
+		var sz = canvasSize();
+		var adj = data.nodes.map(function() { return {}; });
+		var deg = data.nodes.map(function() { return 0; });
+		data.edges.forEach(function(e) {
+			adj[e[0]][e[1]] = true; adj[e[1]][e[0]] = true;
+			deg[e[0]]++; deg[e[1]]++;
+		});
+		G = {
+			data: data, adj: adj, deg: deg,
+			pts: runLayout(data, sz.W, sz.H),
+			W: sz.W, H: sz.H, k: 1, tx: 0, ty: 0, hover: -1,
+		};
+		renderGraph();
+	}
+
+	function renderGraph() {
+		if (!G) return;
+		var canvas = document.getElementById('graphCanvas');
+		var dpr = window.devicePixelRatio || 1;
+		canvas.width = G.W * dpr; canvas.height = G.H * dpr;
+		if (!docked()) canvas.style.height = G.H + 'px';
+		var ctx = canvas.getContext('2d');
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+		ctx.clearRect(0, 0, G.W, G.H);
+
+		var css = getComputedStyle(document.documentElement);
+		var noteColor = css.getPropertyValue('--graph-note').trim() || css.getPropertyValue('--accent').trim();
+		var muted = css.getPropertyValue('--muted').trim();
+		var text = css.getPropertyValue('--text').trim();
+		var border = css.getPropertyValue('--border').trim();
+		var cardBg = css.getPropertyValue('--card-bg').trim();
+
+		var g = G.data, pts = G.pts, k = G.k, hover = G.hover;
+		var sx = function(pt) { return pt.x * k + G.tx; };
+		var sy = function(pt) { return pt.y * k + G.ty; };
+		var inHood = function(i) { return hover < 0 || i === hover || G.adj[hover][i]; };
+
+		g.edges.forEach(function(e) {
+			var touches = hover >= 0 && (e[0] === hover || e[1] === hover);
+			if (hover >= 0) {
+				ctx.globalAlpha = touches ? 0.95 : 0.08;
+				ctx.strokeStyle = touches ? muted : border;
+				ctx.lineWidth = touches ? 1.5 : 1;
+			} else {
+				ctx.globalAlpha = (g.nodes[e[0]].level === 2 || g.nodes[e[1]].level === 2) ? 0.45 : 0.8;
+				ctx.strokeStyle = border;
+				ctx.lineWidth = 1;
+			}
+			ctx.beginPath();
+			ctx.moveTo(sx(pts[e[0]]), sy(pts[e[0]]));
+			ctx.lineTo(sx(pts[e[1]]), sy(pts[e[1]]));
+			ctx.stroke();
+		});
+
+		var rOf = function(i) {
+			var base = i === 0 ? 7 : Math.min(3.2 + G.deg[i] * 0.6, 6.5);
+			return base * Math.pow(k, 0.75);
+		};
+		g.nodes.forEach(function(n, i) {
+			var dim = hover >= 0 ? (inHood(i) ? 1 : 0.14) : (n.level === 2 ? 0.65 : 1);
+			ctx.globalAlpha = dim;
+			ctx.fillStyle = n.type === 'tag' ? '#E985A2' : noteColor;
+			ctx.beginPath(); ctx.arc(sx(pts[i]), sy(pts[i]), rOf(i), 0, Math.PI * 2); ctx.fill();
+			if (i === hover) {
+				ctx.strokeStyle = text; ctx.lineWidth = 1.5;
+				ctx.beginPath(); ctx.arc(sx(pts[i]), sy(pts[i]), rOf(i) + 2.5, 0, Math.PI * 2); ctx.stroke();
+			}
+		});
+
+		// labels: center always; L1 at normal zoom; everything once zoomed in;
+		// hovering shows the whole neighborhood regardless of zoom
+		g.nodes.forEach(function(n, i) {
+			var show;
+			if (hover >= 0) show = inHood(i);
+			else show = i === 0 || (n.level === 1 && (k >= 1.05 || g.nodes.length <= 20)) || k >= 1.9 || g.nodes.length <= 12;
+			if (!show) return;
+			var fs = i === 0 || i === hover ? 11.5 : 10.5;
+			ctx.font = (i === 0 || i === hover ? 'bold ' : '') + fs + 'px -apple-system, sans-serif';
+			var label = n.label.length > 22 ? n.label.slice(0, 21) + '…' : n.label;
+			var tw = ctx.measureText(label).width;
+			var lx = Math.max(2, Math.min(G.W - tw - 2, sx(pts[i]) - tw / 2));
+			var ly = sy(pts[i]) + rOf(i) + fs + 2;
+			var alpha = hover >= 0 ? (inHood(i) ? 1 : 0) : (n.level === 2 && k < 2 ? 0.7 : 0.95);
+			ctx.globalAlpha = alpha * 0.8;
+			ctx.fillStyle = cardBg;
+			ctx.fillRect(lx - 3, ly - fs + 1, tw + 6, fs + 3);
+			ctx.globalAlpha = alpha;
+			ctx.fillStyle = i === 0 || i === hover ? text : muted;
+			ctx.fillText(label, lx, ly);
+		});
+		ctx.globalAlpha = 1;
+	}
+
+	function zoomBy(factor) {
+		if (!G) return;
+		var mx = G.W / 2, my = G.H / 2;
+		var nk = Math.max(0.35, Math.min(4.5, G.k * factor));
+		factor = nk / G.k;
+		G.tx = mx - (mx - G.tx) * factor;
+		G.ty = my - (my - G.ty) * factor;
+		G.k = nk;
+		renderGraph();
+	}
+
+	function wireGraphInteraction() {
+		var canvas = document.getElementById('graphCanvas');
+		var dragging = false, moved = false, lastX = 0, lastY = 0;
+
+		document.getElementById('gZoomIn').addEventListener('click', function() { zoomBy(1.35); });
+		document.getElementById('gZoomOut').addEventListener('click', function() { zoomBy(1 / 1.35); });
+		document.getElementById('gReset').addEventListener('click', function() {
+			if (G) { G.k = 1; G.tx = 0; G.ty = 0; renderGraph(); }
+		});
+
+		function pick(mx, my) {
+			if (!G) return -1;
+			var best = -1, bestD = 12 * 12;
+			G.pts.forEach(function(pt, i) {
+				var dx = pt.x * G.k + G.tx - mx, dy = pt.y * G.k + G.ty - my;
+				var d = dx * dx + dy * dy;
+				if (d < bestD) { bestD = d; best = i; }
+			});
+			return best;
+		}
+		function pos(e) {
+			var r = canvas.getBoundingClientRect();
+			return { x: e.clientX - r.left, y: e.clientY - r.top };
+		}
+
+		canvas.addEventListener('wheel', function(e) {
+			if (!G) return;
+			e.preventDefault();
+			var m = pos(e);
+			var factor = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.002));
+			var nk = Math.max(0.35, Math.min(4.5, G.k * factor));
+			factor = nk / G.k;
+			G.tx = m.x - (m.x - G.tx) * factor;
+			G.ty = m.y - (m.y - G.ty) * factor;
+			G.k = nk;
+			renderGraph();
+		}, { passive: false });
+
+		canvas.addEventListener('pointerdown', function(e) {
+			if (!G) return;
+			dragging = true; moved = false;
+			lastX = e.clientX; lastY = e.clientY;
+			canvas.classList.add('dragging');
+			canvas.setPointerCapture(e.pointerId);
+		});
+		canvas.addEventListener('pointermove', function(e) {
+			if (!G) return;
+			if (dragging) {
+				var dx = e.clientX - lastX, dy = e.clientY - lastY;
+				if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
+				G.tx += dx; G.ty += dy;
+				lastX = e.clientX; lastY = e.clientY;
+				renderGraph();
+			} else {
+				var m = pos(e);
+				var h = pick(m.x, m.y);
+				canvas.classList.toggle('on-node', h >= 0);
+				if (h !== G.hover) { G.hover = h; renderGraph(); }
+			}
+		});
+		canvas.addEventListener('pointerup', function(e) {
+			dragging = false;
+			canvas.classList.remove('dragging');
+			// double-click-ish: a clean click on empty space resets the view
+			if (!moved) {
+				var m = pos(e);
+				if (pick(m.x, m.y) < 0 && G.k !== 1) { G.k = 1; G.tx = 0; G.ty = 0; renderGraph(); }
+			}
+		});
+		canvas.addEventListener('pointerleave', function() {
+			if (G && G.hover !== -1) { G.hover = -1; renderGraph(); }
+			canvas.classList.remove('on-node');
+		});
+	}
+
+	function init() {
+		// start from a known-clean panel state before restoring preferences
+		document.body.classList.remove('cmds-docked');
+		document.getElementById('sideDock').hidden = true;
+		assignHeadingIds();
+		enhanceCodeBlocks();
+		headingAnchors();
+		wireMdTools();
+		hasToc = buildToc();
+		if (hasToc) {
+			document.getElementById('tocToggle').hidden = false;
+			wireToggle('toc');
+			scrollSpy();
+		}
+		hasGraph = !!readGraphData();
+		if (hasGraph) {
+			document.getElementById('graphToggle').hidden = false;
+			wireToggle('graph');
+			wireGraphInteraction();
+			new MutationObserver(function() { renderGraph(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+			window.addEventListener('resize', function() {
+				if (docked() && window.innerWidth <= 1100) { setDock(false); return; }
+				if (docked()) requestAnimationFrame(function() { relayoutGraph(); });
+			});
+		}
+		if (hasToc || hasGraph) {
+			document.querySelectorAll('[data-pin]').forEach(function(btn) {
+				btn.addEventListener('click', function() { setDock(!docked()); });
+			});
+			// floating popups close on any click outside the card (docked stays put)
+			document.addEventListener('pointerdown', function(e) {
+				if (docked()) return;
+				if (e.target.closest('.side-panel, .side-tools')) return;
+				Object.keys(PANELS).forEach(function(k) {
+					if (document.getElementById(PANELS[k]).classList.contains('open')) setPanel(k, false);
+				});
+			});
+		}
+		try {
+			if (localStorage.getItem('cmds-dock') === '1' && (hasToc || hasGraph)) {
+				setDock(true);
+			} else if (localStorage.getItem('cmds-panel-toc') === '1' && hasToc) setPanel('toc', true);
+			else if (localStorage.getItem('cmds-panel-graph') === '1' && hasGraph) setPanel('graph', true);
+		} catch(e) {}
+	}
+
+	if (document.getElementById('encrypted-data') && !window.__cmdsReady) {
+		document.addEventListener('cmds-content-ready', init, { once: true });
+	} else {
+		init();
+	}
+})();
+</script>
+
+</body>
+</html>
