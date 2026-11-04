@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>더픽트 10-29-2026 회의록 - 워크플로우 엔지니어링과 모두의 춘천</title>
+<meta name="description" content="&gt; [!NOTE] &gt; 10-29-2026 `더픽트`에서 `전창대` 대표와 회의한 기록을 정리한 것. #Workflow-Engineering 및 #AX 와 관련해서 중요한 컨설팅과 진지한 의견을 나누었다. 디자인 팀에서 개발 이전 단계에 직접 시연용 포털을 완성된 형태로 만들어 제공하는 방식이 논의되었다. 워크스테이션 형태로 직접 만들어 시연하면 더 수...">
+<link rel="canonical" href="https://laguna821.github.io/obsidian-shared-notes/notes/nj9mj25e.html">
+<meta property="og:url" content="https://laguna821.github.io/obsidian-shared-notes/notes/nj9mj25e.html">
+
+<link rel="icon" type="image/png" href="https://cmdspace.work/assets/logos/cmds-logo-round.png">
+<link rel="apple-touch-icon" href="https://cmdspace.work/assets/logos/cmds-logo-round.png">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="CMDSPACE">
+<meta property="og:title" content="더픽트 10-29-2026 회의록 - 워크플로우 엔지니어링과 모두의 춘천">
+<meta property="og:description" content="&gt; [!NOTE] &gt; 10-29-2026 `더픽트`에서 `전창대` 대표와 회의한 기록을 정리한 것. #Workflow-Engineering 및 #AX 와 관련해서 중요한 컨설팅과 진지한 의견을 나누었다. 디자인 팀에서 개발 이전 단계에 직접 시연용 포털을 완성된 형태로 만들어 제공하는 방식이 논의되었다. 워크스테이션 형태로 직접 만들어 시연하면 더 수...">
+<meta property="og:image" content="https://share.cmdspace.work/assets/og/og-share.png">
+<meta property="og:image:secure_url" content="https://share.cmdspace.work/assets/og/og-share.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CMDS Share — 더픽트 10-29-2026 회의록 - 워크플로우 엔지니어링과 모두의 춘천">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="더픽트 10-29-2026 회의록 - 워크플로우 엔지니어링과 모두의 춘천">
+<meta name="twitter:description" content="&gt; [!NOTE] &gt; 10-29-2026 `더픽트`에서 `전창대` 대표와 회의한 기록을 정리한 것. #Workflow-Engineering 및 #AX 와 관련해서 중요한 컨설팅과 진지한 의견을 나누었다. 디자인 팀에서 개발 이전 단계에 직접 시연용 포털을 완성된 형태로 만들어 제공하는 방식이 논의되었다. 워크스테이션 형태로 직접 만들어 시연하면 더 수...">
+<meta name="twitter:image" content="https://share.cmdspace.work/assets/og/og-share.png">
+
+<script>
+(function(){try{var f='';if(f){document.documentElement.dataset.theme=f;return;}var t=localStorage.getItem('cmds-theme');if(t){document.documentElement.dataset.theme=t;}else if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.dataset.theme='dark';}else{document.documentElement.dataset.theme='light';}}catch(e){}})();
+</script>
+
+<style>
+:root {
+	--max: 750px;
+	--text: #1a1a1a;
+	--muted: #666;
+	--bg: #fff;
+	--accent: #134538;
+	--accent-light: #1a5c4a;
+	--accent-on: #fff;
+	--border: #e5e5e5;
+	--code-bg: #f5f5f5;
+	--card-bg: #fff;
+	--pre-bg: #f5f6f4;
+	--pre-fg: #24292e;
+	--graph-note: #22896a;
+	--callout-tint: 10%;
+}
+[data-theme="dark"] {
+	--text: #f2f4f3;
+	--muted: #9aa39d;
+	--bg: #06080a;
+	--accent: #E985A2;
+	--accent-light: #F4A4B8;
+	--accent-on: #1a0f14;
+	--border: #1a231f;
+	--code-bg: #161c19;
+	--card-bg: #0d1411;
+	--pre-bg: #0a0d0b;
+	--pre-fg: #e0e0e0;
+	--graph-note: #2fb488;
+	--callout-tint: 16%;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+	--text: #f2f4f3;
+	--muted: #9aa39d;
+	--bg: #06080a;
+	--accent: #E985A2;
+	--accent-light: #F4A4B8;
+	--accent-on: #1a0f14;
+	--border: #1a231f;
+	--code-bg: #161c19;
+	--card-bg: #0d1411;
+	--pre-bg: #0a0d0b;
+	--pre-fg: #e0e0e0;
+	--graph-note: #2fb488;
+	--callout-tint: 16%;
+	}
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { color-scheme: light dark; scroll-behavior: smooth; }
+html, body { overflow-x: hidden; }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Pretendard Variable', 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
+	color: var(--text); background: var(--bg); line-height: 1.75;
+	font-size: 16px; -webkit-font-smoothing: antialiased;
+	transition: background-color .2s, color .2s;
+}
+
+.side-tools {
+	position: fixed; top: 1rem; right: 1rem; z-index: 100;
+	display: flex; flex-direction: column; gap: 0.5rem;
+}
+.tool-btn {
+	width: 36px; height: 36px;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 50%;
+	cursor: pointer;
+	display: grid; place-items: center;
+	color: var(--text);
+	transition: border-color .15s, background .15s, color .15s;
+}
+.tool-btn[hidden] { display: none; }
+.tool-btn:hover { border-color: var(--accent); }
+.tool-btn.active { border-color: var(--accent); color: var(--accent); }
+.tool-btn svg { width: 16px; height: 16px; }
+
+.side-panel {
+	position: fixed; top: 1rem; right: 4rem; z-index: 99;
+	width: 280px; max-height: calc(100vh - 2rem);
+	overflow-y: auto;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	padding: 1rem 1.1rem;
+	display: none;
+	box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.side-panel.open { display: block; }
+.panel-head {
+	display: flex; align-items: center; justify-content: space-between;
+	margin-bottom: 0.6rem;
+}
+.panel-head h3 {
+	font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+	letter-spacing: 0.08em; color: var(--muted);
+}
+.pin-btn {
+	background: none; border: none; cursor: pointer; color: var(--muted);
+	width: 22px; height: 22px; display: grid; place-items: center;
+	border-radius: 5px;
+}
+.pin-btn:hover { color: var(--accent); background: var(--code-bg); }
+.pin-btn svg { width: 13px; height: 13px; }
+.g-controls { display: flex; gap: 2px; align-items: center; }
+
+/* docked mode: persistent right sidebar — TOC on top (scrolls), graph fills the rest */
+body.cmds-docked { padding-right: 312px; }
+body.cmds-docked .side-tools { right: calc(312px + 1rem); }
+body.cmds-docked #tocToggle, body.cmds-docked #graphToggle { display: none; }
+body.cmds-docked .pin-btn { color: var(--accent); }
+.side-dock {
+	position: fixed; top: 0; right: 0; bottom: 0; width: 312px; z-index: 98;
+	background: var(--card-bg); border-left: 1px solid var(--border);
+	display: flex; flex-direction: column;
+}
+.side-dock[hidden] { display: none; }
+.side-dock .side-panel {
+	position: static; display: block; width: auto; max-height: none;
+	border: none; border-radius: 0; box-shadow: none;
+}
+.side-dock #tocPanel { flex: 0 1 auto; min-height: 120px; max-height: 58%; overflow-y: auto; }
+.side-dock #graphPanel {
+	flex: 1 1 auto; min-height: 220px; overflow: hidden;
+	border-top: 1px solid var(--border);
+	display: flex; flex-direction: column;
+}
+.side-dock #graphPanel canvas { flex: 1; min-height: 0; }
+#graphCanvas { touch-action: none; cursor: grab; }
+#graphCanvas.dragging { cursor: grabbing; }
+#graphCanvas.on-node { cursor: pointer; }
+#tocList { display: flex; flex-direction: column; gap: 2px; }
+#tocList a {
+	color: var(--text); text-decoration: none; font-size: 0.82rem;
+	line-height: 1.4; padding: 0.25rem 0.5rem; border-radius: 6px;
+	display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+#tocList a:hover { background: var(--code-bg); color: var(--accent); }
+#tocList a.active { background: var(--code-bg); color: var(--accent); font-weight: 600; }
+#tocList a.toc-h2 { padding-left: 1.1rem; }
+#tocList a.toc-h3 { padding-left: 1.7rem; font-size: 0.78rem; color: var(--muted); }
+#tocList a.toc-h4 { padding-left: 2.3rem; font-size: 0.78rem; color: var(--muted); }
+#graphCanvas { width: 100%; display: block; }
+.graph-legend {
+	display: flex; gap: 0.9rem; margin-top: 0.5rem;
+	font-size: 0.7rem; color: var(--muted);
+}
+.graph-legend span::before {
+	content: ''; display: inline-block; width: 8px; height: 8px;
+	border-radius: 50%; margin-right: 4px;
+}
+.graph-legend .lg-link::before { background: var(--graph-note); }
+.graph-legend .lg-tag::before { background: #E985A2; }
+
+main {
+	max-width: var(--max); margin: 0 auto; padding: 4rem 1.5rem 3rem;
+}
+
+
+#note-content { font-size: 1rem; overflow-wrap: break-word; }
+#note-content h1, #note-content h2, #note-content h3,
+#note-content h4, #note-content h5, #note-content h6 {
+	font-weight: 700; letter-spacing: -0.02em; line-height: 1.3;
+	margin: 2rem 0 0.75rem; scroll-margin-top: 1.5rem;
+}
+#note-content h1 { font-size: 1.85rem; margin-top: 2.4rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+#note-content h2 { font-size: 1.4rem; margin-top: 2.2rem; }
+#note-content h3 { font-size: 1.18rem; }
+#note-content h4 { font-size: 1.06rem; color: var(--text); margin-top: 1.8rem; }
+#note-content h5 { font-size: 0.98rem; color: var(--text); }
+#note-content h6 { font-size: 0.9rem; color: var(--muted); }
+#note-content p { margin: 0.85rem 0; }
+#note-content ul, #note-content ol { margin: 0.85rem 0 0.85rem 1.4rem; }
+#note-content li { margin: 0.35rem 0; }
+#note-content li > ul, #note-content li > ol { margin: 0.25rem 0 0.25rem 1.2rem; }
+#note-content a {
+	color: var(--accent); text-decoration: none;
+	border-bottom: 1px solid transparent; transition: border-color .15s;
+}
+#note-content a:hover { border-bottom-color: var(--accent); }
+#note-content code {
+	background: var(--code-bg); padding: 0.18em 0.45em; border-radius: 6px;
+	font-size: 0.86em; font-family: 'SF Mono', 'Menlo', monospace;
+}
+#note-content pre {
+	background: var(--pre-bg); color: var(--pre-fg);
+	border: 1px solid var(--border);
+	padding: 1rem; border-radius: 12px;
+	overflow-x: auto; font-size: 0.85rem; line-height: 1.6;
+	font-family: 'SF Mono', 'Menlo', monospace; margin: 1rem 0;
+	position: relative;
+}
+#note-content pre code { background: transparent; padding: 0; font-size: 1em; }
+#note-content pre[data-lang]::before {
+	content: attr(data-lang);
+	position: absolute; top: 7px; left: 12px;
+	font-size: 0.66rem; font-weight: 600; letter-spacing: 0.05em;
+	color: var(--muted); opacity: 0.75; text-transform: lowercase;
+	font-family: -apple-system, sans-serif;
+}
+#note-content pre[data-lang] { padding-top: 1.9rem; }
+#note-content blockquote {
+	border-left: 3px solid var(--accent); padding: 0.5rem 1rem;
+	margin: 1rem 0; color: var(--muted); background: var(--code-bg);
+	border-radius: 0 8px 8px 0;
+}
+#note-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1rem 0; }
+/* YouTube embeds fill the column at 16:9 (Obsidian's fixed 600×350 box letterboxes on phones) */
+#note-content iframe.external-embed[src*="youtube"] {
+	display: block; width: 100%; height: auto; aspect-ratio: 16 / 9;
+	border: 0; border-radius: 8px; margin: 1rem 0;
+}
+#note-content table {
+	border-collapse: collapse; margin: 1rem 0;
+	font-size: 0.9rem;
+	/* wide tables scroll inside themselves instead of panning the page */
+	display: block; width: max-content; min-width: 60%; max-width: 100%;
+	overflow-x: auto;
+}
+#note-content th, #note-content td {
+	border: none; border-bottom: 1px solid var(--border);
+	padding: 0.65rem 0.9rem; text-align: left; vertical-align: top;
+}
+#note-content th { font-weight: 700; font-size: 0.85rem; color: var(--muted); border-bottom-width: 2px; }
+#note-content tr:last-child td { border-bottom: none; }
+#note-content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+#note-content mark { background: rgba(233,133,162,0.25); padding: 0 0.2rem; border-radius: 3px; }
+/* callouts: tinted with their own color (no left accent bar). The title mixes the callout color with the
+   body text color, so it darkens on light palettes and lightens on dark ones (>= 4.8:1 on every palette). */
+#note-content .callout {
+	--co: var(--accent);
+	background: var(--code-bg);
+	background: color-mix(in srgb, var(--co) var(--callout-tint, 10%), var(--bg));
+	border: 1px solid var(--border);
+	border: 1px solid color-mix(in srgb, var(--co) 24%, var(--bg));
+	border-radius: 10px; padding: 0.95rem 1.1rem; margin: 1.1rem 0;
+}
+#note-content .callout-title {
+	display: flex; align-items: center; gap: 0.5em;
+	font-weight: 700; margin: 0;
+	color: var(--co);
+	color: color-mix(in srgb, var(--co) 50%, var(--text));
+}
+#note-content .callout-icon { display: flex; align-items: center; flex-shrink: 0; }
+#note-content .callout-icon svg, #note-content .callout-title > svg {
+	width: 1.1em; height: 1.1em;
+}
+#note-content .callout-title-inner { line-height: 1.45; }
+#note-content .callout-fold { display: none; }
+#note-content .callout.is-collapsible > .callout-title { cursor: pointer; }
+#note-content .callout.is-collapsible .callout-fold {
+	display: flex; margin-left: auto; color: var(--muted); transition: transform .15s;
+}
+#note-content .callout.is-collapsed .callout-fold { transform: rotate(-90deg); }
+#note-content .callout-fold svg { width: 1em; height: 1em; }
+#note-content .callout-content > :first-child { margin-top: 0.45rem; }
+#note-content .callout-content > :last-child { margin-bottom: 0.1rem; }
+#note-content .callout[data-callout="abstract"], #note-content .callout[data-callout="summary"], #note-content .callout[data-callout="tldr"] { --co: #2a9aa8; }
+#note-content .callout[data-callout="info"], #note-content .callout[data-callout="note"], #note-content .callout[data-callout="todo"] { --co: var(--accent); }
+#note-content .callout[data-callout="tip"], #note-content .callout[data-callout="hint"], #note-content .callout[data-callout="important"] { --co: #2e9d7c; }
+#note-content .callout[data-callout="success"], #note-content .callout[data-callout="check"], #note-content .callout[data-callout="done"] { --co: #3c9a55; }
+#note-content .callout[data-callout="question"], #note-content .callout[data-callout="help"], #note-content .callout[data-callout="faq"] { --co: #c28a2c; }
+#note-content .callout[data-callout="warning"], #note-content .callout[data-callout="caution"], #note-content .callout[data-callout="attention"] { --co: #d0742e; }
+#note-content .callout[data-callout="danger"], #note-content .callout[data-callout="error"], #note-content .callout[data-callout="failure"], #note-content .callout[data-callout="fail"], #note-content .callout[data-callout="missing"], #note-content .callout[data-callout="bug"] { --co: #d24b4b; }
+#note-content .callout[data-callout="example"] { --co: #7d63cc; }
+#note-content .callout[data-callout="quote"], #note-content .callout[data-callout="cite"] { --co: var(--muted); }
+#note-content .internal-link {
+	color: var(--accent); border-bottom: 1px dashed var(--accent); cursor: help;
+}
+
+#note-content pre { position: relative; }
+.code-copy {
+	position: absolute; top: 8px; right: 8px;
+	width: 28px; height: 28px; border-radius: 6px;
+	background: color-mix(in srgb, var(--card-bg) 92%, transparent);
+	backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+	border: 1px solid var(--border);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18);
+	color: var(--muted); cursor: pointer;
+	display: grid; place-items: center;
+	opacity: 0; transition: opacity .15s, color .15s, border-color .15s;
+}
+#note-content pre:hover .code-copy, .code-copy.copied { opacity: 1; }
+.code-copy:hover, .code-copy.copied { color: var(--accent); border-color: var(--accent); }
+.code-copy svg { width: 14px; height: 14px; }
+.h-anchor {
+	margin-left: 0.4rem; opacity: 0; color: var(--muted);
+	border-bottom: none !important; transition: opacity .15s, color .15s;
+}
+.h-anchor svg { width: 0.75em; height: 0.75em; }
+.h-anchor:hover { color: var(--accent); }
+#note-content h1:hover .h-anchor, #note-content h2:hover .h-anchor,
+#note-content h3:hover .h-anchor, #note-content h4:hover .h-anchor { opacity: 0.75; }
+.mermaid-container { margin: 1rem 0; overflow-x: auto; text-align: center; }
+.mermaid-container svg { max-width: 100%; height: auto; }
+.mermaid-container pre { text-align: left; }
+
+/* ── title heading ── */
+.cmds-doc-header { margin: 0 0 2rem; }
+.cmds-doc-kind {
+	display: inline-block; margin-bottom: 0.7rem;
+	font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+	color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent);
+	border-radius: 999px; padding: 0.2rem 0.65rem;
+}
+.cmds-doc-title {
+	font-size: clamp(1.9rem, 4.2vw, 2.6rem); font-weight: 800;
+	letter-spacing: -0.03em; line-height: 1.18; text-wrap: balance;
+}
+#note-content > :first-child, #note-content > .markdown-preview-sizer > :first-child { margin-top: 0; }
+
+/* ── wide layout (drawings, canvases, bases) ── */
+body.cmds-layout-wide { --max: 1320px; }
+body.cmds-layout-wide main { padding-top: 3.5rem; }
+
+/* ── Excalidraw ── */
+.cmds-excalidraw { margin: 0; }
+.cmds-excalidraw > svg {
+	border-radius: 14px; border: 1px solid var(--border);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 12px 32px rgba(0,0,0,0.10);
+}
+
+/* ── JSON Canvas ── */
+:root {
+	--cv-c1: #e93147; --cv-c2: #ec7500; --cv-c3: #e0ac00;
+	--cv-c4: #08b94e; --cv-c5: #00bfbc; --cv-c6: #7852ee;
+}
+.cmds-canvas {
+	position: relative; overflow: hidden; touch-action: none;
+	border: 1px solid var(--border); border-radius: 14px; height: 70vh; min-height: 320px;
+	background-color: var(--bg);
+	background-image: radial-gradient(circle, color-mix(in srgb, var(--muted) 35%, transparent) 1px, transparent 1.2px);
+	background-size: 22px 22px;
+	cursor: grab; user-select: none;
+}
+.cmds-canvas.dragging { cursor: grabbing; }
+.cmds-canvas:fullscreen { border-radius: 0; border: none; height: 100vh; }
+.cmds-canvas-world { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+.cmds-canvas-empty { padding: 2rem; color: var(--muted); text-align: center; }
+.cv-group {
+	position: absolute; border-radius: 14px;
+	border: 2px solid var(--node-color, color-mix(in srgb, var(--muted) 45%, transparent));
+	background: color-mix(in srgb, var(--node-color, var(--muted)) 7%, transparent);
+}
+.cv-group-label {
+	position: absolute; bottom: 100%; left: 0; margin-bottom: 6px;
+	font-size: 1.05rem; font-weight: 700; color: var(--node-color, var(--muted));
+	white-space: nowrap;
+}
+.cv-edges { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.cv-edge path { fill: none; stroke: var(--edge-color, var(--muted)); stroke-width: 2.5; stroke-linecap: round; }
+.cv-edge polygon { fill: var(--edge-color, var(--muted)); stroke: var(--edge-color, var(--muted)); stroke-width: 1; stroke-linejoin: round; }
+.cv-edge-label {
+	position: absolute; transform: translate(-50%, -50%);
+	font-size: 0.8rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 6px;
+	background: var(--bg); color: var(--edge-color, var(--muted));
+	border: 1px solid color-mix(in srgb, var(--edge-color, var(--muted)) 40%, var(--border));
+	white-space: nowrap;
+}
+.cv-node {
+	position: absolute; display: flex; flex-direction: column;
+	border-radius: 12px; overflow: visible;
+	border: 2px solid var(--node-color, var(--border));
+	background: color-mix(in srgb, var(--node-color, transparent) 9%, var(--card-bg));
+	box-shadow: 0 1px 2px rgba(0,0,0,0.06), 0 6px 18px rgba(0,0,0,0.06);
+}
+.cv-body {
+	flex: 1; min-height: 0; overflow: auto; padding: 0.9rem 1.1rem;
+	font-size: 0.95rem; line-height: 1.6; user-select: text; cursor: auto;
+	border-radius: 10px; overscroll-behavior: contain;
+}
+#note-content .cv-body > :first-child { margin-top: 0 !important; }
+#note-content .cv-body > :last-child { margin-bottom: 0 !important; }
+#note-content .cv-body h1 { font-size: 1.45rem; border: none; padding: 0; margin: 0.6rem 0 0.4rem; }
+#note-content .cv-body h2 { font-size: 1.2rem; margin: 0.6rem 0 0.4rem; }
+#note-content .cv-body h3, #note-content .cv-body h4 { font-size: 1.02rem; margin: 0.5rem 0 0.3rem; }
+#note-content .cv-body .h-anchor { display: none; }
+.cv-file-label {
+	position: absolute; bottom: 100%; left: 2px; margin-bottom: 4px;
+	font-size: 0.78rem; font-weight: 600; color: var(--muted);
+	white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;
+}
+.cv-image { background: transparent; box-shadow: none; border-color: transparent; }
+.cv-image img { width: 100%; height: 100%; object-fit: contain; border-radius: 10px; }
+.cv-body .cmds-excalidraw { border: none; padding: 0; background: transparent; }
+.cv-missing { color: var(--muted); font-style: italic; display: grid; place-items: center; }
+.cv-link-card {
+	flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0.3rem;
+	padding: 1rem 1.2rem; text-decoration: none; color: var(--text); cursor: pointer; min-height: 0;
+}
+.cv-link-host { font-weight: 700; font-size: 1rem; color: var(--accent); }
+.cv-link-url { font-size: 0.78rem; color: var(--muted); word-break: break-all; overflow: hidden; }
+.cmds-canvas-ui {
+	position: absolute; right: 12px; bottom: 12px; z-index: 2;
+	display: flex; gap: 4px; padding: 4px; border-radius: 10px;
+	background: color-mix(in srgb, var(--card-bg) 88%, transparent);
+	border: 1px solid var(--border); backdrop-filter: blur(8px);
+}
+.cmds-canvas-ui button {
+	width: 30px; height: 30px; border: none; border-radius: 7px; cursor: pointer;
+	background: transparent; color: var(--text); display: grid; place-items: center;
+}
+.cmds-canvas-ui button:hover { background: var(--code-bg); color: var(--accent); }
+.cmds-canvas-ui svg { width: 15px; height: 15px; }
+.cmds-canvas-hint {
+	position: absolute; left: 12px; bottom: 12px; z-index: 2;
+	font-size: 0.72rem; color: var(--muted); pointer-events: none;
+	background: color-mix(in srgb, var(--card-bg) 80%, transparent); padding: 0.2rem 0.5rem; border-radius: 6px;
+}
+
+/* ── Bases ── */
+/* Fit (default): Obsidian-like single-line rows, columns sized to content,
+   long values truncated. Wrap: values wrap at a readable width. Viewers can
+   drag column edges (fixed widths) and click a row to expand it. */
+.cmds-base-section + .cmds-base-section { margin-top: 2.5rem; }
+#note-content .cmds-base-view-name { font-size: 1.2rem; border: none; padding: 0; margin: 0 0 0.6rem; }
+.cmds-base-bar {
+	display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+	flex-wrap: wrap; margin-bottom: 0.8rem;
+}
+.cmds-base-bar .cmds-base-count { margin: 0; }
+.cmds-base-count { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.8rem; font-variant-numeric: tabular-nums; }
+.cmds-base-tools { display: inline-flex; gap: 4px; align-items: center; }
+.cmds-base-tools button {
+	font: inherit; font-size: 0.74rem; font-weight: 600; cursor: pointer;
+	padding: 0.2rem 0.6rem; border-radius: 999px; box-shadow: none; height: auto;
+	border: 1px solid var(--border); background: transparent; color: var(--muted);
+}
+.cmds-base-tools button:hover { color: var(--text); border-color: var(--accent); }
+.cmds-base-tools button.on { color: var(--accent); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.cmds-base-tools button[hidden] { display: none; }
+.cmds-base-group + .cmds-base-group { margin-top: 1.6rem; }
+.cmds-base-group-head {
+	display: flex; align-items: center; gap: 0.5rem;
+	font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;
+}
+.cmds-base-group-label.is-empty { color: var(--muted); font-weight: 500; font-style: italic; }
+.cmds-base-group-count {
+	font-size: 0.72rem; font-weight: 600; color: var(--muted);
+	background: var(--code-bg); border-radius: 999px; padding: 0.05rem 0.5rem;
+}
+.cmds-base-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; }
+#note-content table.cmds-base-table {
+	display: table; table-layout: auto; width: max-content; min-width: 100%; max-width: none;
+	margin: 0; border: none; border-collapse: collapse; font-size: 0.88rem;
+}
+#note-content table.cmds-base-table.is-sized { table-layout: fixed; min-width: 0; }
+#note-content .cmds-base-table th {
+	position: sticky; top: 0; z-index: 1; text-align: left; white-space: nowrap;
+	font-size: 0.78rem; font-weight: 600; color: var(--muted); background: var(--card-bg);
+	border: none; border-bottom: 1px solid var(--border); padding: 0.5rem 0.9rem;
+	overflow: hidden; text-overflow: ellipsis;
+}
+#note-content .cmds-base-table td {
+	border: none; border-bottom: 1px solid var(--border); padding: 0.45rem 0.9rem; vertical-align: top;
+	white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 26rem;
+}
+#note-content .cmds-base-table.is-sized td { max-width: none; }
+#note-content .cmds-base-table td > * { margin: 0; }
+#note-content .cmds-base-table td p { display: inline; }
+#note-content .cmds-base-view.is-wrap .cmds-base-table td,
+#note-content .cmds-base-table tr.is-expanded td {
+	white-space: normal; overflow-wrap: anywhere; overflow: visible; max-width: 30rem; line-height: 1.55;
+}
+#note-content .cmds-base-view.is-wrap .cmds-base-table.is-sized td,
+#note-content .cmds-base-table.is-sized tr.is-expanded td { max-width: none; }
+#note-content .cmds-base-table tbody tr { cursor: pointer; }
+#note-content .cmds-base-table tr.cmds-base-group-row { cursor: default; }
+#note-content .cmds-base-table td.cmds-base-group-cell {
+	white-space: nowrap; max-width: none; overflow: visible; background: none !important;
+	padding: 1.1rem 0.9rem 0.45rem; border-bottom: 1px solid var(--border);
+}
+#note-content .cmds-base-table tbody:first-of-type td.cmds-base-group-cell { padding-top: 0.7rem; }
+#note-content .cmds-base-table td.cmds-base-group-cell .cmds-base-group-head { margin: 0; position: sticky; left: 0.9rem; display: inline-flex; }
+#note-content .cmds-base-table tr:last-child td { border-bottom: none; }
+#note-content .cmds-base-table tbody tr:hover td { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+#note-content .cmds-base-table tr.is-expanded td { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+.cmds-col-grip {
+	position: absolute; top: 0; right: 0; width: 9px; height: 100%;
+	cursor: col-resize; z-index: 2; touch-action: none;
+}
+.cmds-col-grip::after {
+	content: ''; position: absolute; top: 25%; bottom: 25%; right: 0; width: 1px;
+	background: var(--border); transition: background .15s;
+}
+.cmds-col-grip:hover::after, .cmds-col-grip.dragging::after { background: var(--accent); top: 0; bottom: 0; width: 2px; }
+.cmds-base-table th .cmds-th-inner { display: block; overflow: hidden; text-overflow: ellipsis; padding-right: 6px; }
+.cmds-base-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.9rem; }
+.cmds-base-card { border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 1rem; background: var(--card-bg); }
+.cmds-base-card-title { font-weight: 700; margin-bottom: 0.5rem; }
+.cmds-base-card-prop { display: flex; gap: 0.6rem; font-size: 0.82rem; line-height: 1.5; }
+.cmds-base-card-key { color: var(--muted); flex: 0 0 38%; overflow: hidden; text-overflow: ellipsis; }
+.cmds-base-card-val { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+#note-content .cmds-base .value-list-container { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+#note-content .cmds-base .value-list-element {
+	background: var(--code-bg); border-radius: 6px; padding: 0 0.4rem; font-size: 0.85em;
+}
+#note-content .cmds-base .value-list-element p { margin: 0; }
+
+.cmds-meta {
+	max-width: var(--max); margin: 0 auto;
+	padding: 2rem 1.5rem 2rem; border-top: 1px solid var(--border);
+	font-size: 0.75rem; color: var(--muted); text-align: center;
+	display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+}
+.cmds-meta img { width: 28px; height: 28px; border-radius: 50%; }
+.cmds-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.cmds-badge {
+	display: inline-flex; align-items: center; gap: 0.35em;
+	font-size: 0.7rem; font-weight: 600; color: var(--muted);
+	border: 1px solid var(--border); border-radius: 999px;
+	padding: 0.22rem 0.65rem; background: var(--card-bg);
+}
+.cmds-badge svg { width: 12px; height: 12px; }
+.cmds-badge.b-e2e { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.cmds-badge.b-soon { color: #e0813a; border-color: color-mix(in srgb, #e0813a 45%, var(--border)); }
+.cmds-badge.b-expired { color: #e05252; border-color: color-mix(in srgb, #e05252 45%, var(--border)); }
+.cmds-meta a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.cmds-meta a:hover { text-decoration: underline; }
+.cmds-theme-note { font-size: 0.68rem; color: var(--muted); opacity: 0.75; }
+.cmds-author-link {
+	margin-top: 0.35rem; font-size: 0.85rem; font-weight: 700;
+	letter-spacing: -0.01em;
+}
+.cmds-loading { color: var(--muted); font-style: italic; }
+.decrypt-error {
+	color: #c62828; background: #fce4ec; padding: 1rem; border-radius: 8px;
+	border: 1px solid #c62828; margin: 2rem 0; text-align: center;
+}
+[data-theme="dark"] .decrypt-error { background: #4a1a24; color: #ff8899; border-color: #ff8899; }
+
+@media (max-width: 720px) {
+	.side-panel { right: 1rem; top: 4rem; width: min(280px, calc(100vw - 2rem)); }
+}
+</style>
+
+<style>
+#note-content li.task-list-item { list-style: none !important; }
+#note-content input[type="checkbox"] {
+	all: revert !important;
+	appearance: auto !important;
+	display: inline-block !important;
+	position: static !important;
+	width: 1em !important; height: 1em !important;
+	margin: 0 0.5em 0 0 !important;
+	vertical-align: -0.1em !important;
+	opacity: 1 !important;
+	accent-color: var(--accent) !important;
+}
+#note-content input[type="checkbox"]::before,
+#note-content input[type="checkbox"]::after { content: none !important; display: none !important; }
+</style>
+</head>
+<body class="cmds-kind-note cmds-layout-note">
+<script>
+// Obsidian themes switch on body.theme-light / body.theme-dark
+(function(){var b=document.body,r=document.documentElement;function sync(){var d=r.dataset.theme==='dark';b.classList.toggle('theme-dark',d);b.classList.toggle('theme-light',!d);}sync();new MutationObserver(sync).observe(r,{attributes:true,attributeFilter:['data-theme']});})();
+</script>
+
+
+<div class="side-tools">
+	<button class="tool-btn" id="themeToggle" aria-label="Toggle theme">
+		<svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+	</button>
+	<button class="tool-btn" id="tocToggle" aria-label="Table of contents" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h10M4 18h13"/></svg>
+	</button>
+	<button class="tool-btn" id="graphToggle" aria-label="Local graph" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="18" r="2.2"/><path d="M10.8 6.9 6.2 16m7-9.1 4.6 9.1M7.2 18h9.6"/></svg>
+	</button>
+	<button class="tool-btn" id="mdCopy" aria-label="Copy markdown" title="Copy markdown" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5"/></svg>
+	</button>
+	<button class="tool-btn" id="mdDownload" aria-label="Download markdown" title="Download .md" hidden>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5"/><path d="M4 19h16"/></svg>
+	</button>
+</div>
+
+<div class="side-dock" id="sideDock" hidden></div>
+
+<aside class="side-panel" id="tocPanel"><div class="panel-head"><h3>Contents</h3><button class="pin-btn" data-pin aria-label="Dock panels" title="Dock / undock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5M9 3h6l1 7 3 2H5l3-2 1-7z"/></svg></button></div><nav id="tocList"></nav></aside>
+<aside class="side-panel" id="graphPanel"><div class="panel-head"><h3>Local Graph</h3><span class="g-controls"><button class="pin-btn" id="gZoomOut" aria-label="Zoom out" title="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg></button><button class="pin-btn" id="gZoomIn" aria-label="Zoom in" title="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button><button class="pin-btn" id="gReset" aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v4h4"/></svg></button><button class="pin-btn" data-pin aria-label="Dock panels" title="Dock / undock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5M9 3h6l1 7 3 2H5l3-2 1-7z"/></svg></button></span></div><canvas id="graphCanvas"></canvas>
+<div class="graph-legend"><span class="lg-link">Notes</span><span class="lg-tag">Tags</span></div></aside>
+
+<main>
+	<header class="cmds-doc-header"><h1 class="cmds-doc-title">더픽트 10-29-2026 회의록 - 워크플로우 엔지니어링과 모두의 춘천</h1></header><article id="note-content" class="markdown-rendered"><h2 data-heading="📝 Key Trigger (1–3 lines)" dir="auto">📝 Key Trigger (1–3 lines)</h2>
+<div class="callout node-insert-event callout-note" data-callout="note" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">Note</div></div><div class="callout-content">
+<p dir="auto">10-29-2026 <code>더픽트</code>에서 <code>전창대</code> 대표와 회의한 기록을 정리한 것. <a class="tag" href="#Workflow-Engineering" target="_blank" rel="noopener nofollow">#Workflow-Engineering</a> 및 <a class="tag" href="#AX" target="_blank" rel="noopener nofollow">#AX</a> 와 관련해서 중요한 컨설팅과 진지한 의견을 나누었다.</p>
+</div></div>
+<h2 data-heading="1. Part 1 - AI를 바꾸는 것이 아니라 사람의 일하는 워크플로우를 바꾸어야 한다" dir="auto">1. Part 1 - AI를 바꾸는 것이 아니라 사람의 일하는 워크플로우를 바꾸어야 한다</h2>
+<h3 data-heading="1.1 더픽트: 시연·프로토타입 제작의 패러다임 변화" dir="auto">1.1 더픽트: 시연·프로토타입 제작의 패러다임 변화</h3>
+<p dir="auto">디자인 팀에서 개발 이전 단계에 직접 시연용 포털을 완성된 형태로 만들어 제공하는 방식이 논의되었다. 워크스테이션 형태로 직접 만들어 시연하면 더 수월하고, 개발자까지 거쳤다가 오지 않아도 되므로 거래처나 발주처 입장에서는 일의 속도가 매우 빠르게 느껴진다.</p>
+<div class="callout node-insert-event callout-note" data-callout="note" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">IT·중소기업의 전사적 도입 전망</div></div><div class="callout-content">
+<p dir="auto">일반 IT 기업이나 중소기업이 이 정도 수준으로 전사적으로 하는 데에는 약 5년 정도 걸릴 것으로 보이며, 먼저 시작한 사람이 시장에 더 빨리 진입할 것이라는 전망이 제시되었다.</p>
+</div></div>
+<h3 data-heading="1.2 안창현 교수의 AI 기반 오피스 도구 바이브코딩 경험 소개" dir="auto">1.2 안창현 교수의 AI 기반 오피스 도구 바이브코딩 경험 소개</h3>
+<p dir="auto">안창현 교수는 최근 화제가 된 도구를 소개했다. 현재 연구실 컴퓨터에 설치되어 있고 이 컴퓨터에는 아직 설치하지 않았으나, 윈도우용으로 잘 작동하는 것을 확인했다. 추가로, '이음오피스'라는 이름의 도구가 최근 웹에서 화제가 되었다.</p>
+<p dir="auto"><img src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1793776597529-90670ab7-409b-4bcd-8e0a-8a411ee37995.png" alt="image.png" referrerpolicy="no-referrer"></p>
+<p dir="auto"><em>참고: <a href="https://getartcraft.com/apps" class="external-link" rel="noopener nofollow" aria-label="https://getartcraft.com/apps" data-tooltip-position="top" target="_blank">ArtCraft 앱스의 사이트</a> 화면. 이걸 모르고 바이브코딩을 하겠다고 하면 안된다.</em></p>
+<ul>
+<li dir="auto"><strong>AdobeCraft 계열</strong>: 어도비를 그대로 본떠 만든 형태로, 어도비 구독을 모두 취소했다는 언급이 있었다.
+<ul>
+<li dir="auto">PDFCraft: 직접 사용해 봄</li>
+<li dir="auto">FigCraft: 피그마와 거의 똑같은 수준</li>
+<li dir="auto">VectorCraft 등</li>
+</ul>
+</li>
+<li dir="auto"><a href="https://github.com/morluto/rea" class="external-link" rel="noopener nofollow" aria-label="https://github.com/morluto/rea" data-tooltip-position="top" target="_blank"><strong>REA (Reverse Engineering Anything)</strong></a>: 이 도구가 나올 때쯤 등장하여, 순정 한글(HWP)을 뜯어서 소스로 활용하는 작업을 진행했다.</li>
+</ul>
+<h3 data-heading="1.3 RHWP 개선과 AI 한글 프로토타입" dir="auto">1.3 RHWP 개선과 AI 한글 프로토타입</h3>
+<p dir="auto">안창현 교수는  REA를 소스로 순정 한글을 뜯어 만들던 것 중 하나를 시연했다.</p>
+<p dir="auto"><img src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1793776528424-ebccf858-cc20-4d5a-89bf-ef0880725c27.png" alt="image.png" referrerpolicy="no-referrer"></p>
+<p dir="auto"><em>참고: 안창현 교수가 직접 바이브코딩한 Achmage HOP의 화면. 순정 한글2024 수준으로 폰트 가독성이 디테일하다. (그리고 이런 디테일에 토큰을 GPT 200 프로 주간 한도 3번 분량을 갈아넣었다지..)</em></p>
+<div class="callout node-insert-event callout-example" data-callout="example" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg></div><div class="callout-title-inner">ClearType 기술 발견</div></div><div class="callout-content">
+<p dir="auto">화면에서 보면 한글과 똑같이 보이는데, RHWP는 약간 흐리게 보인다. 한글 순정을 뜯어서 알아낸 결과, 클리어 타입(ClearType)이라는 기술이 하나 더 들어가서 더 깨끗해 보이는 것이었다. 이를 뜯어서 알아냈다.<br>
+RHWP를 개선하면서 여기에 AI 채팅창을 달아 'AI 한글'을 만드는 작업을 진행 중이며, 어느 정도 프로토타입이 완성되어 있다.</p>
+</div></div>
+<ul>
+<li dir="auto"><strong>직접 제작한 버전</strong>: 바이브 코딩으로 만들었으며 라이트/다크 모드를 넣어놓았다. 이미지도 그릴 수 있고 여러 기능을 넣어놓았으며, 서식으로 바꿔주는 기능까지 다 넣어놓았다.</li>
+<li dir="auto"><strong>고등학교 선생님 제작 버전 (이음오피스)</strong>: Achmage HOP을 하필 완성시킨 타이밍에, 비슷한 생각을 한 어떤 고등학교 선생님이 REA 소스를 활용해 바이브코딩으로 만든것을 발견했다고 안창현 교수는 말했다.</li>
+</ul>
+<h3 data-heading="1.4 이음오피스의 완성도에 관한 이야기" dir="auto">1.4 이음오피스의 완성도에 관한 이야기</h3>
+<p dir="auto"><img src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1793776780209-50bd1bfa-0511-4a61-977f-231a495d82e6.png" alt="image.png" referrerpolicy="no-referrer"></p>
+<p dir="auto"><em>참고: <a href="https://ieumoffice.com/" class="external-link" rel="noopener nofollow" aria-label="https://ieumoffice.com/" data-tooltip-position="top" target="_blank">이음오피스 사이트</a>의 메인 화면. 직접 써보면 사용성이 정말 놀라운 수준이다.</em></p>
+<p dir="auto">고등학교 선생님이 만든 이음오피스를 다운받아 사용해 본 결과가 공유되었다.</p>
+<ul>
+<li dir="auto"><strong>자동 온보딩</strong>: 설치 시 노트북에 클로드코드(Claude Code)나 코덱스(Codex) 공식 앱을 깔아 로그인한 적이 있으면 알아서 디텍트해 바로 온보딩한다.</li>
+<li dir="auto"><strong>채팅창 위치</strong>: 왼쪽/오른쪽으로 옮길 수 있다.</li>
+<li dir="auto"><strong>탭 방식</strong>: 프로그램 안에서 웹페이지처럼 여러 탭이 돌아가는 방식이며, 하단에 플러스(+) 버튼이 있다.</li>
+<li dir="auto"><strong>탭 멘션 변환</strong>: 플러스 버튼을 눌러 띄워놓은 탭을 멘션하면, 예를 들어 마크다운 파일을 "이걸 PPT로 바꿔줘" 한마디만 치면 PPT가 실행되면서 바꿔준다.</li>
+<li dir="auto"><strong>PPT 템플릿</strong>: 5~6개의 템플릿 기능이 있고, 만든 파워포인트나 HTML, <code>design.md</code>를 올려 템플릿으로 등록해 만들 수도 있다.</li>
+<li dir="auto">
+<div class="callout node-insert-event callout-success" data-callout="success" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></div><div class="callout-title-inner">활용 제안 및 평가</div></div><div class="callout-content">
+<p dir="auto">이 도구는 오픈소스이며, 모든 직원들 컴퓨터나 대표가 테스트하면 바로 쓸 수 있다. 요새 매우 핫하며, 사용해 보니 놀라울 정도로 완성도가 높다. "기가 막히네요"라는 반응이 있었다.</p>
+</div></div>
+</li>
+</ul>
+<h4 data-heading="1.4.1 이음오피스의 통합 문서 작업 기능" dir="auto">1.4.1 이음오피스의 통합 문서 작업 기능</h4>
+<ul>
+<li dir="auto"><strong>마인드맵</strong>: 지원됨</li>
+<li dir="auto"><strong>입법 기능</strong>: 지원됨</li>
+<li dir="auto"><strong>마크다운 동시 변환</strong>: 마크다운으로 작성한 다음 파워포인트·워드·한글로 동시에 변환하는 것을 모두 시도했고 전부 됨</li>
+<li dir="auto"><strong>PDF</strong>: 지원됨
+<div class="callout node-insert-event callout-important" data-callout="important" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">설계 집념</div></div><div class="callout-content">
+<p dir="auto">"문서 작업이라는 건 더 이상 이 안에서 벗어나지 말게 하겠다"라는 집념으로 만든 거의 무시무시한 소스다. 저장한 것을 순정 한글로 다시 열어보는 것까지 해봐도 잘 되었다.</p>
+</div></div>
+</li>
+</ul>
+<h3 data-heading="1.5 안창현 교수의 발표 자료 포트폴리오 사이트" dir="auto">1.5 안창현 교수의 발표 자료 포트폴리오 사이트</h3>
+<p dir="auto">안창현 교수는 수업 발표 외에 교내 특강 등 전문가 앞에서 발표하는 자료들을 모아놓는 <a href="https://achmage-slides.vercel.app/" class="external-link" rel="noopener nofollow" aria-label="https://achmage-slides.vercel.app/" data-tooltip-position="top" target="_blank">포트폴리오 사이트</a>를 만들었다며 소개하고 보여주었ㅆ다.</p>
+<p dir="auto"><img src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1793776909820-610d243d-6b71-4680-a141-c0fb9aabbd86.png" alt="image.png" referrerpolicy="no-referrer"></p>
+<p dir="auto"><em>참고: 이미지는 Cloudflare R2로 죄다 올려서 링크를 따서 텍스트 하이퍼링크로 해서 <code>https://</code>주소로바꿔서 Vercel에 업로드하는게 편하다. 그래야 용량 아끼면서 무료 플랜으로 엄청 내용을 때려박을 수 있거든.</em> </p>
+<ul>
+<li dir="auto"><strong>테마</strong>: 다크/라이트 전환 가능</li>
+<li dir="auto"><strong>반응형</strong>: 모바일에서는 반응형으로 나옴</li>
+<li dir="auto"><strong>발표 노트</strong>: 화면에서 발표 노트를 볼 수 있음</li>
+<li dir="auto"><strong>목차 점프</strong>: 목차를 점프해서 건너뛸 수 있게 해놓음<br>
+이것은 구현 대표가 만들어 놓은 것을 공유받아 안창현가 튜닝한 것이다. 최근 대학원 과목에서 만든 발표자료도 모바일에서 작게 나오고 눌러볼 수 있다.</li>
+</ul>
+<h3 data-heading="1.6  더픽트 전창대 대표의 거래처 납품용 PPT — 강원대학교 포털 사례" dir="auto">1.6  더픽트 전창대 대표의 거래처 납품용 PPT — 강원대학교 포털 사례</h3>
+<p dir="auto">거래처에 납품할 때는 퀄리티가 훨씬 좋아져야 한다는 점이 강조되었다.</p>
+<div class="callout node-insert-event callout-info" data-callout="info" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">강원대학교 포털 리뉴얼 사례</div></div><div class="callout-content">
+<p dir="auto">전창대 대표가 아니라 아닌 소속 직원이 만든 것으로, 강원대학교 포털이 전부 이것으로 바뀐다. 디자이너가 바이브 코딩으로 디자인 컨펌을 받아 허락받는 프레젠테이션이며, 움직이는 프레젠테이션을 다 만들어서 할 수 있다.</p>
+</div></div>
+<ul>
+<li dir="auto"><strong>플랫폼 수준의 결과물</strong>: 프레젠테이션을 보면서 "플랫폼을 만들어 왔네"라는 생각이 들었다. 서버에 도메인을 연결하면 PPT로 발표하는 것이 아니라 끝나고 나서 플랫폼 튜토리얼로 써도 되는 수준이다.</li>
+<li dir="auto"><strong>모션 그래픽 같은 느낌</strong>: 애프터이펙트로 만든 것 같은 느낌이지만 그런 게 아니다.</li>
+</ul>
+<h4 data-heading="1.6.1 수강신청 화면 시연" dir="auto">1.6.1 수강신청 화면 시연</h4>
+<ul>
+<li dir="auto"><strong>디자인 개선</strong>: 강원대 수강신청이 매우 예뻐진다. 이 때문에 한림대에서도 영업할까 고민 중이다.</li>
+<li dir="auto"><strong>HTML 코드 구현</strong>: 이렇게 보이는 것이 전부 HTML 코드이며, mp4 영상이 아니다.</li>
+<li dir="auto"><strong>기능 시연</strong>: 학생이 신청을 누르면 시간표를 딱딱 만들어주는 서비스를 보여준다. 프레젠테이션 겸 이 화면 자체를 거래처 사람들이 노트북을 가지고 회의에 들어오면 띄운다.
+<div class="callout node-insert-event callout-summary" data-callout="summary" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-clipboard-list"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg></div><div class="callout-title-inner">경계의 소멸</div></div><div class="callout-content">
+<p dir="auto">이제는 프레젠테이션과 시연, 프로토타입 제작의 경계가 다 허물어지는 것 같다. 원래는 많은 절차와 프로세스를 거쳐 나오는데, 이것이 나오는 데까지 정확하게 1~2주밖에 안 걸린다. 플랫폼 개발을 발주하면 보통 5~6개월 걸리는데 이제는 그만큼 걸리지 않을 것 같다.</p>
+</div></div>
+</li>
+</ul>
+<div class="callout node-insert-event callout-warning" data-callout="warning" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">AI 격차</div></div><div class="callout-content">
+<p dir="auto">IT 회사들이 이렇게 넘어가는데, 이제 다른 회사는 진짜 어려울 것 같다. AI 격차가 너무 심하다.</p>
+</div></div>
+<h2 data-heading="2. Part 2. 안창현 교수의 AI 격차 해소를 위한 솔루션 — 워크플로우 엔지니어링" dir="auto">2. Part 2. 안창현 교수의 AI 격차 해소를 위한 솔루션 — 워크플로우 엔지니어링</h2>
+<p dir="auto">안창현 교수는 격차를 어떻게 강제적으로 끌어올리거나 평준화할 것인가가 중요하며, 이에 관한 책을 작년부터 원고를 모으며 쓰려고 했다고 밝혔다. 작년에 대표에게 PPT로 보여준 적 있는 <strong>워크플로우 엔지니어링</strong>이라는 개념이다. 말은 할 수 있지만 실제 솔루션을 어떻게 제시할 것인가에 대한 나름의 답을 제시했다.</p>
+<h3 data-heading="2.1 1단계 — 개인 PKM (Personal Knowledge Management) 구축" dir="auto">2.1 1단계 — 개인 PKM (Personal Knowledge Management) 구축</h3>
+<ul>
+<li dir="auto"><strong>1인 1 옵시디언 볼트</strong>: 개인 PKM(Personal Knowledge Management)으로 옵시디언 볼트를 1인 1개씩 구축하라.
+<ul>
+<li dir="auto">LG에서는 C레벨 임원급부터 구현 대표 같은 사람들에게 과외를 받아가면서 밑에까지 다 전파·제휴시키는 방향으로 실제로 가고 있다고 한다.</li>
+<li dir="auto">개인 차원에서 하는 것이므로 취미생활이든 각자 편하게 구성하는 대로 하면 된다. (예: 전창대 옵시디언 볼트, 안창현 옵시디언 볼트)</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="2.2  2단계 — WKM (Workforce Knowledge Management) 구축" dir="auto">2.2  2단계 — WKM (Workforce Knowledge Management) 구축</h3>
+<p dir="auto">조직 차원에서 개인 역량이 구축되면, 그 다음 단계는 PKM이 아니라 <strong>WKM(Workforce Knowledge Management)</strong> 을 구축하는 것이다.</p>
+<ul>
+<li dir="auto"><strong>GitHub 형태의 협업</strong>: merge, pull request, 브랜치 병합 등을 활용한다.</li>
+<li dir="auto"><strong>조직 단위 지식 볼트</strong>: 상위에서 관장하는 조직 단의 지식 볼트를 만들어 놓고, 전체의 목표와 기여할 수 있는 회사의 지식 문서, 옆자리 디자이너가 기여할 수 있는 지식 문서 등을 다 함께 관리한다.</li>
+<li dir="auto"><strong>결론</strong>: 개인 차원에서는 각자 알아서 쓰고, 거기서 각자 배운 것들을 회사에도 공유할 수 있는 WKM, 즉 개인 지식을 관장하는 그룹 단위의 관리 체계까지 가야 한다는 것이 내린 결론이다. 데이터 아카이빙 등이 모두 이런 맥락이다.</li>
+</ul>
+<p dir="auto">참고로 실제로 <code>박준</code>님 등 기업 AX 강연을 뛰는 사람들도 최근에 이런 문제의식을 가지고 강의를 하고 다니는 것으로 간접 확인이 되었다.</p>
+<p dir="auto"><strong>참고영상 링크:</strong><br>
+<a href="https://youtube.com/shorts/2DWladSNjac?si=-rCyukBFm4wPGU59" class="external-link" rel="noopener nofollow" aria-label="https://youtube.com/shorts/2DWladSNjac?si=-rCyukBFm4wPGU59" data-tooltip-position="top" target="_blank">회사의 AI지식베이스 어디에 저장하세요 - WKM</a></p>
+<h3 data-heading="2.3 휴먼볼트, AI 볼트, LLM-Wiki의 3단 운용" dir="auto">2.3 휴먼볼트, AI 볼트, LLM-Wiki의 3단 운용</h3>
+<p dir="auto">더 구체적인 액션 플랜으로, 안창현 교수는 옵시디언 볼트를 크게 세 개 정도 쓰며 주로 쓰는 것은 그중 두 개라고 밝혔다. (화면이 어두워 라이트 모드로 밝게 전환하여 시연을 이어감)</p>
+<p dir="auto"><img src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1793777472110-897448bc-3d2a-4aee-864b-0dc33d906571.png" alt="image.png" referrerpolicy="no-referrer"></p>
+<p dir="auto"><img src="https://laguna821.github.io/Hallym_Media_Day/Colloquium_6_10/assets/evidence/22_1672_941px.png" alt="휴먼볼트 - AI 옵시디언 볼트 - LLM Wiki의 3각 편대 구조" referrerpolicy="no-referrer"></p>
+<h4 data-heading="2.3.1 AI가 읽고 쓰는 옵시디언 볼트 (Achmage OS)" dir="auto">2.3.1 AI가 읽고 쓰는 옵시디언 볼트 (Achmage OS)</h4>
+<p dir="auto">앞서 본 옵시디언 볼트는 실제로 글쓰기하고 그림도 붙이고 블로그 글도 쓰는 옵시디언 볼트다. 이것은 AI가 있는 옵시디언 볼트로, 고민하다가 만들어 봤는데 만들어 보고 나니까 상당히 맞는 방향성이라는 생각을 하게 될 것이다.<br>
+예를 들어 깃허브에 UX, UI, Pro, Max라는 클로드 스킬이 있다. 이것은 디자인을 진짜 기본 이상은 하게 해주는 스킬이다. 이것을 내 옵시디언 볼트에 저장해놓고 필요할 때 꺼내 쓸 수 있게 수집해 놓는 것이다.</p>
+<h4 data-heading="2.3.2 LLM 위키와 스킬스 정리" dir="auto">2.3.2 LLM 위키와 스킬스 정리</h4>
+<p dir="auto">AI를 위한 LLM 위키로 정리를 했다. <code>MasterSkills</code>라는 폴더에는 스킬이 한 200개 정도 모은 것들이 있는데, 주로 쓰는 건 한 30개 40개 정도 된다. 직접 깎은 것도 있다.</p>
+<ul>
+<li dir="auto"><strong>원문 보관</strong>: 원문 그대로 놔둔다.</li>
+<li dir="auto"><strong>스킬스 위키</strong>: 사람이 읽을 수 있는 형식으로 정리한 것이 따로 있다.</li>
+<li dir="auto"><strong>2단 정리</strong>: 한 번 더 정리한 것은 용도가 뭔지, 언제 쓰는지 설명문 같은 것이 또 한 번 있어, 그렇게 2단으로 정리한 것이다.</li>
+</ul>
+<h4 data-heading="2.3.3 스킬스를 모아두면 생기는 효과" dir="auto">2.3.3 스킬스를 모아두면 생기는 효과</h4>
+<p dir="auto">포트폴리오 사이트를 이렇게 만들어 놓으면, 이것대로 똑같이 만들어주는 스킬스를 하나만 깎아서 조직단위 스킬스로 공용자산으로 해놓을 수 있다.<br>
+발표 내용이나 아이디어나 보고서 내용은 다 있는데 디자인만 못하는 사람이라도, 클로드랑 스킬스만 있으면 똑같이 이것의 90%는 일관된 템플릿을 만들 수 있다.</p>
+<h3 data-heading="2.4 공용 스킬스 시스템에 대한 제안 (Enterprise Skills)" dir="auto">2.4 공용 스킬스 시스템에 대한 제안 (Enterprise Skills)</h3>
+<ul>
+<li dir="auto"><strong>조직 차원의 공용 지식 볼트</strong>: 조직 차원에서 공용 지식 볼트를 만드는 작업을 하는 것이 하나다. 현장이든 회의자료든 포함된다.</li>
+<li dir="auto"><strong>공용 자산화 인센티브</strong>: 디자이너나 개발자든 개인적으로 깎은 스킬스는 놔두고, 공용 자산으로 만드는 스킬스를 개발하면 인센티브를 준다든지, 공용 스킬스를 개발해서 다 같이 공용해서 쓸 수 있게 하는 그런 시스템이 필요할 것 같다.</li>
+</ul>
+<h3 data-heading="2.5 프로젝트 유형의 다양성 문제" dir="auto">2.5 프로젝트 유형의 다양성 문제</h3>
+<p dir="auto">내부 인하우스 하는 프로젝트에서는 앞서 말한 것을 반영하면 너무 좋을 것 같다. 인하우스 팀이랑 완전히 아웃소싱하는 팀이 있다. 인하우스 팀은 내부에서 연구소가 보통 그렇듯 회사 내부에 있고, 그건 이렇게 관리하면 될 것 같다.</p>
+<div class="callout node-insert-event callout-question" data-callout="question" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">계속 고민하는 이유</div></div><div class="callout-content">
+<p dir="auto">강대 홈페이지 같은 것 만들다가, 한림대 홈페이지 만들다가, 스카우트 대원 관리 시스템 만들다가, 쿠팡 인터랙티브 콘텐츠 만들다가 하는 식으로 유형이 너무 다양한 프로젝트들이 많다. 클로드로 따지면 프로젝트 단위로 묶는 게 제일 효과적이었다.<br>
+오히려 저런 볼트 같은 것을 다른 요소의 콘텐츠에서 가지고 왔을 때 생길 수 있는 문제들이 또 있다. 행사도 특히 그렇다. 콘서트만 쭉 하면 좋은데, 콘서트 하다가 반려동물 페스티벌 하다가 애니토이 페스티벌 하다가 유형이 다 다르니까 어떻게 하면 좋을지 고민이다.</p>
+</div></div>
+<h3 data-heading="2.6 프로젝트 단위 위키 구축 방법" dir="auto">2.6 프로젝트 단위 위키 구축 방법</h3>
+<p dir="auto">반려동물 페스티벌은 반려동물 페스티벌 프로젝트에 넣는 식으로, 처음 제안서를 쓸 때부터 구축한다. 현재 회사에서 선택한 방법은 제안서를 작성하고 기획하는 친구부터 그 프로젝트를 처음 만들고 지침 만들고 거기다가 쭉 쌓기 시작하는 것이다. 제안서 선정이 되면 다음 단계로 이어진다.</p>
+<ul>
+<li dir="auto"><strong>계약·협상</strong>: 제안서 선정 후 계약하고 협상한다.</li>
+<li dir="auto"><strong>착수 보고</strong>: 그 다음 착수 보고를 한다.</li>
+<li dir="auto"><strong>중간 단계</strong>: 회의를 여러 번 하고, 중간 보고자료를 만들고 회의도 여러 번 한다.</li>
+<li dir="auto"><strong>행사 당일</strong>: 행사 당일이 된다.</li>
+<li dir="auto"><strong>종료</strong>: 최종 보고서 만들고 리포트하고 용역 종료.<br>
+이 모든 기간을 위키로 따지면 프로젝트 단위로 나뉘어지지 않으면 어렵겠더라.</li>
+</ul>
+<h3 data-heading="2.7 PARA 지식 관리 방법론" dir="auto">2.7 PARA 지식 관리 방법론</h3>
+<p dir="auto">안창현 교수의 제안: <strong>더 픽트의 경우에 맞는 지식볼트 구축 시스템은 PARA 같다고 생각한다. 아이디어가 되게 간단하다.</strong></p>
+<p dir="auto"><img src="https://fortelabs.com/wp-content/uploads/2017/02/3-BASB_Illos_Gray_211015_PARA-1024x537.jpg" alt="PARA method image" referrerpolicy="no-referrer"></p>
+<ul>
+<li dir="auto"><strong>Project(프로젝트)</strong>: 말 그대로 데드라인이 있고 당장 뭔가 해야 되는 것들을 다 폴더 만들어서 넣는다.</li>
+<li dir="auto"><strong>Area(에어리어)</strong>: 프로젝트랑 상관없이 될지 안 될지 모르겠지만 롱텀으로 한번 해보는 것. 급하지 않은 관심사를 가지고 해보는 것.</li>
+<li dir="auto"><strong>Resource(리소스)</strong>: 프로젝트 또는 에어리어 둘 중 하나에 동원되는, 기반 자료가 되는 것을 다 넣는다.</li>
+<li dir="auto"><strong>Archive(아카이브)</strong>: Project, Area, Resource 세 개에 다 속하지 않는 것, 불이 다 꺼져 있고 더 이상 당장은 안 쓰일 것 같은 것을 다 넣는다.</li>
+</ul>
+<div class="callout node-insert-event callout-info" data-callout="info" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">PARA 창시자</div></div><div class="callout-content">
+<p dir="auto">PARA Method는 티아고 포르테가 제시한 방법론이다. 티아고 포르테는 "내가 그동안 PARA에 제시한 지식관리법은 AI 시대를 맞이해서 이걸 해보기 위해 여태까지 이 순간을 맞이하기 위해 살았고, 그전에는 내 인생의 튜토리얼이었다"는 취지의 말을 <a href="https://www.buildingasecondbrain.com/ai-second-brain" class="external-link" rel="noopener nofollow" aria-label="https://www.buildingasecondbrain.com/ai-second-brain" data-tooltip-position="top" target="_blank">티아고 포르테 본인의 Second Brain masterclass 사이트</a>를 런칭하면서 밝힌 바 있다.</p>
+</div></div>
+<h3 data-heading="2.8 PARA 적용 예시" dir="auto">2.8 PARA 적용 예시</h3>
+<ul>
+<li dir="auto"><strong>프로젝트</strong>: 춘천 연합 마라톤 3회는 프로젝트에 해당한다.</li>
+<li dir="auto"><strong>에어리어</strong>: 연합 마라톤이 잘 되니까 연합 자전거 대회 해볼까 하는 것은, 될지 안 될지 모르니 그냥 아이디어 차원으로 킵해 두는 것. 이런 것을 에어리어에 넣는다.<br>
+PARA가 기본적으로 많이 쓰이는 지식관리 방법론이기도 하고, 지금 프로젝트 단위로 돌아간다고 했으니 이런 식으로 크게 구축하는 것도 방법일 것 같다. 반려동물 대회 같은 걸 하면 중간에 보고한 거랑 자료들이 다 있을 것이다.</li>
+</ul>
+<h3 data-heading="2.9 메신저 기록을 리소스로 활용하기" dir="auto">2.9 메신저 기록을 리소스로 활용하기</h3>
+<p dir="auto">중간 보고 자료를 만들 때, 기존에는 지금 중간 보고 자료에 넣어야 될 것 다 가져오고 사진도 찍어 올리고 그랬다. 근데 지금은 너무 좋다. 예를 들면 잔디 메신저, 슬랙 같은 것을 쓴다. 반려동물 행사에서 직원들이 현장에 가서 사진 찍고 제품, 물품 같은 렌탈 품목들 사진을 찍어서 메신저에 다 올린다.</p>
+<div class="callout node-insert-event callout-tip" data-callout="tip" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">직원에게 주는 지침</div></div><div class="callout-content">
+<p dir="auto">사진만 띡 올리지 말고 사진이랑 같이 이 사진이 뭔지를 텍스트로 같이 올려라. 메신저에 어차피 올릴 때 그 설명을 해야 되지 않냐. 근데 그 설명을 상대방한테 설명한다는 생각하지 말고 그걸 기록으로 남겨라.</p>
+</div></div>
+<h3 data-heading="2.10 중간 보고서 자동 생성 워크플로우" dir="auto">2.10 중간 보고서 자동 생성 워크플로우</h3>
+<ul>
+<li dir="auto"><strong>데이터 수집</strong>: 잔디에 있는 이미지랑 텍스트를 클로드 코드로 다 긁어 온다.</li>
+<li dir="auto"><strong>MD 파일 정리</strong>: 긁어 와서 이것을 MD 파일로 정리해놓고 리소스에 저장해놓는다.</li>
+<li dir="auto"><strong>컨텍스트 저장</strong>: 요즘에 클로드가 클로드 코드 아니어도, 코워크도 지난주부터 스토리지로 다 바뀌어서 몇 십 기가를 저장한다.</li>
+<li dir="auto"><strong>보고 자료 생성</strong>: 그렇게 해놓고 나니까 "중간 보고 자료 만들어줘" 했을 때 진짜 중간 보고 자료를 만든다.</li>
+</ul>
+<h3 data-heading="2.11 발주처 요구 형식 대응" dir="auto">2.11 발주처 요구 형식 대응</h3>
+<p dir="auto">보통 발주처에서는 한글 문서 달라고 한다. 예전에는 PDF로밖에 못 만드니까 이것도 또 한글로 만드는 작업을 했는데, <a href="https://github.com/chrisryugj/kordoc" class="external-link" rel="noopener nofollow" aria-label="https://github.com/chrisryugj/kordoc" data-tooltip-position="top" target="_blank">Kordoc 같은 것</a>들 MCP 붙여서 딱 만드니까 완벽하게 만든다.</p>
+<div class="callout node-insert-event callout-success" data-callout="success" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></div><div class="callout-title-inner">Kordoc의 한글 자동화 워크플로우에 대한 전창대 대표의 소감</div></div><div class="callout-content">
+<p dir="auto">진짜 중간 보고서 만든다고 밤샐 필요가 없다.</p>
+</div></div>
+<h2 data-heading="3. Part 3. 워크플로우 엔지니어링을 조직에서 어떻게 구현할 것인가" dir="auto">3. Part 3. 워크플로우 엔지니어링을 조직에서 어떻게 구현할 것인가</h2>
+<h3 data-heading="3.1 핵심은 스킬스다: Skills를 통한 업무 자동화 사례" dir="auto">3.1 핵심은 스킬스다: Skills를 통한 업무 자동화 사례</h3>
+<p dir="auto">안창현 교수는 Kordoc 기능을 <strong>MCP가 아니라 별도의 Skills로 만들어 두었다</strong>고 설명했다.<br>
+MCP는 호출이 중복되기 때문에, 해당 기능을 깎아서 Skills로 하나 만들어 놓았다는 것이다.</p>
+<p dir="auto">안창현 교수 <strong>Skills와 Obsidian 볼트를 회사 차원에서 운영하면 매우 강력하다</strong>고 보았다. 그 배경에는 개인적인 경험이 있었다. 그의 아내가 이번 학기에 곧 논문을 제출해야 하는 대학원생인데, 논문을 한글로 수정하는 작업 등이 너무 오래 걸려 AI를 많이 사용한다는 것이다.</p>
+<div class="callout node-insert-event callout-example" data-callout="example" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg></div><div class="callout-title-inner">반강제 업무 단축의 동기</div></div><div class="callout-content">
+<p dir="auto">안창현 교수는 "요즘 시대에 내가 손으로 편집하고 있으면 이건 뭐가 잘못된 것"이라고 판단했다. 교수(김 교수 등)가 파워포인트 제작, 책 집필 등을 AI에게 시키듯 자꾸 시켜 할 일이 너무 많아 스트레스를 받았고, 이를 반강제로 빨리 끝내게 해주겠다는 생각으로 시스템을 구축했다.</p>
+</div></div>
+<h3 data-heading="3.2 아내를 위한 Skills 볼트 세팅 : &quot;슈퍼 딸깍 스킬스&quot;" dir="auto">3.2 아내를 위한 Skills 볼트 세팅 : "슈퍼 딸깍 스킬스"</h3>
+<ul>
+<li dir="auto"><strong>Dropbox 공용 세팅</strong>: Skills 볼트가 Dropbox에 세팅되어 있으며, 아내도 Dropbox를 공용으로 사용한다. 다만 '은진이의 대학원 폴더'를 별도로 두어, 원룸 하나 빌리는 것처럼 세팅했다.</li>
+<li dir="auto"><strong>통째 복사 붙여넣기</strong>: 그 폴더에 Skills 볼트를 통으로 복사 붙여넣기 했다.</li>
+<li dir="auto"><strong>시스템 설정(agent.md / Claude.md)</strong>: 안창현 본인은 "무슨 Skills와 무슨 Skills를 조합해서 써줘"라고 프롬프트를 잘 작성하지만, 아내는 그렇게 하지 못한다. 그래서 "그냥 한글 써줘"처럼 짧게 말해도 알아서 '알잘딱하게' 작동하도록 시스템 설정 파일에 지정해 두었다.</li>
+</ul>
+<p dir="auto"><strong>이렇게 돌렸더니 아내의 작업 시간이 강제로 매우 단축되었다.</strong> 아내는 아직도 Skills가 정확히 무엇인지 잘 모르지만, 복사 붙여넣기(copy and paste)만으로 Skills 모음집 전체를 넣어주니 강제로 성과가 오른 것이다. 심지어 Skills 폴더 이름을 <code>EJ 슈퍼 딸깍 skills</code>라고 지어 놓았다.</p>
+<div class="callout node-insert-event callout-quote" data-callout="quote" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">아내의 반응</div></div><div class="callout-content">
+<p dir="auto">아내는 안창현 교수가 매일 논문은 안 쓰고 이상한 파워포인트를 만들거나 Skills 만드는 데 일주일씩 소비하는 것을 "뭔 이상한 헛짓거리 하냐"고 했으나, 본인이 직접 돌려본 뒤에야 "이런 거였구나" 하고 인정했다.</p>
+</div></div>
+<h3 data-heading="3.3 직원들의 Skills 이해 부족 : 클로드 스킬스가 나온지 언제인데 아직도 이걸 모르는가" dir="auto">3.3 직원들의 Skills 이해 부족 : 클로드 스킬스가 나온지 언제인데 아직도 이걸 모르는가</h3>
+<p dir="auto">전창대 대표는 직원들을 볼 때 느끼는 마인드가 딱 그 상황이라며, 직원들이 Skills를 이해하지 못한다고 말했다.</p>
+<h4 data-heading="3.3.1 Claude 공식 자료와 자격증(CCAF)" dir="auto">3.3.1 Claude 공식 자료와 자격증(CCAF)</h4>
+<p dir="auto">안창현는 <a href="https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-certification" class="external-link" rel="noopener nofollow" aria-label="https://anthropic-partners.skilljar.com/claude-certified-architect-foundations-certification" data-tooltip-position="top" target="_blank">Claude 공식 페이지</a>에 이미 해법이 다 나와 있어 함께 공부하면 좋겠다고 제안했다.</p>
+<p dir="auto"><img src="https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1793778410276-80a5cdf2-d290-4280-82fd-e8453613cfd0.png" alt="image.png" referrerpolicy="no-referrer"></p>
+<p dir="auto"><em>참고: 굳이 125불이나 비싼 돈 주고 시험볼 필요는 없다. 하지만 스킬스의 개념을 이해하는 정도만으로도 도움이 된다. 그리고 이 사이트의 자료들은 무료로 풀려있다.</em></p>
+<ul>
+<li dir="auto"><strong>Claude Certified Archifact Foundation (CCAF)</strong>: 자격증으로, 한 번 응시하는 데 120분이 소요된다. 다만 시험을 꼭 볼 필요는 없고, sign up만 하면 공짜로 공부할 수 있는 것으로 알고 있다.</li>
+<li dir="auto"><strong>학습 방법</strong>: 우클릭해서 한글로 번역해 보면, 가입 후 Skills가 무엇인지 등이 모두 나온다. CCAF 공부 자료를 찾아보면 한글 자료도 많이 나오며, 관련 개념이 이미 다 정리되어 있다.</li>
+</ul>
+<h3 data-heading="3.4 Skills의 4가지 등급 구조" dir="auto">3.4 Skills의 4가지 등급 구조</h3>
+<p dir="auto">안창현 교수가 아는 바로는 Claude Skills에는 4가지 등급이 있다.</p>
+<ul>
+<li dir="auto"><strong>엔터프라이즈(Enterprise) 스킬</strong>: 제일 높은 등급으로, 조직 차원에서 공유하는 조직 공용 스킬이다.</li>
+<li dir="auto"><strong>중간 등급</strong>: 엔터프라이즈와 플러그인 사이에 등급이 하나 혹은 두 개 더 있다.</li>
+<li dir="auto"><strong>플러그인(Plugin) 스킬</strong>: 제일 밑에 있는 등급으로, 개인 스킬이자 취미용 스킬이다.<br>
+안창현 교수는 Claude가 Skills라는 개념을 세상에 내놓을 때부터 이러한 등급 체계와 우선순위까지 설계해 두었다는 점을 강조했다.</li>
+</ul>
+<p dir="auto">참고 노트: <a href="5. Sharing skills.md" data-href="5. Sharing skills.md" class="internal-link" target="_blank" rel="noopener nofollow">5. Sharing skills</a></p>
+<h4 data-heading="3.4.1 Skills의 등급에 따른 우선 발동 예시" dir="auto">3.4.1 Skills의 등급에 따른 우선 발동 예시</h4>
+<div class="callout node-insert-event callout-example" data-callout="example" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg></div><div class="callout-title-inner">동일 이름 스킬의 우선순위</div></div><div class="callout-content">
+<p dir="auto"><strong>엔터프라이즈 등급</strong> '더픽트의 프론트엔드 프레젠테이션' 스킬은 딥네이비 톤의 벤토 그리드 스타일로 만든다.<br>
+<strong>플러그인 등급</strong> 에서는 더픽트의 AI 개발자 안창현이 취미로 '마개조 튜닝'하고 있는 동일 이름의 프론트엔드 프레젠테이션 스킬이 있는데, 이것은 검은 배경에 형광 글씨의 브루탈리스트 다크 스타일 디자인이다.</p>
+<p dir="auto">두 개가 동시에 있을 때, "대표님이 회사 볼트에서 프론트엔드 스킬로 30장짜리 초안 발표자료 만들어줘"라고 하면, Claude가 자동으로 <strong>엔터프라이즈 등급을 무조건 먼저 발동</strong>시킨다.</p>
+</div></div>
+<p dir="auto">전창대 대표는 이것이 Skills 목록에서 특정 스킬 이름을 불러 참고해 만드는 것과 같은 개념 아니냐고 물었다. 안창현 교수는 <strong>"비슷한 개념이지만, Claude가 처음부터 등급을 만들어 둔 것이 핵심"</strong>이라고 답했다.</p>
+<div class="callout node-insert-event callout-important" data-callout="important" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">등급 설계의 이유 — 버전 안정성</div></div><div class="callout-content">
+<p dir="auto">회사 공용 스킬은 어느 정도 안정화된 버전(예: 발표용 2.5 버전)이다. 개발자 안창현이 최신 발표 트렌드(모션 그래픽 등)를 실험하려 해도 2.5 버전에는 해당 기능이 없다. 당장 공용 버전에 반영할 수는 없고, 공론 회의에서 검증되면 2.3.0 버전 등으로 올리는 식이다. Claude는 이런 상황까지 감안해 스킬 등급 체계를 만들어 놓았다.</p>
+</div></div>
+<h3 data-heading="3.5  워크플로우 엔지니어의 필요성" dir="auto">3.5  워크플로우 엔지니어의 필요성</h3>
+<p dir="auto">전창대은 아내가 디자인팀 이사로서 이것을 제일 먼저 해봤다고 언급하며, 요즘 드는 생각을 밝혔다. 그 친구가 단순 기획 디자인팀에 앉아 있는 것이 아니라, AX 디자인 관련 팀을 만들어 아내여서가 아니라 미친 듯이 스킬만 만들어 직원들에게 공급하는 일만 시켜도, 자신이 쓰려는 책의 핵심 아이디어 중 하나인 솔루션이 바로 그것이라고 말했다.</p>
+<ul>
+<li dir="auto"><strong>파급효과의 강력함</strong>: 안창현 교수는 스킬 하나를 깎는 데 일주일 넘게 걸린 적도 있지만, 하나의 파급효과가 매우 강력하다고 평가했다. 전창대 대표는 그것이 좋은 결정이라고 동의했다.</li>
+<li dir="auto"><strong>워크플로우 자동화 결론</strong>: 스킬을 깎는 것뿐 아니라, <em>회의를 줄이거나 일하는 스텝을 줄이는 식으로 워크플로우를 자동화할 것은 자동화하고, Human-in-the-loop이 중요한 포인트에는 더 투자·검토하는 방식</em>으로 워크플로우를 깎아야 한다.</li>
+<li dir="auto"><strong>워크플로우 엔지니어</strong>: 회사용·공용 Skills를 만들어 구축하는 사람을 편의상 '워크플로우 엔지니어'라고 부른다. 이 사람은 디자인을 보면 아무것도 하지 말고 이것만 시켜야 하며, 따로 있어야 일이 진행된다.</li>
+</ul>
+<h4 data-heading="3.5.1 워크플로우 엔지니어의 구현: 신규 채용이 아닌 내부 전환" dir="auto">3.5.1 워크플로우 엔지니어의 구현: 신규 채용이 아닌 내부 전환</h4>
+<p dir="auto">전창대 대표는 이것을 하는 사람을 회사 밖에서 뽑는 것이 아니라, 회사 안에서 실무 경험이 다 있는 사람이 해야 한다고 보았다. 안창현 교수는 두 가지 방향을 제시했다.</p>
+<ul>
+<li dir="auto"><strong>선임급 보직 전환</strong>: 어느 정도 연차가 있는 선임급이면서 AI를 써본 분의 보직을 바꾸는 방향.</li>
+<li dir="auto"><strong>전사적 리터러시 교육 후 분담</strong>: 회사 각급·전사적으로 기본 이상의 Skills를 이해할 리터러시와 기반 지식을 강제적으로 교육한 뒤 N분의 1로 시스템을 만드는 방향.<br>
+다만 후자는 더 오래 걸릴 수 있으므로, 안창현는 잘 아는 사람을 풀타임 잡으로 전환하는 것이 더 빠를 것이라고 보았다.</li>
+</ul>
+<h3 data-heading="3.6 모션그래픽 스킬 구축 사례" dir="auto">3.6 모션그래픽 스킬 구축 사례</h3>
+<p dir="auto"><strong>참고:</strong> <a href="https://achmage-slides.vercel.app/motion/meal/" class="external-link" rel="noopener nofollow" aria-label="https://achmage-slides.vercel.app/motion/meal/" data-tooltip-position="top" target="_blank">"생각이 맛이되다" 모션그래픽 예제 페이지</a></p>
+<p dir="auto">안창현 교수는 스킬을 제대로 깎으면 얼마나 강력해지는지 자신의 웹사이트 사례로 설명했다. 최근 모션그래픽이 유행이라 모션그래픽 Skills도 일주일 넘게 만들어 깎았다.</p>
+<ul>
+<li dir="auto"><strong>자동 제작 과정</strong>: GPT나 아스트라(Astra) 같은 것으로 모션그래픽을 만들면, AI가 스스로 콘티를 짜고 실사 영상을 가져온 뒤 작업을 수행한다.</li>
+<li dir="auto"><strong>사운드 처리</strong>: 사운드도 오픈소스·오픈 라이선스를 다 찾아, 음악에 맞게 편집하는 의지까지 넣어 두었다.</li>
+<li dir="auto"><strong>확장 가능성(미반영)</strong>: 스킬을 더 마개조하면 11Labs(ElevenLabs) API와 연동해 음성 나레이션을 생성하고 장면에 맞춰 컷편집까지 가능하지만, 안창현는 귀찮아서 그 부분은 뺐다.</li>
+<li dir="auto"><strong>벡터 작업</strong>: 벡터 도형도 FAP(디자인 툴)에서 직접 그린 것이 아니라 전부 아스트라 6로 돌려 그렸다.</li>
+</ul>
+<div class="callout node-insert-event callout-tip" data-callout="tip" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">가편집본 검토 기능 추가</div></div><div class="callout-content">
+<p dir="auto">초기 버전에서는 메시지 작성 등이 완성된 것을 봐야만 확인할 수 있었다. 스킬을 많이 튜닝해, 가편집본을 한 장의 HTML로 만들어 "이대로 할까요? 메시지 마음에 안 들면 말해주세요"라고 보여주고 사용자가 '뺀찌(거절)'를 먹일 수 있는 기능까지 넣어 두었다.</p>
+</div></div>
+<ul>
+<li dir="auto"><strong>고음질 사운드</strong>: 앞서 보여준 것은 미디(MIDI) 파일이었으나, 실제로는 고음(기계음) 같은 것이 아닌 고음질 mp3를 가지고 만들어 보라고 하고 콘티도 직접 확인해 제작했다.</li>
+<li dir="auto"><strong>소재 선정</strong>: 사운드는 AI가 오픈소스로 적어 놓은 것을 찾아오라고 시킨 것이다.</li>
+</ul>
+<div class="callout node-insert-event callout-success" data-callout="success" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></div><div class="callout-title-inner">회사 공용 스킬스를 구축해야 한다</div></div><div class="callout-content">
+<p dir="auto">동일 스킬을 쓰되, 실사 영상은 더픽트에서 찍어온 드론 영상을 활용하고 없는 부분은 벡터로 그려 콘티를 짜게 하면 품질이 갑자기 확 올라간다. 스킬 하나만 생겨도 이런 파급효과가 생기므로, 반드시 풀타임 잡이 필요하다.<br>
+안창현 교수는 프론트엔드 웹사이트도 마찬가지라며, 디자이너에게 돈을 더 주더라도 만든 결과물을 Skills로 만들어 받아 공용 자산으로 만들어 두겠다고 했다. 그러면 그 Skills로 돌릴 때, 일일이 클릭하는 작업의 90% 이상이 똑같이 재현되며, 초보자가 돌려도 웬만하면 그런 파급효과가 생긴다고 설명했다.</p>
+</div></div>
+<h2 data-heading="4. Part 4: AI 저널리즘 코스웨어 및 PBL 과목 신청" dir="auto">4. Part 4: AI 저널리즘 코스웨어 및 PBL 과목 신청</h2>
+<p dir="auto">전창대 대표는 재밌다고 반응하며, AI 저널리즘 코스웨어 건에 대해 최영재 교수님이 컨펌을 안 해준다고 언급했다. 안창현 교수는 저녁에 전화가 왔으며, 교수님이 바빠서 저녁에 보신다고 전했다.</p>
+<ul>
+<li dir="auto"><strong>서류상 신청</strong>: 안창현는 서류상 신청을 했으며, 학부 과목으로 PBL 과목 신청서를 냈다.</li>
+<li dir="auto"><strong>과목명</strong>: '미디어 콘텐츠 바이브코딩'이라는 제목으로, 바이브코딩을 활용하는 수업이다.</li>
+</ul>
+<h3 data-heading="4.1 바이브코딩 PBL 과목 구상" dir="auto">4.1 바이브코딩 PBL 과목 구상</h3>
+<p dir="auto">전창대 대표는 무엇을 해드리면 되는지 묻자, 안창현 교수는 딱히 해줄 것이라기보다 하기 나름이라고 답했다. 서류상 그렇게 하고 본인이 다 수업해도 지장은 없지만, 이왕이면 해보고 싶다고 했다.</p>
+<div class="callout node-insert-event callout-note" data-callout="note" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">교내 수요</div></div><div class="callout-content">
+<p dir="auto">바이브코딩 수업은 학과 차원뿐 아니라 교내에서도 수요가 꽤 있는 것으로 알고 있다.</p>
+</div></div>
+<ul>
+<li dir="auto"><strong>대표 예시</strong>: 모션그래픽, HTML, PDF 만들기 등을 스킬로 만들어 보는 것이 바이브코딩의 대표적 예시다.</li>
+<li dir="auto"><strong>Serious 버전</strong>: 더 진지하게 나가면, 한글 문서를 'AI가 만들어내서라도 만들어 봐라'처럼 토큰을 퍼부어야 하는 사이즈까지 해볼 수 있다.</li>
+<li dir="auto"><strong>실무 연계 구상</strong>: 더픽트 실무에 맞거나, 더픽트 관점에서 지역 학생들이 해커톤·공모전에 나갈 만한 사이즈의 아이템으로 맞춰 강제로 시키는 것과 연계하면 더 체계적일 것이라 보았다.</li>
+</ul>
+<h3 data-heading="4.2 춘천 AI 청년청 프로젝트 연계 제안" dir="auto">4.2 춘천 AI 청년청 프로젝트 연계 제안</h3>
+<p dir="auto">전창대 대표는 자신이 바이브코딩으로 춘천시 청년미래보좌역을 하고 있다며, 청년정책 전체를 맡다 보니 이번에 '춘천 AI 청년청'을 만들려 한다고 밝혔다.</p>
+<ul>
+<li dir="auto"><strong>디자인</strong>: 춘천시청 UI를 다 베껴오라고 해서 만든 것이다.</li>
+<li dir="auto"><strong>청년 5개 층 분류</strong>: 전창대이 요즘 강조하는 것으로, 청년을 5개 층으로 나눠야 한다는 것이다. 같은 청년이라도 다 같지 않으며, 학생 청년 입장에서의 정책 요구가 다르기 때문이다.</li>
+<li dir="auto"><strong>접수 및 배분 체계</strong>: 다섯 개로 쪼개서, 접수되면 검토하고 이를 예를 들어 교통과, 공동주택과 등에 배분한다. 춘천시에서 의무적으로 만들어 운영하는 것이다.</li>
+<li dir="auto"><strong>시장실 현황판</strong>: 이미 시장님 실에서 보는 현황판도 만들어 놓았다.
+<div class="callout node-insert-event callout-important" data-callout="important" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">예산이 아닌 청년 주도 프로젝트</div></div><div class="callout-content">
+<p dir="auto">이것은 춘천시가 예산을 만들어 돈 내고 하는 것이 아니라, 청년들이 청년 문제를 해결하려고 하는 것이다. 지역 현황 쪽이므로 수업과 함께 해보면 좋겠다는 제안이다.<br>
+전창대은 춘천 AI 청년청을 안창현(교수님)가 진행하는 교과목과 연계해 완성해 보자고 제안했고, 안창현는 좋을 것 같다고 답했다.</p>
+</div></div>
+</li>
+</ul>
+<h3 data-heading="4.3 민원을 넘어선 AI 플랫폼 구상" dir="auto">4.3 민원을 넘어선 AI 플랫폼 구상</h3>
+<p dir="auto">현재는 예를 들어 "밤 11시 넘으면 집에 갈 방법이 택시뿐이에요"라는 현안을 누군가 올리는 방식이다. 이때 재원(회원) 등록을 하고 '학생 청년', '현안 문제: 이동'처럼 분류해 포스트잇에 남겨 놓으면 된다. 하지만 이는 민원을 신청하고 답변받는 정도다.</p>
+<div class="callout node-insert-event callout-question" data-callout="question" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">청년 연령 기준과 플랫폼 확장</div></div><div class="callout-content">
+<p dir="auto">바이브코딩에서 실제 AI 청년청은 19세부터 45세까지가 청년이다. 안창현는 86년생이며, 이에 전창대은 "49세까지, 지금 45세까지가 청년"이라고 언급했다. 이 청년들이 활동할 만한 AI 플랫폼을 한번 만들어 보는 컨셉은 어떤지 제안했다.</p>
+</div></div>
+<h3 data-heading="4.4 '모두의 춘천': 플랫폼의 기본 구상" dir="auto">4.4 '모두의 춘천': 플랫폼의 기본 구상</h3>
+<p dir="auto">전창대 대표는 현재 '정책제언 오픈 플랫폼'이라는 컨셉을 잡고 혼자 만들고 있다고 설명했다. 이것만 두면 단순히 민원만 올리는 사이트가 되어 버리므로, 청년들을 위한 커뮤니티 등 다양한 기능을 함께 집어넣는 기획을 구상하고 있다.</p>
+<div class="callout node-insert-event callout-important" data-callout="important" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">핵심 목표</div></div><div class="callout-content">
+<p dir="auto">춘천시에 청년 정주를 늘리는 것이 목표이며, 그 핵심은 한림대와 강원대이다. 이를 대학생들과 함께 만들어 보겠다는 취지로 시작한 일이다.<br>
+안창현는 "누군가가 문제를 올리면 그 문제를 해결해 주는 뭔가를 바이브코딩으로 도전해서 만들어 보는 시스템인가"라고 질문했고, 전창대은 그런 방향을 가고 싶다고 답했다. 또한 사회학·사회과학 전공인 교수님 팀과 함께 해보면 어떨지 제안했다.</p>
+</div></div>
+<h3 data-heading="4.5 공무원 참여와 청년 정책 해결 구조" dir="auto">4.5 공무원 참여와 청년 정책 해결 구조</h3>
+<ul>
+<li dir="auto"><strong>공무원들의 반응</strong>: 여기까지 만들어 놓으니 공무원들은 기대 반, 불안 반이다. 공무원이 할 일이 너무 많아지고 모든 내용을 입력해야 하기 때문이다.</li>
+<li dir="auto"><strong>전 부서 참여</strong>: 청년들이 질문하면 민원실에서만 하는 것이 아니라 모든 부서의 담당자가 다 붙어서 해야 한다.</li>
+<li dir="auto"><strong>직접적 문제 해결</strong>: 그래야 공무원들이 청년 정책에 직접 들어가면서 진짜로 문제를 해결해 줄 수 있다. 공무원들은 청년 문제를 잘 모르기 때문이다.</li>
+</ul>
+<div class="callout node-insert-event callout-example" data-callout="example" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg></div><div class="callout-title-inner">구직 청년 사례</div></div><div class="callout-content">
+<p dir="auto">구직 청년이 "산업단지 가는 버스 출근시간이 한 대뿐"이라는 이야기를 바로바로 올리면, 공무원들은 이를 보고 해결해야겠다고 판단한다. 시장은 출근해서 이 화면만 보며 "답변이 왜 지연되고 있어?"라고 챙기게 된다.<br>
+전창대은 이것이 인문사회융합연구원 쪽에서 하기 딱 좋은 사업이 아닌지 제안했다.</p>
+</div></div>
+<h3 data-heading="4.6 학생들이 만들 콘텐츠 방향" dir="auto">4.6 학생들이 만들 콘텐츠 방향</h3>
+<p dir="auto">안창현 교수가 학생들에게 어떤 식으로 콘텐츠를 만들게 할 것인지 묻자, 전창대 대표는<br>
+청년의 입장에서 '당근' 같은 앱처럼 커뮤니티를 모으는 장치를 만드는 것이라고 설명했다.</p>
+<ul>
+<li dir="auto"><strong>대상</strong>: 15세부터 45세 청년이라면 춘천시 AI 온라인 플랫폼에 들어가 무언가 해볼 수 있는 장치를 다 만드는 것.</li>
+<li dir="auto"><strong>중고장터 아이디어</strong>: 안 쓰는 물건을 빌려주는 사업 등 청년들의 아이디어에서 나오는 기능.</li>
+<li dir="auto"><strong>기본 개념</strong>: 지역사회 문제, 특히 청년의 문제를 청년이 푼다는 개념. 전창대은 정책 쪽이라 '청년 정책 재원 플랫폼'이라고 했지만 여기에 기능을 하나씩 집어넣는 방식.
+<div class="callout node-insert-event callout-tip" data-callout="tip" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">로그인 및 플랫폼 통합</div></div><div class="callout-content">
+<p dir="auto">로그인은 하나의 아이디로 하고, 학생들이 만든 플랫폼을 메인 플랫폼으로 두고 곁가지를 쳐도 된다. SSO로 연동해 한림대와 함께 바이브코딩 개념으로 지역사회 문제를 해결하는 방향.</p>
+</div></div>
+</li>
+</ul>
+<h3 data-heading="4.7 아이디어1: 공유택시 사례" dir="auto">4.7 아이디어1: 공유택시 사례</h3>
+<div class="callout node-insert-event callout-example" data-callout="example" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg></div><div class="callout-title-inner">공유택시 문제</div></div><div class="callout-content">
+<p dir="auto">춘천역에서 학생들이 각자 택시를 타고 오는 대신 몰아서 타는 공유택시 기능을 만들 수 있다. 한림대 가는 학생들이 지하철·ITX에서 내렸지만 서로 얼굴을 몰라 택시를 같이 못 타고, 각자 기본요금 5천원씩 내고 온다. 넷이 타면 1,500원씩 나눠 낼 수 있는데 이런 사소한 문제도 바이브코딩으로 공유택시 앱을 만들 수 있다.</p>
+</div></div>
+<h3 data-heading="4.8 PBL 프로젝트의 기술 구현 지원 방향" dir="auto">4.8 PBL 프로젝트의 기술 구현 지원 방향</h3>
+<p dir="auto">안창현 교수는 만들다 보면 어려워지는 지점을 지적하며, 첫 번째는 앱스토어나 웹스토어로 가지 말자는 것이라고 했다.</p>
+<ul>
+<li dir="auto"><strong>앱 시대 종료 관점</strong>: 한림대에서 HLL, 캘리 등을 만들지만, 전창대은 앱 시대가 끝났다고 보는 주의라 예쁜 도메인 하나 파서 학생들이 웹에 들어와 모든 걸 하게 하는 방식을 선호한다.</li>
+<li dir="auto"><strong>PWA 활용</strong>: 웹 기반으로 하되 PWA 방식으로 해도 된다.</li>
+<li dir="auto"><strong>푸시 알림</strong>: 알림이나 푸시 알림이 필요하면 리멤버 콜 앱처럼 푸시 알림 전용 앱 하나만 만들어 연동하거나, 춘천시에 예산을 요청해 카카오톡 알림톡·문자메시지로 나가게 할 수 있다. 예산이 없으면 SMS 금액만 부담하는 방식도 가능.</li>
+</ul>
+<h3 data-heading="4.9 더픽트의 백엔드 지원과 산학협력" dir="auto">4.9 더픽트의 백엔드 지원과 산학협력</h3>
+<p dir="auto">안창현 교수는 공용 앱을 생각하면 사용자가 요청하면 그것을 접수해 백엔드 시스템을 구현하는 부분이 제일 어렵다고 지적했다.</p>
+<div class="callout node-insert-event callout-note" data-callout="note" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">전창대 대표의 코멘트: 산학협력의 핵심</div></div><div class="callout-content">
+<p dir="auto">백엔드는 어렵지만 바이브 코딩으로 상당 부분 해결되며, 그것이야말로 산학협력을 하는 이유다. 학생들이 앞단까지만 만들어 주면 회사에서 백엔드 개발자 한 명을 붙여 산학협력을 하겠다는 것. 학생들에게 사용성과 제작 부분에서 아이디어를 받고, 괜찮다 싶으면 백엔드를 더 개발하는 식.</p>
+</div></div>
+<h3 data-heading="4.10 '모두의 춘천' 브랜드 구상" dir="auto">4.10 '모두의 춘천' 브랜드 구상</h3>
+<p dir="auto">전창대 대표는 특정 버티컬 앱이 아니라 안창현 교수와 함께 브랜드를 하나 만들자고 제안했다.</p>
+<ul>
+<li dir="auto"><strong>브랜드명</strong>: 춘천의 모든 것을 해결해 준다는 의미로 '모두의 춘천'. 요즘 '모두의'가 대세이기 때문.</li>
+<li dir="auto"><strong>도메인</strong>: <code>모두의춘천.ai</code>, <code>everyChunchon.ai</code> 등 학생들이 직관적으로 생각할 수 있고 구글 검색 상단에 나오게끔 하는 도메인.</li>
+<li dir="auto"><strong>기획 주체</strong>: 교수님이 기획해서 진행.</li>
+</ul>
+<div class="callout node-insert-event callout-important" data-callout="important" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">포트폴리오로서의 서비스</div></div><div class="callout-content">
+<p dir="auto">학생들이 만든 서비스가 어딘가에서 실제 서비스되고 있어야 포트폴리오가 된다. 개발자가 아닌 미디어스쿨 학생들에게 깃(Git)을 다루게 하는 것은 말이 안 되며, 대부분 처음도 못 판다. 해봤자 유튜브 채널 하나 만들어 영상 모으는 정도에 그친다.<br>
+전창대은 학생들이 기획해서 해커톤처럼 만든 서비스를 지역 업체인 자신들이 서비스하겠다고 했다. 남아있는 서버를 다 써주며 '모두의 춘천'을 중심으로 뻗어 나가는 구조다.</p>
+</div></div>
+<h3 data-heading="4.11 비영리 운영과 취업 연계" dir="auto">4.11 비영리 운영과 취업 연계</h3>
+<ul>
+<li dir="auto"><strong>비영리 목적</strong>: <code>모두의춘천.org</code>로 가도 되며, 비영리를 목적으로 서비스한다. 매출을 내는 것이 아니다.</li>
+<li dir="auto"><strong>영리 전환 시 협의</strong>: 학생이 아이디어를 영리 목적으로 썼을 때 문제가 생길 수 있으므로, 교수님·학생·회사가 협의한다.</li>
+<li dir="auto"><strong>취업 연계</strong>: 돈이 되는 부분이라면 해당 학생을 회사에 취직시켜 그 파트를 맡는 직원으로 둘 수도 있다. 그것이 산학협력이며 지역에서 의미가 있다.</li>
+</ul>
+<h3 data-heading="4.12 학생 역할에 대한 교수님 의견" dir="auto">4.12 학생 역할에 대한 교수님 의견</h3>
+<p dir="auto">안창현 교수는 의미가 있다고 공감하며, 본인은 이런 사이트 정도는 혼자 만들었다고 했다. 학생들이 하는 일로는 화면 배치 등을 모바일 기준으로 기획해 대표님이나 다른 사람에게 피드백을 받고 고치는 것까지만 하는 역할을 제시했다.</p>
+<div class="callout node-insert-event callout-success" data-callout="success" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></div><div class="callout-title-inner">역할 분담</div></div><div class="callout-content">
+<p dir="auto">학생들이 부담 없이 기획·화면 배치를 맡고, 실제로 액티브하게 서비스로 돌릴 것들은 교수님과 회사 실무자가 함께 만나 중간고사 때든 기말고사 때든 한 번씩 고민한다. "이번에 모두의 춘천에 탑재할 만한 서비스가 있을까" 하는 식으로 진행.</p>
+</div></div>
+<h3 data-heading="4.13 기존 산학협력 성공 사례 (김선정 교수님)" dir="auto">4.13 기존 산학협력 성공 사례 (김선정 교수님)</h3>
+<p dir="auto">전창대 대표는 김선정 교수님과 교과목으로 진행 중인 사례를 소개했다. 소프트웨어 중심대학(이번에 AI 중심대학)의 가장 대표 성과가 이 협력이라고 설명했다.</p>
+<ul>
+<li dir="auto"><strong>대상 수업</strong>: 김선중 교수님의 '컴퓨터 그래픽스' 수업으로 01분과, 02분과 두 개가 있으며, 그중 1학기 분과에 회사가 진행 중인 소프트웨어 프로젝트 하나를 던진다.</li>
+<li dir="auto"><strong>범용 기술 트렌드</strong>: 회사 전용이 아니라 요즘 기술 트렌드를 다룬다. 한때는 웹으로 메타버스를 했고, 지금은 드론으로 수집한 데이터를 분석하는 모델을 쓴다. 이것도 컴퓨터 그래픽스의 원리다.</li>
+<li dir="auto"><strong>커리큘럼 구성</strong>: 프로젝트를 던지면 교수님이 커리큘럼을 만들어 강의계획서를 올린다. 전공 3학점짜리 과목이라 학생들이 수강한다.</li>
+</ul>
+<h4 data-heading="4.13.1 수업 진행 방식" dir="auto">4.13.1 수업 진행 방식</h4>
+<ol>
+<li dir="auto"><strong>오리엔테이션</strong>: OT 날 전창대도 같이 가서 해야 할 프로젝트와 요즘 트렌드를 다 설명하면, 교수님이 커리큘럼을 만들어 학생들을 가르친다.</li>
+<li dir="auto"><strong>중간고사 발표</strong>: 학교에서 진행하며, 이때 회사 개발팀장이 간다.</li>
+<li dir="auto"><strong>기말고사 발표</strong>: 회사에 와서 하는데 전체 학생이 아니라 절반만 뽑아서 온다. 각 팀 대표 또는 개인 프로젝트를 하는 학생이 선발되어 온다.
+<div class="callout node-insert-event callout-tip" data-callout="tip" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">시상 및 채용 성과</div></div><div class="callout-content">
+<p dir="auto">1등에게는 아이패드를 주며, 회사가 150~200만 원씩 써서 선물을 준다. 그 때문에 학생들이 열심히 한다. 그중 회사에 취직한 학생이 두 명(김도연, 한재현)으로 개발팀에 있다. 정말 좋은 산학협력 프로젝트라고 평가했다.</p>
+</div></div>
+</li>
+</ol>
+<h4 data-heading="4.13.2 산학협력의 의미" dir="auto">4.13.2 산학협력의 의미</h4>
+<ul>
+<li dir="auto"><strong>채용 목적</strong>: IT 소프트웨어 중심대학 컴공 학생 중 개발자를 채용하려 한다.</li>
+<li dir="auto"><strong>포트폴리오·PBL</strong>: 학생들에게 포트폴리오를 만들어 주는 교과목이며, 그것이 PBL의 핵심이다.</li>
+<li dir="auto"><strong>다양한 인재</strong>: 개발자가 아니어도 유능한 PM, 디자인, 바이브 코딩만으로 할 수 있는 친구들도 필요하므로 그런 학생을 뽑는 것도 좋다.</li>
+<li dir="auto"><strong>창업 연계</strong>: 그중에서 창업으로 연결시킬 수도 있다.<br>
+전창대 대표는 가볍게 접근하고 있다면 한번 일을 벌여 같이 해보자고 제안했다.</li>
+</ul>
+<h3 data-heading="4.14 안창현 교수의 PBL 교과목 연계 및 결론" dir="auto">4.14 안창현 교수의 PBL 교과목 연계 및 결론</h3>
+<p dir="auto">안창현 교수는 포인트가 확실히 있고 결과물 하나를 내보자는 목적도 있다고 공감했다.</p>
+<div class="callout node-insert-event callout-note" data-callout="note" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">내년(2027년) 교과목과의 연계</div></div><div class="callout-content">
+<p dir="auto">내년에 'AI 디지털 그래픽 디자인'과 'AI UI/UX 디자인' 과목이 있는데, 거기서도 바이브 코딩이 어느 지점부터 나올 수밖에 없다. Skills 비슷한 것을 돌려 프론트엔드 페이지를 만들어 보는 내용이 들어가면 이 프로젝트와 상당히 겹칠 것 같다. 이 방향으로 하면 고학년 위주로 팀 단위 프로젝트로 회의를 많이 해야 하지만, 교통 편리 등 실제 성과도 날 수 있다.<br>
+안창현는 "그래서 모두의 춘천이라는 프로젝트를 하나 해볼까요?"라며 제안을 수락했다.</p>
+</div></div>
+<h3 data-heading="4.15 도메인 및 네이밍 논의" dir="auto">4.15 도메인 및 네이밍 논의</h3>
+<ul>
+<li dir="auto"><strong>줄임말</strong>: 전창대 대표는 '모두의 춘천'의 줄임말로 '모춘'도 좋다고 했다.</li>
+<li dir="auto"><strong>도메인 확보 방침</strong>: 한글 버전은 리다이렉트를 시키더라도 확보하고, <code>.com</code> 대신 <code>.org</code>로 가도 좋을 것 같다. 전창대은 <code>.com</code>을 중요하게 생각하는 주의다.</li>
+</ul>
+<div class="callout node-insert-event callout-question" data-callout="question" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">영문 표기 고민</div></div><div class="callout-content">
+<p dir="auto">에브리원, 에브리 춘천, 에브리씨씨 등이 거론됐다. '에브리씨'는 <code>.com</code>이 없었다.</p>
+</div></div>
+<h3 data-heading="4.16 모두의 AI'에 대한 문제의식" dir="auto">4.16 모두의 AI'에 대한 문제의식</h3>
+<div class="callout node-insert-event callout-warning" data-callout="warning" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></div><div class="callout-title-inner">국가 데이터 개방의 한계</div></div><div class="callout-content">
+<p dir="auto">내년(2027년)에 '모두의 AI'가 나오지만 잘 안 될 것 같다. 가장 큰 허들은 국가 데이터처가 데이터를 풀지 않는다는 점이다.</p>
+</div></div>
+<ul>
+<li dir="auto"><strong>기대했던 모두의 AI</strong>: 예를 들어 40몇 개월 된 자녀가 어떤 예방접종을 맞았고, 49개월에 어떤 예방접종을 더 맞춰야 하는지 등을 부모가 일일이 리스트업해서 보기 어렵기 때문에, 행정 데이터가 학습된 것을 물어보는 기능. 클로드나 챗GPT는 못하지만 국가가 만든 모두의 AI는 할 수 있어야 하는 것.</li>
+<li dir="auto"><strong>실제 현실</strong>: 모두의 AI가 보건복지부, 개인정보, 심평원 데이터를 긁어오는 것이 규제적으로 문제가 되어, 행정에서 만드는 모두의 AI에 그 기능이 없다. "48개월 때 이 아이한테 부모 입장에서 뭘 해주면 좋을까요?"라는 질문에 대한 현재 수준에 만족하는지 물었더니 "현재로선 그렇다"는 답을 들었다. 이에 대해 필터링 없이 다음과 같이 지적했다.</li>
+</ul>
+<div class="callout node-insert-event callout-quote" data-callout="quote" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-quote"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg></div><div class="callout-title-inner">직접 전달한 의견</div></div><div class="callout-content">
+<p dir="auto">그거는 클로드에다가 질문하면 모두의 AI가 답하는 것보다 훨씬 좋은 결과가 나온다. LG 엑사원이랑 업스테이지가 만든 AI 모델이 클로드랑 챗GPT에서 학습된 모델이랑 완전히 차원이 다를 텐데, 장난하냐고. 여기에 국가 세금 썼다 그러면 너희들 다 보고 날아간다고. 큰일 난다고, 이 정권 날아간다고요.</p>
+</div></div>
+<h3 data-heading="4.17 마이데이터 기반 해결 방안" dir="auto">4.17 마이데이터 기반 해결 방안</h3>
+<ul>
+<li dir="auto"><strong>필요한 기능</strong>: 중고등학교 때 범죄 이력이라든지, 당시의 생활기록부(생기부) 등의 데이터들이 공인인증서를 통해 행정망에서 볼 수 있는 모든 서류들. 인증서를 통해 로그인했다는 근거 아래 마이데이터화되어, 모두의 AI에게 물어보면 답할 수 있어야 한다.</li>
+<li dir="auto"><strong>보안 해법</strong>: API로 데이터를 끌어오는 것이 보안상 문제가 된다면, 데이터 보안의 주체를 정부가 아니라 개인이 가지면 된다. 내 스마트폰과 PC에 정부24의 등본, 가족관계증명서, 세금 정보 등을 한 번씩 받아와 마이데이터로 내 디바이스에 저장하고, 이 디바이스의 정보를 가지고 모두의 AI가 답변하면 보안상 문제가 없다.</li>
+</ul>
+<div class="callout node-insert-event callout-info" data-callout="info" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">현실적 제약</div></div><div class="callout-content">
+<p dir="auto">클라우드나 심평원에서 API를 열어주지 않는다. 약국에서 처방받은 정보 같은 것을 열어줄 리 없다.</p>
+</div></div>
+<h3 data-heading="4.18 프로젝트 방향: 지자체 단위 접근" dir="auto">4.18 프로젝트 방향: 지자체 단위 접근</h3>
+<p dir="auto">정부가 못 하면, 지자체가 열 수 있는 정보만이라도 조금씩 열면서 해보자는 아이디어에서 '모두의 강원', '모두의 춘천'이 나왔다. 다만 지자체도 안 할 것 같으니 두 사람이 직접 해보기로 했다.</p>
+<h4 data-heading="4.18.1 연계 교과목 개설" dir="auto">4.18.1 연계 교과목 개설</h4>
+<ul>
+<li dir="auto"><strong>개설 현황</strong>: 신청서 양식에 맞춰 학교에 이미 제출했고, 개설은 확정되었다. 교과목 개발비 외에 활동비도 처음에 나오는 것으로 알고 있으며, 클로드 팀플랜 등의 구독 지원 여부는 과목 개발이 되면 학교에 문의할 예정이다.</li>
+<li dir="auto"><strong>담당 교과목</strong>: 2학기 중간고사 이후부터 기말고사까지 '공공외교 마케팅' 팀티칭을 담당한다. 화요일 오전 과목이며, 최영재 교수님이 계시는 기초교양대 및 미래융합스쿨 소속이다.</li>
+<li dir="auto"><strong>교과목 취지</strong>: 집중적으로 하려는 것은 바이브 코딩이다. 석사 전공이 공공외교라 ODA 등 공공외교를 배우는데, 개발도상국의 현안 문제를 바이브 코딩으로 해결하기엔 학생들이 맥락을 잘 모른다.</li>
+<li dir="auto"><strong>실제 방향</strong>: 춘천시 공공외교관 개념으로, 춘천의 현안 문제를 해결하는 것을 바이브 코딩으로 만든다.
+<div class="callout node-insert-event callout-note" data-callout="note" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path><path d="m15 5 4 4"></path></svg></div><div class="callout-title-inner">비교</div></div><div class="callout-content">
+<p dir="auto">최인규 교수님의 "독서로 문제 해결하자"는 인문학적 버전이라면, 이것은 좀 더 실용적인 버전의 기획이다.<br>
+시민들이나 학생들이 쓰는 서비스를 실제로 만들어본다는 것이 중요한 경험이며, 하나라도 돌아가는 서비스를 만들어보면 공공기획을 할 수 있게 된다.</p>
+</div></div>
+</li>
+</ul>
+<h4 data-heading="4.18.2 아이디어 1: 카셰어링(공유 라이딩) 서비스" dir="auto">4.18.2 아이디어 1: 카셰어링(공유 라이딩) 서비스</h4>
+<ul>
+<li dir="auto"><strong>협조 필요 사항</strong>: 버스정류장과 춘천역에 협조를 구하면 된다. 춘천시와 함께 논의하여 ITX, 경춘선 등 역 안에 QR 코드를 두는 방식. 밖에 설치하면 택시기사들이 반발할 수 있어 역 내부에 둔다.</li>
+<li dir="auto"><strong>운영 방식</strong>: "나랑 같이 학교 가자", "나랑 같이 택시 같이 타자" 식의 프로모션을 학생이 직접 한다. 시에서 해주면 택시기사들이 반발하지만, 대학생들이 스스로 하면 욕하는 사람이 없고 택시기사들도 학생과는 싸울 수 없다. 이것이 변화의 흐름임을 느끼게 하는 방식이며, 수익사업도 아니다.
+<div class="callout node-insert-event callout-success" data-callout="success" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></div><div class="callout-title-inner">성공 예상</div></div><div class="callout-content">
+<p dir="auto">카셰어링은 남춘천역과 춘천역에서 무조건 성공한다고 생각한다. 춘천역과 남춘천역에 열차가 서는 시간이 똑같기 때문이다.</p>
+</div></div>
+</li>
+<li dir="auto"><strong>기술적 강점</strong>: 카카오택시처럼 매칭하고 앱으로 만들고 푸시 알림을 해야 하는 것과 달리, 기차에서 내리는 시간이 다 똑같으므로 그 시간대에만 웹으로 신청하면 된다. 김유정역이나 강촌역에서부터 학생들이 '모두의 춘천'에 들어와 신청하면, 웹소켓이 연결되어 있어 들어와 있는 학생들이 라이브로 뜬다. 예를 들어 ITX 청춘에 타고 있는 학생 중 120명이 라이브면 이들을 짝지어 준다.</li>
+</ul>
+<h4 data-heading="4.18.3 아이디어 2: 카페·음식점 정리 앱" dir="auto">4.18.3 아이디어 2: 카페·음식점 정리 앱</h4>
+<ul>
+<li dir="auto"><strong>보유 데이터</strong>: 네이버 지도에 인스타에서 볼 때마다 수동으로 저장한 카페가 992개가 넘으며, 전국에 찍혀 있지만 춘천 위주다. 춘천 지역에만 560개가 넘게 찍혀 있다.</li>
+<li dir="auto"><strong>고민 사항</strong>: 목록이 너무 많아지고 검색 활용 능력이 떨어져, 이것을 옵시디언으로 옮겨야겠다고 생각하던 중이었다. 이걸 앱으로 하나 더 만드는 것도 학생들에게 좋을 것 같다.</li>
+<li dir="auto"><strong>구현 방법</strong>: 클로드 코드로 크롤링해서 다 모으면 된다. 예를 들어 일주일에 한 번씩 네이버 플레이스 정보를 크롤링하여 업데이트한다. 요즘 어사이드로 돌려보내는 경우가 많다.</li>
+</ul>
+<h4 data-heading="4.18.4 아이디어 3: '밥도' — 혼밥 매칭 서비스" dir="auto">4.18.4 아이디어 3: '밥도' — 혼밥 매칭 서비스</h4>
+<ul>
+<li dir="auto"><strong>컨셉</strong>: 혼자 먹는 혼밥이 아니라 밥을 '같이 먹는' 것. 혼밥하는 사람들끼리 라이브를 걸어놓으면 특정 식당 2번 테이블에서 같이 밥을 먹는다.</li>
+<li dir="auto"><strong>배경 문제</strong>: 음식점 사장님들이 혼자 밥 먹는 것을 안 된다고 한다. 한림대 앞 1인 라멘집은 사람이 많지만, 테이블이 6~4개뿐인 음식점은 혼자 들어가면 포장밖에 안 된다고 한다. 교수들은 차가 있어 멀리 가서 먹을 수 있지만 학생들은 차가 없다.</li>
+</ul>
+<div class="callout node-insert-event callout-example" data-callout="example" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-list"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg></div><div class="callout-title-inner">공감 사례</div></div><div class="callout-content">
+<p dir="auto">영국에서 혼자 살 때 고깃집에 혼자 가기가 그래서 못 가본 적이 있다. 2년 넘게 사는 분들도 그랬다.</p>
+</div></div>
+<ul>
+<li dir="auto"><strong>지역 특성</strong>: 서울은 1인 음식점이 많지만, 춘천은 1인 음식점이 별로 없다. 학생들이 밥을 굶고 편의점 삼각김밥으로 때우고 스타벅스에 간다. 특히 회영루처럼 배달하는 맛집일수록 혼자 가기 더 어렵다. '모두의 춘천'이라는 프로젝트명과도 잘 맞으며, 처음에는 제일 만만한 매칭 위주로 간다.</li>
+</ul>
+<h4 data-heading="4.18.5 아이디어 4: 외국인 유학생 매칭" dir="auto">4.18.5 아이디어 4: 외국인 유학생 매칭</h4>
+<ul>
+<li dir="auto"><strong>배경</strong>: 춘천에 외국인 유학생이 많이 늘었다. 지방 사립대(강원대 포함)가 충원율 부족으로 살아남기 위해 외국인 유학생 유치를 많이 하기 때문이다.</li>
+</ul>
+<div class="callout node-insert-event callout-info" data-callout="info" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">비자 제약</div></div><div class="callout-content">
+<p dir="auto">유학(학생) 비자이기 때문에 일을 못하며, 학교에서 허가를 받더라도 주 30시간 이상 일할 수 없다. 아르바이트도 짧게만 가능하다.</p>
+</div></div>
+<ul>
+<li dir="auto"><strong>매칭 방식</strong>: 외국인 유학생과 영어를 배우고 싶어하는 한국인 학생을 매칭한다. 예를 들어 춘천 관광지를 투어하면서 투어 안에서 영어만 강제로 쓰면 영어 실력이 는다.</li>
+<li dir="auto"><strong>보상 및 효과</strong>: 외국인 유학생에게는 과외비처럼 활동비를 준다. 자연스럽게 다문화에 대한 거부감을 상쇄할 수 있고, 유학 온 친구들은 기본적으로 마인드가 열려 있어 소통하고 싶어하는 점을 잘 활용하면 '모두의 춘천' 컨셉에 잘 맞는다.</li>
+</ul>
+<h4 data-heading="4.18.5 확장 및 사업화 전략" dir="auto">4.18.5 확장 및 사업화 전략</h4>
+<div class="callout node-insert-event callout-important" data-callout="important" data-callout-fold="" data-callout-metadata=""><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg></div><div class="callout-title-inner">핵심 전략</div></div><div class="callout-content">
+<p dir="auto">이런 에이전트나 플랫폼은 모두의 AI처럼 국가 단위로 하기엔 오히려 더 어렵다. 무조건 소규모 단위, 지방도시 단위에서 성공시킨 뒤 원주, 강릉 등으로 똑같이 확장하자. 그때는 사업자가 되자.</p>
+</div></div>
+<ul>
+<li dir="auto"><strong>모듈 구조</strong>: 각 아이디어가 하나의 모듈(에이전트)이며, 이를 <code>모두의춘천.com</code>에 하나씩 넣으면 된다. 이런 것들을 모으면 에브리타임처럼 될 수 있다.</li>
+</ul>
+<h2 data-heading="5. 마무리: 향후 진행 방안" dir="auto">5. 마무리: 향후 진행 방안</h2>
+<ul>
+<li dir="auto"><strong>일정</strong>: 모두의 춘천은 바로 시작해도 상관없다. 빠를수록 좋지만 과목이 내년(2027년)에 개설되어야 하므로 당장 급한 건 아니며, 우선 사이트 만드는 것부터 진행한다.</li>
+<li dir="auto"><strong>아이디어 수집</strong>: 회의록을 정리하고, 좋은 아이디어가 수시로 생각나면 카톡 등으로 공유한다. 학생들과 30분만 아이데이션 회의를 해도 아이디어가 수두룩하게 나올 것이다. 부담 없이, 아이패드 같은 보상을 걸면 학생들이 좋은 아이디어를 많이 낼 것이다.</li>
+<li dir="auto"><strong>추가 아이디어</strong>: 원룸 등 주거 관련 아이디어도 나올 것이다. 방 구하는 것부터 시작해 학생들이 힘든 점이 많다.</li>
+</ul></article>
+</main>
+
+<footer class="cmds-meta">
+	
+	<a href="https://cmdspace.work" target="_blank" rel="noopener"><img src="https://cmdspace.work/assets/logos/cmds-logo-round.png" alt="CMDSPACE"></a>
+	<span>Shared via <a href="https://github.com/johnfkoo951/cmds-share" target="_blank" rel="noopener">CMDS Share</a></span>
+	<span class="cmds-theme-note">Theme: CMDS</span>
+	
+</footer>
+
+
+
+<script type="application/json" id="graph-data">{"title":"더픽트 10-29-2026 회의록 - 워크플로우 엔지니어링과 모두의 춘천","nodes":[{"label":"더픽트 10-29-2026 회의록 - 워크플로우 엔지니어링과 모두의 춘천","type":"note","level":0},{"label":"데이터 정리하기 전까지는 AI 얘기 꺼내지도 마라","type":"note","level":1},{"label":"5. Sharing skills","type":"note","level":1},{"label":"워크 플로우 엔지니어링 - Workflow Engineering","type":"note","level":1},{"label":"#워크플로우엔지니어링","type":"tag","level":1},{"label":"#워크플로우엔지니어링/단계축소","type":"tag","level":1},{"label":"#워크플로우엔지니어링/변화대응","type":"tag","level":1},{"label":"#워크플로우엔지니어링/조직공유","type":"tag","level":1},{"label":"#워크플로우엔지니어링/실패복구","type":"tag","level":1},{"label":"#Workflow-Engineering","type":"tag","level":1},{"label":"#AX","type":"tag","level":1},{"label":"#모두의춘천","type":"tag","level":1},{"label":"1. What are skills","type":"note","level":2},{"label":"2. Creating your first skill","type":"note","level":2},{"label":"3. Configuration and multi-file skills","type":"note","level":2},{"label":"4. Skills vs. other Claude Code features","type":"note","level":2},{"label":"Context Engineering이라는 용어는 너무 과적합 되었다. 이제는 Workflow Engineering의 시대다","type":"note","level":2}],"edges":[[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],[0,10],[0,11],[2,12],[2,13],[2,14],[2,15],[3,16]]}</script>
+<script type="text/plain" id="md-source">IyMg8J+TnSBLZXkgVHJpZ2dlciAoMeKAkzMgbGluZXMpCgo+IFshTk9URV0KPiAxMC0yOS0yMDI2IGDrjZTtlL3tirhg7JeQ7IScIGDsoITssL3rjIBgIOuMgO2RnOyZgCDtmozsnZjtlZwg6riw66Gd7J2EIOygleumrO2VnCDqsoMuICNXb3JrZmxvdy1FbmdpbmVlcmluZyDrsI8gI0FYIOyZgCDqtIDroKjtlbTshJwg7KSR7JqU7ZWcIOy7qOyEpO2MheqzvCDsp4Tsp4DtlZwg7J2Y6rKs7J2EIOuCmOuIhOyXiOuLpC4KCiMjIDEuIFBhcnQgMSAtIEFJ66W8IOuwlOq+uOuKlCDqsoPsnbQg7JWE64uI6528IOyCrOuejOydmCDsnbztlZjripQg7JuM7YGs7ZSM66Gc7Jqw66W8IOuwlOq+uOyWtOyVvCDtlZzri6QgCiMjIyAxLjEg642U7ZS97Yq4OiDsi5zsl7DCt+2UhOuhnO2GoO2DgOyehSDsoJzsnpHsnZgg7Yyo65+s64uk7J6EIOuzgO2ZlAoK65SU7J6Q7J24IO2MgOyXkOyEnCDqsJzrsJwg7J207KCEIOuLqOqzhOyXkCDsp4HsoJEg7Iuc7Jew7JqpIO2PrO2EuOydhCDsmYTshLHrkJwg7ZiV7YOc66GcIOunjOuTpOyWtCDsoJzqs7XtlZjripQg67Cp7Iud7J20IOuFvOydmOuQmOyXiOuLpC4g7JuM7YGs7Iqk7YWM7J207IWYIO2Yle2DnOuhnCDsp4HsoJEg66eM65Ok7Ja0IOyLnOyXsO2VmOuptCDrjZQg7IiY7JuU7ZWY6rOgLCDqsJzrsJzsnpDquYzsp4Ag6rGw7LOk64uk6rCAIOyYpOyngCDslYrslYTrj4Qg65CY66+A66GcIOqxsOuemOyymOuCmCDrsJzso7zsspgg7J6F7J6l7JeQ7ISc64qUIOydvOydmCDsho3rj4TqsIAg66ek7JqwIOu5oOultOqyjCDripDqu7Tsp4Tri6QuCj4gWyFub3RlXSBJVMK37KSR7IaM6riw7JeF7J2YIOyghOyCrOyggSDrj4TsnoUg7KCE66edCj4g7J2867CYIElUIOq4sOyXheydtOuCmCDspJHshozquLDsl4XsnbQg7J20IOygleuPhCDsiJjspIDsnLzroZwg7KCE7IKs7KCB7Jy866GcIO2VmOuKlCDrjbDsl5DripQg7JW9IDXrhYQg7KCV64+EIOqxuOumtCDqsoPsnLzroZwg67O07J2066mwLCDrqLzsoIAg7Iuc7J6R7ZWcIOyCrOuejOydtCDsi5zsnqXsl5Ag642UIOu5qOumrCDsp4TsnoXtlaAg6rKD7J20652864qUIOyghOunneydtCDsoJzsi5zrkJjsl4jri6QuCgojIyMgMS4yIOyViOywve2YhCDqtZDsiJjsnZggQUkg6riw67CYIOyYpO2UvOyKpCDrj4Tqtawg67CU7J2067iM7L2U65SpIOqyve2XmCDshozqsJwKCuyViOywve2YhCDqtZDsiJjripQg7LWc6re8IO2ZlOygnOqwgCDrkJwg64+E6rWs66W8IOyGjOqwnO2WiOuLpC4g7ZiE7J6sIOyXsOq1rOyLpCDsu7Ttk6jthLDsl5Ag7ISk7LmY65CY7Ja0IOyeiOqzoCDsnbQg7Lu07ZOo7YSw7JeQ64qUIOyVhOyngSDshKTsuZjtlZjsp4Ag7JWK7JWY7Jy864KYLCDsnIjrj4TsmrDsmqnsnLzroZwg7J6YIOyekeuPme2VmOuKlCDqsoPsnYQg7ZmV7J247ZaI64ukLiDstpTqsIDroZwsICfsnbTsnYzsmKTtlLzsiqQn652864qUIOydtOumhOydmCDrj4TqtazqsIAg7LWc6re8IOybueyXkOyEnCDtmZTsoJzqsIAg65CY7JeI64ukLgoKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzkzNzc2NTk3NTI5LTkwNjcwYWI3LTQwOWItNGJjZC04ZTBhLThhNDExZWUzNzk5NS5wbmcpCgoq7LC46rOgOiBbQXJ0Q3JhZnQg7JWx7Iqk7J2YIOyCrOydtO2KuF0oaHR0cHM6Ly9nZXRhcnRjcmFmdC5jb20vYXBwcykg7ZmU66m0LiDsnbTqsbgg66qo66W06rOgIOuwlOydtOu4jOy9lOuUqeydhCDtlZjqsqDri6Tqs6Ag7ZWY66m0IOyViOuQnOuLpC4qCgotICoqQWRvYmVDcmFmdCDqs4Tsl7QqKjog7Ja064+E67mE66W8IOq3uOuMgOuhnCDrs7jrlqAg66eM65OgIO2Yle2DnOuhnCwg7Ja064+E67mEIOq1rOuPheydhCDrqqjrkZAg7Leo7IaM7ZaI64uk64qUIOyWuOq4ieydtCDsnojsl4jri6QuCiAgLSBQREZDcmFmdDog7KeB7KCRIOyCrOyaqe2VtCDrtIQKICAtIEZpZ0NyYWZ0OiDtlLzqt7jrp4jsmYAg6rGw7J2YIOuYkeqwmeydgCDsiJjspIAKICAtIFZlY3RvckNyYWZ0IOuTsQotIFsqKlJFQSAoUmV2ZXJzZSBFbmdpbmVlcmluZyBBbnl0aGluZykqKl0oaHR0cHM6Ly9naXRodWIuY29tL21vcmx1dG8vcmVhKTog7J20IOuPhOq1rOqwgCDrgpjsmKwg65WM7K+kIOuTseyepe2VmOyXrCwg7Iic7KCVIO2VnOq4gChIV1Ap7J2EIOucr+yWtOyEnCDshozsiqTroZwg7Zmc7Jqp7ZWY64qUIOyekeyXheydhCDsp4Ttlontlojri6QuCgojIyMgMS4zIFJIV1Ag6rCc7ISg6rO8IEFJIO2VnOq4gCDtlITroZzthqDtg4DsnoUKCuyViOywve2YhCDqtZDsiJjripQgIFJFQeulvCDshozsiqTroZwg7Iic7KCVIO2VnOq4gOydhCDrnK/slrQg66eM65Ok642YIOqygyDspJEg7ZWY64KY66W8IOyLnOyXsO2WiOuLpC4KCiFbaW1hZ2UucG5nXShodHRwczovL3B1Yi1hY2Y2YWQ5M2YyZWM0YTVlOGZhMTJlOTRkMGM5YjE1MS5yMi5kZXYvMTc5Mzc3NjUyODQyNC1lYmNjZjg1OC1jYzIwLTRkNWEtODliZi1lZjA4ODA3MjVjMjcucG5nKQoKKuywuOqzoDog7JWI7LC97ZiEIOq1kOyImOqwgCDsp4HsoJEg67CU7J2067iM7L2U65Sp7ZWcIEFjaG1hZ2UgSE9Q7J2YIO2ZlOuptC4g7Iic7KCVIO2VnOq4gDIwMjQg7IiY7KSA7Jy866GcIO2PsO2KuCDqsIDrj4XshLHsnbQg65SU7YWM7J287ZWY64ukLiAo6re466as6rOgIOydtOufsCDrlJTthYzsnbzsl5Ag7Yag7YGw7J2EIEdQVCAyMDAg7ZSE66GcIOyjvOqwhCDtlZzrj4QgM+uyiCDrtoTrn4nsnYQg6rCI7JWE64Sj7JeI64uk7KeALi4pKgoKPiBbIWV4YW1wbGVdIENsZWFyVHlwZSDquLDsiKAg67Cc6rKsCj4g7ZmU66m07JeQ7IScIOuztOuptCDtlZzquIDqs7wg65iR6rCZ7J20IOuztOydtOuKlOuNsCwgUkhXUOuKlCDslb3qsIQg7Z2Q66as6rKMIOuztOyduOuLpC4g7ZWc6riAIOyInOygleydhCDrnK/slrTshJwg7JWM7JWE64K4IOqysOqzvCwg7YG066as7Ja0IO2DgOyehShDbGVhclR5cGUp7J20652864qUIOq4sOyIoOydtCDtlZjrgpgg642UIOuTpOyWtOqwgOyEnCDrjZQg6rmo64GX7ZW0IOuztOydtOuKlCDqsoPsnbTsl4jri6QuIOydtOulvCDrnK/slrTshJwg7JWM7JWE64OI64ukLgpSSFdQ66W8IOqwnOyEoO2VmOuptOyEnCDsl6zquLDsl5AgQUkg7LGE7YyF7LC97J2EIOuLrOyVhCAnQUkg7ZWc6riAJ+ydhCDrp4zrk5zripQg7J6R7JeF7J2EIOynhO2WiSDspJHsnbTrqbAsIOyWtOuKkCDsoJXrj4Qg7ZSE66Gc7Yag7YOA7J6F7J20IOyZhOyEseuQmOyWtCDsnojri6QuCi0gKirsp4HsoJEg7KCc7J6R7ZWcIOuyhOyghCoqOiDrsJTsnbTruIwg7L2U65Sp7Jy866GcIOunjOuTpOyXiOycvOupsCDrnbzsnbTtirgv64uk7YGsIOuqqOuTnOulvCDrhKPslrTrhpPslZjri6QuIOydtOuvuOyngOuPhCDqt7jrprQg7IiYIOyeiOqzoCDsl6zrn6wg6riw64ql7J2EIOuEo+yWtOuGk+yVmOycvOupsCwg7ISc7Iud7Jy866GcIOuwlOq/lOyjvOuKlCDquLDriqXquYzsp4Ag64ukIOuEo+yWtOuGk+yVmOuLpC4KLSAqKuqzoOuTse2Vmeq1kCDshKDsg53ri5gg7KCc7J6RIOuyhOyghCAo7J207J2M7Jik7ZS87IqkKSoqOiBBY2htYWdlIEhPUOydhCDtlZjtlYQg7JmE7ISx7Iuc7YKoIO2DgOydtOuwjeyXkCwg67mE7Iq37ZWcIOyDneqwgeydhCDtlZwg7Ja065akIOqzoOuTse2Vmeq1kCDshKDsg53ri5jsnbQgUkVBIOyGjOyKpOulvCDtmZzsmqntlbQg67CU7J2067iM7L2U65Sp7Jy866GcIOunjOuToOqyg+ydhCDrsJzqsqztlojri6Tqs6Ag7JWI7LC97ZiEIOq1kOyImOuKlCDrp5Dtlojri6QuCgojIyMgMS40IOydtOydjOyYpO2UvOyKpOydmCDsmYTshLHrj4Tsl5Ag6rSA7ZWcIOydtOyVvOq4sAoKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzkzNzc2NzgwMjA5LTUwYmQxYmZhLTA1MTEtNGE2MS05NzdmLTIzMWE0OTVkODJlNi5wbmcpCgoq7LC46rOgOiBb7J207J2M7Jik7ZS87IqkIOyCrOydtO2KuF0oaHR0cHM6Ly9pZXVtb2ZmaWNlLmNvbS8p7J2YIOuplOyduCDtmZTrqbQuIOyngeygkSDsjajrs7TrqbQg7IKs7Jqp7ISx7J20IOygleunkCDrhoDrnbzsmrQg7IiY7KSA7J2064ukLioKCuqzoOuTse2Vmeq1kCDshKDsg53ri5jsnbQg66eM65OgIOydtOydjOyYpO2UvOyKpOulvCDri6TsmrTrsJvslYQg7IKs7Jqp7ZW0IOuzuCDqsrDqs7zqsIAg6rO17Jyg65CY7JeI64ukLgotICoq7J6Q64+ZIOyYqOuztOuUqSoqOiDshKTsuZgg7IucIOuFuO2KuOu2geyXkCDtgbTroZzrk5zsvZTrk5woQ2xhdWRlIENvZGUp64KYIOy9lOuNseyKpChDb2RleCkg6rO17IudIOyVseydhCDquZTslYQg66Gc6re47J247ZWcIOyggeydtCDsnojsnLzrqbQg7JWM7JWE7IScIOuUlO2Fje2KuO2VtCDrsJTroZwg7Jio67O065Sp7ZWc64ukLgotICoq7LGE7YyF7LC9IOychOy5mCoqOiDsmbzsqr0v7Jik66W47Kq97Jy866GcIOyYruq4uCDsiJgg7J6I64ukLgotICoq7YOtIOuwqeyLnSoqOiDtlITroZzqt7jrnqgg7JWI7JeQ7IScIOybue2OmOydtOyngOyymOufvCDsl6zrn6wg7YOt7J20IOuPjOyVhOqwgOuKlCDrsKnsi53snbTrqbAsIO2VmOuLqOyXkCDtlIzrn6zsiqQoKykg67KE7Yq87J20IOyeiOuLpC4KLSAqKu2DrSDrqZjshZgg67OA7ZmYKio6IO2UjOufrOyKpCDrsoTtirzsnYQg64iM65+sIOudhOybjOuGk+ydgCDtg63snYQg66mY7IWY7ZWY66m0LCDsmIjrpbwg65Ok7Ja0IOuniO2BrOuLpOyatCDtjIzsnbzsnYQgIuydtOqxuCBQUFTroZwg67CU6r+U7KSYIiDtlZzrp4jrlJTrp4wg7LmY66m0IFBQVOqwgCDsi6TtlonrkJjrqbTshJwg67CU6r+U7KSA64ukLgotICoqUFBUIO2FnO2UjOumvyoqOiA1fjbqsJzsnZgg7YWc7ZSM66a/IOq4sOuKpeydtCDsnojqs6AsIOunjOuToCDtjIzsm4ztj6zsnbjtirjrgpggSFRNTCwgYGRlc2lnbi5tZGDrpbwg7Jis66CkIO2FnO2UjOumv+ycvOuhnCDrk7HroZ3tlbQg66eM65OkIOyImOuPhCDsnojri6QuCi0gCj4gWyFzdWNjZXNzXSDtmZzsmqkg7KCc7JWIIOuwjyDtj4nqsIAKPiDsnbQg64+E6rWs64qUIOyYpO2UiOyGjOyKpOydtOupsCwg66qo65OgIOyngeybkOuTpCDsu7Ttk6jthLDrgpgg64yA7ZGc6rCAIO2FjOyKpO2KuO2VmOuptCDrsJTroZwg7JO4IOyImCDsnojri6QuIOyalOyDiCDrp6TsmrAg7ZWr7ZWY66mwLCDsgqzsmqntlbQg67O064uIIOuGgOudvOyauCDsoJXrj4TroZwg7JmE7ISx64+E6rCAIOuGkuuLpC4gIuq4sOqwgCDrp4ntnojrhKTsmpQi652864qUIOuwmOydkeydtCDsnojsl4jri6QuCiMjIyMgMS40LjEg7J207J2M7Jik7ZS87Iqk7J2YIO2Gte2VqSDrrLjshJwg7J6R7JeFIOq4sOuKpQotICoq66eI7J2465Oc66e1Kio6IOyngOybkOuQqAotICoq7J6F67KVIOq4sOuKpSoqOiDsp4Dsm5DrkKgKLSAqKuuniO2BrOuLpOyatCDrj5nsi5wg67OA7ZmYKio6IOuniO2BrOuLpOyatOycvOuhnCDsnpHshLHtlZwg64uk7J2MIO2MjOybjO2PrOyduO2KuMK37JuM65OcwrftlZzquIDroZwg64+Z7Iuc7JeQIOuzgO2ZmO2VmOuKlCDqsoPsnYQg66qo65GQIOyLnOuPhO2WiOqzoCDsoITrtoAg65CoCi0gKipQREYqKjog7KeA7JuQ65CoCj4gWyFpbXBvcnRhbnRdIOyEpOqzhCDsp5HrhZAKPiAi66y47IScIOyekeyXheydtOudvOuKlCDqsbQg642UIOydtOyDgSDsnbQg7JWI7JeQ7IScIOuyl+yWtOuCmOyngCDrp5Dqsowg7ZWY6rKg64ukIuudvOuKlCDsp5HrhZDsnLzroZwg66eM65OgIOqxsOydmCDrrLTsi5zrrLTsi5ztlZwg7IaM7Iqk64ukLiDsoIDsnqXtlZwg6rKD7J2EIOyInOyglSDtlZzquIDroZwg64uk7IucIOyXtOyWtOuztOuKlCDqsoPquYzsp4Ag7ZW067SQ64+EIOyemCDrkJjsl4jri6QuCgojIyMgMS41IOyViOywve2YhCDqtZDsiJjsnZgg67Cc7ZGcIOyekOujjCDtj6ztirjtj7TrpqzsmKQg7IKs7J207Yq4CgrslYjssL3tmIQg6rWQ7IiY64qUIOyImOyXhSDrsJztkZwg7Jm47JeQIOq1kOuCtCDtirnqsJUg65OxIOyghOusuOqwgCDslZ7sl5DshJwg67Cc7ZGc7ZWY64qUIOyekOujjOuTpOydhCDrqqjslYTrhpPripQgW+2PrO2KuO2PtOumrOyYpCDsgqzsnbTtirhdKGh0dHBzOi8vYWNobWFnZS1zbGlkZXMudmVyY2VsLmFwcC8p66W8IOunjOuTpOyXiOuLpOupsCDshozqsJztlZjqs6Ag67O07Jes7KO87JeI44WG64ukLgoKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzkzNzc2OTA5ODIwLTYxMGQyNDNkLTZiNzEtNDY4MC1hMTQxLWMwZmI5YWFiYmQ4Ni5wbmcpCgoq7LC46rOgOiDsnbTrr7jsp4DripQgQ2xvdWRmbGFyZSBSMuuhnCDso4Tri6Qg7Jis66Ck7IScIOunge2BrOulvCDrlLDshJwg7YWN7Iqk7Yq4IO2VmOydtO2NvOunge2BrOuhnCDtlbTshJwgYGh0dHBzOi8vYOyjvOyGjOuhnOuwlOq/lOyEnCBWZXJjZWzsl5Ag7JeF66Gc65Oc7ZWY64qU6rKMIO2OuO2VmOuLpC4g6re4656Y7JW8IOyaqeufiSDslYTrgbzrqbTshJwg66y066OMIO2UjOuenOycvOuhnCDsl4Tssq0g64K07Jqp7J2EIOuVjOugpOuwleydhCDsiJgg7J6I6rGw65OgLiogCgotICoq7YWM66eIKio6IOuLpO2BrC/rnbzsnbTtirgg7KCE7ZmYIOqwgOuKpQotICoq67CY7J2R7ZiVKio6IOuqqOuwlOydvOyXkOyEnOuKlCDrsJjsnZHtmJXsnLzroZwg64KY7Ji0Ci0gKirrsJztkZwg64W47Yq4Kio6IO2ZlOuptOyXkOyEnCDrsJztkZwg64W47Yq466W8IOuzvCDsiJgg7J6I7J2MCi0gKirrqqnssKgg7KCQ7ZSEKio6IOuqqeywqOulvCDsoJDtlITtlbTshJwg6rG064SI65u4IOyImCDsnojqsowg7ZW064aT7J2MCuydtOqyg+ydgCDqtaztmIQg64yA7ZGc6rCAIOunjOuTpOyWtCDrhpPsnYAg6rKD7J2EIOqzteycoOuwm+yVhCDslYjssL3tmITqsIAg7Yqc64ud7ZWcIOqyg+ydtOuLpC4g7LWc6re8IOuMgO2VmeybkCDqs7zrqqnsl5DshJwg66eM65OgIOuwnO2RnOyekOujjOuPhCDrqqjrsJTsnbzsl5DshJwg7J6R6rKMIOuCmOyYpOqzoCDriIzrn6zrs7wg7IiYIOyeiOuLpC4KCiMjIyAxLjYgIOuNlO2Uve2KuCDsoITssL3rjIAg64yA7ZGc7J2YIOqxsOuemOyymCDrgqntkojsmqkgUFBUIOKAlCDqsJXsm5DrjIDtlZnqtZAg7Y+s7YS4IOyCrOuhgAoK6rGw656Y7LKY7JeQIOuCqe2SiO2VoCDrlYzripQg7YCE66as7Yuw6rCAIO2bqOyUrCDsoovslYTsoLjslbwg7ZWc64uk64qUIOygkOydtCDqsJXsobDrkJjsl4jri6QuCj4gWyFpbmZvXSDqsJXsm5DrjIDtlZnqtZAg7Y+s7YS4IOumrOuJtOyWvCDsgqzroYAKPiDsoITssL3rjIAg64yA7ZGc6rCAIOyVhOuLiOudvCDslYTri4wg7IaM7IaNIOyngeybkOydtCDrp4zrk6Ag6rKD7Jy866GcLCDqsJXsm5DrjIDtlZnqtZAg7Y+s7YS47J20IOyghOu2gCDsnbTqsoPsnLzroZwg67CU64CQ64ukLiDrlJTsnpDsnbTrhIjqsIAg67CU7J2067iMIOy9lOuUqeycvOuhnCDrlJTsnpDsnbgg7Luo7Y6M7J2EIOuwm+yVhCDtl4jrnb3rsJvripQg7ZSE66CI7KCg7YWM7J207IWY7J2066mwLCDsm4Dsp4HsnbTripQg7ZSE66CI7KCg7YWM7J207IWY7J2EIOuLpCDrp4zrk6TslrTshJwg7ZWgIOyImCDsnojri6QuCi0gKirtlIzrnqvtj7wg7IiY7KSA7J2YIOqysOqzvOusvCoqOiDtlITroIjsoKDthYzsnbTshZjsnYQg67O066m07IScICLtlIzrnqvtj7zsnYQg66eM65Ok7Ja0IOyZlOuEpCLrnbzripQg7IOd6rCB7J20IOuTpOyXiOuLpC4g7ISc67KE7JeQIOuPhOuplOyduOydhCDsl7DqsrDtlZjrqbQgUFBU66GcIOuwnO2RnO2VmOuKlCDqsoPsnbQg7JWE64uI6528IOuBneuCmOqzoCDrgpjshJwg7ZSM656r7Y+8IO2KnO2GoOumrOyWvOuhnCDsjajrj4Qg65CY64qUIOyImOykgOydtOuLpC4KLSAqKuuqqOyFmCDqt7jrnpjtlL0g6rCZ7J2AIOuKkOuCjCoqOiDslaDtlITthLDsnbTtjpntirjroZwg66eM65OgIOqygyDqsJnsnYAg64qQ64KM7J207KeA66eMIOq3uOufsCDqsowg7JWE64uI64ukLgojIyMjIDEuNi4xIOyImOqwleyLoOyyrSDtmZTrqbQg7Iuc7JewCi0gKirrlJTsnpDsnbgg6rCc7ISgKio6IOqwleybkOuMgCDsiJjqsJXsi6Dssq3snbQg66ek7JqwIOyYiOu7kOynhOuLpC4g7J20IOuVjOusuOyXkCDtlZzrprzrjIDsl5DshJzrj4Qg7JiB7JeF7ZWg6rmMIOqzoOuvvCDspJHsnbTri6QuCi0gKipIVE1MIOy9lOuTnCDqtaztmIQqKjog7J2066CH6rKMIOuztOydtOuKlCDqsoPsnbQg7KCE67aAIEhUTUwg7L2U65Oc7J2066mwLCBtcDQg7JiB7IOB7J20IOyVhOuLiOuLpC4KLSAqKuq4sOuKpSDsi5zsl7AqKjog7ZWZ7IOd7J20IOyLoOyyreydhCDriITrpbTrqbQg7Iuc6rCE7ZGc66W8IOuUseuUsSDrp4zrk6TslrTso7zripQg7ISc67mE7Iqk66W8IOuztOyXrOykgOuLpC4g7ZSE66CI7KCg7YWM7J207IWYIOqyuCDsnbQg7ZmU66m0IOyekOyytOulvCDqsbDrnpjsspgg7IKs656M65Ok7J20IOuFuO2KuOu2geydhCDqsIDsp4Dqs6Ag7ZqM7J2Y7JeQIOuTpOyWtOyYpOuptCDrnYTsmrTri6QuCj4gWyFzdW1tYXJ5XSDqsr3qs4TsnZgg7IaM66m4Cj4g7J207KCc64qUIO2UhOugiOygoO2FjOydtOyFmOqzvCDsi5zsl7AsIO2UhOuhnO2GoO2DgOyehSDsoJzsnpHsnZgg6rK96rOE6rCAIOuLpCDtl4jrrLzslrTsp4DripQg6rKDIOqwmeuLpC4g7JuQ656Y64qUIOunjuydgCDsoIjssKjsmYAg7ZSE66Gc7IS47Iqk66W8IOqxsOyzkCDrgpjsmKTripTrjbAsIOydtOqyg+ydtCDrgpjsmKTripQg642w6rmM7KeAIOygle2Zle2VmOqyjCAxfjLso7zrsJbsl5Ag7JWIIOqxuOumsOuLpC4g7ZSM656r7Y+8IOqwnOuwnOydhCDrsJzso7ztlZjrqbQg67O07Ya1IDV+NuqwnOyblCDqsbjrpqzripTrjbAg7J207KCc64qUIOq3uOunjO2BvCDqsbjrpqzsp4Ag7JWK7J2EIOqygyDqsJnri6QuCgo+IFshd2FybmluZ10gQUkg6rKp7LCoCj4gSVQg7ZqM7IKs65Ok7J20IOydtOugh+qyjCDrhJjslrTqsIDripTrjbAsIOydtOygnCDri6Trpbgg7ZqM7IKs64qUIOynhOynnCDslrTroKTsmrgg6rKDIOqwmeuLpC4gQUkg6rKp7LCo6rCAIOuEiOustCDsi6ztlZjri6QuCgojIyAyLiBQYXJ0IDIuIOyViOywve2YhCDqtZDsiJjsnZggQUkg6rKp7LCoIO2VtOyGjOulvCDsnITtlZwg7IaU66Oo7IWYIOKAlCDsm4ztgaztlIzroZzsmrAg7JeU7KeA64uI7Ja066eBCgrslYjssL3tmIQg6rWQ7IiY64qUIOqyqeywqOulvCDslrTrlrvqsowg6rCV7KCc7KCB7Jy866GcIOuBjOyWtOyYrOumrOqxsOuCmCDtj4nspIDtmZTtlaAg6rKD7J246rCA6rCAIOykkeyalO2VmOupsCwg7J207JeQIOq0gO2VnCDssYXsnYQg7J6R64WE67aA7YSwIOybkOqzoOulvCDrqqjsnLzrqbAg7JOw66Ck6rOgIO2WiOuLpOqzoCDrsJ3tmJTri6QuIOyekeuFhOyXkCDrjIDtkZzsl5DqsowgUFBU66GcIOuztOyXrOykgCDsoIEg7J6I64qUICoq7JuM7YGs7ZSM66Gc7JqwIOyXlOyngOuLiOyWtOungSoq7J20652864qUIOqwnOuFkOydtOuLpC4g66eQ7J2AIO2VoCDsiJgg7J6I7KeA66eMIOyLpOygnCDshpTro6jshZjsnYQg7Ja065a76rKMIOygnOyLnO2VoCDqsoPsnbjqsIDsl5Ag64yA7ZWcIOuCmOumhOydmCDri7XsnYQg7KCc7Iuc7ZaI64ukLgoKIyMjIDIuMSAx64uo6rOEIOKAlCDqsJzsnbggUEtNIChQZXJzb25hbCBLbm93bGVkZ2UgTWFuYWdlbWVudCkg6rWs7LaVCi0gKiox7J24IDEg7Ji17Iuc65SU7Ja4IOuzvO2KuCoqOiDqsJzsnbggUEtNKFBlcnNvbmFsIEtub3dsZWRnZSBNYW5hZ2VtZW50KeycvOuhnCDsmLXsi5zrlJTslrgg67O87Yq466W8IDHsnbggMeqwnOyUqSDqtazstpXtlZjrnbwuCiAgLSBMR+yXkOyEnOuKlCBD66CI67KoIOyehOybkOq4ieu2gO2EsCDqtaztmIQg64yA7ZGcIOqwmeydgCDsgqzrnozrk6Tsl5Dqsowg6rO87Jm466W8IOuwm+yVhOqwgOuptOyEnCDrsJHsl5DquYzsp4Ag64ukIOyghO2MjMK37KCc7Zy07Iuc7YKk64qUIOuwqe2WpeycvOuhnCDsi6TsoJzroZwg6rCA6rOgIOyeiOuLpOqzoCDtlZzri6QuCiAgLSDqsJzsnbgg7LCo7JuQ7JeQ7IScIO2VmOuKlCDqsoPsnbTrr4DroZwg7Leo66+47IOd7Zmc7J2065OgIOqwgeyekCDtjrjtlZjqsowg6rWs7ISx7ZWY64qUIOuMgOuhnCDtlZjrqbQg65Cc64ukLiAo7JiIOiDsoITssL3rjIAg7Ji17Iuc65SU7Ja4IOuzvO2KuCwg7JWI7LC97ZiEIOyYteyLnOuUlOyWuCDrs7ztirgpCgojIyMgMi4yICAy64uo6rOEIOKAlCBXS00gKFdvcmtmb3JjZSBLbm93bGVkZ2UgTWFuYWdlbWVudCkg6rWs7LaVCuyhsOyngSDssKjsm5Dsl5DshJwg6rCc7J24IOyXreufieydtCDqtazstpXrkJjrqbQsIOq3uCDri6TsnYwg64uo6rOE64qUIFBLTeydtCDslYTri4jrnbwgKipXS00oV29ya2ZvcmNlIEtub3dsZWRnZSBNYW5hZ2VtZW50KSoqIOydhCDqtazstpXtlZjripQg6rKD7J2064ukLgotICoqR2l0SHViIO2Yle2DnOydmCDtmJHsl4UqKjogbWVyZ2UsIHB1bGwgcmVxdWVzdCwg67iM656c7LmYIOuzke2VqSDrk7HsnYQg7Zmc7Jqp7ZWc64ukLgotICoq7KGw7KeBIOuLqOychCDsp4Dsi50g67O87Yq4Kio6IOyDgeychOyXkOyEnCDqtIDsnqXtlZjripQg7KGw7KeBIOuLqOydmCDsp4Dsi50g67O87Yq466W8IOunjOuTpOyWtCDrhpPqs6AsIOyghOyytOydmCDrqqntkZzsmYAg6riw7Jes7ZWgIOyImCDsnojripQg7ZqM7IKs7J2YIOyngOyLnSDrrLjshJwsIOyYhuyekOumrCDrlJTsnpDsnbTrhIjqsIAg6riw7Jes7ZWgIOyImCDsnojripQg7KeA7IudIOusuOyEnCDrk7HsnYQg64ukIO2VqOq7mCDqtIDrpqztlZzri6QuCi0gKirqsrDroaAqKjog6rCc7J24IOywqOybkOyXkOyEnOuKlCDqsIHsnpAg7JWM7JWE7IScIOyTsOqzoCwg6rGw6riw7IScIOqwgeyekCDrsLDsmrQg6rKD65Ok7J2EIO2ajOyCrOyXkOuPhCDqs7XsnKDtlaAg7IiYIOyeiOuKlCBXS00sIOymiSDqsJzsnbgg7KeA7Iud7J2EIOq0gOyepe2VmOuKlCDqt7jro7kg64uo7JyE7J2YIOq0gOumrCDssrTqs4TquYzsp4Ag6rCA7JW8IO2VnOuLpOuKlCDqsoPsnbQg64K066awIOqysOuhoOydtOuLpC4g642w7J207YSwIOyVhOy5tOydtOu5mSDrk7HsnbQg66qo65GQIOydtOufsCDrp6Xrnb3snbTri6QuCgrssLjqs6DroZwg7Iuk7KCc66GcIGDrsJXspIBg64uYIOuTsSDquLDsl4UgQVgg6rCV7Jew7J2EIOubsOuKlCDsgqzrnozrk6Trj4Qg7LWc6re87JeQIOydtOufsCDrrLjsoJzsnZjsi53snYQg6rCA7KeA6rOgIOqwleydmOulvCDtlZjqs6Ag64uk64uI64qUIOqyg+ycvOuhnCDqsITsoJEg7ZmV7J247J20IOuQmOyXiOuLpC4KCioq7LC46rOg7JiB7IOBIOunge2BrDoqKgpb7ZqM7IKs7J2YIEFJ7KeA7Iud67Kg7J207IqkIOyWtOuUlOyXkCDsoIDsnqXtlZjshLjsmpQgLSBXS01dKGh0dHBzOi8veW91dHViZS5jb20vc2hvcnRzLzJEV2xhZFNOamFjP3NpPS1yQ3l1a0JGbTR3UEdVNTkpCgojIyMgMi4zIO2ctOuovOuzvO2KuCwgQUkg67O87Yq4LCBMTE0tV2lraeydmCAz64uoIOyatOyaqQoK642UIOq1rOyytOyggeyduCDslaHshZgg7ZSM656c7Jy866GcLCDslYjssL3tmIQg6rWQ7IiY64qUIOyYteyLnOuUlOyWuCDrs7ztirjrpbwg7YGs6rKMIOyEuCDqsJwg7KCV64+EIOyTsOupsCDso7zroZwg7JOw64qUIOqyg+ydgCDqt7jspJEg65GQIOqwnOudvOqzoCDrsJ3tmJTri6QuICjtmZTrqbTsnbQg7Ja065GQ7JuMIOudvOydtO2KuCDrqqjrk5zroZwg67Cd6rKMIOyghO2ZmO2VmOyXrCDsi5zsl7DsnYQg7J207Ja06rCQKQoKIVtpbWFnZS5wbmddKGh0dHBzOi8vcHViLWFjZjZhZDkzZjJlYzRhNWU4ZmExMmU5NGQwYzliMTUxLnIyLmRldi8xNzkzNzc3NDcyMTEwLTg5NzQ0OGJjLTNkMmEtNGFlZS04NjRiLTBkYzMzZDkwNjU3MS5wbmcpCgohW+2ctOuovOuzvO2KuCAtIEFJIOyYteyLnOuUlOyWuCDrs7ztirggLSBMTE0gV2lraeydmCAz6rCBIO2OuOuMgCDqtazsobBdKGh0dHBzOi8vbGFndW5hODIxLmdpdGh1Yi5pby9IYWxseW1fTWVkaWFfRGF5L0NvbGxvcXVpdW1fNl8xMC9hc3NldHMvZXZpZGVuY2UvMjJfMTY3Ml85NDFweC5wbmcpCgojIyMjIDIuMy4xIEFJ6rCAIOydveqzoCDsk7DripQg7Ji17Iuc65SU7Ja4IOuzvO2KuCAoQWNobWFnZSBPUykK7JWe7IScIOuzuCDsmLXsi5zrlJTslrgg67O87Yq464qUIOyLpOygnOuhnCDquIDsk7DquLDtlZjqs6Ag6re466a864+EIOu2meydtOqzoCDruJTroZzqt7gg6riA64+EIOyTsOuKlCDsmLXsi5zrlJTslrgg67O87Yq464ukLiDsnbTqsoPsnYAgQUnqsIAg7J6I64qUIOyYteyLnOuUlOyWuCDrs7ztirjroZwsIOqzoOuvvO2VmOuLpOqwgCDrp4zrk6TslrQg67Sk64qU642wIOunjOuTpOyWtCDrs7Tqs6Ag64KY64uI6rmMIOyDgeuLue2eiCDrp57ripQg67Cp7Zal7ISx7J20652864qUIOyDneqwgeydhCDtlZjqsowg65CgIOqyg+ydtOuLpC4K7JiI66W8IOuTpOyWtCDquYPtl4jruIzsl5AgVVgsIFVJLCBQcm8sIE1heOudvOuKlCDtgbTroZzrk5wg7Iqk7YKs7J20IOyeiOuLpC4g7J206rKD7J2AIOuUlOyekOyduOydhCDsp4Tsp5wg6riw67O4IOydtOyDgeydgCDtlZjqsowg7ZW07KO864qUIOyKpO2CrOydtOuLpC4g7J206rKD7J2EIOuCtCDsmLXsi5zrlJTslrgg67O87Yq47JeQIOyggOyepe2VtOuGk+qzoCDtlYTsmpTtlaAg65WMIOq6vOuCtCDsk7gg7IiYIOyeiOqyjCDsiJjsp5HtlbQg64aT64qUIOqyg+ydtOuLpC4KIyMjIyAyLjMuMiBMTE0g7JyE7YKk7JmAIOyKpO2CrOyKpCDsoJXrpqwKQUnrpbwg7JyE7ZWcIExMTSDsnITtgqTroZwg7KCV66as66W8IO2WiOuLpC4gYE1hc3RlclNraWxsc2DrnbzripQg7Y+0642U7JeQ64qUIOyKpO2CrOydtCDtlZwgMjAw6rCcIOygleuPhCDrqqjsnYAg6rKD65Ok7J20IOyeiOuKlOuNsCwg7KO866GcIOyTsOuKlCDqsbQg7ZWcIDMw6rCcIDQw6rCcIOygleuPhCDrkJzri6QuIOyngeygkSDquY7snYAg6rKD64+EIOyeiOuLpC4KLSAqKuybkOusuCDrs7TqtIAqKjog7JuQ66y4IOq3uOuMgOuhnCDrhpTrkZTri6QuCi0gKirsiqTtgqzsiqQg7JyE7YKkKio6IOyCrOuejOydtCDsnb3snYQg7IiYIOyeiOuKlCDtmJXsi53snLzroZwg7KCV66as7ZWcIOqyg+ydtCDrlLDroZwg7J6I64ukLgotICoqMuuLqCDsoJXrpqwqKjog7ZWcIOuyiCDrjZQg7KCV66as7ZWcIOqyg+ydgCDsmqnrj4TqsIAg662U7KeALCDslrjsoJwg7JOw64qU7KeAIOyEpOuqheusuCDqsJnsnYAg6rKD7J20IOuYkCDtlZwg67KIIOyeiOyWtCwg6re466CH6rKMIDLri6jsnLzroZwg7KCV66as7ZWcIOqyg+ydtOuLpC4KIyMjIyAyLjMuMyDsiqTtgqzsiqTrpbwg66qo7JWE65GQ66m0IOyDneq4sOuKlCDtmqjqs7wK7Y+s7Yq47Y+066as7JikIOyCrOydtO2KuOulvCDsnbTroIfqsowg66eM65Ok7Ja0IOuGk+ycvOuptCwg7J206rKD64yA66GcIOuYkeqwmeydtCDrp4zrk6TslrTso7zripQg7Iqk7YKs7Iqk66W8IO2VmOuCmOunjCDquY7slYTshJwg7KGw7KeB64uo7JyEIOyKpO2CrOyKpOuhnCDqs7XsmqnsnpDsgrDsnLzroZwg7ZW064aT7J2EIOyImCDsnojri6QuCuuwnO2RnCDrgrTsmqnsnbTrgpgg7JWE7J2065SU7Ja064KYIOuztOqzoOyEnCDrgrTsmqnsnYAg64ukIOyeiOuKlOuNsCDrlJTsnpDsnbjrp4wg66q77ZWY64qUIOyCrOuejOydtOudvOuPhCwg7YG066Gc65Oc656RIOyKpO2CrOyKpOunjCDsnojsnLzrqbQg65iR6rCZ7J20IOydtOqyg+ydmCA5MCXripQg7J286rSA65CcIO2FnO2UjOumv+ydhCDrp4zrk6Qg7IiYIOyeiOuLpC4KCiMjIyAyLjQg6rO17JqpIOyKpO2CrOyKpCDsi5zsiqTthZzsl5Ag64yA7ZWcIOygnOyViCAoRW50ZXJwcmlzZSBTa2lsbHMpCi0gKirsobDsp4Eg7LCo7JuQ7J2YIOqzteyaqSDsp4Dsi50g67O87Yq4Kio6IOyhsOyngSDssKjsm5Dsl5DshJwg6rO17JqpIOyngOyLnSDrs7ztirjrpbwg66eM65Oc64qUIOyekeyXheydhCDtlZjripQg6rKD7J20IO2VmOuCmOuLpC4g7ZiE7J6l7J2065OgIO2ajOydmOyekOujjOuToCDtj6ztlajrkJzri6QuCi0gKirqs7Xsmqkg7J6Q7IKw7ZmUIOyduOyEvO2LsOu4jCoqOiDrlJTsnpDsnbTrhIjrgpgg6rCc67Cc7J6Q65OgIOqwnOyduOyggeycvOuhnCDquY7snYAg7Iqk7YKs7Iqk64qUIOuGlOuRkOqzoCwg6rO17JqpIOyekOyCsOycvOuhnCDrp4zrk5zripQg7Iqk7YKs7Iqk66W8IOqwnOuwnO2VmOuptCDsnbjshLzti7DruIzrpbwg7KSA64uk65Og7KeALCDqs7Xsmqkg7Iqk7YKs7Iqk66W8IOqwnOuwnO2VtOyEnCDri6Qg6rCZ7J20IOqzteyaqe2VtOyEnCDsk7gg7IiYIOyeiOqyjCDtlZjripQg6re465+wIOyLnOyKpO2FnOydtCDtlYTsmpTtlaAg6rKDIOqwmeuLpC4KIyMjIDIuNSDtlITroZzsoJ3tirgg7Jyg7ZiV7J2YIOuLpOyWkeyEsSDrrLjsoJwK64K067aAIOyduO2VmOyasOyKpCDtlZjripQg7ZSE66Gc7KCd7Yq47JeQ7ISc64qUIOyVnuyEnCDrp5DtlZwg6rKD7J2EIOuwmOyYge2VmOuptCDrhIjrrLQg7KKL7J2EIOqygyDqsJnri6QuIOyduO2VmOyasOyKpCDtjIDsnbTrnpEg7JmE7KCE7Z6IIOyVhOybg+yGjOyLse2VmOuKlCDtjIDsnbQg7J6I64ukLiDsnbjtlZjsmrDsiqQg7YyA7J2AIOuCtOu2gOyXkOyEnCDsl7DqtazshozqsIAg67O07Ya1IOq3uOugh+uTryDtmozsgqwg64K067aA7JeQIOyeiOqzoCwg6re46rG0IOydtOugh+qyjCDqtIDrpqztlZjrqbQg65CgIOqygyDqsJnri6QuCj4gWyFxdWVzdGlvbl0g6rOE7IaNIOqzoOuvvO2VmOuKlCDsnbTsnKAKPiDqsJXrjIAg7ZmI7Y6Y7J207KeAIOqwmeydgCDqsoMg66eM65Ok64uk6rCALCDtlZzrprzrjIAg7ZmI7Y6Y7J207KeAIOunjOuTpOuLpOqwgCwg7Iqk7Lm07Jqw7Yq4IOuMgOybkCDqtIDrpqwg7Iuc7Iqk7YWcIOunjOuTpOuLpOqwgCwg7L+g7YyhIOyduO2EsOueme2LsOu4jCDsvZjthZDsuKAg66eM65Ok64uk6rCAIO2VmOuKlCDsi53snLzroZwg7Jyg7ZiV7J20IOuEiOustCDri6TslpHtlZwg7ZSE66Gc7KCd7Yq465Ok7J20IOunjuuLpC4g7YG066Gc65Oc66GcIOuUsOyngOuptCDtlITroZzsoJ3tirgg64uo7JyE66GcIOustuuKlCDqsowg7KCc7J28IO2aqOqzvOyggeydtOyXiOuLpC4K7Jik7Z6I66CkIOyggOufsCDrs7ztirgg6rCZ7J2AIOqyg+ydhCDri6Trpbgg7JqU7IaM7J2YIOy9mO2FkOy4oOyXkOyEnCDqsIDsp4Dqs6Ag7JmU7J2EIOuVjCDsg53quLgg7IiYIOyeiOuKlCDrrLjsoJzrk6TsnbQg65iQIOyeiOuLpC4g7ZaJ7IKs64+EIO2Kue2eiCDqt7jroIfri6QuIOy9mOyEnO2KuOunjCDsrYkg7ZWY66m0IOyii+ydgOuNsCwg7L2Y7ISc7Yq4IO2VmOuLpOqwgCDrsJjroKTrj5nrrLwg7Y6Y7Iqk7Yuw67KMIO2VmOuLpOqwgCDslaDri4jthqDsnbQg7Y6Y7Iqk7Yuw67KMIO2VmOuLpOqwgCDsnKDtmJXsnbQg64ukIOuLpOultOuLiOq5jCDslrTrlrvqsowg7ZWY66m0IOyii+ydhOyngCDqs6Drr7zsnbTri6QuCiMjIyAyLjYg7ZSE66Gc7KCd7Yq4IOuLqOychCDsnITtgqQg6rWs7LaVIOuwqeuylQrrsJjroKTrj5nrrLwg7Y6Y7Iqk7Yuw67KM7J2AIOuwmOugpOuPmeusvCDtjpjsiqTti7Drsowg7ZSE66Gc7KCd7Yq47JeQIOuEo+uKlCDsi53snLzroZwsIOyymOydjCDsoJzslYjshJzrpbwg7JO4IOuVjOu2gO2EsCDqtazstpXtlZzri6QuIO2YhOyerCDtmozsgqzsl5DshJwg7ISg7YOd7ZWcIOuwqeuyleydgCDsoJzslYjshJzrpbwg7J6R7ISx7ZWY6rOgIOq4sO2aje2VmOuKlCDsuZzqtazrtoDthLAg6re4IO2UhOuhnOygne2KuOulvCDsspjsnYwg66eM65Ok6rOgIOyngOy5qCDrp4zrk6Tqs6Ag6rGw6riw64uk6rCAIOytiSDsjJPquLAg7Iuc7J6R7ZWY64qUIOqyg+ydtOuLpC4g7KCc7JWI7IScIOyEoOygleydtCDrkJjrqbQg64uk7J2MIOuLqOqzhOuhnCDsnbTslrTsp4Tri6QuCi0gKirqs4Tslb3Ct+2YkeyDgSoqOiDsoJzslYjshJwg7ISg7KCVIO2bhCDqs4Tslb3tlZjqs6Ag7ZiR7IOB7ZWc64ukLgotICoq7LCp7IiYIOuztOqzoCoqOiDqt7gg64uk7J2MIOywqeyImCDrs7Tqs6Drpbwg7ZWc64ukLgotICoq7KSR6rCEIOuLqOqzhCoqOiDtmozsnZjrpbwg7Jes65+sIOuyiCDtlZjqs6AsIOykkeqwhCDrs7Tqs6DsnpDro4zrpbwg66eM65Ok6rOgIO2ajOydmOuPhCDsl6zrn6wg67KIIO2VnOuLpC4KLSAqKu2WieyCrCDri7nsnbwqKjog7ZaJ7IKsIOuLueydvOydtCDrkJzri6QuCi0gKirsooXro4wqKjog7LWc7KKFIOuztOqzoOyEnCDrp4zrk6Tqs6Ag66as7Y+s7Yq47ZWY6rOgIOyaqeyXrSDsooXro4wuCuydtCDrqqjrk6Ag6riw6rCE7J2EIOychO2CpOuhnCDrlLDsp4DrqbQg7ZSE66Gc7KCd7Yq4IOuLqOychOuhnCDrgpjriZjslrTsp4Dsp4Ag7JWK7Jy866m0IOyWtOugteqyoOuNlOudvC4KIyMjIDIuNyBQQVJBIOyngOyLnSDqtIDrpqwg67Cp67KV66GgCuyViOywve2YhCDqtZDsiJjsnZgg7KCc7JWIOiAqKuuNlCDtlL3tirjsnZgg6rK97Jqw7JeQIOunnuuKlCDsp4Dsi53rs7ztirgg6rWs7LaVIOyLnOyKpO2FnOydgCBQQVJBIOqwmeuLpOqzoCDsg53qsIHtlZzri6QuIOyVhOydtOuUlOyWtOqwgCDrkJjqsowg6rCE64uo7ZWY64ukLioqCgohW1BBUkEgbWV0aG9kIGltYWdlXShodHRwczovL2ZvcnRlbGFicy5jb20vd3AtY29udGVudC91cGxvYWRzLzIwMTcvMDIvMy1CQVNCX0lsbG9zX0dyYXlfMjExMDE1X1BBUkEtMTAyNHg1MzcuanBnKQoKLSAqKlByb2plY3Qo7ZSE66Gc7KCd7Yq4KSoqOiDrp5Ag6re464yA66GcIOuNsOuTnOudvOyduOydtCDsnojqs6Ag64u57J6lIOutlOqwgCDtlbTslbwg65CY64qUIOqyg+uTpOydhCDri6Qg7Y+0642UIOunjOuTpOyWtOyEnCDrhKPripTri6QuCi0gKipBcmVhKOyXkOyWtOumrOyWtCkqKjog7ZSE66Gc7KCd7Yq4656RIOyDgeq0gOyXhuydtCDrkKDsp4Ag7JWIIOuQoOyngCDrqqjrpbTqsqDsp4Drp4wg66Gx7YWA7Jy866GcIO2VnOuyiCDtlbTrs7TripQg6rKDLiDquIntlZjsp4Ag7JWK7J2AIOq0gOyLrOyCrOulvCDqsIDsp4Dqs6Ag7ZW067O064qUIOqygy4KLSAqKlJlc291cmNlKOumrOyGjOyKpCkqKjog7ZSE66Gc7KCd7Yq4IOuYkOuKlCDsl5DslrTrpqzslrQg65GYIOykkSDtlZjrgpjsl5Ag64+Z7JuQ65CY64qULCDquLDrsJgg7J6Q66OM6rCAIOuQmOuKlCDqsoPsnYQg64ukIOuEo+uKlOuLpC4KLSAqKkFyY2hpdmUo7JWE7Lm07J2067iMKSoqOiBQcm9qZWN0LCBBcmVhLCBSZXNvdXJjZSDshLgg6rCc7JeQIOuLpCDsho3tlZjsp4Ag7JWK64qUIOqygywg67aI7J20IOuLpCDqurzsoLgg7J6I6rOgIOuNlCDsnbTsg4Eg64u57J6l7J2AIOyViCDsk7Dsnbwg6rKDIOqwmeydgCDqsoPsnYQg64ukIOuEo+uKlOuLpC4KCj4gWyFpbmZvXSBQQVJBIOywveyLnOyekAo+IFBBUkEgTWV0aG9k64qUIO2LsOyVhOqzoCDtj6zrpbTthYzqsIAg7KCc7Iuc7ZWcIOuwqeuyleuhoOydtOuLpC4g7Yuw7JWE6rOgIO2PrOultO2FjOuKlCAi64K06rCAIOq3uOuPmeyViCBQQVJB7JeQIOygnOyLnO2VnCDsp4Dsi53qtIDrpqzrspXsnYAgQUkg7Iuc64yA66W8IOunnuydtO2VtOyEnCDsnbTqsbgg7ZW067O06riwIOychO2VtCDsl6ztg5zquYzsp4Ag7J20IOyInOqwhOydhCDrp57snbTtlZjquLAg7JyE7ZW0IOyCtOyVmOqzoCwg6re47KCE7JeQ64qUIOuCtCDsnbjsg53snZgg7Yqc7Yag66as7Ja87J207JeI64ukIuuKlCDst6jsp4DsnZgg66eQ7J2EIFvti7DslYTqs6Ag7Y+s66W07YWMIOuzuOyduOydmCBTZWNvbmQgQnJhaW4gbWFzdGVyY2xhc3Mg7IKs7J207Yq4XShodHRwczovL3d3dy5idWlsZGluZ2FzZWNvbmRicmFpbi5jb20vYWktc2Vjb25kLWJyYWluKeulvCDrn7Dsua3tlZjrqbTshJwg67Cd7Z6MIOuwlCDsnojri6QuCiMjIyAyLjggUEFSQSDsoIHsmqkg7JiI7IucCi0gKirtlITroZzsoJ3tirgqKjog7LaY7LKcIOyXsO2VqSDrp4jrnbzthqQgM+2ajOuKlCDtlITroZzsoJ3tirjsl5Ag7ZW064u57ZWc64ukLgotICoq7JeQ7Ja066as7Ja0Kio6IOyXsO2VqSDrp4jrnbzthqTsnbQg7J6YIOuQmOuLiOq5jCDsl7Dtlakg7J6Q7KCE6rGwIOuMgO2ajCDtlbTrs7zquYwg7ZWY64qUIOqyg+ydgCwg65Cg7KeAIOyViCDrkKDsp4Ag66qo66W064uIIOq3uOuDpSDslYTsnbTrlJTslrQg7LCo7JuQ7Jy866GcIO2Cte2VtCDrkZDripQg6rKDLiDsnbTrn7Ag6rKD7J2EIOyXkOyWtOumrOyWtOyXkCDrhKPripTri6QuClBBUkHqsIAg6riw67O47KCB7Jy866GcIOunjuydtCDsk7DsnbTripQg7KeA7Iud6rSA66asIOuwqeuyleuhoOydtOq4sOuPhCDtlZjqs6AsIOyngOq4iCDtlITroZzsoJ3tirgg64uo7JyE66GcIOuPjOyVhOqwhOuLpOqzoCDtlojsnLzri4gg7J2065+wIOyLneycvOuhnCDtgazqsowg6rWs7LaV7ZWY64qUIOqyg+uPhCDrsKnrspXsnbwg6rKDIOqwmeuLpC4g67CY66Ck64+Z66y8IOuMgO2ajCDqsJnsnYAg6rG4IO2VmOuptCDspJHqsITsl5Ag67O06rOg7ZWcIOqxsOuekSDsnpDro4zrk6TsnbQg64ukIOyeiOydhCDqsoPsnbTri6QuCiMjIyAyLjkg66mU7Iug7KCAIOq4sOuhneydhCDrpqzshozsiqTroZwg7Zmc7Jqp7ZWY6riwCuykkeqwhCDrs7Tqs6Ag7J6Q66OM66W8IOunjOuTpCDrlYwsIOq4sOyhtOyXkOuKlCDsp4DquIgg7KSR6rCEIOuztOqzoCDsnpDro4zsl5Ag64Sj7Ja07JW8IOuQoCDqsoMg64ukIOqwgOyguOyYpOqzoCDsgqzsp4Trj4Qg7LCN7Ja0IOyYrOumrOqzoCDqt7jrnqzri6QuIOq3vOuNsCDsp4DquIjsnYAg64SI66y0IOyii+uLpC4g7JiI66W8IOuTpOuptCDsnpTrlJQg66mU7Iug7KCALCDsiqzrnpkg6rCZ7J2AIOqyg+ydhCDsk7Tri6QuIOuwmOugpOuPmeusvCDtlonsgqzsl5DshJwg7KeB7JuQ65Ok7J20IO2YhOyepeyXkCDqsIDshJwg7IKs7KeEIOywjeqzoCDsoJztkogsIOusvO2SiCDqsJnsnYAg66CM7YOIIO2SiOuqqeuTpCDsgqzsp4TsnYQg7LCN7Ja07IScIOuplOyLoOyggOyXkCDri6Qg7Jis66aw64ukLgo+IFshdGlwXSDsp4Hsm5Dsl5Dqsowg7KO864qUIOyngOy5qAo+IOyCrOynhOunjCDrnaEg7Jis66as7KeAIOunkOqzoCDsgqzsp4TsnbTrnpEg6rCZ7J20IOydtCDsgqzsp4TsnbQg662U7KeA66W8IO2FjeyKpO2KuOuhnCDqsJnsnbQg7Jis66Ck6528LiDrqZTsi6DsoIDsl5Ag7Ja07LCo7ZS8IOyYrOumtCDrlYwg6re4IOyEpOuqheydhCDtlbTslbwg65CY7KeAIOyViuuDkC4g6re8642wIOq3uCDshKTrqoXsnYQg7IOB64yA67Cp7ZWc7YWMIOyEpOuqhe2VnOuLpOuKlCDsg53qsIHtlZjsp4Ag66eQ6rOgIOq3uOqxuCDquLDroZ3snLzroZwg64Ko6rKo6528LgojIyMgMi4xMCDspJHqsIQg67O06rOg7IScIOyekOuPmSDsg53shLEg7JuM7YGs7ZSM66Gc7JqwCi0gKirrjbDsnbTthLAg7IiY7KeRKio6IOyelOuUlOyXkCDsnojripQg7J2066+47KeA656RIO2FjeyKpO2KuOulvCDtgbTroZzrk5wg7L2U65Oc66GcIOuLpCDquIHslrQg7Jio64ukLgotICoqTUQg7YyM7J28IOygleumrCoqOiDquIHslrQg7JmA7IScIOydtOqyg+ydhCBNRCDtjIzsnbzroZwg7KCV66as7ZW064aT6rOgIOumrOyGjOyKpOyXkCDsoIDsnqXtlbTrhpPripTri6QuCi0gKirsu6jthY3siqTtirgg7KCA7J6lKio6IOyalOymmOyXkCDtgbTroZzrk5zqsIAg7YG066Gc65OcIOy9lOuTnCDslYTri4jslrTrj4QsIOy9lOybjO2BrOuPhCDsp4Drgpzso7zrtoDthLAg7Iqk7Yag66as7KeA66GcIOuLpCDrsJTrgIzslrTshJwg66qHIOyLrSDquLDqsIDrpbwg7KCA7J6l7ZWc64ukLgotICoq67O06rOgIOyekOujjCDsg53shLEqKjog6re466CH6rKMIO2VtOuGk+qzoCDrgpjri4jquYwgIuykkeqwhCDrs7Tqs6Ag7J6Q66OMIOunjOuTpOyWtOykmCIg7ZaI7J2EIOuVjCDsp4Tsp5wg7KSR6rCEIOuztOqzoCDsnpDro4zrpbwg66eM65Og64ukLgojIyMgMi4xMSDrsJzso7zsspgg7JqU6rWsIO2YleyLnSDrjIDsnZEK67O07Ya1IOuwnOyjvOyymOyXkOyEnOuKlCDtlZzquIAg66y47IScIOuLrOudvOqzoCDtlZzri6QuIOyYiOyghOyXkOuKlCBQREbroZzrsJbsl5Ag66q7IOunjOuTnOuLiOq5jCDsnbTqsoPrj4Qg65iQIO2VnOq4gOuhnCDrp4zrk5zripQg7J6R7JeF7J2EIO2WiOuKlOuNsCwgW0tvcmRvYyDqsJnsnYAg6rKDXShodHRwczovL2dpdGh1Yi5jb20vY2hyaXNyeXVnai9rb3Jkb2Mp65OkIE1DUCDrtpnsl6zshJwg65SxIOunjOuTnOuLiOq5jCDsmYTrsr3tlZjqsowg66eM65Og64ukLgoKPiBbIXN1Y2Nlc3NdIEtvcmRvY+ydmCDtlZzquIAg7J6Q64+Z7ZmUIOybjO2BrO2UjOuhnOyasOyXkCDrjIDtlZwg7KCE7LC964yAIOuMgO2RnOydmCDshozqsJAKPiDsp4Tsp5wg7KSR6rCEIOuztOqzoOyEnCDrp4zrk6Dri6Tqs6Ag67Ck7IOQIO2VhOyalOqwgCDsl4bri6QuCiMjIDMuIFBhcnQgMy4g7JuM7YGs7ZSM66Gc7JqwIOyXlOyngOuLiOyWtOungeydhCDsobDsp4Hsl5DshJwg7Ja065a76rKMIOq1rO2YhO2VoCDqsoPsnbjqsIAKCiMjIyAzLjEg7ZW17Ius7J2AIOyKpO2CrOyKpOuLpDogU2tpbGxz66W8IO2Gte2VnCDsl4XrrLQg7J6Q64+Z7ZmUIOyCrOuhgAoK7JWI7LC97ZiEIOq1kOyImOuKlCBLb3Jkb2Mg6riw64ql7J2EICoqTUNQ6rCAIOyVhOuLiOudvCDrs4Trj4TsnZggU2tpbGxz66GcIOunjOuTpOyWtCDrkZDsl4jri6QqKuqzoCDshKTrqoXtlojri6QuIApNQ1DripQg7Zi47Lac7J20IOykkeuzteuQmOq4sCDrlYzrrLjsl5AsIO2VtOuLuSDquLDriqXsnYQg6rmO7JWE7IScIFNraWxsc+uhnCDtlZjrgpgg66eM65Ok7Ja0IOuGk+yVmOuLpOuKlCDqsoPsnbTri6QuCgrslYjssL3tmIQg6rWQ7IiYICoqU2tpbGxz7JmAIE9ic2lkaWFuIOuzvO2KuOulvCDtmozsgqwg7LCo7JuQ7JeQ7IScIOyatOyYge2VmOuptCDrp6TsmrAg6rCV66Cl7ZWY64ukKirqs6Ag67O07JWY64ukLiDqt7gg67Cw6rK97JeQ64qUIOqwnOyduOyggeyduCDqsr3tl5jsnbQg7J6I7JeI64ukLiDqt7jsnZgg7JWE64K06rCAIOydtOuyiCDtlZnquLDsl5Ag6rOnIOuFvOusuOydhCDsoJzstpztlbTslbwg7ZWY64qUIOuMgO2VmeybkOyDneyduOuNsCwg64W866y47J2EIO2VnOq4gOuhnCDsiJjsoJXtlZjripQg7J6R7JeFIOuTseydtCDrhIjrrLQg7Jik656YIOqxuOugpCBBSeulvCDrp47snbQg7IKs7Jqp7ZWc64uk64qUIOqyg+ydtOuLpC4KCj4gWyFleGFtcGxlXSDrsJjqsJXsoJwg7JeF66y0IOuLqOy2leydmCDrj5nquLAKPiDslYjssL3tmIQg6rWQ7IiY64qUICLsmpTsppgg7Iuc64yA7JeQIOuCtOqwgCDshpDsnLzroZwg7Y647KeR7ZWY6rOgIOyeiOycvOuptCDsnbTqsbQg662Q6rCAIOyemOuqu+uQnCDqsoMi7J2065286rOgIO2MkOuLqO2WiOuLpC4g6rWQ7IiYKOq5gCDqtZDsiJgg65OxKeqwgCDtjIzsm4ztj6zsnbjtirgg7KCc7J6RLCDssYUg7KeR7ZWEIOuTseydhCBBSeyXkOqyjCDsi5ztgqTrk68g7J6Q6r64IOyLnOy8nCDtlaAg7J287J20IOuEiOustCDrp47slYQg7Iqk7Yq466CI7Iqk66W8IOuwm+yVmOqzoCwg7J2066W8IOuwmOqwleygnOuhnCDruajrpqwg64Gd64K06rKMIO2VtOyjvOqyoOuLpOuKlCDsg53qsIHsnLzroZwg7Iuc7Iqk7YWc7J2EIOq1rOy2le2WiOuLpC4KIyMjIDMuMiDslYTrgrTrpbwg7JyE7ZWcIFNraWxscyDrs7ztirgg7IS47YyFIDogIuyKiO2NvCDrlLjquY0g7Iqk7YKs7IqkIgotICoqRHJvcGJveCDqs7Xsmqkg7IS47YyFKio6IFNraWxscyDrs7ztirjqsIAgRHJvcGJveOyXkCDshLjtjIXrkJjslrQg7J6I7Jy866mwLCDslYTrgrTrj4QgRHJvcGJveOulvCDqs7XsmqnsnLzroZwg7IKs7Jqp7ZWc64ukLiDri6Trp4wgJ+ydgOynhOydtOydmCDrjIDtlZnsm5Ag7Y+0642UJ+ulvCDrs4Trj4TroZwg65GQ7Ja0LCDsm5Dro7gg7ZWY64KYIOu5jOumrOuKlCDqsoPsspjrn7wg7IS47YyF7ZaI64ukLgotICoq7Ya17Ke4IOuzteyCrCDrtpnsl6zrhKPquLAqKjog6re4IO2PtOuNlOyXkCBTa2lsbHMg67O87Yq466W8IO2GteycvOuhnCDrs7Xsgqwg67aZ7Jes64Sj6riwIO2WiOuLpC4KLSAqKuyLnOyKpO2FnCDshKTsoJUoYWdlbnQubWQgLyBDbGF1ZGUubWQpKio6IOyViOywve2YhCDrs7jsnbjsnYAgIuustOyKqCBTa2lsbHPsmYAg66y07IqoIFNraWxsc+ulvCDsobDtlantlbTshJwg7I2o7KSYIuudvOqzoCDtlITroaztlITtirjrpbwg7J6YIOyekeyEse2VmOyngOunjCwg7JWE64K064qUIOq3uOugh+qyjCDtlZjsp4Ag66q77ZWc64ukLiDqt7jrnpjshJwgIuq3uOuDpSDtlZzquIAg7I2o7KSYIuyymOufvCDsp6fqsowg66eQ7ZW064+EIOyVjOyVhOyEnCAn7JWM7J6Y65Sx7ZWY6rKMJyDsnpHrj5ntlZjrj4TroZ0g7Iuc7Iqk7YWcIOyEpOyglSDtjIzsnbzsl5Ag7KeA7KCV7ZW0IOuRkOyXiOuLpC4KCioq7J2066CH6rKMIOuPjOuguOuNlOuLiCDslYTrgrTsnZgg7J6R7JeFIOyLnOqwhOydtCDqsJXsoJzroZwg66ek7JqwIOuLqOy2leuQmOyXiOuLpC4qKiDslYTrgrTripQg7JWE7KeB64+EIFNraWxsc+qwgCDsoJXtmZXtnogg66y07JeH7J247KeAIOyemCDrqqjrpbTsp4Drp4wsIOuzteyCrCDrtpnsl6zrhKPquLAoY29weSBhbmQgcGFzdGUp66eM7Jy866GcIFNraWxscyDrqqjsnYzsp5Eg7KCE7LK066W8IOuEo+yWtOyjvOuLiCDqsJXsoJzroZwg7ISx6rO86rCAIOyYpOuluCDqsoPsnbTri6QuIOyLrOyngOyWtCBTa2lsbHMg7Y+0642UIOydtOumhOydhCBgRUog7IqI7Y28IOuUuOq5jSBza2lsbHNg65286rOgIOyngOyWtCDrhpPslZjri6QuCgo+IFshcXVvdGVdIOyVhOuCtOydmCDrsJjsnZEKPiDslYTrgrTripQg7JWI7LC97ZiEIOq1kOyImOqwgCDrp6Tsnbwg64W866y47J2AIOyViCDsk7Dqs6Ag7J207IOB7ZWcIO2MjOybjO2PrOyduO2KuOulvCDrp4zrk6TqsbDrgpggU2tpbGxzIOunjOuTnOuKlCDrjbAg7J287KO87J287JSpIOyGjOu5hO2VmOuKlCDqsoPsnYQgIuutlCDsnbTsg4HtlZwg7Zeb7KeT6rGw66asIO2VmOuDkCLqs6Ag7ZaI7Jy864KYLCDrs7jsnbjsnbQg7KeB7KCRIOuPjOugpOuzuCDrkqTsl5DslbwgIuydtOufsCDqsbDsmIDqtazrgpgiIO2VmOqzoCDsnbjsoJXtlojri6QuCiMjIyAzLjMg7KeB7JuQ65Ok7J2YIFNraWxscyDsnbTtlbQg67aA7KGxIDog7YG066Gc65OcIOyKpO2CrOyKpOqwgCDrgpjsmKjsp4Ag7Ja47KCc7J24642wIOyVhOyngeuPhCDsnbTqsbgg66qo66W064qU6rCACgrsoITssL3rjIAg64yA7ZGc64qUIOyngeybkOuTpOydhCDrs7wg65WMIOuKkOuBvOuKlCDrp4jsnbjrk5zqsIAg65SxIOq3uCDsg4HtmansnbTrnbzrqbAsIOyngeybkOuTpOydtCBTa2lsbHPrpbwg7J207ZW07ZWY7KeAIOuqu+2VnOuLpOqzoCDrp5Dtlojri6QuCiMjIyMgMy4zLjEgQ2xhdWRlIOqzteyLnSDsnpDro4zsmYAg7J6Q6rKp7KadKENDQUYpCuyViOywve2YhOuKlCBbQ2xhdWRlIOqzteyLnSDtjpjsnbTsp4BdKGh0dHBzOi8vYW50aHJvcGljLXBhcnRuZXJzLnNraWxsamFyLmNvbS9jbGF1ZGUtY2VydGlmaWVkLWFyY2hpdGVjdC1mb3VuZGF0aW9ucy1jZXJ0aWZpY2F0aW9uKeyXkCDsnbTrr7gg7ZW067KV7J20IOuLpCDrgpjsmYAg7J6I7Ja0IO2VqOq7mCDqs7XrtoDtlZjrqbQg7KKL6rKg64uk6rOgIOygnOyViO2WiOuLpC4KCiFbaW1hZ2UucG5nXShodHRwczovL3B1Yi1hY2Y2YWQ5M2YyZWM0YTVlOGZhMTJlOTRkMGM5YjE1MS5yMi5kZXYvMTc5Mzc3ODQxMDI3Ni04MGE1Y2RmMi1kMjkwLTQyODAtODJmZC1lODQ1MzYxM2NmZDAucG5nKQoKKuywuOqzoDog6rWz7J20IDEyNeu2iOydtOuCmCDruYTsi7wg64+IIOyjvOqzoCDsi5ztl5jrs7wg7ZWE7JqU64qUIOyXhuuLpC4g7ZWY7KeA66eMIOyKpO2CrOyKpOydmCDqsJzrhZDsnYQg7J207ZW07ZWY64qUIOygleuPhOunjOycvOuhnOuPhCDrj4Tsm4DsnbQg65Cc64ukLiDqt7jrpqzqs6Ag7J20IOyCrOydtO2KuOydmCDsnpDro4zrk6TsnYAg66y066OM66GcIO2SgOugpOyeiOuLpC4qCgotICoqQ2xhdWRlIENlcnRpZmllZCBBcmNoaWZhY3QgRm91bmRhdGlvbiAoQ0NBRikqKjog7J6Q6rKp7Kad7Jy866GcLCDtlZwg67KIIOydkeyLnO2VmOuKlCDrjbAgMTIw67aE7J20IOyGjOyalOuQnOuLpC4g64uk66eMIOyLnO2XmOydhCDqvK0g67O8IO2VhOyalOuKlCDsl4bqs6AsIHNpZ24gdXDrp4wg7ZWY66m0IOqzteynnOuhnCDqs7XrtoDtlaAg7IiYIOyeiOuKlCDqsoPsnLzroZwg7JWM6rOgIOyeiOuLpC4KLSAqKu2VmeyKtSDrsKnrspUqKjog7Jqw7YG066at7ZW07IScIO2VnOq4gOuhnCDrsojsl63tlbQg67O066m0LCDqsIDsnoUg7ZuEIFNraWxsc+qwgCDrrLTsl4fsnbjsp4Ag65Ox7J20IOuqqOuRkCDrgpjsmKjri6QuIENDQUYg6rO167aAIOyekOujjOulvCDssL7slYTrs7TrqbQg7ZWc6riAIOyekOujjOuPhCDrp47snbQg64KY7Jik66mwLCDqtIDroKgg6rCc64WQ7J20IOydtOuvuCDri6Qg7KCV66as65CY7Ja0IOyeiOuLpC4KIyMjIDMuNCBTa2lsbHPsnZggNOqwgOyngCDrk7HquIkg6rWs7KGwCuyViOywve2YhCDqtZDsiJjqsIAg7JWE64qUIOuwlOuhnOuKlCBDbGF1ZGUgU2tpbGxz7JeQ64qUIDTqsIDsp4Ag65Ox6riJ7J20IOyeiOuLpC4KLSAqKuyXlO2EsO2UhOudvOydtOymiChFbnRlcnByaXNlKSDsiqTtgqwqKjog7KCc7J28IOuGkuydgCDrk7HquInsnLzroZwsIOyhsOyngSDssKjsm5Dsl5DshJwg6rO17Jyg7ZWY64qUIOyhsOyngSDqs7Xsmqkg7Iqk7YKs7J2064ukLgotICoq7KSR6rCEIOuTseq4iSoqOiDsl5TthLDtlITrnbzsnbTspojsmYAg7ZSM65+s6re47J24IOyCrOydtOyXkCDrk7HquInsnbQg7ZWY64KYIO2YueydgCDrkZAg6rCcIOuNlCDsnojri6QuCi0gKirtlIzrn6zqt7jsnbgoUGx1Z2luKSDsiqTtgqwqKjog7KCc7J28IOuwkeyXkCDsnojripQg65Ox6riJ7Jy866GcLCDqsJzsnbgg7Iqk7YKs7J207J6QIOy3qOuvuOyaqSDsiqTtgqzsnbTri6QuCuyViOywve2YhCDqtZDsiJjripQgQ2xhdWRl6rCAIFNraWxsc+udvOuKlCDqsJzrhZDsnYQg7IS47IOB7JeQIOuCtOuGk+ydhCDrlYzrtoDthLAg7J2065+s7ZWcIOuTseq4iSDssrTqs4TsmYAg7Jqw7ISg7Iic7JyE6rmM7KeAIOyEpOqzhO2VtCDrkZDsl4jri6TripQg7KCQ7J2EIOqwleyhsO2WiOuLpC4KCuywuOqzoCDrhbjtirg6IFs1LiBTaGFyaW5nIHNraWxsc10oNS4lMjBTaGFyaW5nJTIwc2tpbGxzLm1kKQojIyMjIDMuNC4xIFNraWxsc+ydmCDrk7HquInsl5Ag65Sw66W4IOyasOyEoCDrsJzrj5kg7JiI7IucCj4gWyFleGFtcGxlXSDrj5nsnbwg7J2066aEIOyKpO2CrOydmCDsmrDshKDsiJzsnIQKPiAqKuyXlO2EsO2UhOudvOydtOymiCDrk7HquIkqKiAn642U7ZS97Yq47J2YIO2UhOuhoO2KuOyXlOuTnCDtlITroIjsoKDthYzsnbTshZgnIOyKpO2CrOydgCDrlKXrhKTsnbTruYQg7Yak7J2YIOuypO2GoCDqt7jrpqzrk5wg7Iqk7YOA7J2866GcIOunjOuToOuLpC4KPiAqKu2UjOufrOq3uOyduCDrk7HquIkqKiDsl5DshJzripQg642U7ZS97Yq47J2YIEFJIOqwnOuwnOyekCDslYjssL3tmITsnbQg7Leo66+466GcICfrp4jqsJzsobAg7Yqc64udJ+2VmOqzoCDsnojripQg64+Z7J28IOydtOumhOydmCDtlITroaDtirjsl5Trk5wg7ZSE66CI7KCg7YWM7J207IWYIOyKpO2CrOydtCDsnojripTrjbAsIOydtOqyg+ydgCDqsoDsnYAg67Cw6rK97JeQIO2Yleq0kSDquIDslKjsnZgg67iM66Oo7YOI66as7Iqk7Yq4IOuLpO2BrCDsiqTtg4Dsnbwg65SU7J6Q7J247J2064ukLgo+IAo+IOuRkCDqsJzqsIAg64+Z7Iuc7JeQIOyeiOydhCDrlYwsICLrjIDtkZzri5jsnbQg7ZqM7IKsIOuzvO2KuOyXkOyEnCDtlITroaDtirjsl5Trk5wg7Iqk7YKs66GcIDMw7J6l7Kec66asIOy0iOyViCDrsJztkZzsnpDro4wg66eM65Ok7Ja07KSYIuudvOqzoCDtlZjrqbQsIENsYXVkZeqwgCDsnpDrj5nsnLzroZwgKirsl5TthLDtlITrnbzsnbTspogg65Ox6riJ7J2EIOustOyhsOqxtCDrqLzsoIAg67Cc64+ZKirsi5ztgqjri6QuCgrsoITssL3rjIAg64yA7ZGc64qUIOydtOqyg+ydtCBTa2lsbHMg66qp66Gd7JeQ7IScIO2KueyglSDsiqTtgqwg7J2066aE7J2EIOu2iOufrCDssLjqs6DtlbQg66eM65Oc64qUIOqyg+qzvCDqsJnsnYAg6rCc64WQIOyVhOuLiOuDkOqzoCDrrLzsl4jri6QuIOyViOywve2YhCDqtZDsiJjripQgKioi67mE7Iq37ZWcIOqwnOuFkOydtOyngOunjCwgQ2xhdWRl6rCAIOyymOydjOu2gO2EsCDrk7HquInsnYQg66eM65Ok7Ja0IOuRlCDqsoPsnbQg7ZW17IusIioq7J2065286rOgIOuLte2WiOuLpC4KCj4gWyFpbXBvcnRhbnRdIOuTseq4iSDshKTqs4TsnZgg7J207JygIOKAlCDrsoTsoIQg7JWI7KCV7ISxCj4g7ZqM7IKsIOqzteyaqSDsiqTtgqzsnYAg7Ja064qQIOygleuPhCDslYjsoJXtmZTrkJwg67KE7KCEKOyYiDog67Cc7ZGc7JqpIDIuNSDrsoTsoIQp7J2064ukLiDqsJzrsJzsnpAg7JWI7LC97ZiE7J20IOy1nOyLoCDrsJztkZwg7Yq466CM65OcKOuqqOyFmCDqt7jrnpjtlL0g65OxKeulvCDsi6Ttl5jtlZjroKQg7ZW064+EIDIuNSDrsoTsoITsl5DripQg7ZW064u5IOq4sOuKpeydtCDsl4bri6QuIOuLueyepSDqs7Xsmqkg67KE7KCE7JeQIOuwmOyYge2VoCDsiJjripQg7JeG6rOgLCDqs7XroaAg7ZqM7J2Y7JeQ7IScIOqygOymneuQmOuptCAyLjMuMCDrsoTsoIQg65Ox7Jy866GcIOyYrOumrOuKlCDsi53snbTri6QuIENsYXVkZeuKlCDsnbTrn7Ag7IOB7Zmp6rmM7KeAIOqwkOyViO2VtCDsiqTtgqwg65Ox6riJIOyytOqzhOulvCDrp4zrk6TslrQg64aT7JWY64ukLgojIyMgMy41ICDsm4ztgaztlIzroZzsmrAg7JeU7KeA64uI7Ja07J2YIO2VhOyalOyEsQrsoITssL3rjIDsnYAg7JWE64K06rCAIOuUlOyekOyduO2MgCDsnbTsgqzroZzshJwg7J206rKD7J2EIOygnOydvCDrqLzsoIAg7ZW067Sk64uk6rOgIOyWuOq4ie2VmOupsCwg7JqU7KaYIOuTnOuKlCDsg53qsIHsnYQg67Cd7ZiU64ukLiDqt7gg7Lmc6rWs6rCAIOuLqOyInCDquLDtmo0g65SU7J6Q7J247YyA7JeQIOyVieyVhCDsnojripQg6rKD7J20IOyVhOuLiOudvCwgQVgg65SU7J6Q7J24IOq0gOugqCDtjIDsnYQg66eM65Ok7Ja0IOyVhOuCtOyXrOyEnOqwgCDslYTri4jrnbwg66+47LmcIOuTr+ydtCDsiqTtgqzrp4wg66eM65Ok7Ja0IOyngeybkOuTpOyXkOqyjCDqs7XquIntlZjripQg7J2866eMIOyLnOy8nOuPhCwg7J6Q7Iug7J20IOyTsOugpOuKlCDssYXsnZgg7ZW17IusIOyVhOydtOuUlOyWtCDspJEg7ZWY64KY7J24IOyGlOujqOyFmOydtCDrsJTroZwg6re46rKD7J2065286rOgIOunkO2WiOuLpC4KLSAqKu2MjOq4ie2aqOqzvOydmCDqsJXroKXtlagqKjog7JWI7LC97ZiEIOq1kOyImOuKlCDsiqTtgqwg7ZWY64KY66W8IOq5juuKlCDrjbAg7J287KO87J28IOuEmOqyjCDqsbjrprAg7KCB64+EIOyeiOyngOunjCwg7ZWY64KY7J2YIO2MjOq4ie2aqOqzvOqwgCDrp6TsmrAg6rCV66Cl7ZWY64uk6rOgIO2PieqwgO2WiOuLpC4g7KCE7LC964yAIOuMgO2RnOuKlCDqt7jqsoPsnbQg7KKL7J2AIOqysOygleydtOudvOqzoCDrj5nsnZjtlojri6QuCi0gKirsm4ztgaztlIzroZzsmrAg7J6Q64+Z7ZmUIOqysOuhoCoqOiDsiqTtgqzsnYQg6rmO64qUIOqyg+u/kCDslYTri4jrnbwsICrtmozsnZjrpbwg7KSE7J206rGw64KYIOydvO2VmOuKlCDsiqTthZ3snYQg7KSE7J2064qUIOyLneycvOuhnCDsm4ztgaztlIzroZzsmrDrpbwg7J6Q64+Z7ZmU7ZWgIOqyg+ydgCDsnpDrj5ntmZTtlZjqs6AsIEh1bWFuLWluLXRoZS1sb29w7J20IOykkeyalO2VnCDtj6zsnbjtirjsl5DripQg642UIO2IrOyekMK36rKA7Yag7ZWY64qUIOuwqeyLnSrsnLzroZwg7JuM7YGs7ZSM66Gc7Jqw66W8IOq5juyVhOyVvCDtlZzri6QuCi0gKirsm4ztgaztlIzroZzsmrAg7JeU7KeA64uI7Ja0Kio6IO2ajOyCrOyaqcK36rO17JqpIFNraWxsc+ulvCDrp4zrk6TslrQg6rWs7LaV7ZWY64qUIOyCrOuejOydhCDtjrjsnZjsg4EgJ+ybjO2BrO2UjOuhnOyasCDsl5Tsp4Dri4jslrQn65286rOgIOu2gOuluOuLpC4g7J20IOyCrOuejOydgCDrlJTsnpDsnbjsnYQg67O066m0IOyVhOustOqyg+uPhCDtlZjsp4Ag66eQ6rOgIOydtOqyg+unjCDsi5zsvJzslbwg7ZWY66mwLCDrlLDroZwg7J6I7Ja07JW8IOydvOydtCDsp4TtlonrkJzri6QuCiMjIyMgMy41LjEg7JuM7YGs7ZSM66Gc7JqwIOyXlOyngOuLiOyWtOydmCDqtaztmIQ6IOyLoOq3nCDssYTsmqnsnbQg7JWE64uMIOuCtOu2gCDsoITtmZgK7KCE7LC964yAIOuMgO2RnOuKlCDsnbTqsoPsnYQg7ZWY64qUIOyCrOuejOydhCDtmozsgqwg67CW7JeQ7IScIOu9keuKlCDqsoPsnbQg7JWE64uI6528LCDtmozsgqwg7JWI7JeQ7IScIOyLpOustCDqsr3tl5jsnbQg64ukIOyeiOuKlCDsgqzrnozsnbQg7ZW07JW8IO2VnOuLpOqzoCDrs7TslZjri6QuIOyViOywve2YhCDqtZDsiJjripQg65GQIOqwgOyngCDrsKntlqXsnYQg7KCc7Iuc7ZaI64ukLgotICoq7ISg7J6E6riJIOuztOyngSDsoITtmZgqKjog7Ja064qQIOygleuPhCDsl7DssKjqsIAg7J6I64qUIOyEoOyehOq4ieydtOuptOyEnCBBSeulvCDsjajrs7gg67aE7J2YIOuztOyngeydhCDrsJTqvrjripQg67Cp7ZalLgotICoq7KCE7IKs7KCBIOumrO2EsOufrOyLnCDqtZDsnKEg7ZuEIOu2hOuLtCoqOiDtmozsgqwg6rCB6riJwrfsoITsgqzsoIHsnLzroZwg6riw67O4IOydtOyDgeydmCBTa2lsbHPrpbwg7J207ZW07ZWgIOumrO2EsOufrOyLnOyZgCDquLDrsJgg7KeA7Iud7J2EIOqwleygnOyggeycvOuhnCDqtZDsnKHtlZwg65KkIE7rtoTsnZggMeuhnCDsi5zsiqTthZzsnYQg66eM65Oc64qUIOuwqe2WpS4K64uk66eMIO2bhOyekOuKlCDrjZQg7Jik656YIOqxuOumtCDsiJgg7J6I7Jy866+A66GcLCDslYjssL3tmITripQg7J6YIOyVhOuKlCDsgqzrnozsnYQg7ZKA7YOA7J6EIOyeoeycvOuhnCDsoITtmZjtlZjripQg6rKD7J20IOuNlCDruaDrpbwg6rKD7J2065286rOgIOuztOyVmOuLpC4KIyMjIDMuNiDrqqjshZjqt7jrnpjtlL0g7Iqk7YKsIOq1rOy2lSDsgqzroYAKCioq7LC46rOgOioqIFsi7IOd6rCB7J20IOunm+ydtOuQmOuLpCIg66qo7IWY6re4656Y7ZS9IOyYiOygnCDtjpjsnbTsp4BdKGh0dHBzOi8vYWNobWFnZS1zbGlkZXMudmVyY2VsLmFwcC9tb3Rpb24vbWVhbC8pCgrslYjssL3tmIQg6rWQ7IiY64qUIOyKpO2CrOydhCDsoJzrjIDroZwg6rmO7Jy866m0IOyWvOuniOuCmCDqsJXroKXtlbTsp4DripTsp4Ag7J6Q7Iug7J2YIOybueyCrOydtO2KuCDsgqzroYDroZwg7ISk66qF7ZaI64ukLiDstZzqt7wg66qo7IWY6re4656Y7ZS97J20IOycoO2WieydtOudvCDrqqjshZjqt7jrnpjtlL0gU2tpbGxz64+EIOydvOyjvOydvCDrhJjqsowg66eM65Ok7Ja0IOq5juyVmOuLpC4KLSAqKuyekOuPmSDsoJzsnpEg6rO87KCVKio6IEdQVOuCmCDslYTsiqTtirjrnbwoQXN0cmEpIOqwmeydgCDqsoPsnLzroZwg66qo7IWY6re4656Y7ZS97J2EIOunjOuTpOuptCwgQUnqsIAg7Iqk7Iqk66GcIOy9mO2LsOulvCDsp5zqs6Ag7Iuk7IKsIOyYgeyDgeydhCDqsIDsoLjsmKgg65KkIOyekeyXheydhCDsiJjtlontlZzri6QuCi0gKirsgqzsmrTrk5wg7LKY66asKio6IOyCrOyatOuTnOuPhCDsmKTtlIjshozsiqTCt+yYpO2UiCDrnbzsnbTshKDsiqTrpbwg64ukIOywvuyVhCwg7J2M7JWF7JeQIOunnuqyjCDtjrjsp5HtlZjripQg7J2Y7KeA6rmM7KeAIOuEo+yWtCDrkZDsl4jri6QuCi0gKirtmZXsnqUg6rCA64ql7ISxKOuvuOuwmOyYgSkqKjog7Iqk7YKs7J2EIOuNlCDrp4jqsJzsobDtlZjrqbQgMTFMYWJzKEVsZXZlbkxhYnMpIEFQSeyZgCDsl7Drj5ntlbQg7J2M7ISxIOuCmOugiOydtOyFmOydhCDsg53shLHtlZjqs6Ag7J6l66m07JeQIOunnuy2sCDsu7ftjrjsp5HquYzsp4Ag6rCA64ql7ZWY7KeA66eMLCDslYjssL3tmITripQg6reA7LCu7JWE7IScIOq3uCDrtoDrtoTsnYAg67qQ64ukLgotICoq67Kh7YSwIOyekeyXhSoqOiDrsqHthLAg64+E7ZiV64+EIEZBUCjrlJTsnpDsnbgg7Yi0KeyXkOyEnCDsp4HsoJEg6re466awIOqyg+ydtCDslYTri4jrnbwg7KCE67aAIOyVhOyKpO2KuOudvCA266GcIOuPjOugpCDqt7jroLjri6QuCgo+IFshdGlwXSDqsIDtjrjsp5Hrs7gg6rKA7YagIOq4sOuKpSDstpTqsIAKPiDstIjquLAg67KE7KCE7JeQ7ISc64qUIOuplOyLnOyngCDsnpHshLEg65Ox7J20IOyZhOyEseuQnCDqsoPsnYQg67SQ7JW866eMIO2ZleyduO2VoCDsiJgg7J6I7JeI64ukLiDsiqTtgqzsnYQg66eO7J20IO2KnOuLne2VtCwg6rCA7Y647KeR67O47J2EIO2VnCDsnqXsnZggSFRNTOuhnCDrp4zrk6TslrQgIuydtOuMgOuhnCDtlaDquYzsmpQ/IOuplOyLnOyngCDrp4jsnYzsl5Ag7JWIIOuTpOuptCDrp5DtlbTso7zshLjsmpQi65286rOgIOuztOyXrOyjvOqzoCDsgqzsmqnsnpDqsIAgJ+u6gOywjCjqsbDsoIgpJ+ulvCDrqLnsnbwg7IiYIOyeiOuKlCDquLDriqXquYzsp4Ag64Sj7Ja0IOuRkOyXiOuLpC4KLSAqKuqzoOydjOyniCDsgqzsmrTrk5wqKjog7JWe7IScIOuztOyXrOykgCDqsoPsnYAg66+465SUKE1JREkpIO2MjOydvOydtOyXiOycvOuCmCwg7Iuk7KCc66Gc64qUIOqzoOydjCjquLDqs4TsnYwpIOqwmeydgCDqsoPsnbQg7JWE64uMIOqzoOydjOyniCBtcDPrpbwg6rCA7KeA6rOgIOunjOuTpOyWtCDrs7Trnbzqs6Ag7ZWY6rOgIOy9mO2LsOuPhCDsp4HsoJEg7ZmV7J247ZW0IOygnOyeke2WiOuLpC4KLSAqKuyGjOyerCDshKDsoJUqKjog7IKs7Jq065Oc64qUIEFJ6rCAIOyYpO2UiOyGjOyKpOuhnCDsoIHslrQg64aT7J2AIOqyg+ydhCDssL7slYTsmKTrnbzqs6Ag7Iuc7YKoIOqyg+ydtOuLpC4KCj4gWyFzdWNjZXNzXSDtmozsgqwg6rO17JqpIOyKpO2CrOyKpOulvCDqtazstpXtlbTslbwg7ZWc64ukCj4g64+Z7J28IOyKpO2CrOydhCDsk7DrkJgsIOyLpOyCrCDsmIHsg4HsnYAg642U7ZS97Yq47JeQ7IScIOywjeyWtOyYqCDrk5zroaAg7JiB7IOB7J2EIO2ZnOyaqe2VmOqzoCDsl4bripQg67aA67aE7J2AIOuyoe2EsOuhnCDqt7jroKQg7L2Y7Yuw66W8IOynnOqyjCDtlZjrqbQg7ZKI7KeI7J20IOqwkeyekOq4sCDtmZUg7Jis65286rCE64ukLiDsiqTtgqwg7ZWY64KY66eMIOyDneqyqOuPhCDsnbTrn7Ag7YyM6riJ7Zqo6rO86rCAIOyDneq4sOuvgOuhnCwg67CY65Oc7IucIO2SgO2DgOyehCDsnqHsnbQg7ZWE7JqU7ZWY64ukLgo+IOyViOywve2YhCDqtZDsiJjripQg7ZSE66Gg7Yq47JeU65OcIOybueyCrOydtO2KuOuPhCDrp4jssKzqsIDsp4DrnbzrqbAsIOuUlOyekOydtOuEiOyXkOqyjCDrj4jsnYQg642UIOyjvOuNlOudvOuPhCDrp4zrk6Ag6rKw6rO866y87J2EIFNraWxsc+uhnCDrp4zrk6TslrQg67Cb7JWEIOqzteyaqSDsnpDsgrDsnLzroZwg66eM65Ok7Ja0IOuRkOqyoOuLpOqzoCDtlojri6QuIOq3uOufrOuptCDqt7ggU2tpbGxz66GcIOuPjOumtCDrlYwsIOydvOydvOydtCDtgbTrpq3tlZjripQg7J6R7JeF7J2YIDkwJSDsnbTsg4HsnbQg65iR6rCZ7J20IOyerO2YhOuQmOupsCwg7LSI67O07J6Q6rCAIOuPjOugpOuPhCDsm6zrp4ztlZjrqbQg6re465+wIO2MjOq4ie2aqOqzvOqwgCDsg53quLTri6Tqs6Ag7ISk66qF7ZaI64ukLgojIyA0LiBQYXJ0IDQ6IEFJIOyggOuEkOumrOymmCDsvZTsiqTsm6jslrQg67CPIFBCTCDqs7zrqqkg7Iug7LKtCuyghOywveuMgCDrjIDtkZzripQg7J6s67CM64uk6rOgIOuwmOydke2VmOupsCwgQUkg7KCA64SQ66as7KaYIOy9lOyKpOybqOyWtCDqsbTsl5Ag64yA7ZW0IOy1nOyYgeyerCDqtZDsiJjri5jsnbQg7Luo7Y6M7J2EIOyViCDtlbTspIDri6Tqs6Ag7Ja46riJ7ZaI64ukLiDslYjssL3tmIQg6rWQ7IiY64qUIOyggOuFgeyXkCDsoITtmZTqsIAg7JmU7Jy866mwLCDqtZDsiJjri5jsnbQg67CU67mg7IScIOyggOuFgeyXkCDrs7Tsi6Dri6Tqs6Ag7KCE7ZaI64ukLgotICoq7ISc66WY7IOBIOyLoOyyrSoqOiDslYjssL3tmITripQg7ISc66WY7IOBIOyLoOyyreydhCDtlojsnLzrqbAsIO2Vmeu2gCDqs7zrqqnsnLzroZwgUEJMIOqzvOuqqSDsi6Dssq3shJzrpbwg64OI64ukLgotICoq6rO866qp66qFKio6ICfrr7jrlJTslrQg7L2Y7YWQ7LigIOuwlOydtOu4jOy9lOuUqSfsnbTrnbzripQg7KCc66qp7Jy866GcLCDrsJTsnbTruIzsvZTrlKnsnYQg7Zmc7Jqp7ZWY64qUIOyImOyXheydtOuLpC4KIyMjIDQuMSDrsJTsnbTruIzsvZTrlKkgUEJMIOqzvOuqqSDqtazsg4EK7KCE7LC964yAIOuMgO2RnOuKlCDrrLTsl4fsnYQg7ZW065Oc66as66m0IOuQmOuKlOyngCDrrLvsnpAsIOyViOywve2YhCDqtZDsiJjripQg65Sx7Z6IIO2VtOykhCDqsoPsnbTrnbzquLDrs7Tri6Qg7ZWY6riwIOuCmOumhOydtOudvOqzoCDri7Xtlojri6QuIOyEnOulmOyDgSDqt7jroIfqsowg7ZWY6rOgIOuzuOyduOydtCDri6Qg7IiY7JeF7ZW064+EIOyngOyepeydgCDsl4bsp4Drp4wsIOydtOyZleydtOuptCDtlbTrs7Tqs6Ag7Iu264uk6rOgIO2WiOuLpC4KCj4gWyFub3RlXSDqtZDrgrQg7IiY7JqUCj4g67CU7J2067iM7L2U65SpIOyImOyXheydgCDtlZnqs7wg7LCo7JuQ67+QIOyVhOuLiOudvCDqtZDrgrTsl5DshJzrj4Qg7IiY7JqU6rCAIOq9pCDsnojripQg6rKD7Jy866GcIOyVjOqzoCDsnojri6QuCi0gKirrjIDtkZwg7JiI7IucKio6IOuqqOyFmOq3uOuemO2UvSwgSFRNTCwgUERGIOunjOuTpOq4sCDrk7HsnYQg7Iqk7YKs66GcIOunjOuTpOyWtCDrs7TripQg6rKD7J20IOuwlOydtOu4jOy9lOuUqeydmCDrjIDtkZzsoIEg7JiI7Iuc64ukLgotICoqU2VyaW91cyDrsoTsoIQqKjog642UIOynhOyngO2VmOqyjCDrgpjqsIDrqbQsIO2VnOq4gCDrrLjshJzrpbwgJ0FJ6rCAIOunjOuTpOyWtOuCtOyEnOudvOuPhCDrp4zrk6TslrQg67SQ6528J+yymOufvCDthqDtgbDsnYQg7Y2867aA7Ja07JW8IO2VmOuKlCDsgqzsnbTspojquYzsp4Ag7ZW067O8IOyImCDsnojri6QuCi0gKirsi6TrrLQg7Jew6rOEIOq1rOyDgSoqOiDrjZTtlL3tirgg7Iuk66y07JeQIOunnuqxsOuCmCwg642U7ZS97Yq4IOq0gOygkOyXkOyEnCDsp4Dsl60g7ZWZ7IOd65Ok7J20IO2VtOy7pO2GpMK36rO166qo7KCE7JeQIOuCmOqwiCDrp4ztlZwg7IKs7J207KaI7J2YIOyVhOydtO2FnOycvOuhnCDrp57strAg6rCV7KCc66GcIOyLnO2CpOuKlCDqsoPqs7wg7Jew6rOE7ZWY66m0IOuNlCDssrTqs4TsoIHsnbwg6rKD7J206528IOuztOyVmOuLpC4KIyMjIDQuMiDstpjsspwgQUkg7LKt64WE7LKtIO2UhOuhnOygne2KuCDsl7Dqs4Qg7KCc7JWICuyghOywveuMgCDrjIDtkZzripQg7J6Q7Iug7J20IOuwlOydtOu4jOy9lOuUqeycvOuhnCDstpjsspzsi5wg7LKt64WE66+4656Y67O07KKM7Jet7J2EIO2VmOqzoCDsnojri6TrqbAsIOyyreuFhOygleyxhSDsoITssrTrpbwg66eh64ukIOuztOuLiCDsnbTrsojsl5AgJ+y2mOyynCBBSSDssq3rhYTssq0n7J2EIOunjOuTpOugpCDtlZzri6Tqs6Ag67Cd7ZiU64ukLgotICoq65SU7J6Q7J24Kio6IOy2mOyynOyLnOyyrSBVSeulvCDri6Qg67Kg6ru07Jik65286rOgIO2VtOyEnCDrp4zrk6Ag6rKD7J2064ukLgotICoq7LKt64WEIDXqsJwg7Li1IOu2hOulmCoqOiDsoITssL3rjIDsnbQg7JqU7KaYIOqwleyhsO2VmOuKlCDqsoPsnLzroZwsIOyyreuFhOydhCA16rCcIOy4teycvOuhnCDrgpjriKDslbwg7ZWc64uk64qUIOqyg+ydtOuLpC4g6rCZ7J2AIOyyreuFhOydtOudvOuPhCDri6Qg6rCZ7KeAIOyViuycvOupsCwg7ZWZ7IOdIOyyreuFhCDsnoXsnqXsl5DshJzsnZgg7KCV7LGFIOyalOq1rOqwgCDri6TrpbTquLAg65WM66y47J2064ukLgotICoq7KCR7IiYIOuwjyDrsLDrtoQg7LK06rOEKio6IOuLpOyEryDqsJzroZwg7Kq86rCc7IScLCDsoJHsiJjrkJjrqbQg6rKA7Yag7ZWY6rOgIOydtOulvCDsmIjrpbwg65Ok7Ja0IOq1kO2GteqzvCwg6rO164+Z7KO87YOd6rO8IOuTseyXkCDrsLDrtoTtlZzri6QuIOy2mOyynOyLnOyXkOyEnCDsnZjrrLTsoIHsnLzroZwg66eM65Ok7Ja0IOyatOyYge2VmOuKlCDqsoPsnbTri6QuCi0gKirsi5zsnqXsi6Qg7ZiE7Zmp7YyQKio6IOydtOuvuCDsi5zsnqXri5gg7Iuk7JeQ7IScIOuztOuKlCDtmITtmantjJDrj4Qg66eM65Ok7Ja0IOuGk+yVmOuLpC4KPiBbIWltcG9ydGFudF0g7JiI7IKw7J20IOyVhOuLjCDssq3rhYQg7KO864+EIO2UhOuhnOygne2KuAo+IOydtOqyg+ydgCDstpjsspzsi5zqsIAg7JiI7IKw7J2EIOunjOuTpOyWtCDrj4gg64K06rOgIO2VmOuKlCDqsoPsnbQg7JWE64uI6528LCDssq3rhYTrk6TsnbQg7LKt64WEIOusuOygnOulvCDtlbTqsrDtlZjroKTqs6Ag7ZWY64qUIOqyg+ydtOuLpC4g7KeA7JetIO2YhO2ZqSDsqr3snbTrr4DroZwg7IiY7JeF6rO8IO2VqOq7mCDtlbTrs7TrqbQg7KKL6rKg64uk64qUIOygnOyViOydtOuLpC4K7KCE7LC964yA7J2AIOy2mOyynCBBSSDssq3rhYTssq3snYQg7JWI7LC97ZiEKOq1kOyImOuLmCnqsIAg7KeE7ZaJ7ZWY64qUIOq1kOqzvOuqqeqzvCDsl7Dqs4TtlbQg7JmE7ISx7ZW0IOuztOyekOqzoCDsoJzslYjtlojqs6AsIOyViOywve2YhOuKlCDsoovsnYQg6rKDIOqwmeuLpOqzoCDri7Xtlojri6QuCiMjIyA0LjMg66+87JuQ7J2EIOuEmOyWtOyEoCBBSSDtlIzrnqvtj7wg6rWs7IOBCu2YhOyerOuKlCDsmIjrpbwg65Ok7Ja0ICLrsKQgMTHsi5wg64SY7Jy866m0IOynkeyXkCDqsIgg67Cp67KV7J20IO2DneyLnOu/kOydtOyXkOyalCLrnbzripQg7ZiE7JWI7J2EIOuIhOq1sOqwgCDsmKzrpqzripQg67Cp7Iud7J2064ukLiDsnbTrlYwg7J6s7JuQKO2ajOybkCkg65Ox66Gd7J2EIO2VmOqzoCAn7ZWZ7IOdIOyyreuFhCcsICftmITslYgg66y47KCcOiDsnbTrj5kn7LKY65+8IOu2hOulmO2VtCDtj6zsiqTtirjsnofsl5Ag64Ko6rKoIOuGk+ycvOuptCDrkJzri6QuIO2VmOyngOunjCDsnbTripQg66+87JuQ7J2EIOyLoOyyre2VmOqzoCDri7Xrs4DrsJvripQg7KCV64+E64ukLgoKPiBbIXF1ZXN0aW9uXSDssq3rhYQg7Jew66C5IOq4sOykgOqzvCDtlIzrnqvtj7wg7ZmV7J6lCj4g67CU7J2067iM7L2U65Sp7JeQ7IScIOyLpOygnCBBSSDssq3rhYTssq3snYAgMTnshLjrtoDthLAgNDXshLjquYzsp4DqsIAg7LKt64WE7J2064ukLiDslYjssL3tmITripQgODbrhYTsg53snbTrqbAsIOydtOyXkCDsoITssL3rjIDsnYAgIjQ57IS46rmM7KeALCDsp4DquIggNDXshLjquYzsp4DqsIAg7LKt64WEIuydtOudvOqzoCDslrjquIntlojri6QuIOydtCDssq3rhYTrk6TsnbQg7Zmc64+Z7ZWgIOunjO2VnCBBSSDtlIzrnqvtj7zsnYQg7ZWc67KIIOunjOuTpOyWtCDrs7TripQg7Luo7IWJ7J2AIOyWtOuWpOyngCDsoJzslYjtlojri6QuCiMjIyA0LjQgJ+uqqOuRkOydmCDstpjsspwnOiDtlIzrnqvtj7zsnZgg6riw67O4IOq1rOyDgQrsoITssL3rjIAg64yA7ZGc64qUIO2YhOyerCAn7KCV7LGF7KCc7Ja4IOyYpO2UiCDtlIzrnqvtj7wn7J20652864qUIOy7qOyFieydhCDsnqHqs6Ag7Zi87J6QIOunjOuTpOqzoCDsnojri6Tqs6Ag7ISk66qF7ZaI64ukLiDsnbTqsoPrp4wg65GQ66m0IOuLqOyInO2eiCDrr7zsm5Drp4wg7Jis66as64qUIOyCrOydtO2KuOqwgCDrkJjslrQg67KE66as66+A66GcLCDssq3rhYTrk6TsnYQg7JyE7ZWcIOy7pOuupOuLiO2LsCDrk7Eg64uk7JaR7ZWcIOq4sOuKpeydhCDtlajqu5gg7KeR7Ja064Sj64qUIOq4sO2ajeydhCDqtazsg4HtlZjqs6Ag7J6I64ukLgoKPiBbIWltcG9ydGFudF0g7ZW17IusIOuqqe2RnAo+IOy2mOyynOyLnOyXkCDssq3rhYQg7KCV7KO866W8IOuKmOumrOuKlCDqsoPsnbQg66qp7ZGc7J2066mwLCDqt7gg7ZW17Ius7J2AIO2VnOumvOuMgOyZgCDqsJXsm5DrjIDsnbTri6QuIOydtOulvCDrjIDtlZnsg53rk6Tqs7wg7ZWo6ruYIOunjOuTpOyWtCDrs7TqsqDri6TripQg7Leo7KeA66GcIOyLnOyeke2VnCDsnbzsnbTri6QuCuyViOywve2YhOuKlCAi64iE6rWw6rCA6rCAIOusuOygnOulvCDsmKzrpqzrqbQg6re4IOusuOygnOulvCDtlbTqsrDtlbQg7KO864qUIOutlOqwgOulvCDrsJTsnbTruIzsvZTrlKnsnLzroZwg64+E7KCE7ZW07IScIOunjOuTpOyWtCDrs7TripQg7Iuc7Iqk7YWc7J246rCAIuudvOqzoCDsp4jrrLjtlojqs6AsIOyghOywveuMgOydgCDqt7jrn7Ag67Cp7Zal7J2EIOqwgOqzoCDsi7bri6Tqs6Ag64u17ZaI64ukLiDrmJDtlZwg7IKs7ZqM7ZWZwrfsgqztmozqs7ztlZkg7KCE6rO17J24IOq1kOyImOuLmCDtjIDqs7wg7ZWo6ruYIO2VtOuztOuptCDslrTrlqjsp4Ag7KCc7JWI7ZaI64ukLgojIyMgNC41IOqzteustOybkCDssLjsl6zsmYAg7LKt64WEIOygleyxhSDtlbTqsrAg6rWs7KGwCi0gKirqs7XrrLTsm5Drk6TsnZgg67CY7J2RKio6IOyXrOq4sOq5jOyngCDrp4zrk6TslrQg64aT7Jy864uIIOqzteustOybkOuTpOydgCDquLDrjIAg67CYLCDrtojslYgg67CY7J2064ukLiDqs7XrrLTsm5DsnbQg7ZWgIOydvOydtCDrhIjrrLQg66eO7JWE7KeA6rOgIOuqqOuToCDrgrTsmqnsnYQg7J6F66Cl7ZW07JW8IO2VmOq4sCDrlYzrrLjsnbTri6QuCi0gKirsoIQg67aA7IScIOywuOyXrCoqOiDssq3rhYTrk6TsnbQg7KeI66y47ZWY66m0IOuvvOybkOyLpOyXkOyEnOunjCDtlZjripQg6rKD7J20IOyVhOuLiOudvCDrqqjrk6Ag67aA7ISc7J2YIOuLtOuLueyekOqwgCDri6Qg67aZ7Ja07IScIO2VtOyVvCDtlZzri6QuCi0gKirsp4HsoJHsoIEg66y47KCcIO2VtOqysCoqOiDqt7jrnpjslbwg6rO166y07JuQ65Ok7J20IOyyreuFhCDsoJXssYXsl5Ag7KeB7KCRIOuTpOyWtOqwgOuptOyEnCDsp4Tsp5zroZwg66y47KCc66W8IO2VtOqysO2VtCDspIQg7IiYIOyeiOuLpC4g6rO166y07JuQ65Ok7J2AIOyyreuFhCDrrLjsoJzrpbwg7J6YIOuqqOultOq4sCDrlYzrrLjsnbTri6QuCgo+IFshZXhhbXBsZV0g6rWs7KeBIOyyreuFhCDsgqzroYAKPiDqtazsp4Eg7LKt64WE7J20ICLsgrDsl4Xri6jsp4Ag6rCA64qUIOuyhOyKpCDstpzqt7zsi5zqsITsnbQg7ZWcIOuMgOu/kCLsnbTrnbzripQg7J207JW86riw66W8IOuwlOuhnOuwlOuhnCDsmKzrpqzrqbQsIOqzteustOybkOuTpOydgCDsnbTrpbwg67O06rOgIO2VtOqysO2VtOyVvOqyoOuLpOqzoCDtjJDri6jtlZzri6QuIOyLnOyepeydgCDstpzqt7ztlbTshJwg7J20IO2ZlOuptOunjCDrs7TrqbAgIuuLteuzgOydtCDsmZwg7KeA7Jew65CY6rOgIOyeiOyWtD8i65286rOgIOyxmeq4sOqyjCDrkJzri6QuCuyghOywveuMgOydgCDsnbTqsoPsnbQg7J2466y47IKs7ZqM7Jy17ZWp7Jew6rWs7JuQIOyqveyXkOyEnCDtlZjquLAg65SxIOyii+ydgCDsgqzsl4XsnbQg7JWE64uM7KeAIOygnOyViO2WiOuLpC4KIyMjIDQuNiDtlZnsg53rk6TsnbQg66eM65OkIOy9mO2FkOy4oCDrsKntlqUK7JWI7LC97ZiEIOq1kOyImOqwgCDtlZnsg53rk6Tsl5Dqsowg7Ja065akIOyLneycvOuhnCDsvZjthZDsuKDrpbwg66eM65Ok6rKMIO2VoCDqsoPsnbjsp4Ag66y77J6QLCDsoITssL3rjIAg64yA7ZGc64qUCuyyreuFhOydmCDsnoXsnqXsl5DshJwgJ+uLueq3vCcg6rCZ7J2AIOyVseyymOufvCDsu6TrrqTri4jti7Drpbwg66qo7Jy864qUIOyepey5mOulvCDrp4zrk5zripQg6rKD7J2065286rOgIOyEpOuqhe2WiOuLpC4KLSAqKuuMgOyDgSoqOiAxNeyEuOu2gO2EsCA0NeyEuCDssq3rhYTsnbTrnbzrqbQg7LaY7LKc7IucIEFJIOyYqOudvOyduCDtlIzrnqvtj7zsl5Ag65Ok7Ja06rCAIOustOyWuOqwgCDtlbTrs7wg7IiYIOyeiOuKlCDsnqXsuZjrpbwg64ukIOunjOuTnOuKlCDqsoMuCi0gKirspJHqs6DsnqXthLAg7JWE7J2065SU7Ja0Kio6IOyViCDsk7DripQg66y86rG07J2EIOu5jOugpOyjvOuKlCDsgqzsl4Ug65OxIOyyreuFhOuTpOydmCDslYTsnbTrlJTslrTsl5DshJwg64KY7Jik64qUIOq4sOuKpS4KLSAqKuq4sOuzuCDqsJzrhZAqKjog7KeA7Jet7IKs7ZqMIOusuOygnCwg7Yq57Z6IIOyyreuFhOydmCDrrLjsoJzrpbwg7LKt64WE7J20IO2RvOuLpOuKlCDqsJzrhZAuIOyghOywveuMgOydgCDsoJXssYUg7Kq97J206528ICfssq3rhYQg7KCV7LGFIOyerOybkCDtlIzrnqvtj7wn7J2065286rOgIO2WiOyngOunjCDsl6zquLDsl5Ag6riw64ql7J2EIO2VmOuCmOyUqSDsp5HslrTrhKPripQg67Cp7IudLgo+IFshdGlwXSDroZzqt7jsnbgg67CPIO2UjOueq+2PvCDthrXtlakKPiDroZzqt7jsnbjsnYAg7ZWY64KY7J2YIOyVhOydtOuUlOuhnCDtlZjqs6AsIO2VmeyDneuTpOydtCDrp4zrk6Ag7ZSM656r7Y+87J2EIOuplOyduCDtlIzrnqvtj7zsnLzroZwg65GQ6rOgIOqzgeqwgOyngOulvCDss5Drj4Qg65Cc64ukLiBTU0/roZwg7Jew64+Z7ZW0IO2VnOumvOuMgOyZgCDtlajqu5gg67CU7J2067iM7L2U65SpIOqwnOuFkOycvOuhnCDsp4Dsl63sgqztmowg66y47KCc66W8IO2VtOqysO2VmOuKlCDrsKntlqUuCiMjIyA0Ljcg7JWE7J2065SU7Ja0MTog6rO17Jyg7YOd7IucIOyCrOuhgAoKPiBbIWV4YW1wbGVdIOqzteycoO2DneyLnCDrrLjsoJwKPiDstpjsspzsl63sl5DshJwg7ZWZ7IOd65Ok7J20IOqwgeyekCDtg53si5zrpbwg7YOA6rOgIOyYpOuKlCDrjIDsi6Ag66qw7JWE7IScIO2DgOuKlCDqs7XsnKDtg53si5wg6riw64ql7J2EIOunjOuTpCDsiJgg7J6I64ukLiDtlZzrprzrjIAg6rCA64qUIO2VmeyDneuTpOydtCDsp4DtlZjssqDCt0lUWOyXkOyEnCDrgrTroLjsp4Drp4wg7ISc66GcIOyWvOq1tOydhCDrqrDrnbwg7YOd7Iuc66W8IOqwmeydtCDrqrsg7YOA6rOgLCDqsIHsnpAg6riw67O47JqU6riIIDXsspzsm5DslKkg64K06rOgIOyYqOuLpC4g64S37J20IO2DgOuptCAxLDUwMOybkOyUqSDrgpjriKAg64K8IOyImCDsnojripTrjbAg7J2065+wIOyCrOyGjO2VnCDrrLjsoJzrj4Qg67CU7J2067iM7L2U65Sp7Jy866GcIOqzteycoO2DneyLnCDslbHsnYQg66eM65OkIOyImCDsnojri6QuCiMjIyA0LjggUEJMIO2UhOuhnOygne2KuOydmCDquLDsiKAg6rWs7ZiEIOyngOybkCDrsKntlqUK7JWI7LC97ZiEIOq1kOyImOuKlCDrp4zrk6Tri6Qg67O066m0IOyWtOugpOybjOyngOuKlCDsp4DsoJDsnYQg7KeA7KCB7ZWY66mwLCDssqsg67KI7Ke464qUIOyVseyKpO2GoOyWtOuCmCDsm7nsiqTthqDslrTroZwg6rCA7KeAIOunkOyekOuKlCDqsoPsnbTrnbzqs6Ag7ZaI64ukLgotICoq7JWxIOyLnOuMgCDsooXro4wg6rSA7KCQKio6IO2VnOumvOuMgOyXkOyEnCBITEwsIOy6mOumrCDrk7HsnYQg66eM65Ok7KeA66eMLCDsoITssL3rjIDsnYAg7JWxIOyLnOuMgOqwgCDrgZ3rgqzri6Tqs6Ag67O064qUIOyjvOydmOudvCDsmIjsgZwg64+E66mU7J24IO2VmOuCmCDtjIzshJwg7ZWZ7IOd65Ok7J20IOybueyXkCDrk6TslrTsmYAg66qo65OgIOqxuCDtlZjqsowg7ZWY64qUIOuwqeyLneydhCDshKDtmLjtlZzri6QuCi0gKipQV0Eg7Zmc7JqpKio6IOybuSDquLDrsJjsnLzroZwg7ZWY65CYIFBXQSDrsKnsi53snLzroZwg7ZW064+EIOuQnOuLpC4KLSAqKu2RuOyLnCDslYzrprwqKjog7JWM66a87J2064KYIO2RuOyLnCDslYzrprzsnbQg7ZWE7JqU7ZWY66m0IOumrOuppOuyhCDsvZwg7JWx7LKY65+8IO2RuOyLnCDslYzrprwg7KCE7JqpIOyVsSDtlZjrgpjrp4wg66eM65Ok7Ja0IOyXsOuPme2VmOqxsOuCmCwg7LaY7LKc7Iuc7JeQIOyYiOyCsOydhCDsmpTssq3tlbQg7Lm07Lm07Jik7YahIOyVjOumvO2GocK366y47J6Q66mU7Iuc7KeA66GcIOuCmOqwgOqyjCDtlaAg7IiYIOyeiOuLpC4g7JiI7IKw7J20IOyXhuycvOuptCBTTVMg6riI7JWh66eMIOu2gOuLtO2VmOuKlCDrsKnsi53rj4Qg6rCA64qlLgojIyMgNC45IOuNlO2Uve2KuOydmCDrsLHsl5Trk5wg7KeA7JuQ6rO8IOyCsO2Vme2YkeugpQoK7JWI7LC97ZiEIOq1kOyImOuKlCDqs7Xsmqkg7JWx7J2EIOyDneqwge2VmOuptCDsgqzsmqnsnpDqsIAg7JqU7LKt7ZWY66m0IOq3uOqyg+ydhCDsoJHsiJjtlbQg67Cx7JeU65OcIOyLnOyKpO2FnOydhCDqtaztmITtlZjripQg67aA67aE7J20IOygnOydvCDslrTroLXri6Tqs6Ag7KeA7KCB7ZaI64ukLgoKPiBbIW5vdGVdIOyghOywveuMgCDrjIDtkZzsnZgg7L2U66mY7Yq4OiDsgrDtlZntmJHroKXsnZgg7ZW17IusCj4g67Cx7JeU65Oc64qUIOyWtOugteyngOunjCDrsJTsnbTruIwg7L2U65Sp7Jy866GcIOyDgeuLuSDrtoDrtoQg7ZW06rKw65CY66mwLCDqt7jqsoPsnbTslbzrp5DroZwg7IKw7ZWZ7ZiR66Cl7J2EIO2VmOuKlCDsnbTsnKDri6QuIO2VmeyDneuTpOydtCDslZ7ri6jquYzsp4Drp4wg66eM65Ok7Ja0IOyjvOuptCDtmozsgqzsl5DshJwg67Cx7JeU65OcIOqwnOuwnOyekCDtlZwg66qF7J2EIOu2meyXrCDsgrDtlZntmJHroKXsnYQg7ZWY6rKg64uk64qUIOqygy4g7ZWZ7IOd65Ok7JeQ6rKMIOyCrOyaqeyEseqzvCDsoJzsnpEg67aA67aE7JeQ7IScIOyVhOydtOuUlOyWtOulvCDrsJvqs6AsIOq0nOywruuLpCDsi7bsnLzrqbQg67Cx7JeU65Oc66W8IOuNlCDqsJzrsJztlZjripQg7IudLgojIyMgNC4xMCAn66qo65GQ7J2YIOy2mOyynCcg67iM656c65OcIOq1rOyDgQrsoITssL3rjIAg64yA7ZGc64qUIO2KueyglSDrsoTti7Dsu6wg7JWx7J20IOyVhOuLiOudvCDslYjssL3tmIQg6rWQ7IiY7JmAIO2VqOq7mCDruIzrnpzrk5zrpbwg7ZWY64KYIOunjOuTpOyekOqzoCDsoJzslYjtlojri6QuCi0gKirruIzrnpzrk5zrqoUqKjog7LaY7LKc7J2YIOuqqOuToCDqsoPsnYQg7ZW06rKw7ZW0IOykgOuLpOuKlCDsnZjrr7jroZwgJ+uqqOuRkOydmCDstpjsspwnLiDsmpTsppggJ+uqqOuRkOydmCfqsIAg64yA7IS47J206riwIOuVjOusuC4KLSAqKuuPhOuplOyduCoqOiBg66qo65GQ7J2Y7LaY7LKcLmFpYCwgYGV2ZXJ5Q2h1bmNob24uYWlgIOuTsSDtlZnsg53rk6TsnbQg7KeB6rSA7KCB7Jy866GcIOyDneqwge2VoCDsiJgg7J6I6rOgIOq1rOq4gCDqsoDsg4kg7IOB64uo7JeQIOuCmOyYpOqyjOuBlCDtlZjripQg64+E66mU7J24LgotICoq6riw7ZqNIOyjvOyytCoqOiDqtZDsiJjri5jsnbQg6riw7ZqN7ZW07IScIOynhO2WiS4KCj4gWyFpbXBvcnRhbnRdIO2PrO2KuO2PtOumrOyYpOuhnOyEnOydmCDshJzruYTsiqQKPiDtlZnsg53rk6TsnbQg66eM65OgIOyEnOu5hOyKpOqwgCDslrTrlJjqsIDsl5DshJwg7Iuk7KCcIOyEnOu5hOyKpOuQmOqzoCDsnojslrTslbwg7Y+s7Yq47Y+066as7Jik6rCAIOuQnOuLpC4g6rCc67Cc7J6Q6rCAIOyVhOuLjCDrr7jrlJTslrTsiqTsv6gg7ZWZ7IOd65Ok7JeQ6rKMIOq5gyhHaXQp7J2EIOuLpOujqOqyjCDtlZjripQg6rKD7J2AIOunkOydtCDslYgg65CY66mwLCDrjIDrtoDrtoQg7LKY7J2M64+EIOuquyDtjJDri6QuIO2VtOu0pOyekCDsnKDtipzruIwg7LGE64SQIO2VmOuCmCDrp4zrk6TslrQg7JiB7IOBIOuqqOycvOuKlCDsoJXrj4Tsl5Ag6re47Lmc64ukLgrsoITssL3rjIDsnYAg7ZWZ7IOd65Ok7J20IOq4sO2aje2VtOyEnCDtlbTsu6TthqTsspjrn7wg66eM65OgIOyEnOu5hOyKpOulvCDsp4Dsl60g7JeF7LK07J24IOyekOyLoOuTpOydtCDshJzruYTsiqTtlZjqsqDri6Tqs6Ag7ZaI64ukLiDrgqjslYTsnojripQg7ISc67KE66W8IOuLpCDsjajso7zrqbAgJ+uqqOuRkOydmCDstpjsspwn7J2EIOykkeyLrOycvOuhnCDru5fslrQg64KY6rCA64qUIOq1rOyhsOuLpC4KIyMjIDQuMTEg67mE7JiB66asIOyatOyYgeqzvCDst6jsl4Ug7Jew6rOECi0gKirruYTsmIHrpqwg66qp7KCBKio6IGDrqqjrkZDsnZjstpjsspwub3JnYOuhnCDqsIDrj4Qg65CY66mwLCDruYTsmIHrpqzrpbwg66qp7KCB7Jy866GcIOyEnOu5hOyKpO2VnOuLpC4g66ek7Lac7J2EIOuCtOuKlCDqsoPsnbQg7JWE64uI64ukLgotICoq7JiB66asIOyghO2ZmCDsi5wg7ZiR7J2YKio6IO2VmeyDneydtCDslYTsnbTrlJTslrTrpbwg7JiB66asIOuqqeyggeycvOuhnCDsjbzsnYQg65WMIOusuOygnOqwgCDsg53quLgg7IiYIOyeiOycvOuvgOuhnCwg6rWQ7IiY64uYwrftlZnsg53Ct+2ajOyCrOqwgCDtmJHsnZjtlZzri6QuCi0gKirst6jsl4Ug7Jew6rOEKio6IOuPiOydtCDrkJjripQg67aA67aE7J20652866m0IO2VtOuLuSDtlZnsg53snYQg7ZqM7IKs7JeQIOy3qOyngeyLnOy8nCDqt7gg7YyM7Yq466W8IOunoeuKlCDsp4Hsm5DsnLzroZwg65GYIOyImOuPhCDsnojri6QuIOq3uOqyg+ydtCDsgrDtlZntmJHroKXsnbTrqbAg7KeA7Jet7JeQ7IScIOydmOuvuOqwgCDsnojri6QuCiMjIyA0LjEyIO2VmeyDnSDsl63tlaDsl5Ag64yA7ZWcIOq1kOyImOuLmCDsnZjqsqwK7JWI7LC97ZiEIOq1kOyImOuKlCDsnZjrr7jqsIAg7J6I64uk6rOgIOqzteqwkO2VmOupsCwg67O47J247J2AIOydtOufsCDsgqzsnbTtirgg7KCV64+E64qUIO2YvOyekCDrp4zrk6Tsl4jri6Tqs6Ag7ZaI64ukLiDtlZnsg53rk6TsnbQg7ZWY64qUIOydvOuhnOuKlCDtmZTrqbQg67Cw7LmYIOuTseydhCDrqqjrsJTsnbwg6riw7KSA7Jy866GcIOq4sO2aje2VtCDrjIDtkZzri5jsnbTrgpgg64uk66W4IOyCrOuejOyXkOqyjCDtlLzrk5zrsLHsnYQg67Cb6rOgIOqzoOy5mOuKlCDqsoPquYzsp4Drp4wg7ZWY64qUIOyXre2VoOydhCDsoJzsi5ztlojri6QuCgo+IFshc3VjY2Vzc10g7Jet7ZWgIOu2hOuLtAo+IO2VmeyDneuTpOydtCDrtoDri7Qg7JeG7J20IOq4sO2ajcK37ZmU66m0IOuwsOy5mOulvCDrp6Hqs6AsIOyLpOygnOuhnCDslaHti7DruIztlZjqsowg7ISc67mE7Iqk66GcIOuPjOumtCDqsoPrk6TsnYAg6rWQ7IiY64uY6rO8IO2ajOyCrCDsi6TrrLTsnpDqsIAg7ZWo6ruYIOunjOuCmCDspJHqsITqs6Dsgqwg65WM65OgIOq4sOunkOqzoOyCrCDrlYzrk6Ag7ZWcIOuyiOyUqSDqs6Drr7ztlZzri6QuICLsnbTrsojsl5Ag66qo65GQ7J2YIOy2mOyynOyXkCDtg5HsnqztlaAg66eM7ZWcIOyEnOu5hOyKpOqwgCDsnojsnYTquYwiIO2VmOuKlCDsi53snLzroZwg7KeE7ZaJLgoKIyMjIDQuMTMg6riw7KG0IOyCsO2Vme2YkeugpSDshLHqs7Ug7IKs66GAICjquYDshKDsoJUg6rWQ7IiY64uYKQrsoITssL3rjIAg64yA7ZGc64qUIOq5gOyEoOyglSDqtZDsiJjri5jqs7wg6rWQ6rO866qp7Jy866GcIOynhO2WiSDspJHsnbgg7IKs66GA66W8IOyGjOqwnO2WiOuLpC4g7IaM7ZSE7Yq47Juo7Ja0IOykkeyLrOuMgO2VmSjsnbTrsojsl5AgQUkg7KSR7Ius64yA7ZWZKeydmCDqsIDsnqUg64yA7ZGcIOyEseqzvOqwgCDsnbQg7ZiR66Cl7J2065286rOgIOyEpOuqhe2WiOuLpC4KLSAqKuuMgOyDgSDsiJjsl4UqKjog6rmA7ISg7KSRIOq1kOyImOuLmOydmCAn7Lu07ZOo7YSwIOq3uOuemO2UveyKpCcg7IiY7JeF7Jy866GcIDAx67aE6rO8LCAwMuu2hOqzvCDrkZAg6rCc6rCAIOyeiOycvOupsCwg6re47KSRIDHtlZnquLAg67aE6rO87JeQIO2ajOyCrOqwgCDsp4Ttlokg7KSR7J24IOyGjO2UhO2KuOybqOyWtCDtlITroZzsoJ3tirgg7ZWY64KY66W8IOuNmOynhOuLpC4KLSAqKuuylOyaqSDquLDsiKAg7Yq466CM65OcKio6IO2ajOyCrCDsoITsmqnsnbQg7JWE64uI6528IOyalOymmCDquLDsiKAg7Yq466CM65Oc66W8IOuLpOujrOuLpC4g7ZWc65WM64qUIOybueycvOuhnCDrqZTtg4DrsoTsiqTrpbwg7ZaI6rOgLCDsp4DquIjsnYAg65Oc66Gg7Jy866GcIOyImOynke2VnCDrjbDsnbTthLDrpbwg67aE7ISd7ZWY64qUIOuqqOuNuOydhCDsk7Tri6QuIOydtOqyg+uPhCDsu7Ttk6jthLAg6re4656Y7ZS97Iqk7J2YIOybkOumrOuLpC4KLSAqKuy7pOumrO2BmOufvCDqtazshLEqKjog7ZSE66Gc7KCd7Yq466W8IOuNmOyngOuptCDqtZDsiJjri5jsnbQg7Luk66as7YGY65+87J2EIOunjOuTpOyWtCDqsJXsnZjqs4Ttmo3shJzrpbwg7Jis66aw64ukLiDsoITqs7UgM+2VmeygkOynnOumrCDqs7zrqqnsnbTrnbwg7ZWZ7IOd65Ok7J20IOyImOqwle2VnOuLpC4KIyMjIyA0LjEzLjEg7IiY7JeFIOynhO2WiSDrsKnsi50KMS4gKirsmKTrpqzsl5TthYzsnbTshZgqKjogT1Qg64KgIOyghOywveuMgOuPhCDqsJnsnbQg6rCA7IScIO2VtOyVvCDtlaAg7ZSE66Gc7KCd7Yq47JmAIOyalOymmCDtirjroIzrk5zrpbwg64ukIOyEpOuqhe2VmOuptCwg6rWQ7IiY64uY7J20IOy7pOumrO2BmOufvOydhCDrp4zrk6TslrQg7ZWZ7IOd65Ok7J2EIOqwgOultOy5nOuLpC4KMi4gKirspJHqsITqs6Dsgqwg67Cc7ZGcKio6IO2Vmeq1kOyXkOyEnCDsp4TtlontlZjrqbAsIOydtOuVjCDtmozsgqwg6rCc67Cc7YyA7J6l7J20IOqwhOuLpC4KMy4gKirquLDrp5Dqs6Dsgqwg67Cc7ZGcKio6IO2ajOyCrOyXkCDsmYDshJwg7ZWY64qU642wIOyghOyytCDtlZnsg53snbQg7JWE64uI6528IOygiOuwmOunjCDrvZHslYTshJwg7Jio64ukLiDqsIEg7YyAIOuMgO2RnCDrmJDripQg6rCc7J24IO2UhOuhnOygne2KuOulvCDtlZjripQg7ZWZ7IOd7J20IOyEoOuwnOuQmOyWtCDsmKjri6QuCj4gWyF0aXBdIOyLnOyDgSDrsI8g7LGE7JqpIOyEseqzvAo+IDHrk7Hsl5DqsozripQg7JWE7J207Yyo65Oc66W8IOyjvOupsCwg7ZqM7IKs6rCAIDE1MH4yMDDrp4wg7JuQ7JSpIOyNqOyEnCDshKDrrLzsnYQg7KSA64ukLiDqt7gg65WM66y47JeQIO2VmeyDneuTpOydtCDsl7Tsi6ztnogg7ZWc64ukLiDqt7jspJEg7ZqM7IKs7JeQIOy3qOynge2VnCDtlZnsg53snbQg65GQIOuqhSjquYDrj4Tsl7AsIO2VnOyerO2YhCnsnLzroZwg6rCc67Cc7YyA7JeQIOyeiOuLpC4g7KCV66eQIOyii+ydgCDsgrDtlZntmJHroKUg7ZSE66Gc7KCd7Yq465286rOgIO2PieqwgO2WiOuLpC4KIyMjIyA0LjEzLjIg7IKw7ZWZ7ZiR66Cl7J2YIOydmOuvuAotICoq7LGE7JqpIOuqqeyggSoqOiBJVCDshoztlITtirjsm6jslrQg7KSR7Ius64yA7ZWZIOy7tOqztSDtlZnsg50g7KSRIOqwnOuwnOyekOulvCDssYTsmqntlZjroKQg7ZWc64ukLgotICoq7Y+s7Yq47Y+066as7JikwrdQQkwqKjog7ZWZ7IOd65Ok7JeQ6rKMIO2PrO2KuO2PtOumrOyYpOulvCDrp4zrk6TslrQg7KO864qUIOq1kOqzvOuqqeydtOupsCwg6re46rKD7J20IFBCTOydmCDtlbXsi6zsnbTri6QuCi0gKirri6TslpHtlZwg7J247J6sKio6IOqwnOuwnOyekOqwgCDslYTri4jslrTrj4Qg7Jyg64ql7ZWcIFBNLCDrlJTsnpDsnbgsIOuwlOydtOu4jCDsvZTrlKnrp4zsnLzroZwg7ZWgIOyImCDsnojripQg7Lmc6rWs65Ok64+EIO2VhOyalO2VmOuvgOuhnCDqt7jrn7Ag7ZWZ7IOd7J2EIOu9keuKlCDqsoPrj4Qg7KKL64ukLgotICoq7LC97JeFIOyXsOqzhCoqOiDqt7jspJHsl5DshJwg7LC97JeF7Jy866GcIOyXsOqysOyLnO2CrCDsiJjrj4Qg7J6I64ukLgrsoITssL3rjIAg64yA7ZGc64qUIOqwgOuzjeqyjCDsoJHqt7ztlZjqs6Ag7J6I64uk66m0IO2VnOuyiCDsnbzsnYQg67KM7JesIOqwmeydtCDtlbTrs7TsnpDqs6Ag7KCc7JWI7ZaI64ukLgojIyMgNC4xNCDslYjssL3tmIQg6rWQ7IiY7J2YIFBCTCDqtZDqs7zrqqkg7Jew6rOEIOuwjyDqsrDroaAKCuyViOywve2YhCDqtZDsiJjripQg7Y+s7J247Yq46rCAIO2ZleyLpO2eiCDsnojqs6Ag6rKw6rO866y8IO2VmOuCmOulvCDrgrTrs7TsnpDripQg66qp7KCB64+EIOyeiOuLpOqzoCDqs7XqsJDtlojri6QuCgo+IFshbm90ZV0g64K064WEKDIwMjfrhYQpIOq1kOqzvOuqqeqzvOydmCDsl7Dqs4QKPiDrgrTrhYTsl5AgJ0FJIOuUlOyngO2EuCDqt7jrnpjtlL0g65SU7J6Q7J24J+qzvCAnQUkgVUkvVVgg65SU7J6Q7J24JyDqs7zrqqnsnbQg7J6I64qU642wLCDqsbDquLDshJzrj4Qg67CU7J2067iMIOy9lOuUqeydtCDslrTripAg7KeA7KCQ67aA7YSwIOuCmOyYrCDsiJjrsJbsl5Ag7JeG64ukLiBTa2lsbHMg67mE7Iq37ZWcIOqyg+ydhCDrj4zroKQg7ZSE66Gg7Yq47JeU65OcIO2OmOydtOyngOulvCDrp4zrk6TslrQg67O064qUIOuCtOyaqeydtCDrk6TslrTqsIDrqbQg7J20IO2UhOuhnOygne2KuOyZgCDsg4Hri7ntnogg6rK57LmgIOqygyDqsJnri6QuIOydtCDrsKntlqXsnLzroZwg7ZWY66m0IOqzoO2VmeuFhCDsnITso7zroZwg7YyAIOuLqOychCDtlITroZzsoJ3tirjroZwg7ZqM7J2Y66W8IOunjuydtCDtlbTslbwg7ZWY7KeA66eMLCDqtZDthrUg7Y6466asIOuTsSDsi6TsoJwg7ISx6rO864+EIOuCoCDsiJgg7J6I64ukLgrslYjssL3tmITripQgIuq3uOuemOyEnCDrqqjrkZDsnZgg7LaY7LKc7J20652864qUIO2UhOuhnOygne2KuOulvCDtlZjrgpgg7ZW067O86rmM7JqUPyLrnbzrqbAg7KCc7JWI7J2EIOyImOudve2WiOuLpC4KIyMjIDQuMTUg64+E66mU7J24IOuwjyDrhKTsnbTrsI0g64W87J2YCi0gKirspITsnoTrp5AqKjog7KCE7LC964yAIOuMgO2RnOuKlCAn66qo65GQ7J2YIOy2mOyynCfsnZgg7KSE7J6E66eQ66GcICfrqqjstpgn64+EIOyii+uLpOqzoCDtlojri6QuCi0gKirrj4TrqZTsnbgg7ZmV67O0IOuwqey5qCoqOiDtlZzquIAg67KE7KCE7J2AIOumrOuLpOydtOugie2KuOulvCDsi5ztgqTrjZTrnbzrj4Qg7ZmV67O07ZWY6rOgLCBgLmNvbWAg64yA7IugIGAub3JnYOuhnCDqsIDrj4Qg7KKL7J2EIOqygyDqsJnri6QuIOyghOywveuMgOydgCBgLmNvbWDsnYQg7KSR7JqU7ZWY6rKMIOyDneqwge2VmOuKlCDso7zsnZjri6QuCgo+IFshcXVlc3Rpb25dIOyYgeusuCDtkZzquLAg6rOg66+8Cj4g7JeQ67iM66as7JuQLCDsl5DruIzrpqwg7LaY7LKcLCDsl5DruIzrpqzslKjslKgg65Ox7J20IOqxsOuhoOuQkOuLpC4gJ+yXkOu4jOumrOyUqCfripQgYC5jb21g7J20IOyXhuyXiOuLpC4KIyMjIDQuMTYg66qo65GQ7J2YIEFJJ+yXkCDrjIDtlZwg66y47KCc7J2Y7IudCgo+IFshd2FybmluZ10g6rWt6rCAIOuNsOydtO2EsCDqsJzrsKnsnZgg7ZWc6rOECj4g64K064WEKDIwMjfrhYQp7JeQICfrqqjrkZDsnZggQUkn6rCAIOuCmOyYpOyngOunjCDsnpgg7JWIIOuQoCDqsoMg6rCZ64ukLiDqsIDsnqUg7YGwIO2XiOuTpOydgCDqta3qsIAg642w7J207YSw7LKY6rCAIOuNsOydtO2EsOulvCDtkoDsp4Ag7JWK64qU64uk64qUIOygkOydtOuLpC4KLSAqKuq4sOuMgO2WiOuNmCDrqqjrkZDsnZggQUkqKjog7JiI66W8IOuTpOyWtCA0MOuqhyDqsJzsm5Qg65CcIOyekOuFgOqwgCDslrTrlqQg7JiI67Cp7KCR7KKF7J2EIOunnuyVmOqzoCwgNDnqsJzsm5Tsl5Ag7Ja065akIOyYiOuwqeygkeyiheydhCDrjZQg66ee7Law7JW8IO2VmOuKlOyngCDrk7HsnYQg67aA66qo6rCAIOydvOydvOydtCDrpqzsiqTtirjsl4XtlbTshJwg67O06riwIOyWtOugteq4sCDrlYzrrLjsl5AsIO2WieyglSDrjbDsnbTthLDqsIAg7ZWZ7Iq165CcIOqyg+ydhCDrrLzslrTrs7TripQg6riw64qlLiDtgbTroZzrk5zrgpgg7LGXR1BU64qUIOuqu+2VmOyngOunjCDqta3qsIDqsIAg66eM65OgIOuqqOuRkOydmCBBSeuKlCDtlaAg7IiYIOyeiOyWtOyVvCDtlZjripQg6rKDLgotICoq7Iuk7KCcIO2YhOyLpCoqOiDrqqjrkZDsnZggQUnqsIAg67O06rG067O17KeA67aALCDqsJzsnbjsoJXrs7QsIOyLrO2PieybkCDrjbDsnbTthLDrpbwg6riB7Ja07Jik64qUIOqyg+ydtCDqt5zsoJzsoIHsnLzroZwg66y47KCc6rCAIOuQmOyWtCwg7ZaJ7KCV7JeQ7IScIOunjOuTnOuKlCDrqqjrkZDsnZggQUnsl5Ag6re4IOq4sOuKpeydtCDsl4bri6QuICI0OOqwnOyblCDrlYwg7J20IOyVhOydtO2VnO2FjCDrtoDrqqgg7J6F7J6l7JeQ7IScIOutmCDtlbTso7zrqbQg7KKL7J2E6rmM7JqUPyLrnbzripQg7KeI66y47JeQIOuMgO2VnCDtmITsnqwg7IiY7KSA7JeQIOunjOyhse2VmOuKlOyngCDrrLzsl4jrjZTri4ggIu2YhOyerOuhnOyEoCDqt7jroIfri6Qi64qUIOuLteydhCDrk6Tsl4jri6QuIOydtOyXkCDrjIDtlbQg7ZWE7YSw66eBIOyXhuydtCDri6TsnYzqs7wg6rCZ7J20IOyngOygge2WiOuLpC4KCj4gWyFxdW90ZV0g7KeB7KCRIOyghOuLrO2VnCDsnZjqsqwKPiDqt7jqsbDripQg7YG066Gc65Oc7JeQ64uk6rCAIOyniOusuO2VmOuptCDrqqjrkZDsnZggQUnqsIAg64u17ZWY64qUIOqyg+uztOuLpCDtm6jslKwg7KKL7J2AIOqysOqzvOqwgCDrgpjsmKjri6QuIExHIOyXkeyCrOybkOydtOuekSDsl4XsiqTthYzsnbTsp4DqsIAg66eM65OgIEFJIOuqqOuNuOydtCDtgbTroZzrk5zrnpEg7LGXR1BU7JeQ7IScIO2VmeyKteuQnCDrqqjrjbjsnbTrnpEg7JmE7KCE7Z6IIOywqOybkOydtCDri6Trpbwg7YWQ642wLCDsnqXrgpztlZjrg5Dqs6AuIOyXrOq4sOyXkCDqta3qsIAg7IS46riIIOyNvOuLpCDqt7jrn6zrqbQg64SI7Z2s65OkIOuLpCDrs7Tqs6Ag64Kg7JWE6rCE64uk6rOgLiDtgbDsnbwg64Kc64uk6rOgLCDsnbQg7KCV6raMIOuCoOyVhOqwhOuLpOqzoOyalC4KIyMjIDQuMTcg66eI7J20642w7J207YSwIOq4sOuwmCDtlbTqsrAg67Cp7JWICi0gKirtlYTsmpTtlZwg6riw64qlKio6IOykkeqzoOuTse2Vmeq1kCDrlYwg67KU7KOEIOydtOugpeydtOudvOuToOyngCwg64u57Iuc7J2YIOyDne2ZnOq4sOuhneu2gCjsg53quLDrtoApIOuTseydmCDrjbDsnbTthLDrk6TsnbQg6rO17J247J247Kad7ISc66W8IO2Gte2VtCDtlonsoJXrp53sl5DshJwg67O8IOyImCDsnojripQg66qo65OgIOyEnOulmOuTpC4g7J247Kad7ISc66W8IO2Gte2VtCDroZzqt7jsnbjtlojri6TripQg6re86rGwIOyVhOuemCDrp4jsnbTrjbDsnbTthLDtmZTrkJjslrQsIOuqqOuRkOydmCBBSeyXkOqyjCDrrLzslrTrs7TrqbQg64u17ZWgIOyImCDsnojslrTslbwg7ZWc64ukLgotICoq67O07JWIIO2VtOuylSoqOiBBUEnroZwg642w7J207YSw66W8IOuBjOyWtOyYpOuKlCDqsoPsnbQg67O07JWI7IOBIOusuOygnOqwgCDrkJzri6TrqbQsIOuNsOydtO2EsCDrs7TslYjsnZgg7KO87LK066W8IOygleu2gOqwgCDslYTri4jrnbwg6rCc7J247J20IOqwgOyngOuptCDrkJzri6QuIOuCtCDsiqTrp4jtirjtj7Dqs7wgUEPsl5Ag7KCV67aAMjTsnZgg65Ox67O4LCDqsIDsobHqtIDqs4Tspp3rqoXshJwsIOyEuOq4iCDsoJXrs7Qg65Ox7J2EIO2VnCDrsojslKkg67Cb7JWE7JmAIOuniOydtOuNsOydtO2EsOuhnCDrgrQg65SU67CU7J207Iqk7JeQIOyggOyepe2VmOqzoCwg7J20IOuUlOuwlOydtOyKpOydmCDsoJXrs7Trpbwg6rCA7KeA6rOgIOuqqOuRkOydmCBBSeqwgCDri7Xrs4DtlZjrqbQg67O07JWI7IOBIOusuOygnOqwgCDsl4bri6QuCgo+IFshaW5mb10g7ZiE7Iuk7KCBIOygnOyVvQo+IO2BtOudvOyasOuTnOuCmCDsi6ztj4nsm5Dsl5DshJwgQVBJ66W8IOyXtOyWtOyjvOyngCDslYrripTri6QuIOyVveq1reyXkOyEnCDsspjrsKnrsJvsnYAg7KCV67O0IOqwmeydgCDqsoPsnYQg7Je07Ja07KSEIOumrCDsl4bri6QuCiMjIyA0LjE4IO2UhOuhnOygne2KuCDrsKntlqU6IOyngOyekOyytCDri6jsnIQg7KCR6re8Cuygleu2gOqwgCDrqrsg7ZWY66m0LCDsp4DsnpDssrTqsIAg7Je0IOyImCDsnojripQg7KCV67O066eM7J20652864+EIOyhsOq4iOyUqSDsl7TrqbTshJwg7ZW067O07J6Q64qUIOyVhOydtOuUlOyWtOyXkOyEnCAn66qo65GQ7J2YIOqwleybkCcsICfrqqjrkZDsnZgg7LaY7LKcJ+ydtCDrgpjsmZTri6QuIOuLpOunjCDsp4DsnpDssrTrj4Qg7JWIIO2VoCDqsoMg6rCZ7Jy864uIIOuRkCDsgqzrnozsnbQg7KeB7KCRIO2VtOuztOq4sOuhnCDtlojri6QuCiMjIyMgNC4xOC4xIOyXsOqzhCDqtZDqs7zrqqkg6rCc7ISkCi0gKirqsJzshKQg7ZiE7ZmpKio6IOyLoOyyreyEnCDslpHsi53sl5Ag66ee7LawIO2Vmeq1kOyXkCDsnbTrr7gg7KCc7Lac7ZaI6rOgLCDqsJzshKTsnYAg7ZmV7KCV65CY7JeI64ukLiDqtZDqs7zrqqkg6rCc67Cc67mEIOyZuOyXkCDtmZzrj5nruYTrj4Qg7LKY7J2M7JeQIOuCmOyYpOuKlCDqsoPsnLzroZwg7JWM6rOgIOyeiOycvOupsCwg7YG066Gc65OcIO2MgO2UjOuenCDrk7HsnZgg6rWs64+FIOyngOybkCDsl6zrtoDripQg6rO866qpIOqwnOuwnOydtCDrkJjrqbQg7ZWZ6rWQ7JeQIOusuOydmO2VoCDsmIjsoJXsnbTri6QuCi0gKirri7Tri7kg6rWQ6rO866qpKio6IDLtlZnquLAg7KSR6rCE6rOg7IKsIOydtO2bhOu2gO2EsCDquLDrp5Dqs6DsgqzquYzsp4AgJ+qzteqzteyZuOq1kCDrp4jsvIDtjIUnIO2MgO2LsOy5reydhCDri7Tri7ntlZzri6QuIO2ZlOyalOydvCDsmKTsoIQg6rO866qp7J2066mwLCDstZzsmIHsnqwg6rWQ7IiY64uY7J20IOqzhOyLnOuKlCDquLDstIjqtZDslpHrjIAg67CPIOuvuOuemOycte2VqeyKpOy/qCDshozsho3snbTri6QuCi0gKirqtZDqs7zrqqkg7Leo7KeAKio6IOynkeykkeyggeycvOuhnCDtlZjroKTripQg6rKD7J2AIOuwlOydtOu4jCDsvZTrlKnsnbTri6QuIOyEneyCrCDsoITqs7XsnbQg6rO16rO17Jm46rWQ6528IE9EQSDrk7Eg6rO16rO17Jm46rWQ66W8IOuwsOyasOuKlOuNsCwg6rCc67Cc64+E7IOB6rWt7J2YIO2YhOyViCDrrLjsoJzrpbwg67CU7J2067iMIOy9lOuUqeycvOuhnCDtlbTqsrDtlZjquLDsl5Qg7ZWZ7IOd65Ok7J20IOunpeudveydhCDsnpgg66qo66W464ukLgotICoq7Iuk7KCcIOuwqe2WpSoqOiDstpjsspzsi5wg6rO16rO17Jm46rWQ6rSAIOqwnOuFkOycvOuhnCwg7LaY7LKc7J2YIO2YhOyViCDrrLjsoJzrpbwg7ZW06rKw7ZWY64qUIOqyg+ydhCDrsJTsnbTruIwg7L2U65Sp7Jy866GcIOunjOuToOuLpC4KPiBbIW5vdGVdIOu5hOq1kAo+IOy1nOyduOq3nCDqtZDsiJjri5jsnZggIuuPheyEnOuhnCDrrLjsoJwg7ZW06rKw7ZWY7J6QIuuKlCDsnbjrrLjtlZnsoIEg67KE7KCE7J20652866m0LCDsnbTqsoPsnYAg7KKAIOuNlCDsi6TsmqnsoIHsnbgg67KE7KCE7J2YIOq4sO2ajeydtOuLpC4K7Iuc66+865Ok7J2064KYIO2VmeyDneuTpOydtCDsk7DripQg7ISc67mE7Iqk66W8IOyLpOygnOuhnCDrp4zrk6TslrTrs7jri6TripQg6rKD7J20IOykkeyalO2VnCDqsr3tl5jsnbTrqbAsIO2VmOuCmOudvOuPhCDrj4zslYTqsIDripQg7ISc67mE7Iqk66W8IOunjOuTpOyWtOuztOuptCDqs7Xqs7XquLDtmo3snYQg7ZWgIOyImCDsnojqsowg65Cc64ukLgojIyMjIDQuMTguMiDslYTsnbTrlJTslrQgMTog7Lm07IWw7Ja066eBKOqzteycoCDrnbzsnbTrlKkpIOyEnOu5hOyKpAotICoq7ZiR7KGwIO2VhOyalCDsgqztla0qKjog67KE7Iqk7KCV66WY7J6l6rO8IOy2mOyynOyXreyXkCDtmJHsobDrpbwg6rWs7ZWY66m0IOuQnOuLpC4g7LaY7LKc7Iuc7JmAIO2VqOq7mCDrhbzsnZjtlZjsl6wgSVRYLCDqsr3stpjshKAg65OxIOyXrSDslYjsl5AgUVIg7L2U65Oc66W8IOuRkOuKlCDrsKnsi50uIOuwluyXkCDshKTsuZjtlZjrqbQg7YOd7Iuc6riw7IKs65Ok7J20IOuwmOuwnO2VoCDsiJgg7J6I7Ja0IOyXrSDrgrTrtoDsl5Ag65GU64ukLgotICoq7Jq07JiBIOuwqeyLnSoqOiAi64KY656RIOqwmeydtCDtlZnqtZAg6rCA7J6QIiwgIuuCmOuekSDqsJnsnbQg7YOd7IucIOqwmeydtCDtg4DsnpAiIOyLneydmCDtlITroZzrqqjshZjsnYQg7ZWZ7IOd7J20IOyngeygkSDtlZzri6QuIOyLnOyXkOyEnCDtlbTso7zrqbQg7YOd7Iuc6riw7IKs65Ok7J20IOuwmOuwnO2VmOyngOunjCwg64yA7ZWZ7IOd65Ok7J20IOyKpOyKpOuhnCDtlZjrqbQg7JqV7ZWY64qUIOyCrOuejOydtCDsl4bqs6Ag7YOd7Iuc6riw7IKs65Ok64+EIO2VmeyDneqzvOuKlCDsi7jsmrgg7IiYIOyXhuuLpC4g7J206rKD7J20IOuzgO2ZlOydmCDtnZDrpoTsnoTsnYQg64qQ64G86rKMIO2VmOuKlCDrsKnsi53snbTrqbAsIOyImOydteyCrOyXheuPhCDslYTri4jri6QuCj4gWyFzdWNjZXNzXSDshLHqs7Ug7JiI7IOBCj4g7Lm07IWw7Ja066eB7J2AIOuCqOy2mOyynOyXreqzvCDstpjsspzsl63sl5DshJwg66y07KGw6rG0IOyEseqzte2VnOuLpOqzoCDsg53qsIHtlZzri6QuIOy2mOyynOyXreqzvCDrgqjstpjsspzsl63sl5Ag7Je07LCo6rCAIOyEnOuKlCDsi5zqsITsnbQg65iR6rCZ6riwIOuVjOusuOydtOuLpC4KLSAqKuq4sOyIoOyggSDqsJXsoJAqKjog7Lm07Lm07Jik7YOd7Iuc7LKY65+8IOunpOy5re2VmOqzoCDslbHsnLzroZwg66eM65Ok6rOgIO2RuOyLnCDslYzrprzsnYQg7ZW07JW8IO2VmOuKlCDqsoPqs7wg64us66asLCDquLDssKjsl5DshJwg64K066as64qUIOyLnOqwhOydtCDri6Qg65iR6rCZ7Jy866+A66GcIOq3uCDsi5zqsITrjIDsl5Drp4wg7Ju57Jy866GcIOyLoOyyre2VmOuptCDrkJzri6QuIOq5gOycoOygleyXreydtOuCmCDqsJXstIzsl63sl5DshJzrtoDthLAg7ZWZ7IOd65Ok7J20ICfrqqjrkZDsnZgg7LaY7LKcJ+yXkCDrk6TslrTsmYAg7Iug7LKt7ZWY66m0LCDsm7nshozsvJPsnbQg7Jew6rKw65CY7Ja0IOyeiOyWtCDrk6TslrTsmYAg7J6I64qUIO2VmeyDneuTpOydtCDrnbzsnbTruIzroZwg65ys64ukLiDsmIjrpbwg65Ok7Ja0IElUWCDssq3stpjsl5Ag7YOA6rOgIOyeiOuKlCDtlZnsg50g7KSRIDEyMOuqheydtCDrnbzsnbTruIzrqbQg7J2065Ok7J2EIOynneyngOyWtCDspIDri6QuCiMjIyMgNC4xOC4zIOyVhOydtOuUlOyWtCAyOiDsubTtjpjCt+ydjOyLneygkCDsoJXrpqwg7JWxCi0gKirrs7TsnKAg642w7J207YSwKio6IOuEpOydtOuyhCDsp4Drj4Tsl5Ag7J247Iqk7YOA7JeQ7IScIOuzvCDrlYzrp4jri6Qg7IiY64+Z7Jy866GcIOyggOyepe2VnCDsubTtjpjqsIAgOTky6rCc6rCAIOuEmOycvOupsCwg7KCE6rWt7JeQIOywje2YgCDsnojsp4Drp4wg7LaY7LKcIOychOyjvOuLpC4g7LaY7LKcIOyngOyXreyXkOunjCA1NjDqsJzqsIAg64SY6rKMIOywje2YgCDsnojri6QuCi0gKirqs6Drr7wg7IKs7ZWtKio6IOuqqeuhneydtCDrhIjrrLQg66eO7JWE7KeA6rOgIOqygOyDiSDtmZzsmqkg64ql66Cl7J20IOuWqOyWtOyguCwg7J206rKD7J2EIOyYteyLnOuUlOyWuOycvOuhnCDsmK7qsqjslbzqsqDri6Tqs6Ag7IOd6rCB7ZWY642YIOykkeydtOyXiOuLpC4g7J206rG4IOyVseycvOuhnCDtlZjrgpgg642UIOunjOuTnOuKlCDqsoPrj4Qg7ZWZ7IOd65Ok7JeQ6rKMIOyii+ydhCDqsoMg6rCZ64ukLgotICoq6rWs7ZiEIOuwqeuylSoqOiDtgbTroZzrk5wg7L2U65Oc66GcIO2BrOuhpOunge2VtOyEnCDri6Qg66qo7Jy866m0IOuQnOuLpC4g7JiI66W8IOuTpOyWtCDsnbzso7zsnbzsl5Ag7ZWcIOuyiOyUqSDrhKTsnbTrsoQg7ZSM66CI7J207IqkIOygleuztOulvCDtgazroaTrp4HtlZjsl6wg7JeF642w7J207Yq47ZWc64ukLiDsmpTsppgg7Ja07IKs7J2065Oc66GcIOuPjOugpOuztOuCtOuKlCDqsr3smrDqsIAg66eO64ukLgojIyMjIDQuMTguNCDslYTsnbTrlJTslrQgMzogJ+uwpeuPhCcg4oCUIO2YvOuwpSDrp6Tsua0g7ISc67mE7IqkCi0gKirsu6jshYkqKjog7Zi87J6QIOuoueuKlCDtmLzrsKXsnbQg7JWE64uI6528IOuwpeydhCAn6rCZ7J20IOuoueuKlCcg6rKDLiDtmLzrsKXtlZjripQg7IKs656M65Ok64G866asIOudvOydtOu4jOulvCDqsbjslrTrhpPsnLzrqbQg7Yq57KCVIOyLneuLuSAy67KIIO2FjOydtOu4lOyXkOyEnCDqsJnsnbQg67Cl7J2EIOuoueuKlOuLpC4KLSAqKuuwsOqyvSDrrLjsoJwqKjog7J2M7Iud7KCQIOyCrOyepeuLmOuTpOydtCDtmLzsnpAg67ClIOuoueuKlCDqsoPsnYQg7JWIIOuQnOuLpOqzoCDtlZzri6QuIO2VnOumvOuMgCDslZ4gMeyduCDrnbzrqZjsp5HsnYAg7IKs656M7J20IOunjuyngOunjCwg7YWM7J2067iU7J20IDZ+NOqwnOu/kOyduCDsnYzsi53soJDsnYAg7Zi87J6QIOuTpOyWtOqwgOuptCDtj6zsnqXrsJbsl5Ag7JWIIOuQnOuLpOqzoCDtlZzri6QuIOq1kOyImOuTpOydgCDssKjqsIAg7J6I7Ja0IOupgOumrCDqsIDshJwg66i57J2EIOyImCDsnojsp4Drp4wg7ZWZ7IOd65Ok7J2AIOywqOqwgCDsl4bri6QuCgo+IFshZXhhbXBsZV0g6rO16rCQIOyCrOuhgAo+IOyYgeq1reyXkOyEnCDtmLzsnpAg7IK0IOuVjCDqs6DquYPsp5Hsl5Ag7Zi87J6QIOqwgOq4sOqwgCDqt7jrnpjshJwg66q7IOqwgOuzuCDsoIHsnbQg7J6I64ukLiAy64WEIOuEmOqyjCDsgqzripQg67aE65Ok64+EIOq3uOuerOuLpC4KCi0gKirsp4Dsl60g7Yq57ISxKio6IOyEnOyauOydgCAx7J24IOydjOyLneygkOydtCDrp47sp4Drp4wsIOy2mOyynOydgCAx7J24IOydjOyLneygkOydtCDrs4TroZwg7JeG64ukLiDtlZnsg53rk6TsnbQg67Cl7J2EIOq1tuqzoCDtjrjsnZjsoJAg7IK86rCB6rmA67Cl7Jy866GcIOuVjOyasOqzoCDsiqTtg4DrsoXsiqTsl5Ag6rCE64ukLiDtirntnogg7ZqM7JiB66Oo7LKY65+8IOuwsOuLrO2VmOuKlCDrp5vsp5HsnbzsiJjroZ0g7Zi87J6QIOqwgOq4sCDrjZQg7Ja066C164ukLiAn66qo65GQ7J2YIOy2mOyynCfsnbTrnbzripQg7ZSE66Gc7KCd7Yq466qF6rO864+EIOyemCDrp57snLzrqbAsIOyymOydjOyXkOuKlCDsoJzsnbwg66eM66eM7ZWcIOunpOy5rSDsnITso7zroZwg6rCE64ukLgojIyMjIDQuMTguNSDslYTsnbTrlJTslrQgNDog7Jm46rWt7J24IOycoO2VmeyDnSDrp6Tsua0KLSAqKuuwsOqyvSoqOiDstpjsspzsl5Ag7Jm46rWt7J24IOycoO2VmeyDneydtCDrp47snbQg64qY7JeI64ukLiDsp4DrsKkg7IKs66a964yAKOqwleybkOuMgCDtj6ztlagp6rCAIOy2qeybkOycqCDrtoDsobHsnLzroZwg7IK07JWE64Ko6riwIOychO2VtCDsmbjqta3snbgg7Jyg7ZWZ7IOdIOycoOy5mOulvCDrp47snbQg7ZWY6riwIOuVjOusuOydtOuLpC4KCj4gWyFpbmZvXSDruYTsnpAg7KCc7JW9Cj4g7Jyg7ZWZKO2VmeyDnSkg67mE7J6Q7J206riwIOuVjOusuOyXkCDsnbzsnYQg66q77ZWY66mwLCDtlZnqtZDsl5DshJwg7ZeI6rCA66W8IOuwm+uNlOudvOuPhCDso7wgMzDsi5zqsIQg7J207IOBIOydvO2VoCDsiJgg7JeG64ukLiDslYTrpbTrsJTsnbTtirjrj4Qg7Ken6rKM66eMIOqwgOuKpe2VmOuLpC4KCi0gKirrp6Tsua0g67Cp7IudKio6IOyZuOq1reyduCDsnKDtlZnsg53qs7wg7JiB7Ja066W8IOuwsOyasOqzoCDsi7bslrTtlZjripQg7ZWc6rWt7J24IO2VmeyDneydhCDrp6Tsua3tlZzri6QuIOyYiOulvCDrk6TslrQg7LaY7LKcIOq0gOq0keyngOulvCDtiKzslrTtlZjrqbTshJwg7Yis7Ja0IOyViOyXkOyEnCDsmIHslrTrp4wg6rCV7KCc66GcIOyTsOuptCDsmIHslrQg7Iuk66Cl7J20IOuKlOuLpC4KLSAqKuuztOyDgSDrsI8g7Zqo6rO8Kio6IOyZuOq1reyduCDsnKDtlZnsg53sl5DqsozripQg6rO87Jm467mE7LKY65+8IO2ZnOuPmeu5hOulvCDspIDri6QuIOyekOyXsOyKpOufveqyjCDri6TrrLjtmZTsl5Ag64yA7ZWcIOqxsOu2gOqwkOydhCDsg4Hsh4TtlaAg7IiYIOyeiOqzoCwg7Jyg7ZWZIOyYqCDsuZzqtazrk6TsnYAg6riw67O47KCB7Jy866GcIOuniOyduOuTnOqwgCDsl7TroKQg7J6I7Ja0IOyGjO2Gte2VmOqzoCDsi7bslrTtlZjripQg7KCQ7J2EIOyemCDtmZzsmqntlZjrqbQgJ+uqqOuRkOydmCDstpjsspwnIOy7qOyFieyXkCDsnpgg66ee64qU64ukLgojIyMjIDQuMTguNSDtmZXsnqUg67CPIOyCrOyXhe2ZlCDsoITrnrUKPiBbIWltcG9ydGFudF0g7ZW17IusIOyghOuetQo+IOydtOufsCDsl5DsnbTsoITtirjrgpgg7ZSM656r7Y+87J2AIOuqqOuRkOydmCBBSeyymOufvCDqta3qsIAg64uo7JyE66GcIO2VmOq4sOyXlCDsmKTtnojroKQg642UIOyWtOugteuLpC4g66y07KGw6rG0IOyGjOq3nOuqqCDri6jsnIQsIOyngOuwqeuPhOyLnCDri6jsnITsl5DshJwg7ISx6rO17Iuc7YKoIOuSpCDsm5Dso7wsIOqwleumiSDrk7HsnLzroZwg65iR6rCZ7J20IO2Zleyepe2VmOyekC4g6re465WM64qUIOyCrOyXheyekOqwgCDrkJjsnpAuCgotICoq66qo65OIIOq1rOyhsCoqOiDqsIEg7JWE7J2065SU7Ja06rCAIO2VmOuCmOydmCDrqqjrk4go7JeQ7J207KCE7Yq4KeydtOupsCwg7J2066W8IGDrqqjrkZDsnZjstpjsspwuY29tYOyXkCDtlZjrgpjslKkg64Sj7Jy866m0IOuQnOuLpC4g7J2065+wIOqyg+uTpOydhCDrqqjsnLzrqbQg7JeQ67iM66as7YOA7J6E7LKY65+8IOuQoCDsiJgg7J6I64ukLgojIyA1LiDrp4jrrLTrpqw6IO2Wpe2bhCDsp4Ttlokg67Cp7JWICi0gKirsnbzsoJUqKjog66qo65GQ7J2YIOy2mOyynOydgCDrsJTroZwg7Iuc7J6R7ZW064+EIOyDgeq0gOyXhuuLpC4g67mg66W87IiY66GdIOyii+yngOunjCDqs7zrqqnsnbQg64K064WEKDIwMjfrhYQp7JeQIOqwnOyEpOuQmOyWtOyVvCDtlZjrr4DroZwg64u57J6lIOq4ie2VnCDqsbQg7JWE64uI66mwLCDsmrDshKAg7IKs7J207Yq4IOunjOuTnOuKlCDqsoPrtoDthLAg7KeE7ZaJ7ZWc64ukLgotICoq7JWE7J2065SU7Ja0IOyImOynkSoqOiDtmozsnZjroZ3snYQg7KCV66as7ZWY6rOgLCDsoovsnYAg7JWE7J2065SU7Ja06rCAIOyImOyLnOuhnCDsg53qsIHrgpjrqbQg7Lm07YahIOuTseycvOuhnCDqs7XsnKDtlZzri6QuIO2VmeyDneuTpOqzvCAzMOu2hOunjCDslYTsnbTrjbDsnbTshZgg7ZqM7J2Y66W8IO2VtOuPhCDslYTsnbTrlJTslrTqsIAg7IiY65GQ66Op7ZWY6rKMIOuCmOyYrCDqsoPsnbTri6QuIOu2gOuLtCDsl4bsnbQsIOyVhOydtO2MqOuTnCDqsJnsnYAg67O07IOB7J2EIOqxuOuptCDtlZnsg53rk6TsnbQg7KKL7J2AIOyVhOydtOuUlOyWtOulvCDrp47snbQg64K8IOqyg+ydtOuLpC4KLSAqKuy2lOqwgCDslYTsnbTrlJTslrQqKjog7JuQ66O4IOuTsSDso7zqsbAg6rSA66CoIOyVhOydtOuUlOyWtOuPhCDrgpjsmKwg6rKD7J2064ukLiDrsKkg6rWs7ZWY64qUIOqyg+u2gO2EsCDsi5zsnpHtlbQg7ZWZ7IOd65Ok7J20IO2emOuToCDsoJDsnbQg66eO64ukLgoK</script>
+
+
+<script type="module">
+(async function() {
+	// mermaid sources travel base64-encoded in data-mmd. Renderer (setting "Diagram renderer"):
+	// Pele, pinned + SRI, themeable SVG, with a per-diagram Mermaid fallback; or Mermaid only.
+	if (document.getElementById('encrypted-data') && !window.__cmdsReady) {
+		await new Promise(function(r) { document.addEventListener('cmds-content-ready', r, { once: true }); });
+	}
+	var containers = Array.from(document.querySelectorAll('.mermaid-container[data-mmd]'));
+	if (!containers.length) return;
+	function decode(b64) {
+		var bin = atob(b64); var bytes = new Uint8Array(bin.length);
+		for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+		return new TextDecoder().decode(bytes);
+	}
+	var sources = containers.map(function(d) { return decode(d.getAttribute('data-mmd')); });
+	function showSource(el, src) {
+		var pre = document.createElement('pre');
+		pre.textContent = src;
+		el.innerHTML = '';
+		el.appendChild(pre);
+	}
+	var queue = [];   // indexes left for Mermaid
+	if ("pele" === 'pele' && window.cmdsPele) {
+		var loaded = true;
+		if (!window.pele) {
+			try {
+				await new Promise(function(res, rej) {
+					var s = document.createElement('script');
+					s.src = "https://cdn.jsdelivr.net/npm/pele@1.9.0/dist/pele.global.js";
+					s.integrity = "sha256-MjwW3nhE1LYJdD9wRJ684EGlMeT0jyOx6efsnTuRcoc=";
+					s.crossOrigin = 'anonymous';
+					s.onload = res; s.onerror = rej;
+					document.head.appendChild(s);
+				});
+			} catch (e) { loaded = false; }
+		}
+		if (!loaded || !window.pele) {
+			queue = containers.map(function(_, i) { return i; });
+		} else {
+			await Promise.all(containers.map(function(el, i) {
+				return new Promise(function(done) {
+					var settled = false;
+					function finish(ok) {
+						if (settled) return;
+						settled = true;
+						if (!ok) {
+							try { if (el.__cmdsPele) el.__cmdsPele.destroy(); } catch (e) {}
+							el.classList.remove('cmds-pele');
+							['data-cp-theme', 'role', 'aria-label'].forEach(function(a) { el.removeAttribute(a); });
+							queue.push(i);
+						}
+						done();
+					}
+					try {
+						window.cmdsPele.mount(el, sources[i], {
+							profile: 'screen', theme: 'auto',
+							onRender: function() { finish(true); },
+							onError: function() { finish(false); }
+						});
+					} catch (e) { finish(false); }
+					setTimeout(function() { finish(!!el.querySelector('svg.pele')); }, 4000);
+				});
+			}));
+		}
+	} else {
+		queue = containers.map(function(_, i) { return i; });
+	}
+	if (!queue.length) return;
+	queue.sort(function(a, b) { return a - b; });
+	var mermaid;
+	try {
+		mermaid = (await import('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs')).default;
+	} catch (e) {
+		queue.forEach(function(i) { showSource(containers[i], sources[i]); });
+		return;
+	}
+	var seq = 0;
+	async function renderAll() {
+		var dark = document.documentElement.dataset.theme === 'dark';
+		mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'neutral', securityLevel: 'strict', suppressErrorRendering: true });
+		for (var k = 0; k < queue.length; k++) {
+			var i = queue[k], id = 'cmds-mmd-' + i + '-' + (seq++);
+			try {
+				var out = await mermaid.render(id, sources[i]);
+				containers[i].innerHTML = out.svg;
+			} catch (e) {
+				// a failed render can leave its scratch nodes (and an error drawing) at the end of <body>
+				['d' + id, id].forEach(function(x) { var n = document.getElementById(x); if (n) n.remove(); });
+				showSource(containers[i], sources[i]);
+			}
+		}
+	}
+	await renderAll();
+	new MutationObserver(function() { renderAll(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
+
+
+<script>
+(function() {
+	var icon = document.getElementById('themeIcon');
+	var SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>';
+	var MOON = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+	function paint(theme) {
+		if (icon) icon.innerHTML = theme === 'dark' ? MOON : SUN;
+	}
+	var btn = document.getElementById('themeToggle');
+	if (btn) btn.addEventListener('click', function() {
+		var next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+		document.documentElement.dataset.theme = next;
+		try { localStorage.setItem('cmds-theme', next); } catch(e) {}
+		paint(next);
+	});
+	paint(document.documentElement.dataset.theme || 'light');
+})();
+</script>
+
+<script>
+(function() {
+	var badge = document.getElementById('expiryBadge');
+	if (!badge) return;
+	var ts = Number(badge.getAttribute('data-expires'));
+	if (!ts) return;
+	var ko = badge.getAttribute('data-lang') === 'ko';
+	var text = document.getElementById('expiryText');
+	function render() {
+		var msLeft = ts - Date.now();
+		var d = new Date(ts);
+		var dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+		if (msLeft <= 0) {
+			text.textContent = ko ? '만료됨' : 'Expired';
+			badge.classList.add('b-expired');
+			// file-hosting backends (GitHub Pages, NAS…) have no server to
+			// 410 an expired share — hide the body here as a soft tombstone
+			var body = document.getElementById('note-content');
+			if (body && !body.dataset.tombstoned) {
+				body.dataset.tombstoned = '1';
+				body.innerHTML = '<p class="cmds-loading">' + (ko ? '이 공유는 만료되었습니다.' : 'This shared note has expired.') + '</p>';
+				var toc = document.getElementById('tocToggle'); if (toc) toc.hidden = true;
+				['mdCopy', 'mdDownload'].forEach(function(id) { var b = document.getElementById(id); if (b) b.hidden = true; });
+			}
+		} else {
+			// calendar-date diff, so "D-1" flips at midnight, not at share-time+24h
+			var now = new Date();
+			var days = Math.round(
+				(new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime() -
+				 new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime()) / 86400000
+			);
+			var count = days <= 0 ? (ko ? '오늘 만료' : 'expires today') : 'D-' + days;
+			text.textContent = (ko ? dateStr + ' 만료 · ' : 'Expires ' + dateStr + ' · ') + count;
+			if (days <= 3) badge.classList.add('b-soon');
+		}
+		badge.hidden = false;
+	}
+	render();
+	// keep honest across long-lived tabs (midnight rollover)
+	setInterval(render, 60 * 60 * 1000);
+})();
+</script>
+
+
+<script>
+(function() {
+	var PANELS = { toc: 'tocPanel', graph: 'graphPanel' };
+	var hasToc = false, hasGraph = false;
+
+	function docked() { return document.body.classList.contains('cmds-docked'); }
+
+	function setPanel(name, open) {
+		Object.keys(PANELS).forEach(function(k) {
+			var on = k === name ? open : false;
+			document.getElementById(PANELS[k]).classList.toggle('open', on);
+			document.getElementById(k + 'Toggle').classList.toggle('active', on);
+			try { localStorage.setItem('cmds-panel-' + k, on ? '1' : '0'); } catch(e) {}
+		});
+		if (name === 'graph' && open) requestAnimationFrame(function() { relayoutGraph(); });
+	}
+	function wireToggle(name) {
+		document.getElementById(name + 'Toggle').addEventListener('click', function() {
+			var isOpen = document.getElementById(PANELS[name]).classList.contains('open');
+			setPanel(name, !isOpen);
+		});
+	}
+
+	function setDock(on) {
+		if (on && window.innerWidth <= 1100) on = false;
+		var dock = document.getElementById('sideDock');
+		var toc = document.getElementById('tocPanel');
+		var graph = document.getElementById('graphPanel');
+		document.body.classList.toggle('cmds-docked', on);
+		if (on) {
+			Object.keys(PANELS).forEach(function(k) {
+				document.getElementById(PANELS[k]).classList.remove('open');
+				document.getElementById(k + 'Toggle').classList.remove('active');
+			});
+			if (hasToc) dock.appendChild(toc);
+			if (hasGraph) dock.appendChild(graph);
+			dock.hidden = false;
+		} else {
+			dock.hidden = true;
+			document.body.appendChild(toc);
+			document.body.appendChild(graph);
+		}
+		try { localStorage.setItem('cmds-dock', on ? '1' : '0'); } catch(e) {}
+		if (hasGraph) requestAnimationFrame(function() { relayoutGraph(); });
+	}
+
+	function headings() {
+		// headings inside canvas cards are card content, not document structure
+		return Array.prototype.filter.call(
+			document.querySelectorAll('#note-content h1, #note-content h2, #note-content h3, #note-content h4'),
+			function(h) { return !h.closest('.cmds-canvas'); }
+		);
+	}
+
+	function assignHeadingIds() {
+		var used = {};
+		headings().forEach(function(h) {
+			var text = (h.textContent || '').trim();
+			if (!text || h.id) return;
+			var slug = text.toLowerCase().replace(/[^0-9a-z\uAC00-\uD7A3\u3131-\u318E\s-]/g, '').replace(/\s+/g, '-') || 'section';
+			if (used[slug] != null) { used[slug]++; slug = slug + '-' + used[slug]; } else { used[slug] = 0; }
+			h.id = slug;
+		});
+	}
+
+	function buildToc() {
+		var list = document.getElementById('tocList');
+		list.innerHTML = '';
+		headings().forEach(function(h) {
+			var text = (h.textContent || '').trim();
+			if (!text || !h.id) return;
+			var a = document.createElement('a');
+			a.href = '#' + h.id;
+			a.textContent = text;
+			a.className = 'toc-' + h.tagName.toLowerCase();
+			a.title = text;
+			list.appendChild(a);
+		});
+		return list.children.length >= 2;
+	}
+
+	// highlight the section currently in view (and keep it visible in a scrolling TOC)
+	function scrollSpy() {
+		var links = document.querySelectorAll('#tocList a');
+		if (!links.length) return;
+		var map = {};
+		links.forEach(function(a) { map[decodeURIComponent(a.hash.slice(1))] = a; });
+		var obs = new IntersectionObserver(function(entries) {
+			entries.forEach(function(en) {
+				if (!en.isIntersecting) return;
+				links.forEach(function(a) { a.classList.remove('active'); });
+				var a = map[en.target.id];
+				if (a) {
+					a.classList.add('active');
+					if (a.scrollIntoView) a.scrollIntoView({ block: 'nearest' });
+				}
+			});
+		}, { rootMargin: '0px 0px -75% 0px' });
+		headings().forEach(function(h) { if (h.id) obs.observe(h); });
+	}
+
+	var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15H4.5A2.5 2.5 0 0 1 2 12.5v-8A2.5 2.5 0 0 1 4.5 2h8A2.5 2.5 0 0 1 15 4.5V5"/></svg>';
+	var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+	var ICON_LINK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+
+	function enhanceCodeBlocks() {
+		document.querySelectorAll('#note-content pre').forEach(function(pre) {
+			if (pre.querySelector('.code-copy')) return;
+			var code = pre.querySelector('code');
+			var langMatch = ((code ? code.className : '') + ' ' + pre.className).match(/language-([a-z0-9+#-]+)/i);
+			if (langMatch && langMatch[1] !== 'undefined') pre.setAttribute('data-lang', langMatch[1]);
+			var btn = document.createElement('button');
+			btn.className = 'code-copy';
+			btn.setAttribute('aria-label', 'Copy code');
+			btn.innerHTML = ICON_COPY;
+			btn.addEventListener('click', function() {
+				var code = pre.querySelector('code');
+				var textToCopy = (code || pre).innerText.replace(/\n$/, '');
+				navigator.clipboard.writeText(textToCopy).then(function() {
+					btn.innerHTML = ICON_CHECK;
+					btn.classList.add('copied');
+					setTimeout(function() { btn.innerHTML = ICON_COPY; btn.classList.remove('copied'); }, 1500);
+				});
+			});
+			pre.appendChild(btn);
+		});
+	}
+
+	// foldable callouts ("> [!tip]-") render collapsed with inline display:none
+	function foldableCallouts() {
+		document.querySelectorAll('#note-content .callout.is-collapsible > .callout-title').forEach(function(title) {
+			if (title.dataset.cmdsFold) return;
+			title.dataset.cmdsFold = '1';
+			title.addEventListener('click', function() {
+				var callout = title.parentElement;
+				var content = callout.querySelector(':scope > .callout-content');
+				var collapsed = callout.classList.toggle('is-collapsed');
+				if (content) content.style.display = collapsed ? 'none' : '';
+				var fold = title.querySelector('.callout-fold');
+				if (fold) fold.classList.toggle('is-collapsed', collapsed);
+			});
+		});
+	}
+
+	// hover link icon on headings — click copies the deep link
+	function headingAnchors() {
+		headings().forEach(function(h) {
+			if (!h.id || h.querySelector('.h-anchor')) return;
+			var a = document.createElement('a');
+			a.className = 'h-anchor';
+			a.href = '#' + h.id;
+			a.setAttribute('aria-label', 'Copy link to section');
+			a.innerHTML = ICON_LINK;
+			a.addEventListener('click', function(e) {
+				e.preventDefault();
+				history.replaceState(null, '', '#' + h.id);
+				try { navigator.clipboard.writeText(location.href.split('#')[0] + '#' + h.id); } catch(err) {}
+				h.scrollIntoView({ behavior: 'smooth' });
+			});
+			h.appendChild(a);
+		});
+	}
+
+	// ══════════ markdown source tools (copy / download) ══════════
+	function mdSource() {
+		if (window.__cmdsMd != null) return window.__cmdsMd; // decrypted payload
+		var el = document.getElementById('md-source');
+		if (!el) return null;
+		try {
+			var bin = atob(el.textContent.trim());
+			var bytes = new Uint8Array(bin.length);
+			for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+			return new TextDecoder().decode(bytes);
+		} catch(e) { return null; }
+	}
+
+	function wireMdTools() {
+		var md = mdSource();
+		if (md == null) return;
+		var copyBtn = document.getElementById('mdCopy');
+		var dlBtn = document.getElementById('mdDownload');
+		if (copyBtn) {
+			copyBtn.hidden = false;
+			var idle = copyBtn.innerHTML;
+			copyBtn.addEventListener('click', function() {
+				navigator.clipboard.writeText(md).then(function() {
+					copyBtn.innerHTML = ICON_CHECK;
+					copyBtn.classList.add('active');
+					setTimeout(function() { copyBtn.innerHTML = idle; copyBtn.classList.remove('active'); }, 1500);
+				});
+			});
+		}
+		if (dlBtn) {
+			dlBtn.hidden = false;
+			dlBtn.addEventListener('click', function() {
+				var name = (document.title || 'note').replace(/[\\/:*?"<>|]/g, '-').trim() || 'note';
+				var blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+				var url = URL.createObjectURL(blob);
+				var a = document.createElement('a');
+				a.href = url;
+				a.download = name + '.md';
+				document.body.appendChild(a);
+				a.click();
+				a.remove();
+				setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+			});
+		}
+	}
+
+	// ══════════ interactive force-directed local graph ══════════
+	var G = null; // { data, pts, adj, deg, W, H, k, tx, ty, hover }
+
+	function readGraphData() {
+		var dataEl = document.getElementById('graph-data');
+		if (!dataEl) return null;
+		var g;
+		try { g = JSON.parse(dataEl.textContent); } catch(e) { return null; }
+		if (!g.nodes || g.nodes.length < 2) return null;
+		return g;
+	}
+
+	function runLayout(g, W, H) {
+		var N = g.nodes.length;
+		var pts = g.nodes.map(function(n, i) {
+			var a = i * 2.399963;
+			var r = n.level === 0 ? 0 : (n.level === 1 ? 0.35 : 0.7) * Math.min(W, H) / 2;
+			return { x: W / 2 + r * Math.cos(a), y: H / 2 + r * Math.sin(a), vx: 0, vy: 0 };
+		});
+		var SPRING = 0.03, REST = Math.min(W, H) / 3.2, REPEL = Math.min(W, H) * 55, GRAV = 0.008;
+		for (var it = 0; it < 300; it++) {
+			var damp = 0.85 * (1 - it / 340);
+			for (var i = 0; i < N; i++) {
+				for (var j = i + 1; j < N; j++) {
+					var dx = pts[j].x - pts[i].x, dy = pts[j].y - pts[i].y;
+					var d2 = dx * dx + dy * dy + 0.01, d = Math.sqrt(d2);
+					var f = Math.min(REPEL / d2, 8);
+					var fx = (dx / d) * f, fy = (dy / d) * f;
+					pts[i].vx -= fx; pts[i].vy -= fy;
+					pts[j].vx += fx; pts[j].vy += fy;
+				}
+			}
+			g.edges.forEach(function(e) {
+				var a = pts[e[0]], b = pts[e[1]];
+				var dx = b.x - a.x, dy = b.y - a.y;
+				var d = Math.sqrt(dx * dx + dy * dy) + 0.01;
+				var f = SPRING * (d - REST);
+				var fx = (dx / d) * f, fy = (dy / d) * f;
+				a.vx += fx; a.vy += fy;
+				b.vx -= fx; b.vy -= fy;
+			});
+			for (var k2 = 0; k2 < N; k2++) {
+				pts[k2].vx += (W / 2 - pts[k2].x) * GRAV;
+				pts[k2].vy += (H / 2 - pts[k2].y) * GRAV;
+				pts[k2].x += pts[k2].vx * damp;
+				pts[k2].y += pts[k2].vy * damp;
+				pts[k2].vx *= 0.6; pts[k2].vy *= 0.6;
+			}
+			pts[0].x = W / 2; pts[0].y = H / 2; pts[0].vx = 0; pts[0].vy = 0;
+		}
+		var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
+		pts.forEach(function(pt) {
+			minX = Math.min(minX, pt.x); maxX = Math.max(maxX, pt.x);
+			minY = Math.min(minY, pt.y); maxY = Math.max(maxY, pt.y);
+		});
+		var M = 30;
+		var sx = (W - M * 2) / Math.max(maxX - minX, 1), sy = (H - M * 2) / Math.max(maxY - minY, 1);
+		var sc = Math.min(sx, sy, 1.5);
+		pts.forEach(function(pt) {
+			pt.x = M + (pt.x - minX) * sc + (W - M * 2 - (maxX - minX) * sc) / 2;
+			pt.y = M + (pt.y - minY) * sc + (H - M * 2 - (maxY - minY) * sc) / 2;
+		});
+		return pts;
+	}
+
+	function canvasSize() {
+		var canvas = document.getElementById('graphCanvas');
+		var panel = document.getElementById('graphPanel');
+		var wasHidden = !panel.classList.contains('open') && !docked();
+		if (wasHidden) { panel.style.visibility = 'hidden'; panel.classList.add('open'); }
+		var W = Math.max(canvas.clientWidth || panel.clientWidth - 36, 200);
+		var H = docked() ? Math.max(canvas.clientHeight, 200) : 280;
+		if (wasHidden) { panel.classList.remove('open'); panel.style.visibility = ''; }
+		return { W: W, H: H };
+	}
+
+	function relayoutGraph() {
+		var data = G ? G.data : readGraphData();
+		if (!data) return;
+		var sz = canvasSize();
+		var adj = data.nodes.map(function() { return {}; });
+		var deg = data.nodes.map(function() { return 0; });
+		data.edges.forEach(function(e) {
+			adj[e[0]][e[1]] = true; adj[e[1]][e[0]] = true;
+			deg[e[0]]++; deg[e[1]]++;
+		});
+		G = {
+			data: data, adj: adj, deg: deg,
+			pts: runLayout(data, sz.W, sz.H),
+			W: sz.W, H: sz.H, k: 1, tx: 0, ty: 0, hover: -1,
+		};
+		renderGraph();
+	}
+
+	function renderGraph() {
+		if (!G) return;
+		var canvas = document.getElementById('graphCanvas');
+		var dpr = window.devicePixelRatio || 1;
+		canvas.width = G.W * dpr; canvas.height = G.H * dpr;
+		if (!docked()) canvas.style.height = G.H + 'px';
+		var ctx = canvas.getContext('2d');
+		ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+		ctx.clearRect(0, 0, G.W, G.H);
+
+		var css = getComputedStyle(document.documentElement);
+		var noteColor = css.getPropertyValue('--graph-note').trim() || css.getPropertyValue('--accent').trim();
+		var muted = css.getPropertyValue('--muted').trim();
+		var text = css.getPropertyValue('--text').trim();
+		var border = css.getPropertyValue('--border').trim();
+		var cardBg = css.getPropertyValue('--card-bg').trim();
+
+		var g = G.data, pts = G.pts, k = G.k, hover = G.hover;
+		var sx = function(pt) { return pt.x * k + G.tx; };
+		var sy = function(pt) { return pt.y * k + G.ty; };
+		var inHood = function(i) { return hover < 0 || i === hover || G.adj[hover][i]; };
+
+		g.edges.forEach(function(e) {
+			var touches = hover >= 0 && (e[0] === hover || e[1] === hover);
+			if (hover >= 0) {
+				ctx.globalAlpha = touches ? 0.95 : 0.08;
+				ctx.strokeStyle = touches ? muted : border;
+				ctx.lineWidth = touches ? 1.5 : 1;
+			} else {
+				ctx.globalAlpha = (g.nodes[e[0]].level === 2 || g.nodes[e[1]].level === 2) ? 0.45 : 0.8;
+				ctx.strokeStyle = border;
+				ctx.lineWidth = 1;
+			}
+			ctx.beginPath();
+			ctx.moveTo(sx(pts[e[0]]), sy(pts[e[0]]));
+			ctx.lineTo(sx(pts[e[1]]), sy(pts[e[1]]));
+			ctx.stroke();
+		});
+
+		var rOf = function(i) {
+			var base = i === 0 ? 7 : Math.min(3.2 + G.deg[i] * 0.6, 6.5);
+			return base * Math.pow(k, 0.75);
+		};
+		g.nodes.forEach(function(n, i) {
+			var dim = hover >= 0 ? (inHood(i) ? 1 : 0.14) : (n.level === 2 ? 0.65 : 1);
+			ctx.globalAlpha = dim;
+			ctx.fillStyle = n.type === 'tag' ? '#E985A2' : noteColor;
+			ctx.beginPath(); ctx.arc(sx(pts[i]), sy(pts[i]), rOf(i), 0, Math.PI * 2); ctx.fill();
+			if (i === hover) {
+				ctx.strokeStyle = text; ctx.lineWidth = 1.5;
+				ctx.beginPath(); ctx.arc(sx(pts[i]), sy(pts[i]), rOf(i) + 2.5, 0, Math.PI * 2); ctx.stroke();
+			}
+		});
+
+		// labels: center always; L1 at normal zoom; everything once zoomed in;
+		// hovering shows the whole neighborhood regardless of zoom
+		g.nodes.forEach(function(n, i) {
+			var show;
+			if (hover >= 0) show = inHood(i);
+			else show = i === 0 || (n.level === 1 && (k >= 1.05 || g.nodes.length <= 20)) || k >= 1.9 || g.nodes.length <= 12;
+			if (!show) return;
+			var fs = i === 0 || i === hover ? 11.5 : 10.5;
+			ctx.font = (i === 0 || i === hover ? 'bold ' : '') + fs + 'px -apple-system, sans-serif';
+			var label = n.label.length > 22 ? n.label.slice(0, 21) + '…' : n.label;
+			var tw = ctx.measureText(label).width;
+			var lx = Math.max(2, Math.min(G.W - tw - 2, sx(pts[i]) - tw / 2));
+			var ly = sy(pts[i]) + rOf(i) + fs + 2;
+			var alpha = hover >= 0 ? (inHood(i) ? 1 : 0) : (n.level === 2 && k < 2 ? 0.7 : 0.95);
+			ctx.globalAlpha = alpha * 0.8;
+			ctx.fillStyle = cardBg;
+			ctx.fillRect(lx - 3, ly - fs + 1, tw + 6, fs + 3);
+			ctx.globalAlpha = alpha;
+			ctx.fillStyle = i === 0 || i === hover ? text : muted;
+			ctx.fillText(label, lx, ly);
+		});
+		ctx.globalAlpha = 1;
+	}
+
+	function zoomBy(factor) {
+		if (!G) return;
+		var mx = G.W / 2, my = G.H / 2;
+		var nk = Math.max(0.35, Math.min(4.5, G.k * factor));
+		factor = nk / G.k;
+		G.tx = mx - (mx - G.tx) * factor;
+		G.ty = my - (my - G.ty) * factor;
+		G.k = nk;
+		renderGraph();
+	}
+
+	function wireGraphInteraction() {
+		var canvas = document.getElementById('graphCanvas');
+		var dragging = false, moved = false, lastX = 0, lastY = 0;
+
+		document.getElementById('gZoomIn').addEventListener('click', function() { zoomBy(1.35); });
+		document.getElementById('gZoomOut').addEventListener('click', function() { zoomBy(1 / 1.35); });
+		document.getElementById('gReset').addEventListener('click', function() {
+			if (G) { G.k = 1; G.tx = 0; G.ty = 0; renderGraph(); }
+		});
+
+		function pick(mx, my) {
+			if (!G) return -1;
+			var best = -1, bestD = 12 * 12;
+			G.pts.forEach(function(pt, i) {
+				var dx = pt.x * G.k + G.tx - mx, dy = pt.y * G.k + G.ty - my;
+				var d = dx * dx + dy * dy;
+				if (d < bestD) { bestD = d; best = i; }
+			});
+			return best;
+		}
+		function pos(e) {
+			var r = canvas.getBoundingClientRect();
+			return { x: e.clientX - r.left, y: e.clientY - r.top };
+		}
+
+		canvas.addEventListener('wheel', function(e) {
+			if (!G) return;
+			e.preventDefault();
+			var m = pos(e);
+			var factor = Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.002));
+			var nk = Math.max(0.35, Math.min(4.5, G.k * factor));
+			factor = nk / G.k;
+			G.tx = m.x - (m.x - G.tx) * factor;
+			G.ty = m.y - (m.y - G.ty) * factor;
+			G.k = nk;
+			renderGraph();
+		}, { passive: false });
+
+		canvas.addEventListener('pointerdown', function(e) {
+			if (!G) return;
+			dragging = true; moved = false;
+			lastX = e.clientX; lastY = e.clientY;
+			canvas.classList.add('dragging');
+			canvas.setPointerCapture(e.pointerId);
+		});
+		canvas.addEventListener('pointermove', function(e) {
+			if (!G) return;
+			if (dragging) {
+				var dx = e.clientX - lastX, dy = e.clientY - lastY;
+				if (Math.abs(dx) + Math.abs(dy) > 2) moved = true;
+				G.tx += dx; G.ty += dy;
+				lastX = e.clientX; lastY = e.clientY;
+				renderGraph();
+			} else {
+				var m = pos(e);
+				var h = pick(m.x, m.y);
+				canvas.classList.toggle('on-node', h >= 0);
+				if (h !== G.hover) { G.hover = h; renderGraph(); }
+			}
+		});
+		canvas.addEventListener('pointerup', function(e) {
+			dragging = false;
+			canvas.classList.remove('dragging');
+			// double-click-ish: a clean click on empty space resets the view
+			if (!moved) {
+				var m = pos(e);
+				if (pick(m.x, m.y) < 0 && G.k !== 1) { G.k = 1; G.tx = 0; G.ty = 0; renderGraph(); }
+			}
+		});
+		canvas.addEventListener('pointerleave', function() {
+			if (G && G.hover !== -1) { G.hover = -1; renderGraph(); }
+			canvas.classList.remove('on-node');
+		});
+	}
+
+	function init() {
+		// start from a known-clean panel state before restoring preferences
+		document.body.classList.remove('cmds-docked');
+		document.getElementById('sideDock').hidden = true;
+		assignHeadingIds();
+		enhanceCodeBlocks();
+		headingAnchors();
+		foldableCallouts();
+		wireMdTools();
+		hasToc = buildToc();
+		if (hasToc) {
+			document.getElementById('tocToggle').hidden = false;
+			wireToggle('toc');
+			scrollSpy();
+		}
+		hasGraph = !!readGraphData();
+		if (hasGraph) {
+			document.getElementById('graphToggle').hidden = false;
+			wireToggle('graph');
+			wireGraphInteraction();
+			new MutationObserver(function() { renderGraph(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+			window.addEventListener('resize', function() {
+				if (docked() && window.innerWidth <= 1100) { setDock(false); return; }
+				if (docked()) requestAnimationFrame(function() { relayoutGraph(); });
+			});
+		}
+		if (hasToc || hasGraph) {
+			document.querySelectorAll('[data-pin]').forEach(function(btn) {
+				btn.addEventListener('click', function() { setDock(!docked()); });
+			});
+			// floating popups close on any click outside the card (docked stays put)
+			document.addEventListener('pointerdown', function(e) {
+				if (docked()) return;
+				if (e.target.closest('.side-panel, .side-tools')) return;
+				Object.keys(PANELS).forEach(function(k) {
+					if (document.getElementById(PANELS[k]).classList.contains('open')) setPanel(k, false);
+				});
+			});
+		}
+		try {
+			if (localStorage.getItem('cmds-dock') === '1' && (hasToc || hasGraph)) {
+				setDock(true);
+			} else if (localStorage.getItem('cmds-panel-toc') === '1' && hasToc) setPanel('toc', true);
+			else if (localStorage.getItem('cmds-panel-graph') === '1' && hasGraph) setPanel('graph', true);
+		} catch(e) {}
+	}
+
+	if (document.getElementById('encrypted-data') && !window.__cmdsReady) {
+		document.addEventListener('cmds-content-ready', init, { once: true });
+	} else {
+		init();
+	}
+})();
+</script>
+
+
+
+</body>
+</html>
